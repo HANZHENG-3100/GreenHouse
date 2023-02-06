@@ -108,19 +108,20 @@ class MainWindow(QMainWindow):
         # ///////////////////////////////////////////////////////////////
 
         # LEFT MENUS
-        # widgets.btn_home.clicked.connect(self.buttonClick)
-        # widgets.btn_widgets.clicked.connect(self.buttonClick)
-        # widgets.btn_new.clicked.connect(self.buttonClick)
-        # widgets.btn_save.clicked.connect(self.buttonClick)
-        # #  新增切换皮肤功能
-        # widgets.btn_chage_topic.clicked.connect(self.buttonClick)
-        # # 新增电脑数据分析功能
-        # widgets.btn_computer.clicked.connect(self.buttonClick)
-        # widgets.computer_info_start.clicked.connect(self.start_computer_info)
+        widgets.btn_cloud.clicked.connect(self.buttonClick)
+        widgets.btn_environment.clicked.connect(self.buttonClick)
+        widgets.btn_manual_control.clicked.connect(self.buttonClick)
+        widgets.btn_auto_control.clicked.connect(self.buttonClick)
+        widgets.btn_information.clicked.connect(self.buttonClick)
+        #  新增切换皮肤功能
+        widgets.btn_change_topic.clicked.connect(self.buttonClick)
+        # 新增电脑数据分析功能
+
+       # widgets.computer_info_start.clicked.connect(self.start_computer_info)
 
         # widgets.computer_info_start.clicked.connect(get_computer_info)  # 此方法会导致页面卡顿
         # 清理电脑数据
-        widgets.computer_info_clear.clicked.connect(self.clear_computer_info)
+        # widgets.computer_info_clear.clicked.connect(self.clear_computer_info)
 
         # 打开说明书
         widgets.pushButton_2.clicked.connect(self.open_guide_book)
@@ -178,29 +179,35 @@ class MainWindow(QMainWindow):
         btn = self.sender()  # 获取发送信号的对象
         btnName = btn.objectName()
 
-        # SHOW HOME PAGE
-        if btnName == "btn_home":
-            widgets.stackedWidget.setCurrentWidget(widgets.home)
+        # SHOW cloud_page
+        if btnName == "btn_cloud":
+            widgets.stackedWidget.setCurrentWidget(widgets.cloud_page)
             UIFunctions.resetStyle(self, btnName)
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
 
-        # SHOW WIDGETS PAGE
-        if btnName == "btn_widgets":
-            widgets.stackedWidget.setCurrentWidget(widgets.widgets)
+        # SHOW environ_page
+        if btnName == "btn_environment":
+            widgets.stackedWidget.setCurrentWidget(widgets.environ_page)
             UIFunctions.resetStyle(self, btnName)
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
 
-        # SHOW NEW PAGE
-        if btnName == "btn_new":
-            widgets.stackedWidget.setCurrentWidget(widgets.new_page)  # SET PAGE
+        # SHOW manual_control_page
+        if btnName == "btn_auto_control":
+            widgets.stackedWidget.setCurrentWidget(widgets.manual_control_page)  # SET PAGE
             UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
 
-        if btnName == "btn_save":
+        # SHOW auto_control_page
+        if btnName == "btn_manual_control":
             # print("Save BTN clicked!")
-            QMessageBox.information(self, "提示", "该功能暂未实现", QMessageBox.Yes)
+            widgets.stackedWidget.setCurrentWidget(widgets.auto_control_page)  # SET PAGE
+            UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
+            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
+            # QMessageBox.information(self, "提示", "该功能暂未实现", QMessageBox.Yes)
+        if btnName == "btn_information":
+            QMessageBox.information(self,"提示","该功能未实现",QMessageBox.Yes)
 
-        if btnName == "btn_chage_topic":
+        if btnName == "btn_change_topic":
             if self.useCustomTheme:
                 themeFile = os.path.abspath(os.path.join(self.absPath, "themes\py_dracula_dark.qss"))
                 UIFunctions.theme(self, themeFile, True)

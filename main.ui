@@ -1849,16 +1849,16 @@ hr { height: 1px; border-width: 0; }
                       <string notr="true">background: transparent;</string>
                      </property>
                      <property name="currentIndex">
-                      <number>2</number>
+                      <number>3</number>
                      </property>
-                     <widget class="QWidget" name="home">
+                     <widget class="QWidget" name="cloud_page">
                       <property name="styleSheet">
                        <string notr="true">background-image: url(:/images/images/images/PyDracula_vertical.png);
 background-position: center;
 background-repeat: no-repeat;</string>
                       </property>
                      </widget>
-                     <widget class="QWidget" name="widgets">
+                     <widget class="QWidget" name="auto_control_page">
                       <property name="styleSheet">
                        <string notr="true">b</string>
                       </property>
@@ -2698,7 +2698,7 @@ background-repeat: no-repeat;</string>
                        </item>
                       </layout>
                      </widget>
-                     <widget class="QWidget" name="new_page">
+                     <widget class="QWidget" name="manual_control_page">
                       <layout class="QVBoxLayout" name="verticalLayout_20">
                        <item>
                         <widget class="QPushButton" name="pushButton_2">
@@ -2742,8 +2742,11 @@ background-repeat: no-repeat;</string>
                        </item>
                       </layout>
                      </widget>
-                     <widget class="QWidget" name="computer_info">
+                     <widget class="QWidget" name="environ_page">
                       <layout class="QVBoxLayout" name="verticalLayout_22">
+                       <item>
+                        <widget class="QWidget" name="widget" native="true"/>
+                       </item>
                        <item>
                         <layout class="QVBoxLayout" name="verticalLayout_21">
                          <item>
@@ -2895,7 +2898,7 @@ background-repeat: no-repeat;</string>
                           <number>0</number>
                          </property>
                          <item>
-                          <widget class="QPushButton" name="btn_chage_topic">
+                          <widget class="QPushButton" name="btn_change_topic">
                            <property name="sizePolicy">
                             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                              <horstretch>0</horstretch>

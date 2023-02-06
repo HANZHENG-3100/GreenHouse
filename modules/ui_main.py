@@ -28,7 +28,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(940, 560)
+        MainWindow.resize(951, 560)
         MainWindow.setMinimumSize(QSize(940, 560))
         self.styleSheet = QWidget(MainWindow)
         self.styleSheet.setObjectName(u"styleSheet")
@@ -1043,20 +1043,20 @@ class Ui_MainWindow(object):
         self.stackedWidget = QStackedWidget(self.pagesContainer)
         self.stackedWidget.setObjectName(u"stackedWidget")
         self.stackedWidget.setStyleSheet(u"background: transparent;")
-        self.home = QWidget()
-        self.home.setObjectName(u"home")
-        self.home.setStyleSheet(u"background-image: url(:/images/images/images/PyDracula_vertical.png);\n"
+        self.cloud_page = QWidget()
+        self.cloud_page.setObjectName(u"cloud_page")
+        self.cloud_page.setStyleSheet(u"background-image: url(:/images/images/images/PyDracula_vertical.png);\n"
 "background-position: center;\n"
 "background-repeat: no-repeat;")
-        self.stackedWidget.addWidget(self.home)
-        self.widgets = QWidget()
-        self.widgets.setObjectName(u"widgets")
-        self.widgets.setStyleSheet(u"b")
-        self.verticalLayout = QVBoxLayout(self.widgets)
+        self.stackedWidget.addWidget(self.cloud_page)
+        self.auto_control_page = QWidget()
+        self.auto_control_page.setObjectName(u"auto_control_page")
+        self.auto_control_page.setStyleSheet(u"b")
+        self.verticalLayout = QVBoxLayout(self.auto_control_page)
         self.verticalLayout.setSpacing(10)
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.verticalLayout.setContentsMargins(10, 10, 10, 10)
-        self.row_1 = QFrame(self.widgets)
+        self.row_1 = QFrame(self.auto_control_page)
         self.row_1.setObjectName(u"row_1")
         self.row_1.setFrameShape(QFrame.StyledPanel)
         self.row_1.setFrameShadow(QFrame.Raised)
@@ -1139,7 +1139,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout.addWidget(self.row_1)
 
-        self.row_2 = QFrame(self.widgets)
+        self.row_2 = QFrame(self.auto_control_page)
         self.row_2.setObjectName(u"row_2")
         self.row_2.setMinimumSize(QSize(0, 150))
         self.row_2.setFrameShape(QFrame.StyledPanel)
@@ -1257,7 +1257,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout.addWidget(self.row_2)
 
-        self.row_3 = QFrame(self.widgets)
+        self.row_3 = QFrame(self.auto_control_page)
         self.row_3.setObjectName(u"row_3")
         self.row_3.setMinimumSize(QSize(0, 150))
         self.row_3.setFrameShape(QFrame.StyledPanel)
@@ -1390,50 +1390,55 @@ class Ui_MainWindow(object):
 
         self.verticalLayout.addWidget(self.row_3)
 
-        self.stackedWidget.addWidget(self.widgets)
-        self.new_page = QWidget()
-        self.new_page.setObjectName(u"new_page")
-        self.verticalLayout_20 = QVBoxLayout(self.new_page)
+        self.stackedWidget.addWidget(self.auto_control_page)
+        self.manual_control_page = QWidget()
+        self.manual_control_page.setObjectName(u"manual_control_page")
+        self.verticalLayout_20 = QVBoxLayout(self.manual_control_page)
         self.verticalLayout_20.setObjectName(u"verticalLayout_20")
-        self.pushButton_2 = QPushButton(self.new_page)
+        self.pushButton_2 = QPushButton(self.manual_control_page)
         self.pushButton_2.setObjectName(u"pushButton_2")
         self.pushButton_2.setStyleSheet(u"background-color: rgb(52, 59, 72);")
 
         self.verticalLayout_20.addWidget(self.pushButton_2)
 
-        self.pushButton_3 = QPushButton(self.new_page)
+        self.pushButton_3 = QPushButton(self.manual_control_page)
         self.pushButton_3.setObjectName(u"pushButton_3")
         self.pushButton_3.setStyleSheet(u"background-color: rgb(52, 59, 72);")
 
         self.verticalLayout_20.addWidget(self.pushButton_3)
 
-        self.pushButton_4 = QPushButton(self.new_page)
+        self.pushButton_4 = QPushButton(self.manual_control_page)
         self.pushButton_4.setObjectName(u"pushButton_4")
         self.pushButton_4.setStyleSheet(u"background-color: rgb(52, 59, 72);")
 
         self.verticalLayout_20.addWidget(self.pushButton_4)
 
-        self.label = QLabel(self.new_page)
+        self.label = QLabel(self.manual_control_page)
         self.label.setObjectName(u"label")
         self.label.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_20.addWidget(self.label)
 
-        self.stackedWidget.addWidget(self.new_page)
-        self.computer_info = QWidget()
-        self.computer_info.setObjectName(u"computer_info")
-        self.verticalLayout_22 = QVBoxLayout(self.computer_info)
+        self.stackedWidget.addWidget(self.manual_control_page)
+        self.environ_page = QWidget()
+        self.environ_page.setObjectName(u"environ_page")
+        self.verticalLayout_22 = QVBoxLayout(self.environ_page)
         self.verticalLayout_22.setObjectName(u"verticalLayout_22")
+        self.widget = QWidget(self.environ_page)
+        self.widget.setObjectName(u"widget")
+
+        self.verticalLayout_22.addWidget(self.widget)
+
         self.verticalLayout_21 = QVBoxLayout()
         self.verticalLayout_21.setObjectName(u"verticalLayout_21")
-        self.graphicsView = QGraphicsView(self.computer_info)
+        self.graphicsView = QGraphicsView(self.environ_page)
         self.graphicsView.setObjectName(u"graphicsView")
 
         self.verticalLayout_21.addWidget(self.graphicsView)
 
         self.horizontalLayout_6 = QHBoxLayout()
         self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
-        self.computer_info_start = QPushButton(self.computer_info)
+        self.computer_info_start = QPushButton(self.environ_page)
         self.computer_info_start.setObjectName(u"computer_info_start")
         self.computer_info_start.setLayoutDirection(Qt.LeftToRight)
         self.computer_info_start.setAutoFillBackground(False)
@@ -1441,7 +1446,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_6.addWidget(self.computer_info_start)
 
-        self.computer_info_clear = QPushButton(self.computer_info)
+        self.computer_info_clear = QPushButton(self.environ_page)
         self.computer_info_clear.setObjectName(u"computer_info_clear")
         self.computer_info_clear.setLayoutDirection(Qt.LeftToRight)
         self.computer_info_clear.setAutoFillBackground(False)
@@ -1455,7 +1460,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_22.addLayout(self.verticalLayout_21)
 
-        self.stackedWidget.addWidget(self.computer_info)
+        self.stackedWidget.addWidget(self.environ_page)
 
         self.verticalLayout_15.addWidget(self.stackedWidget)
 
@@ -1496,17 +1501,17 @@ class Ui_MainWindow(object):
         self.verticalLayout_14.setSpacing(0)
         self.verticalLayout_14.setObjectName(u"verticalLayout_14")
         self.verticalLayout_14.setContentsMargins(0, 0, 0, 0)
-        self.btn_chage_topic = QPushButton(self.topMenus)
-        self.btn_chage_topic.setObjectName(u"btn_chage_topic")
-        sizePolicy.setHeightForWidth(self.btn_chage_topic.sizePolicy().hasHeightForWidth())
-        self.btn_chage_topic.setSizePolicy(sizePolicy)
-        self.btn_chage_topic.setMinimumSize(QSize(0, 45))
-        self.btn_chage_topic.setFont(font)
-        self.btn_chage_topic.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_chage_topic.setLayoutDirection(Qt.LeftToRight)
-        self.btn_chage_topic.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-envelope-open.png);")
+        self.btn_change_topic = QPushButton(self.topMenus)
+        self.btn_change_topic.setObjectName(u"btn_change_topic")
+        sizePolicy.setHeightForWidth(self.btn_change_topic.sizePolicy().hasHeightForWidth())
+        self.btn_change_topic.setSizePolicy(sizePolicy)
+        self.btn_change_topic.setMinimumSize(QSize(0, 45))
+        self.btn_change_topic.setFont(font)
+        self.btn_change_topic.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_change_topic.setLayoutDirection(Qt.LeftToRight)
+        self.btn_change_topic.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-moon.png);")
 
-        self.verticalLayout_14.addWidget(self.btn_chage_topic)
+        self.verticalLayout_14.addWidget(self.btn_change_topic)
 
         self.btn_print = QPushButton(self.topMenus)
         self.btn_print.setObjectName(u"btn_print")
@@ -1597,7 +1602,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(2)
+        self.stackedWidget.setCurrentIndex(3)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -1726,9 +1731,9 @@ class Ui_MainWindow(object):
         self.label.setText(QCoreApplication.translate("MainWindow", u"NEW PAGE TEST", None))
         self.computer_info_start.setText(QCoreApplication.translate("MainWindow", u"\u7ed8\u56fe", None))
         self.computer_info_clear.setText(QCoreApplication.translate("MainWindow", u"\u6e05\u9664", None))
-        self.btn_chage_topic.setText(QCoreApplication.translate("MainWindow", u"Message", None))
-        self.btn_print.setText(QCoreApplication.translate("MainWindow", u"Print", None))
-        self.btn_logout.setText(QCoreApplication.translate("MainWindow", u"Logout", None))
+        self.btn_change_topic.setText(QCoreApplication.translate("MainWindow", u"\u6539\u53d8\u4e3b\u9898", None))
+        self.btn_print.setText(QCoreApplication.translate("MainWindow", u"\u5f85\u8bbe\u529f\u80fd2print", None))
+        self.btn_logout.setText(QCoreApplication.translate("MainWindow", u"\u5f85\u8bbe\u529f\u80fd1logout", None))
         self.creditsLabel.setText(QCoreApplication.translate("MainWindow", u"By: blyang", None))
         self.version.setText(QCoreApplication.translate("MainWindow", u"v1.0.3", None))
     # retranslateUi

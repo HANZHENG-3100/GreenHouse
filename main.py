@@ -108,15 +108,15 @@ class MainWindow(QMainWindow):
         # ///////////////////////////////////////////////////////////////
 
         # LEFT MENUS
-        widgets.btn_home.clicked.connect(self.buttonClick)
-        widgets.btn_widgets.clicked.connect(self.buttonClick)
-        widgets.btn_new.clicked.connect(self.buttonClick)
-        widgets.btn_save.clicked.connect(self.buttonClick)
-        #  新增切换皮肤功能
-        widgets.btn_chage_topic.clicked.connect(self.buttonClick)
-        # 新增电脑数据分析功能
-        widgets.btn_computer.clicked.connect(self.buttonClick)
-        widgets.computer_info_start.clicked.connect(self.start_computer_info)
+        # widgets.btn_home.clicked.connect(self.buttonClick)
+        # widgets.btn_widgets.clicked.connect(self.buttonClick)
+        # widgets.btn_new.clicked.connect(self.buttonClick)
+        # widgets.btn_save.clicked.connect(self.buttonClick)
+        # #  新增切换皮肤功能
+        # widgets.btn_chage_topic.clicked.connect(self.buttonClick)
+        # # 新增电脑数据分析功能
+        # widgets.btn_computer.clicked.connect(self.buttonClick)
+        # widgets.computer_info_start.clicked.connect(self.start_computer_info)
 
         # widgets.computer_info_start.clicked.connect(get_computer_info)  # 此方法会导致页面卡顿
         # 清理电脑数据
@@ -168,7 +168,7 @@ class MainWindow(QMainWindow):
         # SET HOME PAGE AND SELECT MENU
         # ///////////////////////////////////////////////////////////////
         widgets.stackedWidget.setCurrentWidget(widgets.home)
-        widgets.btn_home.setStyleSheet(UIFunctions.selectMenu(widgets.btn_home.styleSheet()))
+        # widgets.btn_home.setStyleSheet(UIFunctions.selectMenu(widgets.btn_home.styleSheet()))
 
     # BUTTONS CLICK
     # Post here your functions for clicked buttons
@@ -320,6 +320,6 @@ class MainWindow(QMainWindow):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    app.setWindowIcon(QIcon("icon.ico"))
+    app.setWindowIcon(QIcon("bakeup/icon.ico"))
     window = MainWindow()
     sys.exit(app.exec())

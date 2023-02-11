@@ -17,7 +17,7 @@
 # MAIN FILE
 # ///////////////////////////////////////////////////////////////
 from main import *
-
+from .app_settings import Settings
 # WITH ACCESS TO MAIN WINDOW WIDGETS
 # ///////////////////////////////////////////////////////////////
 class AppFunctions(MainWindow):
@@ -39,3 +39,43 @@ class AppFunctions(MainWindow):
         self.ui.horizontalScrollBar.setStyleSheet("background-color: #6272a4;")
         self.ui.verticalScrollBar.setStyleSheet("background-color: #6272a4;")
         self.ui.commandLinkButton.setStyleSheet("color: #ff79c6;")
+
+    def Btn_open_web(self):
+        import webbrowser
+        webbrowser.open('http://www.0531yun.com/')
+        print("Btn_open_web run")
+
+        return
+
+    def clear_computer_info(self):
+        # 更改设置的flag
+        self.seriesS.clear()
+        self.seriesL.clear()
+        self.chart.addSeries(self.seriesS)
+        self.chart.addSeries(self.seriesL)
+
+    def open_guide_book(self):
+        import webbrowser
+        webbrowser.open("shuoming" + '.docx')
+
+    def data_display(self, str):
+        # 获取已经记录好的数据并展示
+        # 设置一个flag
+        with open(r'./computer_info.csv', 'r') as f:
+            reader = f.readlines()
+            reader_last = reader[-1].replace('\n', '').split(',')
+            # 横坐标
+            col = int(reader_last[0])
+            # cpu
+            cpu = float(reader_last[1])
+            # 内存
+            memory = float(reader_last[2])
+
+        self.seriesS.append(col, cpu)
+        self.seriesL.append(col, memory)
+        self.chart = QChart()  # 创建 Chart
+        self.chart.setTitle("device information")
+        self.chart.addSeries(self.seriesS)
+        self.chart.addSeries(self.seriesL)
+        self.chart.createDefaultAxes()
+        widgets.graphicsView.setChart(self.chart)

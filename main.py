@@ -1,8 +1,8 @@
 # ///////////////////////////////////////////////////////////////
 #
-# BY: WANDERSON M.PIMENTA
+# BY: HANZHENG
 # PROJECT MADE WITH: Qt Designer and PySide6
-# V: 1.0.0
+# V: 1.0
 #
 # This project can be used freely for all uses, as long as they maintain the
 # respective credits only in the Python scripts, any information in the visual
@@ -13,25 +13,21 @@
 # https://doc.qt.io/qtforpython/licenses.html
 #
 # ///////////////////////////////////////////////////////////////
-
 import sys
-import os
 import time
 import PySide6
 import psutil
-
 # IMPORT / GUI AND MODULES AND WIDGETS
-# ///////////////////////////////////////////////////////////////
 from modules import *
 from widgets import *
 from PySide6.QtCharts import QChart, QLineSeries, QValueAxis
 
+import os
 # 解决no Qt platform plugin could be initialized问题
 dir_name = os.path.dirname(PySide6.__file__)
 plusin_path = os.path.join(dir_name, 'plugins', 'platforms')
 os.environ['QT_QPA_PLATFORM_PLUGIN_PATH'] = plusin_path
 os.environ["QT_FONT_DPI"] = "96"  # FIX Problem for High DPI and Scale above 100%
-
 # SET AS GLOBAL WIDGETS
 # ///////////////////////////////////////////////////////////////
 widgets = None
@@ -85,7 +81,6 @@ class MainWindow(QMainWindow):
         Settings.ENABLE_CUSTOM_TITLE_BAR = True
 
         # APP NAME
-        # ///////////////////////////////////////////////////////////////
         title = "智能物联网温室环境自动控制系统"
         description = "智能物联网温室环境自动控制系统"
         # APPLY TEXTS
@@ -94,7 +89,7 @@ class MainWindow(QMainWindow):
 
         # TOGGLE MENU
         # ///////////////////////////////////////////////////////////////
-        widgets.toggleButton.clicked.connect(lambda: UIFunctions.toggleMenu(self, True))
+        widgets.toggleButton.clicked.connect(lambda: UIFunctions.toggleMenu(self, True))  # 实现隐藏功能按钮
 
         # SET UI DEFINITIONS
         # ///////////////////////////////////////////////////////////////
@@ -113,6 +108,7 @@ class MainWindow(QMainWindow):
         widgets.btn_manual_control.clicked.connect(self.buttonClick)
         widgets.btn_auto_control.clicked.connect(self.buttonClick)
         widgets.btn_information.clicked.connect(self.buttonClick)
+        widgets.btn_open_web.clicked.connect(self.buttonClick)
         #  新增切换皮肤功能
         widgets.btn_change_topic.clicked.connect(self.buttonClick)
         # 新增电脑数据分析功能
@@ -124,11 +120,11 @@ class MainWindow(QMainWindow):
         # widgets.computer_info_clear.clicked.connect(self.clear_computer_info)
 
         # 打开说明书
-        widgets.pushButton_2.clicked.connect(self.open_guide_book)
+        # widgets.pushButton_2.clicked.connect(self.open_guide_book)
         # 打开网址
-        widgets.pushButton_3.clicked.connect(self.open_web)
+        # widgets.pushButton_3.clicked.connect(self.open_web)
         # 切换图片
-        widgets.pushButton_4.clicked.connect(self.change_pic)
+        # widgets.pushButton_4.clicked.connect(self.change_pic)
 
         # EXTRA LEFT BOX
         def openCloseLeftBox():
@@ -181,10 +177,14 @@ class MainWindow(QMainWindow):
 
         # SHOW cloud_page
         if btnName == "btn_cloud":
-            widgets.stackedWidget.setCurrentWidget(widgets.cloud_page)
+            widgets.stackedWidget.setCurrentWidget(widgets.cloud_page) # 堆栈窗口设置为cloud_page窗口
             UIFunctions.resetStyle(self, btnName)
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
-
+            # self.ui.cloud_page.browser = QWebEngineView()
+            # 加载外部的web界面
+            # self.ui.cloud_page.browser.load(QUrl("https://www.jb51.net"))
+            # self.ui.cloud_page.browser.setCentralWidget(self.ui.cloud_page.browser)
+            # self.ui.cloud_page.browser.show()
         # SHOW environ_page
         if btnName == "btn_environment":
             widgets.stackedWidget.setCurrentWidget(widgets.environ_page)
@@ -232,6 +232,10 @@ class MainWindow(QMainWindow):
             self.seriesS.setName("cpu")
             self.seriesL.setName("memory")
         # PRINT BTN NAME
+
+        if btnName == "btn_open_web":
+            print(f'Button33 "{btnName}" pressed!')
+            AppFunctions.Btn_open_web(self)
         print(f'Button "{btnName}" pressed!')
 
     # RESIZE EVENTS
@@ -244,7 +248,8 @@ class MainWindow(QMainWindow):
     # ///////////////////////////////////////////////////////////////
     def mousePressEvent(self, event):
         # SET DRAG POS WINDOW
-        self.dragPos = event.globalPos()
+        # self.dragPos = event.globalPos()
+        self.dragPos = event.globalPosition().toPoint()
 
         # PRINT MOUSE EVENTS
         if event.buttons() == Qt.LeftButton:
@@ -263,66 +268,6 @@ class MainWindow(QMainWindow):
         self.thread1.finishSignal.connect(self.data_display)
         # 启动线程，执行线程类中run函数
         self.thread1.start()
-
-    def data_display(self, str_):
-        """
-        电脑信息的数据展示
-        :return:
-        """
-        # 获取已经记录好的数据并展示
-        # 设置一个flag
-        with open(r'./computer_info.csv', 'r') as f:
-            reader = f.readlines()
-            reader_last = reader[-1].replace('\n', '').split(',')
-            # 横坐标
-            col = int(reader_last[0])
-            # cpu
-            cpu = float(reader_last[1])
-            # 内存
-            memory = float(reader_last[2])
-
-        self.seriesS.append(col, cpu)
-        self.seriesL.append(col, memory)
-        self.chart = QChart()  # 创建 Chart
-        self.chart.setTitle("设备资源图")
-        self.chart.addSeries(self.seriesS)
-        self.chart.addSeries(self.seriesL)
-        self.chart.createDefaultAxes()
-        widgets.graphicsView.setChart(self.chart)
-
-    def clear_computer_info(self):
-        """
-        清除设备表格信息
-        :return:
-        """
-        # 更改设置的flag
-        self.seriesS.clear()
-        self.seriesL.clear()
-        self.chart.addSeries(self.seriesS)
-        self.chart.addSeries(self.seriesL)
-
-    def open_guide_book(self):
-        import webbrowser
-        webbrowser.open("说明书" + '.docx')
-
-    def open_web(self):
-        import webbrowser
-        webbrowser.open('www.baidu.com')
-
-    def change_pic(self):
-        url_list = [
-            "./1.jpg",
-            "./2.jpg",
-            "./3.jpg",
-            "./4.jpg",
-            "./5.jpg",
-        ]
-        import random
-        index = random.randint(0, 4)
-        lb1 = widgets.label
-        pix = QPixmap(url_list[index]).scaled(lb1.size(), aspectMode=Qt.KeepAspectRatio)
-        lb1.setPixmap(pix)
-        lb1.repaint()
 
 
 if __name__ == "__main__":

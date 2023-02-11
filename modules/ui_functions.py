@@ -16,12 +16,16 @@
 
 # MAIN FILE
 # ///////////////////////////////////////////////////////////////
+
 from main import *
 
 # GLOBALS
 # ///////////////////////////////////////////////////////////////
+from modules import Settings
+from widgets import CustomGrip
 GLOBAL_STATE = False
 GLOBAL_TITLE_BAR = True
+from main import *
 
 class UIFunctions(MainWindow):
     # MAXIMIZE/RESTORE
@@ -34,6 +38,7 @@ class UIFunctions(MainWindow):
             GLOBAL_STATE = True
             self.ui.appMargins.setContentsMargins(0, 0, 0, 0)
             self.ui.maximizeRestoreAppBtn.setToolTip("Restore")
+            # self.ui.maximizeRestoreAppBtn.setIcon(QIcon(u":/icons/images/icons/icon_restore.png"))
             self.ui.maximizeRestoreAppBtn.setIcon(QIcon(u":/icons/images/icons/icon_restore.png"))
             self.ui.frame_size_grip.hide()
             self.left_grip.hide()
@@ -46,7 +51,7 @@ class UIFunctions(MainWindow):
             self.resize(self.width()+1, self.height()+1)
             self.ui.appMargins.setContentsMargins(10, 10, 10, 10)
             self.ui.maximizeRestoreAppBtn.setToolTip("Maximize")
-            self.ui.maximizeRestoreAppBtn.setIcon(QIcon(u":/icons/images/icons/icon_maximize.png"))
+            self.ui.maximizeRestoreAppBtn.setIcon(QIcon(u"../images/icons/icon_maximize.png"))
             self.ui.frame_size_grip.show()
             self.left_grip.show()
             self.right_grip.show()

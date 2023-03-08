@@ -7,14 +7,14 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>940</width>
-    <height>560</height>
+    <width>1343</width>
+    <height>800</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>940</width>
-    <height>560</height>
+    <width>1200</width>
+    <height>800</height>
    </size>
   </property>
   <property name="mouseTracking">
@@ -29,7 +29,7 @@
   <widget class="QWidget" name="styleSheet">
    <property name="font">
     <font>
-     <family>Segoe UI Semibold</family>
+     <family>Segoe UI</family>
      <pointsize>14</pointsize>
      <italic>false</italic>
      <bold>false</bold>
@@ -56,16 +56,20 @@ DARK THEME - DRACULA COLOR BASED
 ///////////////////////////////////////////////////////////////////////////////////////////////// */
 
 QWidget{
-	color: #333;
-	font: 14pt &quot;Segoe UI Semibold&quot;;
-}
+	 color: rgb(221, 221, 221);
+    /* color: rgb(80, 80, 80);*/
 
+	font: 14pt &quot;Segoe UI&quot;;
+}
+Line{
+color: rgb(189, 147, 249);
+}
 /* /////////////////////////////////////////////////////////////////////////////////////////////////
 Tooltip */
 QToolTip {
-	color: #333;
-	background-color: #f8f8f2;
-	border: 1px solid #CCC;
+	color: #ffffff;
+	background-color: rgba(33, 37, 43, 180);
+	border: 1px solid rgb(44, 49, 58);
 	background-image: none;
 	background-position: left center;
     background-repeat: no-repeat;
@@ -79,24 +83,23 @@ QToolTip {
 /* /////////////////////////////////////////////////////////////////////////////////////////////////
 Bg App */
 #bgApp {	
-	background-color: #f8f8f2;
-	border: 1px solid #CCC;
-    color: #44475a;
+	background-color: rgb(40, 44, 52);
+	border: 1px solid rgb(44, 49, 58);
 }
 
 /* /////////////////////////////////////////////////////////////////////////////////////////////////
 Left Menu */
 #leftMenuBg {	
-	background-color: #6272a4;
+	background-color: rgb(33, 37, 43);
 }
 #topLogo {
-	background-color: #6272a4;
+	background-color: rgb(33, 37, 43);
 	background-image: url(:/images/images/images/PyDracula.png);
-	background-position: centered;
+	background-position: center;
 	background-repeat: no-repeat;
 }
-#titleLeftApp { font: 63 15pt &quot;Segoe UI Semibold&quot;; color: #f8f8f2; }
-#titleLeftDescription { font: 12pt &quot;Segoe UI&quot;; color: #bd93f9; }
+#titleLeftApp { font: 63 15pt &quot;Segoe UI Semibold&quot;; }
+#titleLeftDescription { font: 12pt &quot;Segoe UI&quot;; color: rgb(189, 147, 249); }
 
 /* MENUS */
 #topMenu .QPushButton {	
@@ -107,13 +110,12 @@ Left Menu */
 	background-color: transparent;
 	text-align: left;
 	padding-left: 44px;
-    color: #f8f8f2;
 }
 #topMenu .QPushButton:hover {
-	background-color: #bd93f9;
+	background-color: rgb(40, 44, 52);
 }
 #topMenu .QPushButton:pressed {	
-	background-color: #ff79c6;
+	background-color: rgb(189, 147, 249);
 	color: rgb(255, 255, 255);
 }
 #bottomMenu .QPushButton {	
@@ -124,17 +126,16 @@ Left Menu */
 	background-color:transparent;
 	text-align: left;
 	padding-left: 44px;
-    color: #f8f8f2;
 }
 #bottomMenu .QPushButton:hover {
-	background-color: #bd93f9;
+	background-color: rgb(40, 44, 52);
 }
 #bottomMenu .QPushButton:pressed {	
-	background-color: #ff79c6;
+	background-color: rgb(189, 147, 249);
 	color: rgb(255, 255, 255);
 }
 #leftMenuFrame{
-	border-top: 3px solid #6a7cb1;
+	border-top: 3px solid rgb(44, 49, 58);
 }
 
 /* Toggle Button */
@@ -143,17 +144,16 @@ Left Menu */
     background-repeat: no-repeat;
 	border: none;
 	border-left: 20px solid transparent;
-	background-color: #5b6996;
+	background-color: rgb(37, 41, 48);
 	text-align: left;
 	padding-left: 44px;
-	color: #f8f8f2;
+	color: rgb(113, 126, 149);
 }
 #toggleButton:hover {
-	background-color: #bd93f9;
+	background-color: rgb(40, 44, 52);
 }
-#toggleButton:pressed {	
-	background-color: #ff79c6;
-	color: rgb(255, 255, 255);
+#toggleButton:pressed {
+	background-color: rgb(189, 147, 249);
 }
 
 /* Title Menu */
@@ -163,13 +163,11 @@ Left Menu */
 /* /////////////////////////////////////////////////////////////////////////////////////////////////
 Extra Tab */
 #extraLeftBox {	
-	background-color: #495474;
-    color: #f8f8f2;
+	background-color: rgb(44, 49, 58);
 }
 #extraTopBg{	
 	background-color: rgb(189, 147, 249)
 }
-
 /* Icon */
 #extraIcon {
 	background-position: center;
@@ -187,22 +185,21 @@ Extra Tab */
 
 /* Extra Content */
 #extraContent{
-	border-top: 3px solid #6272a4;
+	border-top: 3px solid rgb(40, 44, 52);
 }
 
 /* Extra Top Menus */
 #extraTopMenu .QPushButton {
-    background-position: left center;
+background-position: left center;
     background-repeat: no-repeat;
 	border: none;
 	border-left: 22px solid transparent;
 	background-color:transparent;
 	text-align: left;
 	padding-left: 44px;
-    color: #f8f8f2;
 }
 #extraTopMenu .QPushButton:hover {
-	background-color: #5d6c99;
+	background-color: rgb(40, 44, 52);
 }
 #extraTopMenu .QPushButton:pressed {	
 	background-color: rgb(189, 147, 249);
@@ -212,91 +209,105 @@ Extra Tab */
 /* /////////////////////////////////////////////////////////////////////////////////////////////////
 Content App */
 #contentTopBg{	
-	background-color: #6272a4;
+	background-color: rgb(33, 37, 43);
 }
 #contentBottom{
-	border-top: 3px solid #bd93f9;
-}
-#titleRightInfo{
-    color: #f8f8f2;
+	border-top: 3px solid rgb(44, 49, 58);
 }
 
 /* Top Buttons */
 #rightButtons .QPushButton { background-color: rgba(255, 255, 255, 0); border: none;  border-radius: 5px; }
-#rightButtons .QPushButton:hover { background-color: #bd93f9; border-style: solid; border-radius: 4px; }
-#rightButtons .QPushButton:pressed { background-color: #ff79c6; border-style: solid; border-radius: 4px; }
+#rightButtons .QPushButton:hover { background-color: rgb(44, 49, 57); border-style: solid; border-radius: 4px; }
+#rightButtons .QPushButton:pressed { background-color: rgb(23, 26, 30); border-style: solid; border-radius: 4px; }
 
 /* Theme Settings */
-#extraRightBox { background-color: #495474; }
-#themeSettingsTopDetail { background-color: #6272a4; }
+#extraRightBox { background-color: rgb(44, 49, 58); }
+#themeSettingsTopDetail { background-color: rgb(189, 147, 249); }
 
 /* Bottom Bar */
-#bottomBar { background-color: #495474 }
-#bottomBar QLabel { font-size: 14px; color: #f8f8f2; padding-left: 10px; padding-right: 10px; padding-bottom: 2px; }
+#bottomBar { background-color: rgb(44, 49, 58); }
+#bottomBar QLabel { font-size: 14px; color: rgb(113, 126, 149); padding-left: 10px; padding-right: 10px; padding-bottom: 2px; }
 
 /* CONTENT SETTINGS */
 /* MENUS */
-#contentSettings .QPushButton {
-    background-position: left center;
+#contentSettings .QPushButton {	
+	background-position: left center;
     background-repeat: no-repeat;
 	border: none;
 	border-left: 22px solid transparent;
 	background-color:transparent;
 	text-align: left;
 	padding-left: 44px;
-    color: #f8f8f2;
 }
 #contentSettings .QPushButton:hover {
-	background-color: #5d6c99;
+	background-color: rgb(40, 44, 52);
 }
 #contentSettings .QPushButton:pressed {	
 	background-color: rgb(189, 147, 249);
 	color: rgb(255, 255, 255);
 }
+
 /* /////////////////////////////////////////////////////////////////////////////////////////////////
 QTableWidget */
 QTableWidget {	
 	background-color: transparent;
 	padding: 10px;
 	border-radius: 5px;
-	gridline-color: #9faeda;
-    outline: none;
+	gridline-color: rgb(44, 49, 58);
+	border-bottom: 1px solid rgb(44, 49, 60);
 }
 QTableWidget::item{
-	border-color: #9faeda;
+	border-color: rgb(44, 49, 60);
 	padding-left: 5px;
 	padding-right: 5px;
-	gridline-color: #9faeda;
+	gridline-color: rgb(44, 49, 60);
 }
 QTableWidget::item:selected{
 	background-color: rgb(189, 147, 249);
-    color: #f8f8f2;
 }
 QHeaderView::section{
-	background-color: #6272a4;
+	background-color: rgb(33, 37, 43);
 	max-width: 30px;
-	border: none;
+	border: 1px solid rgb(44, 49, 58);
 	border-style: none;
+    border-bottom: 1px solid rgb(44, 49, 60);
+    border-right: 1px solid rgb(44, 49, 60);
 }
-QTableWidget::horizontalHeader {	
-	background-color: #6272a4;
+QTableWidget::horizontalHeader{
+	background-color: rgb(33, 37, 43);
 }
 QHeaderView::section:horizontal
 {
-    border: 1px solid #6272a4;
-	background-color: #6272a4;
+    border: 1px solid rgb(33, 37, 43);
+	background-color: rgb(33, 37, 43);
 	padding: 3px;
 	border-top-left-radius: 7px;
     border-top-right-radius: 7px;
-    color: #f8f8f2;
 }
 QHeaderView::section:vertical
 {
-    border: 1px solid #6272a4;
+    border: 1px solid rgb(44, 49, 60);
 }
 
 /* /////////////////////////////////////////////////////////////////////////////////////////////////
-LineEdit */
+LineEdit 
+QLineEdit {
+	background-color: rgb(33, 37, 43);
+	border-radius: 5px;
+	border: 2px solid rgb(33, 37, 43);
+	padding-left: 10px;
+	selection-color: rgb(255, 255, 255);
+	selection-background-color: rgb(255, 121, 198);
+}
+QLineEdit:hover {
+	border: 2px solid rgb(64, 71, 88);
+}
+QLineEdit:focus {
+	border: 2px solid rgb(91, 101, 124);
+} 
+*/
+
+/*LineEdit  亮色*/
 QLineEdit {
 	background-color: #6272a4;
 	border-radius: 5px;
@@ -316,12 +327,11 @@ QLineEdit:focus {
 /* /////////////////////////////////////////////////////////////////////////////////////////////////
 PlainTextEdit */
 QPlainTextEdit {
-	background-color: #6272a4;
+	background-color: rgb(27, 29, 35);
 	border-radius: 5px;
 	padding: 10px;
 	selection-color: rgb(255, 255, 255);
 	selection-background-color: rgb(255, 121, 198);
-    color: #f8f8f2;
 }
 QPlainTextEdit  QScrollBar:vertical {
     width: 8px;
@@ -333,14 +343,14 @@ QPlainTextEdit:hover {
 	border: 2px solid rgb(64, 71, 88);
 }
 QPlainTextEdit:focus {
-	border: 2px solid #ff79c6;
+	border: 2px solid rgb(91, 101, 124);
 }
 
 /* /////////////////////////////////////////////////////////////////////////////////////////////////
 ScrollBars */
 QScrollBar:horizontal {
     border: none;
-    background: #6272a4;
+    background: rgb(52, 59, 72);
     height: 8px;
     margin: 0px 21px 0 21px;
 	border-radius: 0px;
@@ -352,7 +362,7 @@ QScrollBar::handle:horizontal {
 }
 QScrollBar::add-line:horizontal {
     border: none;
-    background: #6272a4;
+    background: rgb(55, 63, 77);
     width: 20px;
 	border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
@@ -361,7 +371,7 @@ QScrollBar::add-line:horizontal {
 }
 QScrollBar::sub-line:horizontal {
     border: none;
-    background: #6272a4;
+    background: rgb(55, 63, 77);
     width: 20px;
 	border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
@@ -378,7 +388,7 @@ QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal
 }
  QScrollBar:vertical {
 	border: none;
-    background-color: #6272a4;
+    background: rgb(52, 59, 72);
     width: 8px;
     margin: 21px 0 21px 0;
 	border-radius: 0px;
@@ -390,7 +400,7 @@ QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal
  }
  QScrollBar::add-line:vertical {
      border: none;
-    background: #6272a4;
+    background: rgb(55, 63, 77);
      height: 20px;
 	border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
@@ -399,7 +409,7 @@ QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal
  }
  QScrollBar::sub-line:vertical {
 	border: none;
-    background: #6272a4;
+    background: rgb(55, 63, 77);
      height: 20px;
 	border-top-left-radius: 4px;
     border-top-right-radius: 4px;
@@ -417,57 +427,56 @@ QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal
 /* /////////////////////////////////////////////////////////////////////////////////////////////////
 CheckBox */
 QCheckBox::indicator {
-    border: 3px solid #6272a4;
+    border: 3px solid rgb(52, 59, 72);
 	width: 15px;
 	height: 15px;
 	border-radius: 10px;
-    background: #6272a4;
+    background: rgb(44, 49, 60);
 }
 QCheckBox::indicator:hover {
-    border: 3px solid rgb(119, 136, 187);
+    border: 3px solid rgb(58, 66, 81);
 }
 QCheckBox::indicator:checked {
-    background: 3px solid #bd93f9;
-	border: 3px solid #bd93f9;	
+    background: 3px solid rgb(52, 59, 72);
+	border: 3px solid rgb(52, 59, 72);	
 	background-image: url(:/icons/images/icons/cil-check-alt.png);
 }
 
 /* /////////////////////////////////////////////////////////////////////////////////////////////////
 RadioButton */
 QRadioButton::indicator {
-    border: 3px solid #6272a4;
+    border: 3px solid rgb(52, 59, 72);
 	width: 15px;
 	height: 15px;
 	border-radius: 10px;
-    background: #6272a4;
+    background: rgb(44, 49, 60);
 }
 QRadioButton::indicator:hover {
-    border: 3px solid rgb(119, 136, 187);
+    border: 3px solid rgb(58, 66, 81);
 }
 QRadioButton::indicator:checked {
-    background: 3px solid #bd93f9;
-	border: 3px solid #bd93f9;	
+    background: 3px solid rgb(94, 106, 130);
+	border: 3px solid rgb(52, 59, 72);	
 }
 
 /* /////////////////////////////////////////////////////////////////////////////////////////////////
 ComboBox */
 QComboBox{
-	background-color: #6272a4;
+	background-color: rgb(27, 29, 35);
 	border-radius: 5px;
-	border: 2px solid #6272a4;
+	border: 2px solid rgb(33, 37, 43);
 	padding: 5px;
 	padding-left: 10px;
-    color: #f8f8f2;
 }
 QComboBox:hover{
-	border: 2px solid #7284b9;
+	border: 2px solid rgb(64, 71, 88);
 }
 QComboBox::drop-down {
 	subcontrol-origin: padding;
 	subcontrol-position: top right;
 	width: 25px; 
 	border-left-width: 3px;
-	border-left-color: #6272a4;
+	border-left-color: rgba(39, 44, 54, 150);
 	border-left-style: solid;
 	border-top-right-radius: 3px;
 	border-bottom-right-radius: 3px;	
@@ -477,9 +486,9 @@ QComboBox::drop-down {
  }
 QComboBox QAbstractItemView {
 	color: rgb(255, 121, 198);	
-	background-color: #6272a4;
+	background-color: rgb(33, 37, 43);
 	padding: 10px;
-	selection-background-color: #6272a4;
+	selection-background-color: rgb(39, 44, 54);
 }
 
 /* /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -488,10 +497,10 @@ QSlider::groove:horizontal {
     border-radius: 5px;
     height: 10px;
 	margin: 0px;
-	background-color: #6272a4;
+	background-color: rgb(52, 59, 72);
 }
 QSlider::groove:horizontal:hover {
-	background-color: #6272a4;
+	background-color: rgb(55, 62, 76);
 }
 QSlider::handle:horizontal {
     background-color: rgb(189, 147, 249);
@@ -512,10 +521,10 @@ QSlider::groove:vertical {
     border-radius: 5px;
     width: 10px;
     margin: 0px;
-	background-color: #6272a4;
+	background-color: rgb(52, 59, 72);
 }
 QSlider::groove:vertical:hover {
-	background-color: #6272a4;
+	background-color: rgb(55, 62, 76);
 }
 QSlider::handle:vertical {
     background-color: rgb(189, 147, 249);
@@ -534,43 +543,58 @@ QSlider::handle:vertical:pressed {
 
 /* /////////////////////////////////////////////////////////////////////////////////////////////////
 CommandLinkButton */
-#pagesContainer QCommandLinkButton {	
+QCommandLinkButton {	
 	color: rgb(255, 121, 198);
 	border-radius: 5px;
 	padding: 5px;
-    border: 2px solid #ff79c6;
-    color: #ff79c6;
 }
-#pagesContainer QCommandLinkButton:hover {	
+QCommandLinkButton:hover {	
 	color: rgb(255, 170, 255);
-	background-color: #6272a4;
+	background-color: rgb(44, 49, 60);
 }
-#pagesContainer QCommandLinkButton:pressed {	
+QCommandLinkButton:pressed {	
 	color: rgb(189, 147, 249);
-	background-color: #586796;
+	background-color: rgb(52, 58, 71);
 }
 
 /* /////////////////////////////////////////////////////////////////////////////////////////////////
 Button */
 #pagesContainer QPushButton {
-	border: 2px solid #6272a4;
+	border: 2px solid rgb(52, 59, 72);
 	border-radius: 5px;	
-	background-color: #6272a4;
-    color: #f8f8f2;
+	background-color: rgb(52, 59, 72);
 }
 #pagesContainer QPushButton:hover {
-	background-color: #7082b6;
-	border: 2px solid #7082b6;
+	background-color: rgb(57, 65, 80);
+	border: 2px solid rgb(61, 70, 86);
 }
 #pagesContainer QPushButton:pressed {	
-	background-color: #546391;
-	border: 2px solid #ff79c6;
+	background-color: rgb(35, 40, 49);
+	border: 2px solid rgb(43, 50, 61);
 }
 
-
-</string>
+/* /////////////////////////////////////////////////////////////////////////////////////////////////
+QRadioButton */
+QRadioButton::indicator {
+    width:                30px;
+    height:               30px;
+    border-radius:        17px;
+}
+ 
+QRadioButton::indicator:checked {
+    background-color:       green;
+    border:                3px solid white;
+}
+ 
+/*QRadioButton::indicator:unchecked {
+    background-color:       red;
+    border:                 2px solid white;
+}*/
+QTextBrowser{
+border-width:0;
+border-style:outset;}</string>
    </property>
-   <layout class="QGridLayout" name="gridLayout_6">
+   <layout class="QGridLayout" name="gridLayout_2">
     <item row="0" column="0">
      <widget class="QFrame" name="bgApp">
       <property name="styleSheet">
@@ -817,7 +841,7 @@ Button */
                   </property>
                   <property name="font">
                    <font>
-                    <family>Segoe UI Semibold</family>
+                    <family>Segoe UI</family>
                     <pointsize>14</pointsize>
                     <italic>false</italic>
                     <bold>false</bold>
@@ -883,7 +907,7 @@ Button */
                   </property>
                   <property name="font">
                    <font>
-                    <family>Segoe UI Semibold</family>
+                    <family>Segoe UI</family>
                     <pointsize>14</pointsize>
                     <italic>false</italic>
                     <bold>false</bold>
@@ -899,12 +923,12 @@ Button */
                    <string notr="true">background-image: url(:/icons/images/icons/cil-cloudy.png);</string>
                   </property>
                   <property name="text">
-                   <string>云端数据</string>
+                   <string>云端数据显示</string>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="btn_environment">
+                 <widget class="QPushButton" name="btn_manual_control">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                     <horstretch>0</horstretch>
@@ -919,7 +943,7 @@ Button */
                   </property>
                   <property name="font">
                    <font>
-                    <family>Segoe UI Semibold</family>
+                    <family>Segoe UI</family>
                     <pointsize>14</pointsize>
                     <italic>false</italic>
                     <bold>false</bold>
@@ -932,10 +956,10 @@ Button */
                    <enum>Qt::LeftToRight</enum>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">background-image: url(:/icons/images/icons/cil-speedometer.png);</string>
+                   <string notr="true">background-image: url(:/icons/images/icons/cil-hand-point-up.png);</string>
                   </property>
                   <property name="text">
-                   <string>实时环境</string>
+                   <string>手动远程控制</string>
                   </property>
                  </widget>
                 </item>
@@ -956,7 +980,7 @@ Button */
                  </widget>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="btn_manual_control">
+                 <widget class="QPushButton" name="btn_energy">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                     <horstretch>0</horstretch>
@@ -971,7 +995,7 @@ Button */
                   </property>
                   <property name="font">
                    <font>
-                    <family>Segoe UI Semibold</family>
+                    <family>Segoe UI</family>
                     <pointsize>14</pointsize>
                     <italic>false</italic>
                     <bold>false</bold>
@@ -984,10 +1008,10 @@ Button */
                    <enum>Qt::LeftToRight</enum>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">background-image: url(:/icons/images/icons/cil-hand-point-up.png);</string>
+                   <string notr="true">background-image: url(:/icons/images/icons/cil-speedometer.png);</string>
                   </property>
                   <property name="text">
-                   <string>手动控制</string>
+                   <string>能量收支</string>
                   </property>
                  </widget>
                 </item>
@@ -1050,7 +1074,7 @@ Button */
                   </property>
                   <property name="font">
                    <font>
-                    <family>Segoe UI Semibold</family>
+                    <family>Segoe UI</family>
                     <pointsize>14</pointsize>
                     <italic>false</italic>
                     <bold>false</bold>
@@ -1322,14 +1346,14 @@ Button */
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 hr { height: 1px; border-width: 0; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI Semibold'; font-size:14pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:12pt; font-weight:600; color:#ff79c6;&quot;&gt;系统介绍&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:10pt; color:#55aaff;&quot;&gt;该软件系统根据实际需求，提供了一个温度、湿度、光照、气体、水肥及气象等网络传感器数据的综合平台，同时为实验平台提供大棚卷帘、水肥、通风、补光、补热等执行器的手动及自动控制功能。软件使用 Python、 PySide 编写(支持 PyQt).&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Segoe UI'; font-size:10pt; color:#55aaff;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:12pt; font-weight:600; color:#ff79c6;&quot;&gt;Convert UI&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:9pt; color:#ffffff;&quot;&gt;pyside6-uic main.ui &amp;gt; ui_main.py&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:12pt; font-weight:600; color:#ff79c6;&quot;&gt;Convert QRC&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:9pt; color:#ffffff;&quot;&gt;pyside6-rcc resources.qrc -o resources_rc.py&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:14pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#ff79c6;&quot;&gt;系统介绍&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; color:#55aaff;&quot;&gt;该软件系统根据实际需求，提供了一个温度、湿度、光照、气体、水肥及气象等网络传感器数据的综合平台，同时为实验平台提供大棚卷帘、水肥、通风、补光、补热等执行器的手动及自动控制功能。软件使用 Python、 PySide 编写(支持 PyQt).&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt; color:#55aaff;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#ff79c6;&quot;&gt;Convert UI&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; color:#ffffff;&quot;&gt;pyside6-uic main.ui &amp;gt; ui_main.py&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#ff79c6;&quot;&gt;Convert QRC&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; color:#ffffff;&quot;&gt;pyside6-rcc resources.qrc -o resources_rc.py&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                   </property>
                   <property name="textInteractionFlags">
                    <set>Qt::TextSelectableByMouse</set>
@@ -1600,7 +1624,7 @@ hr { height: 1px; border-width: 0; }
                   </property>
                   <property name="font">
                    <font>
-                    <family>Segoe UI Semibold</family>
+                    <family>Segoe UI</family>
                     <pointsize>14</pointsize>
                     <italic>false</italic>
                     <bold>false</bold>
@@ -1748,7 +1772,7 @@ hr { height: 1px; border-width: 0; }
                     <widget class="QStackedWidget" name="stackedWidget">
                      <property name="font">
                       <font>
-                       <family>Segoe UI Semibold</family>
+                       <family>Segoe UI</family>
                        <pointsize>14</pointsize>
                        <italic>false</italic>
                        <bold>false</bold>
@@ -1757,20 +1781,96 @@ hr { height: 1px; border-width: 0; }
                      <property name="styleSheet">
                       <string notr="true">background: transparent;</string>
                      </property>
-                     <property name="currentIndex">
-                      <number>3</number>
+                     <property name="frameShape">
+                      <enum>QFrame::NoFrame</enum>
                      </property>
-                     <widget class="QWidget" name="cloud_page">
+                     <property name="currentIndex">
+                      <number>2</number>
+                     </property>
+                     <widget class="QWidget" name="energy_page">
                       <property name="styleSheet">
                        <string notr="true"/>
                       </property>
-                      <widget class="QFrame" name="row_4">
+                      <widget class="QFrame" name="energy_page_row_1">
                        <property name="geometry">
                         <rect>
                          <x>20</x>
                          <y>0</y>
-                         <width>820</width>
-                         <height>112</height>
+                         <width>781</width>
+                         <height>121</height>
+                        </rect>
+                       </property>
+                       <property name="minimumSize">
+                        <size>
+                         <width>150</width>
+                         <height>100</height>
+                        </size>
+                       </property>
+                       <property name="frameShape">
+                        <enum>QFrame::StyledPanel</enum>
+                       </property>
+                       <property name="frameShadow">
+                        <enum>QFrame::Raised</enum>
+                       </property>
+                       <layout class="QHBoxLayout" name="horizontalLayout_14">
+                        <item>
+                         <widget class="QLabel" name="label">
+                          <property name="font">
+                           <font>
+                            <family>Segoe UI</family>
+                            <pointsize>14</pointsize>
+                            <italic>false</italic>
+                            <bold>false</bold>
+                           </font>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true"/>
+                          </property>
+                          <property name="text">
+                           <string>产生电能总量：XXXXX                           消耗电能总量： XXXX</string>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
+                      </widget>
+                      <widget class="QFrame" name="energy_page_row_2">
+                       <property name="geometry">
+                        <rect>
+                         <x>10</x>
+                         <y>140</y>
+                         <width>801</width>
+                         <height>121</height>
+                        </rect>
+                       </property>
+                       <property name="minimumSize">
+                        <size>
+                         <width>150</width>
+                         <height>100</height>
+                        </size>
+                       </property>
+                       <property name="frameShape">
+                        <enum>QFrame::StyledPanel</enum>
+                       </property>
+                       <property name="frameShadow">
+                        <enum>QFrame::Raised</enum>
+                       </property>
+                       <layout class="QHBoxLayout" name="horizontalLayout_15">
+                        <item>
+                         <widget class="QLabel" name="label_2">
+                          <property name="text">
+                           <string>获取太阳辐射能总量：XXXX                耗散热能总量：XXXXX</string>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
+                      </widget>
+                      <widget class="QFrame" name="energy_page_row_3">
+                       <property name="geometry">
+                        <rect>
+                         <x>10</x>
+                         <y>260</y>
+                         <width>661</width>
+                         <height>121</height>
                         </rect>
                        </property>
                        <property name="frameShape">
@@ -1779,174 +1879,12 @@ hr { height: 1px; border-width: 0; }
                        <property name="frameShadow">
                         <enum>QFrame::Raised</enum>
                        </property>
-                       <layout class="QVBoxLayout" name="verticalLayout_22">
-                        <property name="spacing">
-                         <number>0</number>
-                        </property>
-                        <property name="leftMargin">
-                         <number>0</number>
-                        </property>
-                        <property name="topMargin">
-                         <number>0</number>
-                        </property>
-                        <property name="rightMargin">
-                         <number>0</number>
-                        </property>
-                        <property name="bottomMargin">
-                         <number>0</number>
-                        </property>
+                       <layout class="QHBoxLayout" name="horizontalLayout_16">
                         <item>
-                         <widget class="QFrame" name="frame_div_content_2">
-                          <property name="minimumSize">
-                           <size>
-                            <width>0</width>
-                            <height>110</height>
-                           </size>
+                         <widget class="QLabel" name="label_14">
+                          <property name="text">
+                           <string>获取热能总量：XXXXX                          耗散热能总量：XXXXX</string>
                           </property>
-                          <property name="maximumSize">
-                           <size>
-                            <width>16777215</width>
-                            <height>110</height>
-                           </size>
-                          </property>
-                          <property name="frameShape">
-                           <enum>QFrame::NoFrame</enum>
-                          </property>
-                          <property name="frameShadow">
-                           <enum>QFrame::Raised</enum>
-                          </property>
-                          <layout class="QVBoxLayout" name="verticalLayout_24">
-                           <property name="spacing">
-                            <number>0</number>
-                           </property>
-                           <property name="leftMargin">
-                            <number>0</number>
-                           </property>
-                           <property name="topMargin">
-                            <number>0</number>
-                           </property>
-                           <property name="rightMargin">
-                            <number>0</number>
-                           </property>
-                           <property name="bottomMargin">
-                            <number>0</number>
-                           </property>
-                           <item>
-                            <widget class="QFrame" name="frame_content_wid_2">
-                             <property name="frameShape">
-                              <enum>QFrame::NoFrame</enum>
-                             </property>
-                             <property name="frameShadow">
-                              <enum>QFrame::Raised</enum>
-                             </property>
-                             <layout class="QHBoxLayout" name="horizontalLayout_13">
-                              <item>
-                               <layout class="QGridLayout" name="gridLayout_3">
-                                <property name="bottomMargin">
-                                 <number>0</number>
-                                </property>
-                                <item row="0" column="0">
-                                 <widget class="QLineEdit" name="lineEdit_5">
-                                  <property name="minimumSize">
-                                   <size>
-                                    <width>0</width>
-                                    <height>30</height>
-                                   </size>
-                                  </property>
-                                  <property name="styleSheet">
-                                   <string notr="true">background-color: rgb(33, 37, 43);</string>
-                                  </property>
-                                  <property name="text">
-                                   <string/>
-                                  </property>
-                                  <property name="placeholderText">
-                                   <string>Type here</string>
-                                  </property>
-                                 </widget>
-                                </item>
-                                <item row="1" column="0" colspan="3">
-                                 <widget class="QLabel" name="labelVersion_4">
-                                  <property name="styleSheet">
-                                   <string notr="true">color: rgb(113, 126, 149);</string>
-                                  </property>
-                                  <property name="lineWidth">
-                                   <number>1</number>
-                                  </property>
-                                  <property name="text">
-                                   <string>Label description</string>
-                                  </property>
-                                  <property name="alignment">
-                                   <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-                                  </property>
-                                 </widget>
-                                </item>
-                                <item row="2" column="0">
-                                 <widget class="QFrame" name="frame_title_wid_2">
-                                  <property name="maximumSize">
-                                   <size>
-                                    <width>16777215</width>
-                                    <height>35</height>
-                                   </size>
-                                  </property>
-                                  <property name="frameShape">
-                                   <enum>QFrame::StyledPanel</enum>
-                                  </property>
-                                  <property name="frameShadow">
-                                   <enum>QFrame::Raised</enum>
-                                  </property>
-                                  <layout class="QVBoxLayout" name="verticalLayout_25"/>
-                                 </widget>
-                                </item>
-                                <item row="0" column="2">
-                                 <widget class="QPushButton" name="pushButton_5">
-                                  <property name="minimumSize">
-                                   <size>
-                                    <width>150</width>
-                                    <height>30</height>
-                                   </size>
-                                  </property>
-                                  <property name="font">
-                                   <font>
-                                    <family>Segoe UI Semibold</family>
-                                    <pointsize>14</pointsize>
-                                    <italic>false</italic>
-                                    <bold>false</bold>
-                                   </font>
-                                  </property>
-                                  <property name="cursor">
-                                   <cursorShape>PointingHandCursor</cursorShape>
-                                  </property>
-                                  <property name="styleSheet">
-                                   <string notr="true">background-color: rgb(52, 59, 72);</string>
-                                  </property>
-                                  <property name="text">
-                                   <string>Open</string>
-                                  </property>
-                                  <property name="icon">
-                                   <iconset resource="resources.qrc">
-                                    <normaloff>:/icons/images/icons/cil-folder-open.png</normaloff>:/icons/images/icons/cil-folder-open.png</iconset>
-                                  </property>
-                                 </widget>
-                                </item>
-                                <item row="0" column="1">
-                                 <spacer name="horizontalSpacer_17">
-                                  <property name="orientation">
-                                   <enum>Qt::Horizontal</enum>
-                                  </property>
-                                  <property name="sizeHint" stdset="0">
-                                   <size>
-                                    <width>40</width>
-                                    <height>20</height>
-                                   </size>
-                                  </property>
-                                 </spacer>
-                                </item>
-                               </layout>
-                              </item>
-                             </layout>
-                            </widget>
-                           </item>
-                          </layout>
                          </widget>
                         </item>
                        </layout>
@@ -1973,407 +1911,177 @@ hr { height: 1px; border-width: 0; }
                         <number>10</number>
                        </property>
                        <item>
-                        <widget class="QFrame" name="row_1">
+                        <widget class="QFrame" name="auto_control_page_row_1">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                           <horstretch>4</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
                          <property name="frameShape">
                           <enum>QFrame::StyledPanel</enum>
                          </property>
                          <property name="frameShadow">
                           <enum>QFrame::Raised</enum>
                          </property>
-                         <layout class="QVBoxLayout" name="verticalLayout_16">
-                          <property name="spacing">
-                           <number>0</number>
-                          </property>
-                          <property name="leftMargin">
-                           <number>0</number>
-                          </property>
-                          <property name="topMargin">
-                           <number>0</number>
-                          </property>
-                          <property name="rightMargin">
-                           <number>0</number>
-                          </property>
-                          <property name="bottomMargin">
-                           <number>0</number>
-                          </property>
-                          <item>
-                           <widget class="QFrame" name="frame_div_content_1">
-                            <property name="minimumSize">
-                             <size>
-                              <width>0</width>
-                              <height>110</height>
-                             </size>
+                         <layout class="QGridLayout" name="gridLayout_3">
+                          <item row="2" column="1">
+                           <widget class="QSpinBox" name="spinBox"/>
+                          </item>
+                          <item row="2" column="2">
+                           <widget class="QLineEdit" name="lineEdit_7">
+                            <property name="text">
+                             <string>度</string>
                             </property>
-                            <property name="maximumSize">
-                             <size>
-                              <width>16777215</width>
-                              <height>110</height>
-                             </size>
-                            </property>
-                            <property name="frameShape">
-                             <enum>QFrame::NoFrame</enum>
-                            </property>
-                            <property name="frameShadow">
-                             <enum>QFrame::Raised</enum>
-                            </property>
-                            <layout class="QVBoxLayout" name="verticalLayout_17">
-                             <property name="spacing">
-                              <number>0</number>
-                             </property>
-                             <property name="leftMargin">
-                              <number>0</number>
-                             </property>
-                             <property name="topMargin">
-                              <number>0</number>
-                             </property>
-                             <property name="rightMargin">
-                              <number>0</number>
-                             </property>
-                             <property name="bottomMargin">
-                              <number>0</number>
-                             </property>
-                             <item>
-                              <widget class="QFrame" name="frame_title_wid_1">
-                               <property name="maximumSize">
-                                <size>
-                                 <width>16777215</width>
-                                 <height>35</height>
-                                </size>
-                               </property>
-                               <property name="frameShape">
-                                <enum>QFrame::StyledPanel</enum>
-                               </property>
-                               <property name="frameShadow">
-                                <enum>QFrame::Raised</enum>
-                               </property>
-                               <layout class="QVBoxLayout" name="verticalLayout_18">
-                                <item>
-                                 <widget class="QLabel" name="labelBoxBlenderInstalation">
-                                  <property name="font">
-                                   <font>
-                                    <family>Segoe UI Semibold</family>
-                                    <pointsize>14</pointsize>
-                                    <italic>false</italic>
-                                    <bold>false</bold>
-                                   </font>
-                                  </property>
-                                  <property name="styleSheet">
-                                   <string notr="true"/>
-                                  </property>
-                                  <property name="text">
-                                   <string>FILE BOX</string>
-                                  </property>
-                                 </widget>
-                                </item>
-                               </layout>
-                              </widget>
-                             </item>
-                             <item>
-                              <widget class="QFrame" name="frame_content_wid_1">
-                               <property name="frameShape">
-                                <enum>QFrame::NoFrame</enum>
-                               </property>
-                               <property name="frameShadow">
-                                <enum>QFrame::Raised</enum>
-                               </property>
-                               <layout class="QHBoxLayout" name="horizontalLayout_9">
-                                <item>
-                                 <layout class="QGridLayout" name="gridLayout">
-                                  <property name="bottomMargin">
-                                   <number>0</number>
-                                  </property>
-                                  <item row="0" column="0">
-                                   <widget class="QLineEdit" name="lineEdit">
-                                    <property name="minimumSize">
-                                     <size>
-                                      <width>0</width>
-                                      <height>30</height>
-                                     </size>
-                                    </property>
-                                    <property name="styleSheet">
-                                     <string notr="true">background-color: rgb(33, 37, 43);</string>
-                                    </property>
-                                    <property name="text">
-                                     <string/>
-                                    </property>
-                                    <property name="placeholderText">
-                                     <string>Type here</string>
-                                    </property>
-                                   </widget>
-                                  </item>
-                                  <item row="0" column="1">
-                                   <widget class="QPushButton" name="pushButton">
-                                    <property name="minimumSize">
-                                     <size>
-                                      <width>150</width>
-                                      <height>30</height>
-                                     </size>
-                                    </property>
-                                    <property name="font">
-                                     <font>
-                                      <family>Segoe UI Semibold</family>
-                                      <pointsize>14</pointsize>
-                                      <italic>false</italic>
-                                      <bold>false</bold>
-                                     </font>
-                                    </property>
-                                    <property name="cursor">
-                                     <cursorShape>PointingHandCursor</cursorShape>
-                                    </property>
-                                    <property name="styleSheet">
-                                     <string notr="true">background-color: rgb(52, 59, 72);</string>
-                                    </property>
-                                    <property name="text">
-                                     <string>Open</string>
-                                    </property>
-                                    <property name="icon">
-                                     <iconset resource="resources.qrc">
-                                      <normaloff>:/icons/images/icons/cil-folder-open.png</normaloff>:/icons/images/icons/cil-folder-open.png</iconset>
-                                    </property>
-                                   </widget>
-                                  </item>
-                                  <item row="1" column="0" colspan="2">
-                                   <widget class="QLabel" name="labelVersion_3">
-                                    <property name="styleSheet">
-                                     <string notr="true">color: rgb(113, 126, 149);</string>
-                                    </property>
-                                    <property name="lineWidth">
-                                     <number>1</number>
-                                    </property>
-                                    <property name="text">
-                                     <string>Label description</string>
-                                    </property>
-                                    <property name="alignment">
-                                     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-                                    </property>
-                                   </widget>
-                                  </item>
-                                 </layout>
-                                </item>
-                               </layout>
-                              </widget>
-                             </item>
-                            </layout>
                            </widget>
                           </item>
-                         </layout>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QFrame" name="row_2">
-                         <property name="minimumSize">
-                          <size>
-                           <width>0</width>
-                           <height>150</height>
-                          </size>
-                         </property>
-                         <property name="frameShape">
-                          <enum>QFrame::StyledPanel</enum>
-                         </property>
-                         <property name="frameShadow">
-                          <enum>QFrame::Raised</enum>
-                         </property>
-                         <layout class="QVBoxLayout" name="verticalLayout_19">
-                          <item>
-                           <layout class="QGridLayout" name="gridLayout_2">
-                            <item row="0" column="0">
-                             <widget class="QCheckBox" name="checkBox">
-                              <property name="autoFillBackground">
-                               <bool>false</bool>
-                              </property>
-                              <property name="styleSheet">
-                               <string notr="true"/>
-                              </property>
-                              <property name="text">
-                               <string>CheckBox</string>
-                              </property>
-                             </widget>
-                            </item>
-                            <item row="0" column="1">
-                             <widget class="QRadioButton" name="radioButton">
-                              <property name="styleSheet">
-                               <string notr="true"/>
-                              </property>
-                              <property name="text">
-                               <string>RadioButton</string>
-                              </property>
-                             </widget>
-                            </item>
-                            <item row="0" column="2" rowspan="3">
-                             <widget class="QSlider" name="verticalSlider">
-                              <property name="styleSheet">
-                               <string notr="true"/>
-                              </property>
-                              <property name="orientation">
-                               <enum>Qt::Vertical</enum>
-                              </property>
-                             </widget>
-                            </item>
-                            <item row="0" column="4" rowspan="3">
-                             <widget class="QScrollBar" name="verticalScrollBar">
-                              <property name="styleSheet">
-                               <string notr="true"> QScrollBar:vertical { background: rgb(52, 59, 72); }
- QScrollBar:horizontal { background: rgb(52, 59, 72); }</string>
-                              </property>
-                              <property name="orientation">
-                               <enum>Qt::Vertical</enum>
-                              </property>
-                             </widget>
-                            </item>
-                            <item row="0" column="5" rowspan="3">
-                             <widget class="QScrollArea" name="scrollArea">
-                              <property name="styleSheet">
-                               <string notr="true"> QScrollBar:vertical {
-    background: rgb(52, 59, 72);
- }
- QScrollBar:horizontal {
-    background: rgb(52, 59, 72);
- }</string>
-                              </property>
-                              <property name="frameShape">
-                               <enum>QFrame::NoFrame</enum>
-                              </property>
-                              <property name="verticalScrollBarPolicy">
-                               <enum>Qt::ScrollBarAlwaysOn</enum>
-                              </property>
-                              <property name="horizontalScrollBarPolicy">
-                               <enum>Qt::ScrollBarAsNeeded</enum>
-                              </property>
-                              <property name="widgetResizable">
-                               <bool>true</bool>
-                              </property>
-                              <widget class="QWidget" name="scrollAreaWidgetContents">
-                               <property name="geometry">
-                                <rect>
-                                 <x>0</x>
-                                 <y>0</y>
-                                 <width>273</width>
-                                 <height>218</height>
-                                </rect>
-                               </property>
-                               <property name="styleSheet">
-                                <string notr="true"> QScrollBar:vertical {
-	border: none;
-    background: rgb(52, 59, 72);
-    width: 14px;
-    margin: 21px 0 21px 0;
-	border-radius: 0px;
- }</string>
-                               </property>
-                               <layout class="QHBoxLayout" name="horizontalLayout_11">
-                                <item>
-                                 <widget class="QPlainTextEdit" name="plainTextEdit">
-                                  <property name="minimumSize">
-                                   <size>
-                                    <width>200</width>
-                                    <height>200</height>
-                                   </size>
-                                  </property>
-                                  <property name="styleSheet">
-                                   <string notr="true">background-color: rgb(33, 37, 43);</string>
-                                  </property>
-                                 </widget>
-                                </item>
-                               </layout>
-                              </widget>
-                             </widget>
-                            </item>
-                            <item row="1" column="0" colspan="2">
-                             <widget class="QComboBox" name="comboBox">
-                              <property name="font">
-                               <font>
-                                <family>Segoe UI Semibold</family>
-                                <pointsize>14</pointsize>
-                                <italic>false</italic>
-                                <bold>false</bold>
-                               </font>
-                              </property>
-                              <property name="autoFillBackground">
-                               <bool>false</bool>
-                              </property>
-                              <property name="styleSheet">
-                               <string notr="true">background-color: rgb(33, 37, 43);</string>
-                              </property>
-                              <property name="iconSize">
-                               <size>
-                                <width>16</width>
-                                <height>16</height>
-                               </size>
-                              </property>
-                              <property name="frame">
-                               <bool>true</bool>
-                              </property>
-                              <item>
-                               <property name="text">
-                                <string>Test 1</string>
-                               </property>
-                              </item>
-                              <item>
-                               <property name="text">
-                                <string>Test 2</string>
-                               </property>
-                              </item>
-                              <item>
-                               <property name="text">
-                                <string>Test 3</string>
-                               </property>
-                              </item>
-                             </widget>
-                            </item>
-                            <item row="1" column="3">
-                             <widget class="QScrollBar" name="horizontalScrollBar">
-                              <property name="sizePolicy">
-                               <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-                                <horstretch>0</horstretch>
-                                <verstretch>0</verstretch>
-                               </sizepolicy>
-                              </property>
-                              <property name="styleSheet">
-                               <string notr="true"> QScrollBar:vertical { background: rgb(52, 59, 72); }
- QScrollBar:horizontal { background: rgb(52, 59, 72); }</string>
-                              </property>
-                              <property name="orientation">
-                               <enum>Qt::Horizontal</enum>
-                              </property>
-                             </widget>
-                            </item>
-                            <item row="1" column="6">
-                             <widget class="QCommandLinkButton" name="commandLinkButton">
-                              <property name="cursor">
-                               <cursorShape>PointingHandCursor</cursorShape>
-                              </property>
-                              <property name="styleSheet">
-                               <string notr="true"/>
-                              </property>
-                              <property name="text">
-                               <string>Link Button</string>
-                              </property>
-                              <property name="icon">
-                               <iconset resource="resources.qrc">
-                                <normaloff>:/icons/images/icons/cil-link.png</normaloff>:/icons/images/icons/cil-link.png</iconset>
-                              </property>
-                              <property name="description">
-                               <string>Link description</string>
-                              </property>
-                             </widget>
-                            </item>
-                            <item row="2" column="0" colspan="2">
-                             <widget class="QSlider" name="horizontalSlider">
-                              <property name="styleSheet">
-                               <string notr="true"/>
-                              </property>
-                              <property name="orientation">
-                               <enum>Qt::Horizontal</enum>
-                              </property>
-                             </widget>
-                            </item>
-                           </layout>
+                          <item row="3" column="3">
+                           <spacer name="horizontalSpacer_22">
+                            <property name="orientation">
+                             <enum>Qt::Horizontal</enum>
+                            </property>
+                            <property name="sizeHint" stdset="0">
+                             <size>
+                              <width>40</width>
+                              <height>20</height>
+                             </size>
+                            </property>
+                           </spacer>
+                          </item>
+                          <item row="3" column="0">
+                           <widget class="QLineEdit" name="lineEdit_10">
+                            <property name="text">
+                             <string>CO2浓度：</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="3" column="6">
+                           <widget class="QLineEdit" name="lineEdit_13">
+                            <property name="text">
+                             <string>umol/m2s    (PPFD)</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="2" column="4">
+                           <widget class="QLineEdit" name="lineEdit_8">
+                            <property name="sizePolicy">
+                             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                              <horstretch>0</horstretch>
+                              <verstretch>0</verstretch>
+                             </sizepolicy>
+                            </property>
+                            <property name="mouseTracking">
+                             <bool>true</bool>
+                            </property>
+                            <property name="accessibleDescription">
+                             <string>0</string>
+                            </property>
+                            <property name="layoutDirection">
+                             <enum>Qt::RightToLeft</enum>
+                            </property>
+                            <property name="inputMethodHints">
+                             <set>Qt::ImhUppercaseOnly</set>
+                            </property>
+                            <property name="text">
+                             <string>土壤湿度：</string>
+                            </property>
+                            <property name="alignment">
+                             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="3" column="2">
+                           <widget class="QLineEdit" name="lineEdit_11">
+                            <property name="text">
+                             <string>ppm</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="3" column="1">
+                           <widget class="QSpinBox" name="spinBox_3"/>
+                          </item>
+                          <item row="1" column="6">
+                           <widget class="QPushButton" name="pushButton_2">
+                            <property name="text">
+                             <string>开始控制</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="2" column="5">
+                           <widget class="QSpinBox" name="spinBox_2"/>
+                          </item>
+                          <item row="2" column="6">
+                           <widget class="QLineEdit" name="lineEdit_9">
+                            <property name="text">
+                             <string>% </string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="2" column="3">
+                           <spacer name="horizontalSpacer_21">
+                            <property name="orientation">
+                             <enum>Qt::Horizontal</enum>
+                            </property>
+                            <property name="sizeHint" stdset="0">
+                             <size>
+                              <width>40</width>
+                              <height>20</height>
+                             </size>
+                            </property>
+                           </spacer>
+                          </item>
+                          <item row="1" column="0" colspan="2">
+                           <widget class="QLineEdit" name="lineEdit_5">
+                            <property name="text">
+                             <string>目标环境值设置：</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="3" column="4">
+                           <widget class="QLineEdit" name="lineEdit_12">
+                            <property name="text">
+                             <string>光照强度：</string>
+                            </property>
+                            <property name="alignment">
+                             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="2" column="0">
+                           <widget class="QLineEdit" name="lineEdit_6">
+                            <property name="text">
+                             <string>综合温度值：</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="3" column="5">
+                           <widget class="QSpinBox" name="spinBox_4"/>
                           </item>
                          </layout>
                         </widget>
                        </item>
                        <item>
-                        <widget class="QFrame" name="row_3">
+                        <widget class="QLineEdit" name="lineEdit_14">
+                         <property name="text">
+                          <string>实时环境数据：</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="Line" name="line">
+                         <property name="frameShadow">
+                          <enum>QFrame::Plain</enum>
+                         </property>
+                         <property name="lineWidth">
+                          <number>2</number>
+                         </property>
+                         <property name="orientation">
+                          <enum>Qt::Horizontal</enum>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QFrame" name="auto_control_page_row_2">
                          <property name="minimumSize">
                           <size>
                            <width>0</width>
@@ -2403,446 +2111,713 @@ hr { height: 1px; border-width: 0; }
                            <number>0</number>
                           </property>
                           <item>
-                           <widget class="QTableWidget" name="tableWidget">
-                            <property name="sizePolicy">
-                             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-                              <horstretch>0</horstretch>
-                              <verstretch>0</verstretch>
-                             </sizepolicy>
-                            </property>
-                            <property name="palette">
-                             <palette>
-                              <active>
-                               <colorrole role="WindowText">
-                                <brush brushstyle="SolidPattern">
-                                 <color alpha="255">
-                                  <red>51</red>
-                                  <green>51</green>
-                                  <blue>51</blue>
-                                 </color>
-                                </brush>
-                               </colorrole>
-                               <colorrole role="Button">
-                                <brush brushstyle="SolidPattern">
-                                 <color alpha="0">
-                                  <red>0</red>
-                                  <green>0</green>
-                                  <blue>0</blue>
-                                 </color>
-                                </brush>
-                               </colorrole>
-                               <colorrole role="Text">
-                                <brush brushstyle="SolidPattern">
-                                 <color alpha="255">
-                                  <red>51</red>
-                                  <green>51</green>
-                                  <blue>51</blue>
-                                 </color>
-                                </brush>
-                               </colorrole>
-                               <colorrole role="ButtonText">
-                                <brush brushstyle="SolidPattern">
-                                 <color alpha="255">
-                                  <red>51</red>
-                                  <green>51</green>
-                                  <blue>51</blue>
-                                 </color>
-                                </brush>
-                               </colorrole>
-                               <colorrole role="Base">
-                                <brush brushstyle="NoBrush">
-                                 <color alpha="255">
-                                  <red>0</red>
-                                  <green>0</green>
-                                  <blue>0</blue>
-                                 </color>
-                                </brush>
-                               </colorrole>
-                               <colorrole role="Window">
-                                <brush brushstyle="SolidPattern">
-                                 <color alpha="0">
-                                  <red>0</red>
-                                  <green>0</green>
-                                  <blue>0</blue>
-                                 </color>
-                                </brush>
-                               </colorrole>
-                               <colorrole role="PlaceholderText">
-                                <brush brushstyle="SolidPattern">
-                                 <color alpha="255">
-                                  <red>51</red>
-                                  <green>51</green>
-                                  <blue>51</blue>
-                                 </color>
-                                </brush>
-                               </colorrole>
-                              </active>
-                              <inactive>
-                               <colorrole role="WindowText">
-                                <brush brushstyle="SolidPattern">
-                                 <color alpha="255">
-                                  <red>51</red>
-                                  <green>51</green>
-                                  <blue>51</blue>
-                                 </color>
-                                </brush>
-                               </colorrole>
-                               <colorrole role="Button">
-                                <brush brushstyle="SolidPattern">
-                                 <color alpha="0">
-                                  <red>0</red>
-                                  <green>0</green>
-                                  <blue>0</blue>
-                                 </color>
-                                </brush>
-                               </colorrole>
-                               <colorrole role="Text">
-                                <brush brushstyle="SolidPattern">
-                                 <color alpha="255">
-                                  <red>51</red>
-                                  <green>51</green>
-                                  <blue>51</blue>
-                                 </color>
-                                </brush>
-                               </colorrole>
-                               <colorrole role="ButtonText">
-                                <brush brushstyle="SolidPattern">
-                                 <color alpha="255">
-                                  <red>51</red>
-                                  <green>51</green>
-                                  <blue>51</blue>
-                                 </color>
-                                </brush>
-                               </colorrole>
-                               <colorrole role="Base">
-                                <brush brushstyle="NoBrush">
-                                 <color alpha="255">
-                                  <red>0</red>
-                                  <green>0</green>
-                                  <blue>0</blue>
-                                 </color>
-                                </brush>
-                               </colorrole>
-                               <colorrole role="Window">
-                                <brush brushstyle="SolidPattern">
-                                 <color alpha="0">
-                                  <red>0</red>
-                                  <green>0</green>
-                                  <blue>0</blue>
-                                 </color>
-                                </brush>
-                               </colorrole>
-                               <colorrole role="PlaceholderText">
-                                <brush brushstyle="SolidPattern">
-                                 <color alpha="255">
-                                  <red>51</red>
-                                  <green>51</green>
-                                  <blue>51</blue>
-                                 </color>
-                                </brush>
-                               </colorrole>
-                              </inactive>
-                              <disabled>
-                               <colorrole role="WindowText">
-                                <brush brushstyle="SolidPattern">
-                                 <color alpha="255">
-                                  <red>51</red>
-                                  <green>51</green>
-                                  <blue>51</blue>
-                                 </color>
-                                </brush>
-                               </colorrole>
-                               <colorrole role="Button">
-                                <brush brushstyle="SolidPattern">
-                                 <color alpha="0">
-                                  <red>0</red>
-                                  <green>0</green>
-                                  <blue>0</blue>
-                                 </color>
-                                </brush>
-                               </colorrole>
-                               <colorrole role="Text">
-                                <brush brushstyle="SolidPattern">
-                                 <color alpha="255">
-                                  <red>51</red>
-                                  <green>51</green>
-                                  <blue>51</blue>
-                                 </color>
-                                </brush>
-                               </colorrole>
-                               <colorrole role="ButtonText">
-                                <brush brushstyle="SolidPattern">
-                                 <color alpha="255">
-                                  <red>51</red>
-                                  <green>51</green>
-                                  <blue>51</blue>
-                                 </color>
-                                </brush>
-                               </colorrole>
-                               <colorrole role="Base">
-                                <brush brushstyle="NoBrush">
-                                 <color alpha="255">
-                                  <red>0</red>
-                                  <green>0</green>
-                                  <blue>0</blue>
-                                 </color>
-                                </brush>
-                               </colorrole>
-                               <colorrole role="Window">
-                                <brush brushstyle="SolidPattern">
-                                 <color alpha="0">
-                                  <red>0</red>
-                                  <green>0</green>
-                                  <blue>0</blue>
-                                 </color>
-                                </brush>
-                               </colorrole>
-                               <colorrole role="PlaceholderText">
-                                <brush brushstyle="SolidPattern">
-                                 <color alpha="255">
-                                  <red>51</red>
-                                  <green>51</green>
-                                  <blue>51</blue>
-                                 </color>
-                                </brush>
-                               </colorrole>
-                              </disabled>
-                             </palette>
-                            </property>
+                           <widget class="QFrame" name="frame_content_wid_1">
                             <property name="frameShape">
                              <enum>QFrame::NoFrame</enum>
                             </property>
-                            <property name="verticalScrollBarPolicy">
-                             <enum>Qt::ScrollBarAlwaysOn</enum>
+                            <property name="frameShadow">
+                             <enum>QFrame::Raised</enum>
                             </property>
-                            <property name="sizeAdjustPolicy">
-                             <enum>QAbstractScrollArea::AdjustToContents</enum>
-                            </property>
-                            <property name="editTriggers">
-                             <set>QAbstractItemView::NoEditTriggers</set>
-                            </property>
-                            <property name="selectionMode">
-                             <enum>QAbstractItemView::SingleSelection</enum>
-                            </property>
-                            <property name="selectionBehavior">
-                             <enum>QAbstractItemView::SelectRows</enum>
-                            </property>
-                            <property name="showGrid">
-                             <bool>true</bool>
-                            </property>
-                            <property name="gridStyle">
-                             <enum>Qt::SolidLine</enum>
-                            </property>
-                            <property name="sortingEnabled">
-                             <bool>false</bool>
-                            </property>
-                            <attribute name="horizontalHeaderVisible">
-                             <bool>false</bool>
-                            </attribute>
-                            <attribute name="horizontalHeaderCascadingSectionResizes">
-                             <bool>true</bool>
-                            </attribute>
-                            <attribute name="horizontalHeaderDefaultSectionSize">
-                             <number>200</number>
-                            </attribute>
-                            <attribute name="horizontalHeaderStretchLastSection">
-                             <bool>true</bool>
-                            </attribute>
-                            <attribute name="verticalHeaderVisible">
-                             <bool>false</bool>
-                            </attribute>
-                            <attribute name="verticalHeaderCascadingSectionResizes">
-                             <bool>false</bool>
-                            </attribute>
-                            <attribute name="verticalHeaderHighlightSections">
-                             <bool>false</bool>
-                            </attribute>
-                            <attribute name="verticalHeaderStretchLastSection">
-                             <bool>true</bool>
-                            </attribute>
-                            <row>
-                             <property name="text">
-                              <string>New Row</string>
-                             </property>
-                             <property name="font">
-                              <font>
-                               <family>Segoe UI</family>
-                              </font>
-                             </property>
-                            </row>
-                            <row>
-                             <property name="text">
-                              <string>New Row</string>
-                             </property>
-                            </row>
-                            <row>
-                             <property name="text">
-                              <string>New Row</string>
-                             </property>
-                            </row>
-                            <row>
-                             <property name="text">
-                              <string>New Row</string>
-                             </property>
-                            </row>
-                            <row>
-                             <property name="text">
-                              <string>New Row</string>
-                             </property>
-                            </row>
-                            <row>
-                             <property name="text">
-                              <string>New Row</string>
-                             </property>
-                            </row>
-                            <row>
-                             <property name="text">
-                              <string>New Row</string>
-                             </property>
-                            </row>
-                            <row>
-                             <property name="text">
-                              <string>New Row</string>
-                             </property>
-                            </row>
-                            <row>
-                             <property name="text">
-                              <string>New Row</string>
-                             </property>
-                            </row>
-                            <row>
-                             <property name="text">
-                              <string>New Row</string>
-                             </property>
-                            </row>
-                            <row>
-                             <property name="text">
-                              <string>New Row</string>
-                             </property>
-                            </row>
-                            <row>
-                             <property name="text">
-                              <string>New Row</string>
-                             </property>
-                            </row>
-                            <row>
-                             <property name="text">
-                              <string>New Row</string>
-                             </property>
-                            </row>
-                            <row>
-                             <property name="text">
-                              <string>New Row</string>
-                             </property>
-                            </row>
-                            <row>
-                             <property name="text">
-                              <string>New Row</string>
-                             </property>
-                            </row>
-                            <row>
-                             <property name="text">
-                              <string>New Row</string>
-                             </property>
-                            </row>
-                            <column>
-                             <property name="text">
-                              <string>0</string>
-                             </property>
-                            </column>
-                            <column>
-                             <property name="text">
-                              <string>1</string>
-                             </property>
-                            </column>
-                            <column>
-                             <property name="text">
-                              <string>2</string>
-                             </property>
-                            </column>
-                            <column>
-                             <property name="text">
-                              <string>3</string>
-                             </property>
-                            </column>
-                            <item row="0" column="0">
-                             <property name="text">
-                              <string>Test</string>
-                             </property>
-                            </item>
-                            <item row="0" column="1">
-                             <property name="text">
-                              <string>Text</string>
-                             </property>
-                            </item>
-                            <item row="0" column="2">
-                             <property name="text">
-                              <string>Cell</string>
-                             </property>
-                            </item>
-                            <item row="0" column="3">
-                             <property name="text">
-                              <string>Line</string>
-                             </property>
-                            </item>
+                            <layout class="QHBoxLayout" name="horizontalLayout_9">
+                             <item>
+                              <layout class="QGridLayout" name="gridLayout">
+                               <property name="bottomMargin">
+                                <number>0</number>
+                               </property>
+                               <item row="0" column="1">
+                                <widget class="QPushButton" name="pushButton">
+                                 <property name="minimumSize">
+                                  <size>
+                                   <width>150</width>
+                                   <height>30</height>
+                                  </size>
+                                 </property>
+                                 <property name="font">
+                                  <font>
+                                   <family>Segoe UI</family>
+                                   <pointsize>14</pointsize>
+                                   <italic>false</italic>
+                                   <bold>false</bold>
+                                  </font>
+                                 </property>
+                                 <property name="cursor">
+                                  <cursorShape>PointingHandCursor</cursorShape>
+                                 </property>
+                                 <property name="styleSheet">
+                                  <string notr="true">background-color: rgb(52, 59, 72);</string>
+                                 </property>
+                                 <property name="text">
+                                  <string>打开</string>
+                                 </property>
+                                 <property name="icon">
+                                  <iconset resource="resources.qrc">
+                                   <normaloff>:/icons/images/icons/cil-folder-open.png</normaloff>:/icons/images/icons/cil-folder-open.png</iconset>
+                                 </property>
+                                </widget>
+                               </item>
+                               <item row="0" column="0">
+                                <widget class="QLineEdit" name="lineEdit">
+                                 <property name="minimumSize">
+                                  <size>
+                                   <width>0</width>
+                                   <height>30</height>
+                                  </size>
+                                 </property>
+                                 <property name="styleSheet">
+                                  <string notr="true">background-color: rgb(33, 37, 43);</string>
+                                 </property>
+                                 <property name="text">
+                                  <string>输入文件路径</string>
+                                 </property>
+                                 <property name="placeholderText">
+                                  <string>Type here</string>
+                                 </property>
+                                </widget>
+                               </item>
+                               <item row="1" column="0" colspan="2">
+                                <widget class="QLabel" name="labelVersion_3">
+                                 <property name="styleSheet">
+                                  <string notr="true">color: rgb(113, 126, 149);</string>
+                                 </property>
+                                 <property name="lineWidth">
+                                  <number>1</number>
+                                 </property>
+                                 <property name="text">
+                                  <string>控制数据文件模板见说明书</string>
+                                 </property>
+                                 <property name="alignment">
+                                  <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                                 </property>
+                                </widget>
+                               </item>
+                              </layout>
+                             </item>
+                            </layout>
                            </widget>
                           </item>
                          </layout>
                         </widget>
                        </item>
+                       <item>
+                        <widget class="QLineEdit" name="lineEdit_15">
+                         <property name="text">
+                          <string>实时环境数据：</string>
+                         </property>
+                        </widget>
+                       </item>
                       </layout>
                      </widget>
                      <widget class="QWidget" name="manual_control_page">
-                      <layout class="QGridLayout" name="gridLayout_5">
-                       <item row="2" column="0">
-                        <widget class="QPushButton" name="pushButton_4">
-                         <property name="styleSheet">
-                          <string notr="true">background-color: rgb(52, 59, 72);</string>
-                         </property>
-                         <property name="text">
-                          <string>切换图片</string>
-                         </property>
-                        </widget>
-                       </item>
-                       <item row="1" column="0">
-                        <widget class="QPushButton" name="pushButton_3">
-                         <property name="styleSheet">
-                          <string notr="true">background-color: rgb(52, 59, 72);</string>
-                         </property>
-                         <property name="text">
-                          <string>打开外部网页</string>
-                         </property>
-                        </widget>
-                       </item>
-                       <item row="3" column="0">
-                        <widget class="QLabel" name="label">
-                         <property name="text">
-                          <string>NEW PAGE TEST</string>
-                         </property>
-                         <property name="alignment">
-                          <set>Qt::AlignCenter</set>
-                         </property>
-                        </widget>
-                       </item>
-                       <item row="0" column="0">
-                        <widget class="QPushButton" name="pushButton_2">
-                         <property name="styleSheet">
-                          <string notr="true">background-color: rgb(52, 59, 72);</string>
-                         </property>
-                         <property name="text">
-                          <string>打开本地说明书文件</string>
-                         </property>
-                        </widget>
-                       </item>
-                      </layout>
+                      <widget class="QFrame" name="frame_k">
+                       <property name="geometry">
+                        <rect>
+                         <x>30</x>
+                         <y>10</y>
+                         <width>1041</width>
+                         <height>600</height>
+                        </rect>
+                       </property>
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="minimumSize">
+                        <size>
+                         <width>0</width>
+                         <height>600</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>16777215</width>
+                         <height>400</height>
+                        </size>
+                       </property>
+                       <property name="frameShape">
+                        <enum>QFrame::StyledPanel</enum>
+                       </property>
+                       <property name="frameShadow">
+                        <enum>QFrame::Raised</enum>
+                       </property>
+                       <layout class="QGridLayout" name="gridLayout_4">
+                        <item row="0" column="0">
+                         <widget class="QFrame" name="frame_1">
+                          <property name="frameShape">
+                           <enum>QFrame::Box</enum>
+                          </property>
+                          <property name="frameShadow">
+                           <enum>QFrame::Raised</enum>
+                          </property>
+                          <property name="lineWidth">
+                           <number>0</number>
+                          </property>
+                          <property name="midLineWidth">
+                           <number>2</number>
+                          </property>
+                          <layout class="QHBoxLayout" name="horizontalLayout_17">
+                           <item>
+                            <widget class="QLabel" name="label_4">
+                             <property name="text">
+                              <string>照明灯</string>
+                             </property>
+                             <property name="alignment">
+                              <set>Qt::AlignCenter</set>
+                             </property>
+                            </widget>
+                           </item>
+                           <item>
+                            <layout class="QVBoxLayout" name="verticalLayout_27">
+                             <item>
+                              <widget class="QRadioButton" name="RB_open_zhaoming">
+                               <property name="styleSheet">
+                                <string notr="true"/>
+                               </property>
+                               <property name="text">
+                                <string>开启</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QRadioButton" name="RB_close_zhaoming">
+                               <property name="styleSheet">
+                                <string notr="true"/>
+                               </property>
+                               <property name="text">
+                                <string>关闭</string>
+                               </property>
+                              </widget>
+                             </item>
+                            </layout>
+                           </item>
+                          </layout>
+                         </widget>
+                        </item>
+                        <item row="0" column="2">
+                         <widget class="QFrame" name="frame_3">
+                          <property name="frameShape">
+                           <enum>QFrame::Box</enum>
+                          </property>
+                          <property name="frameShadow">
+                           <enum>QFrame::Raised</enum>
+                          </property>
+                          <property name="lineWidth">
+                           <number>0</number>
+                          </property>
+                          <property name="midLineWidth">
+                           <number>2</number>
+                          </property>
+                          <layout class="QHBoxLayout" name="horizontalLayout_20">
+                           <item>
+                            <widget class="QLabel" name="label_7">
+                             <property name="text">
+                              <string>加热灯</string>
+                             </property>
+                             <property name="alignment">
+                              <set>Qt::AlignCenter</set>
+                             </property>
+                            </widget>
+                           </item>
+                           <item>
+                            <layout class="QVBoxLayout" name="verticalLayout_30">
+                             <item>
+                              <widget class="QRadioButton" name="RB_open_jiare">
+                               <property name="styleSheet">
+                                <string notr="true"/>
+                               </property>
+                               <property name="text">
+                                <string>开启</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QRadioButton" name="RB_close_jiare">
+                               <property name="styleSheet">
+                                <string notr="true"/>
+                               </property>
+                               <property name="text">
+                                <string>关闭</string>
+                               </property>
+                              </widget>
+                             </item>
+                            </layout>
+                           </item>
+                          </layout>
+                         </widget>
+                        </item>
+                        <item row="0" column="3">
+                         <widget class="QFrame" name="frame_4">
+                          <property name="frameShape">
+                           <enum>QFrame::Box</enum>
+                          </property>
+                          <property name="frameShadow">
+                           <enum>QFrame::Raised</enum>
+                          </property>
+                          <property name="lineWidth">
+                           <number>0</number>
+                          </property>
+                          <property name="midLineWidth">
+                           <number>2</number>
+                          </property>
+                          <layout class="QHBoxLayout" name="horizontalLayout_18">
+                           <item>
+                            <widget class="QLabel" name="label_5">
+                             <property name="text">
+                              <string>卷帘机</string>
+                             </property>
+                             <property name="alignment">
+                              <set>Qt::AlignCenter</set>
+                             </property>
+                            </widget>
+                           </item>
+                           <item>
+                            <layout class="QVBoxLayout" name="verticalLayout_28">
+                             <item>
+                              <widget class="QRadioButton" name="RB_open_juanlian">
+                               <property name="styleSheet">
+                                <string notr="true"/>
+                               </property>
+                               <property name="text">
+                                <string>上卷</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QRadioButton" name="RB_close_juanlian">
+                               <property name="styleSheet">
+                                <string notr="true"/>
+                               </property>
+                               <property name="text">
+                                <string>停止</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QRadioButton" name="RB_close_juanlian_2">
+                               <property name="styleSheet">
+                                <string notr="true"/>
+                               </property>
+                               <property name="text">
+                                <string>下放</string>
+                               </property>
+                              </widget>
+                             </item>
+                            </layout>
+                           </item>
+                          </layout>
+                         </widget>
+                        </item>
+                        <item row="1" column="1">
+                         <widget class="QFrame" name="frame_8">
+                          <property name="frameShape">
+                           <enum>QFrame::Box</enum>
+                          </property>
+                          <property name="frameShadow">
+                           <enum>QFrame::Raised</enum>
+                          </property>
+                          <property name="lineWidth">
+                           <number>0</number>
+                          </property>
+                          <property name="midLineWidth">
+                           <number>2</number>
+                          </property>
+                          <layout class="QHBoxLayout" name="horizontalLayout_24">
+                           <item>
+                            <widget class="QLabel" name="label_11">
+                             <property name="text">
+                              <string>水泵</string>
+                             </property>
+                             <property name="alignment">
+                              <set>Qt::AlignCenter</set>
+                             </property>
+                            </widget>
+                           </item>
+                           <item>
+                            <layout class="QVBoxLayout" name="verticalLayout_34">
+                             <item>
+                              <widget class="QRadioButton" name="RB_open_shuibeng">
+                               <property name="styleSheet">
+                                <string notr="true"/>
+                               </property>
+                               <property name="text">
+                                <string>开启</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QRadioButton" name="RB_close_shuibeng">
+                               <property name="styleSheet">
+                                <string notr="true"/>
+                               </property>
+                               <property name="text">
+                                <string>关闭</string>
+                               </property>
+                              </widget>
+                             </item>
+                            </layout>
+                           </item>
+                          </layout>
+                         </widget>
+                        </item>
+                        <item row="1" column="0">
+                         <widget class="QFrame" name="frame_6">
+                          <property name="frameShape">
+                           <enum>QFrame::Box</enum>
+                          </property>
+                          <property name="frameShadow">
+                           <enum>QFrame::Raised</enum>
+                          </property>
+                          <property name="lineWidth">
+                           <number>0</number>
+                          </property>
+                          <property name="midLineWidth">
+                           <number>2</number>
+                          </property>
+                          <layout class="QHBoxLayout" name="horizontalLayout_22">
+                           <item>
+                            <widget class="QLabel" name="label_9">
+                             <property name="text">
+                              <string>通风机</string>
+                             </property>
+                             <property name="alignment">
+                              <set>Qt::AlignCenter</set>
+                             </property>
+                            </widget>
+                           </item>
+                           <item>
+                            <layout class="QVBoxLayout" name="verticalLayout_32">
+                             <item>
+                              <widget class="QRadioButton" name="RB_open_tongfeng">
+                               <property name="styleSheet">
+                                <string notr="true"/>
+                               </property>
+                               <property name="text">
+                                <string>开启</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QRadioButton" name="RB_close_tongfeng">
+                               <property name="styleSheet">
+                                <string notr="true"/>
+                               </property>
+                               <property name="text">
+                                <string>关闭</string>
+                               </property>
+                              </widget>
+                             </item>
+                            </layout>
+                           </item>
+                          </layout>
+                         </widget>
+                        </item>
+                        <item row="1" column="2">
+                         <widget class="QFrame" name="frame_7">
+                          <property name="frameShape">
+                           <enum>QFrame::Box</enum>
+                          </property>
+                          <property name="frameShadow">
+                           <enum>QFrame::Raised</enum>
+                          </property>
+                          <property name="lineWidth">
+                           <number>0</number>
+                          </property>
+                          <property name="midLineWidth">
+                           <number>2</number>
+                          </property>
+                          <layout class="QHBoxLayout" name="horizontalLayout_23">
+                           <item>
+                            <widget class="QLabel" name="label_10">
+                             <property name="text">
+                              <string>集热器</string>
+                             </property>
+                             <property name="alignment">
+                              <set>Qt::AlignCenter</set>
+                             </property>
+                            </widget>
+                           </item>
+                           <item>
+                            <layout class="QVBoxLayout" name="verticalLayout_33">
+                             <item>
+                              <widget class="QRadioButton" name="RB_open_jire">
+                               <property name="styleSheet">
+                                <string notr="true"/>
+                               </property>
+                               <property name="text">
+                                <string>开启</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QRadioButton" name="RB_close_jire">
+                               <property name="styleSheet">
+                                <string notr="true"/>
+                               </property>
+                               <property name="text">
+                                <string>关闭</string>
+                               </property>
+                              </widget>
+                             </item>
+                            </layout>
+                           </item>
+                          </layout>
+                         </widget>
+                        </item>
+                        <item row="0" column="1">
+                         <widget class="QFrame" name="frame_2">
+                          <property name="frameShape">
+                           <enum>QFrame::Box</enum>
+                          </property>
+                          <property name="frameShadow">
+                           <enum>QFrame::Raised</enum>
+                          </property>
+                          <property name="lineWidth">
+                           <number>0</number>
+                          </property>
+                          <property name="midLineWidth">
+                           <number>2</number>
+                          </property>
+                          <layout class="QHBoxLayout" name="horizontalLayout_19">
+                           <item>
+                            <widget class="QLabel" name="label_6">
+                             <property name="text">
+                              <string>补光灯</string>
+                             </property>
+                             <property name="alignment">
+                              <set>Qt::AlignCenter</set>
+                             </property>
+                            </widget>
+                           </item>
+                           <item>
+                            <layout class="QVBoxLayout" name="verticalLayout_29">
+                             <item>
+                              <widget class="QRadioButton" name="RB_open_buguang">
+                               <property name="styleSheet">
+                                <string notr="true"/>
+                               </property>
+                               <property name="text">
+                                <string>开启</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QRadioButton" name="RB_close_buguang">
+                               <property name="styleSheet">
+                                <string notr="true"/>
+                               </property>
+                               <property name="text">
+                                <string>关闭</string>
+                               </property>
+                              </widget>
+                             </item>
+                            </layout>
+                           </item>
+                          </layout>
+                         </widget>
+                        </item>
+                        <item row="2" column="0" colspan="2">
+                         <widget class="QFrame" name="frame_9">
+                          <property name="frameShape">
+                           <enum>QFrame::Box</enum>
+                          </property>
+                          <property name="frameShadow">
+                           <enum>QFrame::Raised</enum>
+                          </property>
+                          <property name="lineWidth">
+                           <number>0</number>
+                          </property>
+                          <property name="midLineWidth">
+                           <number>2</number>
+                          </property>
+                          <layout class="QHBoxLayout" name="horizontalLayout_26">
+                           <item>
+                            <widget class="QLabel" name="label_13">
+                             <property name="text">
+                              <string>水肥一体机</string>
+                             </property>
+                             <property name="alignment">
+                              <set>Qt::AlignCenter</set>
+                             </property>
+                            </widget>
+                           </item>
+                           <item>
+                            <layout class="QFormLayout" name="formLayout">
+                             <item row="0" column="0">
+                              <widget class="QRadioButton" name="RB_open_shuifeiyitiji">
+                               <property name="styleSheet">
+                                <string notr="true"/>
+                               </property>
+                               <property name="text">
+                                <string>补水</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item row="0" column="1">
+                              <widget class="QRadioButton" name="RB_close_shuifeiyitiji_2">
+                               <property name="styleSheet">
+                                <string notr="true"/>
+                               </property>
+                               <property name="text">
+                                <string>施肥</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item row="1" column="1">
+                              <widget class="QRadioButton" name="RB_open_shuifeiyitiji_3">
+                               <property name="styleSheet">
+                                <string notr="true"/>
+                               </property>
+                               <property name="text">
+                                <string>停止施肥</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item row="1" column="0">
+                              <widget class="QRadioButton" name="RB_open_shuifeiyitiji_2">
+                               <property name="styleSheet">
+                                <string notr="true"/>
+                               </property>
+                               <property name="text">
+                                <string>停止补水</string>
+                               </property>
+                              </widget>
+                             </item>
+                            </layout>
+                           </item>
+                          </layout>
+                         </widget>
+                        </item>
+                        <item row="1" column="3">
+                         <widget class="QFrame" name="frame_5">
+                          <property name="frameShape">
+                           <enum>QFrame::Box</enum>
+                          </property>
+                          <property name="frameShadow">
+                           <enum>QFrame::Raised</enum>
+                          </property>
+                          <property name="lineWidth">
+                           <number>0</number>
+                          </property>
+                          <property name="midLineWidth">
+                           <number>2</number>
+                          </property>
+                          <layout class="QHBoxLayout" name="horizontalLayout_21">
+                           <item>
+                            <widget class="QLabel" name="label_8">
+                             <property name="text">
+                              <string>卷膜机</string>
+                             </property>
+                             <property name="alignment">
+                              <set>Qt::AlignCenter</set>
+                             </property>
+                            </widget>
+                           </item>
+                           <item>
+                            <layout class="QVBoxLayout" name="verticalLayout_31">
+                             <item>
+                              <widget class="QRadioButton" name="RB_open_juanmo">
+                               <property name="styleSheet">
+                                <string notr="true"/>
+                               </property>
+                               <property name="text">
+                                <string>上卷</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QRadioButton" name="RB_close_juanmo">
+                               <property name="styleSheet">
+                                <string notr="true"/>
+                               </property>
+                               <property name="text">
+                                <string>停止</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QRadioButton" name="RB_close_juanmo_2">
+                               <property name="styleSheet">
+                                <string notr="true"/>
+                               </property>
+                               <property name="text">
+                                <string>下放</string>
+                               </property>
+                              </widget>
+                             </item>
+                            </layout>
+                           </item>
+                          </layout>
+                         </widget>
+                        </item>
+                       </layout>
+                      </widget>
                      </widget>
-                     <widget class="QWidget" name="environ_page">
+                     <widget class="QWidget" name="cloud_page">
                       <property name="styleSheet">
                        <string notr="true"/>
                       </property>
                       <layout class="QVBoxLayout" name="verticalLayout_21">
                        <item>
-                        <widget class="QWidget" name="widget" native="true"/>
+                        <widget class="QFrame" name="frame">
+                         <property name="frameShape">
+                          <enum>QFrame::StyledPanel</enum>
+                         </property>
+                         <property name="frameShadow">
+                          <enum>QFrame::Raised</enum>
+                         </property>
+                         <layout class="QHBoxLayout" name="horizontalLayout_11">
+                          <item>
+                           <spacer name="horizontalSpacer_19">
+                            <property name="orientation">
+                             <enum>Qt::Horizontal</enum>
+                            </property>
+                            <property name="sizeType">
+                             <enum>QSizePolicy::Fixed</enum>
+                            </property>
+                            <property name="sizeHint" stdset="0">
+                             <size>
+                              <width>60</width>
+                              <height>20</height>
+                             </size>
+                            </property>
+                           </spacer>
+                          </item>
+                          <item>
+                           <widget class="QPushButton" name="btn_get_12data">
+                            <property name="styleSheet">
+                             <string notr="true">background-color: rgb(52, 59, 72);</string>
+                            </property>
+                            <property name="text">
+                             <string>点击获取12小时环境数据</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item>
+                           <spacer name="horizontalSpacer_20">
+                            <property name="orientation">
+                             <enum>Qt::Horizontal</enum>
+                            </property>
+                            <property name="sizeType">
+                             <enum>QSizePolicy::Fixed</enum>
+                            </property>
+                            <property name="sizeHint" stdset="0">
+                             <size>
+                              <width>60</width>
+                              <height>20</height>
+                             </size>
+                            </property>
+                           </spacer>
+                          </item>
+                          <item>
+                           <widget class="QLabel" name="label_time">
+                            <property name="text">
+                             <string>获取时间：</string>
+                            </property>
+                           </widget>
+                          </item>
+                         </layout>
+                        </widget>
                        </item>
                        <item>
                         <layout class="QHBoxLayout" name="horizontalLayout_6">
@@ -2928,7 +2903,7 @@ hr { height: 1px; border-width: 0; }
                           <widget class="QLineEdit" name="text_humidness">
                            <property name="font">
                             <font>
-                             <family>Segoe UI Semibold</family>
+                             <family>Segoe UI</family>
                              <pointsize>14</pointsize>
                              <italic>false</italic>
                              <bold>false</bold>
@@ -3119,7 +3094,7 @@ hr { height: 1px; border-width: 0; }
                          <item>
                           <widget class="QLineEdit" name="lineEdit_4">
                            <property name="text">
-                            <string>二氧化碳</string>
+                            <string>土壤湿度</string>
                            </property>
                            <property name="alignment">
                             <set>Qt::AlignCenter</set>
@@ -3142,7 +3117,7 @@ hr { height: 1px; border-width: 0; }
                          <item>
                           <widget class="QLineEdit" name="lineEdit_2">
                            <property name="text">
-                            <string>土壤湿度</string>
+                            <string>二氧化碳浓度</string>
                            </property>
                            <property name="alignment">
                             <set>Qt::AlignCenter</set>
@@ -3164,9 +3139,81 @@ hr { height: 1px; border-width: 0; }
                          </item>
                         </layout>
                        </item>
+                       <item>
+                        <widget class="QFrame" name="frame_10">
+                         <property name="frameShape">
+                          <enum>QFrame::StyledPanel</enum>
+                         </property>
+                         <property name="frameShadow">
+                          <enum>QFrame::Raised</enum>
+                         </property>
+                         <layout class="QHBoxLayout" name="horizontalLayout_13">
+                          <item>
+                           <spacer name="horizontalSpacer_18">
+                            <property name="orientation">
+                             <enum>Qt::Horizontal</enum>
+                            </property>
+                            <property name="sizeHint" stdset="0">
+                             <size>
+                              <width>40</width>
+                              <height>20</height>
+                             </size>
+                            </property>
+                           </spacer>
+                          </item>
+                          <item>
+                           <widget class="QPushButton" name="pushButton_10">
+                            <property name="styleSheet">
+                             <string notr="true">background-color: rgb(52, 59, 72);</string>
+                            </property>
+                            <property name="text">
+                             <string>登陆云平台http://www.0531yun.com 查看详细信息</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item>
+                           <spacer name="horizontalSpacer_17">
+                            <property name="orientation">
+                             <enum>Qt::Horizontal</enum>
+                            </property>
+                            <property name="sizeHint" stdset="0">
+                             <size>
+                              <width>40</width>
+                              <height>20</height>
+                             </size>
+                            </property>
+                           </spacer>
+                          </item>
+                         </layout>
+                        </widget>
+                       </item>
                       </layout>
                      </widget>
-                     <widget class="QWidget" name="information_page"/>
+                     <widget class="QWidget" name="information_page">
+                      <widget class="QTextBrowser" name="textBrowser">
+                       <property name="geometry">
+                        <rect>
+                         <x>70</x>
+                         <y>30</y>
+                         <width>811</width>
+                         <height>351</height>
+                        </rect>
+                       </property>
+                       <property name="inputMethodHints">
+                        <set>Qt::ImhNone</set>
+                       </property>
+                       <property name="html">
+                        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:14pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;       本软件基于“xxx项目”太阳能智能温室大棚实际应用开发，集成常用温室大棚数据采集器及控制器，配合专用“自动控制系统&amp;quot;硬件使用。&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;       软件版权归“内蒙古睿力能源有限公司”所有，非经公司授权，不能将其用于盈利或非盈利的任何用途。&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;     软件技术支持请联系：15389769877&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
+                      </widget>
+                     </widget>
                     </widget>
                    </item>
                   </layout>
@@ -3288,7 +3335,7 @@ hr { height: 1px; border-width: 0; }
                            </property>
                            <property name="font">
                             <font>
-                             <family>Segoe UI Semibold</family>
+                             <family>Segoe UI</family>
                              <pointsize>14</pointsize>
                              <italic>false</italic>
                              <bold>false</bold>
@@ -3324,7 +3371,7 @@ hr { height: 1px; border-width: 0; }
                            </property>
                            <property name="font">
                             <font>
-                             <family>Segoe UI Semibold</family>
+                             <family>Segoe UI</family>
                              <pointsize>14</pointsize>
                              <italic>false</italic>
                              <bold>false</bold>
@@ -3360,7 +3407,7 @@ hr { height: 1px; border-width: 0; }
                            </property>
                            <property name="font">
                             <font>
-                             <family>Segoe UI Semibold</family>
+                             <family>Segoe UI</family>
                              <pointsize>14</pointsize>
                              <italic>false</italic>
                              <bold>false</bold>
@@ -3438,7 +3485,7 @@ hr { height: 1px; border-width: 0; }
                   </property>
                   <property name="font">
                    <font>
-                    <family>Segoe UI Semibold</family>
+                    <family>Segoe UI</family>
                     <pointsize>-1</pointsize>
                     <italic>false</italic>
                     <bold>false</bold>

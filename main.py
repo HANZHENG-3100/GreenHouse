@@ -86,7 +86,7 @@ class MainWindow(QMainWindow):
         # APPLY TEXTS
         self.setWindowTitle(title)
         widgets.titleRightInfo.setText(description)
-
+        UIFunctions.toggleMenu(self, True)
         # TOGGLE MENU
         # ///////////////////////////////////////////////////////////////
         widgets.toggleButton.clicked.connect(lambda: UIFunctions.toggleMenu(self, True))  # 实现隐藏功能按钮
@@ -97,18 +97,24 @@ class MainWindow(QMainWindow):
 
         # QTableWidget PARAMETERS
         # ///////////////////////////////////////////////////////////////
-        widgets.tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
+        # widgets.tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
 
         # BUTTONS CLICK
         # ///////////////////////////////////////////////////////////////
 
+        # btn_cloud -> cloud_page；
+        # btn_manual_control->manual_control_page
+        # btn_auto_control-> auto_control_page；
+        # btn_energy-> energy_page；
+        # btn_information->information_page；
+
         # LEFT MENUS
         widgets.btn_cloud.clicked.connect(self.buttonClick)
-        widgets.btn_environment.clicked.connect(self.buttonClick)
         widgets.btn_manual_control.clicked.connect(self.buttonClick)
         widgets.btn_auto_control.clicked.connect(self.buttonClick)
+        widgets.btn_energy.clicked.connect(self.buttonClick)
         widgets.btn_information.clicked.connect(self.buttonClick)
-        widgets.btn_open_web.clicked.connect(self.buttonClick)
+        # widgets.btn_open_web.clicked.connect(self.buttonClick)
         #  新增切换皮肤功能
         widgets.btn_change_topic.clicked.connect(self.buttonClick)
         # 新增电脑数据分析功能
@@ -174,7 +180,11 @@ class MainWindow(QMainWindow):
         # GET BUTTON CLICKED
         btn = self.sender()  # 获取发送信号的对象
         btnName = btn.objectName()
-
+        # btn_auto_control-> auto_control_page；
+        # btn_cloud -> cloud_page；
+        # btn_energy-> energy_page；
+        # btn_information->information_page；
+        # btn_manual_control->manual_control_page
         # SHOW cloud_page
         if btnName == "btn_cloud":
             widgets.stackedWidget.setCurrentWidget(widgets.cloud_page) # 堆栈窗口设置为cloud_page窗口
@@ -186,26 +196,29 @@ class MainWindow(QMainWindow):
             # self.ui.cloud_page.browser.setCentralWidget(self.ui.cloud_page.browser)
             # self.ui.cloud_page.browser.show()
         # SHOW environ_page
-        if btnName == "btn_environment":
-            widgets.stackedWidget.setCurrentWidget(widgets.environ_page)
+        if btnName == "btn_energy":
+            widgets.stackedWidget.setCurrentWidget(widgets.energy_page)
             UIFunctions.resetStyle(self, btnName)
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
+            QMessageBox.information(self, "Sorry", "该功能还在开发之中", QMessageBox.Yes)
 
         # SHOW manual_control_page
         if btnName == "btn_auto_control":
-            widgets.stackedWidget.setCurrentWidget(widgets.manual_control_page)  # SET PAGE
+            widgets.stackedWidget.setCurrentWidget(widgets.auto_control_page)  # SET PAGE
             UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
 
         # SHOW auto_control_page
         if btnName == "btn_manual_control":
             # print("Save BTN clicked!")
-            widgets.stackedWidget.setCurrentWidget(widgets.auto_control_page)  # SET PAGE
+            widgets.stackedWidget.setCurrentWidget(widgets.manual_control_page)  # SET PAGE
             UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
             # QMessageBox.information(self, "提示", "该功能暂未实现", QMessageBox.Yes)
         if btnName == "btn_information":
-            QMessageBox.information(self,"提示","该功能未实现",QMessageBox.Yes)
+            widgets.stackedWidget.setCurrentWidget(widgets.information_page)  # SET PAGE
+            UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
+            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
 
         if btnName == "btn_change_topic":
             if self.useCustomTheme:

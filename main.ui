@@ -1785,7 +1785,7 @@ hr { height: 1px; border-width: 0; }
                       <enum>QFrame::NoFrame</enum>
                      </property>
                      <property name="currentIndex">
-                      <number>2</number>
+                      <number>1</number>
                      </property>
                      <widget class="QWidget" name="energy_page">
                       <property name="styleSheet">
@@ -2001,7 +2001,7 @@ hr { height: 1px; border-width: 0; }
                            <widget class="QSpinBox" name="spinBox_3"/>
                           </item>
                           <item row="1" column="6">
-                           <widget class="QPushButton" name="pushButton_2">
+                           <widget class="QPushButton" name="btn_auto_control_2">
                             <property name="text">
                              <string>开始控制</string>
                             </property>
@@ -2125,7 +2125,7 @@ hr { height: 1px; border-width: 0; }
                                 <number>0</number>
                                </property>
                                <item row="0" column="1">
-                                <widget class="QPushButton" name="pushButton">
+                                <widget class="QPushButton" name="btn_open_control_file">
                                  <property name="minimumSize">
                                   <size>
                                    <width>150</width>
@@ -2784,7 +2784,7 @@ hr { height: 1px; border-width: 0; }
                            </spacer>
                           </item>
                           <item>
-                           <widget class="QPushButton" name="btn_get_12data">
+                           <widget class="QPushButton" name="btn_get_data_12hours">
                             <property name="styleSheet">
                              <string notr="true">background-color: rgb(52, 59, 72);</string>
                             </property>
@@ -3162,7 +3162,7 @@ hr { height: 1px; border-width: 0; }
                            </spacer>
                           </item>
                           <item>
-                           <widget class="QPushButton" name="pushButton_10">
+                           <widget class="QPushButton" name="Btn_open_cloud_web">
                             <property name="styleSheet">
                              <string notr="true">background-color: rgb(52, 59, 72);</string>
                             </property>

@@ -119,6 +119,8 @@ class MainWindow(QMainWindow):
         widgets.btn_change_topic.clicked.connect(self.buttonClick)
         # 新增电脑数据分析功能
 
+        widgets.Btn_open_cloud_web.clicked.connect(self.buttonClick)
+        # widgets.btn_
        # widgets.computer_info_start.clicked.connect(self.start_computer_info)
 
         # widgets.computer_info_start.clicked.connect(get_computer_info)  # 此方法会导致页面卡顿
@@ -185,24 +187,21 @@ class MainWindow(QMainWindow):
         # btn_energy-> energy_page；
         # btn_information->information_page；
         # btn_manual_control->manual_control_page
+
         # SHOW cloud_page
         if btnName == "btn_cloud":
             widgets.stackedWidget.setCurrentWidget(widgets.cloud_page) # 堆栈窗口设置为cloud_page窗口
             UIFunctions.resetStyle(self, btnName)
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
-            # self.ui.cloud_page.browser = QWebEngineView()
-            # 加载外部的web界面
-            # self.ui.cloud_page.browser.load(QUrl("https://www.jb51.net"))
-            # self.ui.cloud_page.browser.setCentralWidget(self.ui.cloud_page.browser)
-            # self.ui.cloud_page.browser.show()
-        # SHOW environ_page
+
+        # SHOW energy_page
         if btnName == "btn_energy":
             widgets.stackedWidget.setCurrentWidget(widgets.energy_page)
             UIFunctions.resetStyle(self, btnName)
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
             QMessageBox.information(self, "Sorry", "该功能还在开发之中", QMessageBox.Yes)
 
-        # SHOW manual_control_page
+        # SHOW auto_control_page
         if btnName == "btn_auto_control":
             widgets.stackedWidget.setCurrentWidget(widgets.auto_control_page)  # SET PAGE
             UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
@@ -215,11 +214,13 @@ class MainWindow(QMainWindow):
             UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
             # QMessageBox.information(self, "提示", "该功能暂未实现", QMessageBox.Yes)
+
         if btnName == "btn_information":
             widgets.stackedWidget.setCurrentWidget(widgets.information_page)  # SET PAGE
             UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
 
+        # change topic button
         if btnName == "btn_change_topic":
             if self.useCustomTheme:
                 themeFile = os.path.abspath(os.path.join(self.absPath, "themes\py_dracula_dark.qss"))
@@ -234,23 +235,12 @@ class MainWindow(QMainWindow):
                 AppFunctions.setThemeHack(self)
                 self.useCustomTheme = True
 
-        # SHOW NEW PAGE
-        if btnName == "btn_computer":
-            widgets.stackedWidget.setCurrentWidget(widgets.computer_info)  # SET PAGE
-            UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
-            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
-
-            self.seriesS = QLineSeries()
-            self.seriesL = QLineSeries()
-            self.seriesS.setName("cpu")
-            self.seriesL.setName("memory")
-        # PRINT BTN NAME
-
-        if btnName == "btn_open_web":
-            print(f'Button33 "{btnName}" pressed!')
+        #  Button in cloud_page
+        if btnName == "Btn_open_cloud_web":
             AppFunctions.Btn_open_web(self)
         print(f'Button "{btnName}" pressed!')
-
+        if btnName == "btn_get_data_12hours":
+            AppFunctions.getClouldData_12hours()
     # RESIZE EVENTS
     # ///////////////////////////////////////////////////////////////
     def resizeEvent(self, event):

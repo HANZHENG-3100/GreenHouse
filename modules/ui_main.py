@@ -1165,10 +1165,10 @@ class Ui_MainWindow(object):
 
         self.gridLayout_3.addWidget(self.spinBox_3, 3, 1, 1, 1)
 
-        self.pushButton_2 = QPushButton(self.auto_control_page_row_1)
-        self.pushButton_2.setObjectName(u"pushButton_2")
+        self.btn_auto_control_2 = QPushButton(self.auto_control_page_row_1)
+        self.btn_auto_control_2.setObjectName(u"btn_auto_control_2")
 
-        self.gridLayout_3.addWidget(self.pushButton_2, 1, 6, 1, 1)
+        self.gridLayout_3.addWidget(self.btn_auto_control_2, 1, 6, 1, 1)
 
         self.spinBox_2 = QSpinBox(self.auto_control_page_row_1)
         self.spinBox_2.setObjectName(u"spinBox_2")
@@ -1239,17 +1239,17 @@ class Ui_MainWindow(object):
         self.gridLayout = QGridLayout()
         self.gridLayout.setObjectName(u"gridLayout")
         self.gridLayout.setContentsMargins(-1, -1, -1, 0)
-        self.pushButton = QPushButton(self.frame_content_wid_1)
-        self.pushButton.setObjectName(u"pushButton")
-        self.pushButton.setMinimumSize(QSize(150, 30))
-        self.pushButton.setFont(font)
-        self.pushButton.setCursor(QCursor(Qt.PointingHandCursor))
-        self.pushButton.setStyleSheet(u"background-color: rgb(52, 59, 72);")
+        self.btn_open_control_file = QPushButton(self.frame_content_wid_1)
+        self.btn_open_control_file.setObjectName(u"btn_open_control_file")
+        self.btn_open_control_file.setMinimumSize(QSize(150, 30))
+        self.btn_open_control_file.setFont(font)
+        self.btn_open_control_file.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_open_control_file.setStyleSheet(u"background-color: rgb(52, 59, 72);")
         icon4 = QIcon()
         icon4.addFile(u":/icons/images/icons/cil-folder-open.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.pushButton.setIcon(icon4)
+        self.btn_open_control_file.setIcon(icon4)
 
-        self.gridLayout.addWidget(self.pushButton, 0, 1, 1, 1)
+        self.gridLayout.addWidget(self.btn_open_control_file, 0, 1, 1, 1)
 
         self.lineEdit = QLineEdit(self.frame_content_wid_1)
         self.lineEdit.setObjectName(u"lineEdit")
@@ -1643,11 +1643,11 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_11.addItem(self.horizontalSpacer_19)
 
-        self.btn_get_12data = QPushButton(self.frame)
-        self.btn_get_12data.setObjectName(u"btn_get_12data")
-        self.btn_get_12data.setStyleSheet(u"background-color: rgb(52, 59, 72);")
+        self.btn_get_data_12hours = QPushButton(self.frame)
+        self.btn_get_data_12hours.setObjectName(u"btn_get_data_12hours")
+        self.btn_get_data_12hours.setStyleSheet(u"background-color: rgb(52, 59, 72);")
 
-        self.horizontalLayout_11.addWidget(self.btn_get_12data)
+        self.horizontalLayout_11.addWidget(self.btn_get_data_12hours)
 
         self.horizontalSpacer_20 = QSpacerItem(60, 20, QSizePolicy.Fixed, QSizePolicy.Minimum)
 
@@ -1831,11 +1831,11 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_13.addItem(self.horizontalSpacer_18)
 
-        self.pushButton_10 = QPushButton(self.frame_10)
-        self.pushButton_10.setObjectName(u"pushButton_10")
-        self.pushButton_10.setStyleSheet(u"background-color: rgb(52, 59, 72);")
+        self.Btn_open_cloud_web = QPushButton(self.frame_10)
+        self.Btn_open_cloud_web.setObjectName(u"Btn_open_cloud_web")
+        self.Btn_open_cloud_web.setStyleSheet(u"background-color: rgb(52, 59, 72);")
 
-        self.horizontalLayout_13.addWidget(self.pushButton_10)
+        self.horizontalLayout_13.addWidget(self.Btn_open_cloud_web)
 
         self.horizontalSpacer_17 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
@@ -1993,7 +1993,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(2)
+        self.stackedWidget.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -2057,13 +2057,13 @@ class Ui_MainWindow(object):
 #endif // QT_CONFIG(accessibility)
         self.lineEdit_8.setText(QCoreApplication.translate("MainWindow", u"\u571f\u58e4\u6e7f\u5ea6\uff1a", None))
         self.lineEdit_11.setText(QCoreApplication.translate("MainWindow", u"ppm", None))
-        self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"\u5f00\u59cb\u63a7\u5236", None))
+        self.btn_auto_control_2.setText(QCoreApplication.translate("MainWindow", u"\u5f00\u59cb\u63a7\u5236", None))
         self.lineEdit_9.setText(QCoreApplication.translate("MainWindow", u"% ", None))
         self.lineEdit_5.setText(QCoreApplication.translate("MainWindow", u"\u76ee\u6807\u73af\u5883\u503c\u8bbe\u7f6e\uff1a", None))
         self.lineEdit_12.setText(QCoreApplication.translate("MainWindow", u"\u5149\u7167\u5f3a\u5ea6\uff1a", None))
         self.lineEdit_6.setText(QCoreApplication.translate("MainWindow", u"\u7efc\u5408\u6e29\u5ea6\u503c\uff1a", None))
         self.lineEdit_14.setText(QCoreApplication.translate("MainWindow", u"\u5b9e\u65f6\u73af\u5883\u6570\u636e\uff1a", None))
-        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"\u6253\u5f00", None))
+        self.btn_open_control_file.setText(QCoreApplication.translate("MainWindow", u"\u6253\u5f00", None))
         self.lineEdit.setText(QCoreApplication.translate("MainWindow", u"\u8f93\u5165\u6587\u4ef6\u8def\u5f84", None))
         self.lineEdit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Type here", None))
         self.labelVersion_3.setText(QCoreApplication.translate("MainWindow", u"\u63a7\u5236\u6570\u636e\u6587\u4ef6\u6a21\u677f\u89c1\u8bf4\u660e\u4e66", None))
@@ -2099,7 +2099,7 @@ class Ui_MainWindow(object):
         self.RB_open_juanmo.setText(QCoreApplication.translate("MainWindow", u"\u4e0a\u5377", None))
         self.RB_close_juanmo.setText(QCoreApplication.translate("MainWindow", u"\u505c\u6b62", None))
         self.RB_close_juanmo_2.setText(QCoreApplication.translate("MainWindow", u"\u4e0b\u653e", None))
-        self.btn_get_12data.setText(QCoreApplication.translate("MainWindow", u"\u70b9\u51fb\u83b7\u53d612\u5c0f\u65f6\u73af\u5883\u6570\u636e", None))
+        self.btn_get_data_12hours.setText(QCoreApplication.translate("MainWindow", u"\u70b9\u51fb\u83b7\u53d612\u5c0f\u65f6\u73af\u5883\u6570\u636e", None))
         self.label_time.setText(QCoreApplication.translate("MainWindow", u"\u83b7\u53d6\u65f6\u95f4\uff1a", None))
         self.text_humidness.setText(QCoreApplication.translate("MainWindow", u"\u7a7a\u6c14\u6e7f\u5ea6", None))
         self.text_temperature.setText(QCoreApplication.translate("MainWindow", u"\u7a7a\u6c14\u6e29\u5ea6", None))
@@ -2107,7 +2107,7 @@ class Ui_MainWindow(object):
         self.lineEdit_3.setText(QCoreApplication.translate("MainWindow", u"\u571f\u58e4\u6e29\u5ea6", None))
         self.lineEdit_4.setText(QCoreApplication.translate("MainWindow", u"\u571f\u58e4\u6e7f\u5ea6", None))
         self.lineEdit_2.setText(QCoreApplication.translate("MainWindow", u"\u4e8c\u6c27\u5316\u78b3\u6d53\u5ea6", None))
-        self.pushButton_10.setText(QCoreApplication.translate("MainWindow", u"\u767b\u9646\u4e91\u5e73\u53f0http://www.0531yun.com \u67e5\u770b\u8be6\u7ec6\u4fe1\u606f", None))
+        self.Btn_open_cloud_web.setText(QCoreApplication.translate("MainWindow", u"\u767b\u9646\u4e91\u5e73\u53f0http://www.0531yun.com \u67e5\u770b\u8be6\u7ec6\u4fe1\u606f", None))
         self.textBrowser.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"

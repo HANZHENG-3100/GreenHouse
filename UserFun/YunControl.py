@@ -2,7 +2,7 @@ import os
 import requests
 import json
 import urllib3
-import time
+import datetime
 # import sys, tty, select, termios
 
 
@@ -14,7 +14,7 @@ class YunControl:
         self.url_yun = "http://www.0531yun.com/"  # 建大仁科综合环境监控云平台地址
         self.ID = "h211222yqhz"  # 云服务器登录账号
         self.PW = "h211222yqhz"  # 云服务器登录密码
-        self.deviceAddr = {'气象站': "20009680",
+        self.deviceAddr = {'气象站': "40133062",
                            '集中器': "20009680",
                            '对照土壤': "21043744",
                            '北部土壤传感器1': "21043747",
@@ -25,16 +25,16 @@ class YunControl:
                            '主机2': "40184180",
                            '网络继电器': "40191625"
                            }
-        self.weather_station_addr = "20009680"       # 气象站设备地址
-        self.concentrator_addr = "20009680"          # 集中器地址            数据6个 甲烷、氮气、水箱123、CO2浓度
-        self.Comparison_soil_addr = "21043744"       # 对照土壤传感器       （5个温度值，5个湿度值）
-        self.northern_soil_addr1 = "21043747"        # 北部土壤传感器1      （5个温度值，5个湿度值）
-        self.northern_soil_addr2 = "21043747"        # 北部土壤传感器2      （5个温度值，5个湿度值）
-        self.southern_soil_addr1 = "21043765"        # 南部土壤传感器1      （5个温度值，5个湿度值）
-        self.southern_soil_addr2 = "21043765"        # 南部土壤传感器2      （5个温度值，5个湿度值）
-        self.host1_addr = "40184157"                 # 主机1地址            （32组温湿度）
-        self.host2_addr = "40184180"                 # 主机2地址            （29组温湿度） 不确定
-        self.relay_addr = "40191625"                 # 网络继电器地址
+        self.addr_weather_station = "40133062"       # 气象站设备地址
+        self.addr_concentrator = "20009680"          # 集中器地址            数据6个 甲烷、氮气、水箱123、CO2浓度
+        self.Addr_Comparison_soil = "21043744"       # 对照土壤传感器       （5个温度值，5个湿度值）
+        self.addr_northern_soil = "21043747"        # 北部土壤传感器1      （5个温度值，5个湿度值）
+        self.addr_northern_soil2 = "21043747"        # 北部土壤传感器2      （5个温度值，5个湿度值）
+        self.addr_southern_soil1 = "21043765"        # 南部土壤传感器1      （5个温度值，5个湿度值）
+        self.addr_southern_soil2 = "21043765"        # 南部土壤传感器2      （5个温度值，5个湿度值）
+        self.addr_host1 = "40184157"                 # 主机1地址            （32组温湿度）
+        self.addr_host2 = "40184180"                 # 主机2地址            （29组温湿度） 不确定
+        self.addr_relay = "40191625"                 # 网络继电器地址
         self.delay_time = 2                          # 程序运行时间间隔，由传感器采集频率决定
 
         self.relay_command = {1: 1, 2: 1, 3: 1, 4: 0, 5: 0, 6: 0, 7: 1, 8: 1}  # 继电器控制初始状态  0灯亮 闭合  1灯灭 断开
@@ -47,19 +47,25 @@ class YunControl:
     #  获取传感器历史数据 deviceAddr=主机地址, nodeId=传感器因子号, startTime, endTime时间格式：YYYY-MM-dd HH:mm:ss
     #  使用接口获取历史数据时，每分钟只能执行6次，超出次数会被拒绝。
     def get_history_data(self, deviceAddr, startTime, endTime, nodeId=-1,):
+        iid = list(self.deviceAddr.values()).index(deviceAddr)
+        name = list(self.deviceAddr.keys())[iid]
         url = self.url_yun + "api/data/historyList"
         params = {"deviceAddr": int(deviceAddr), "nodeId": nodeId, "startTime": startTime, "endTime": endTime}
         r = requests.get(url=url, headers=headers, params=params)
         p = json.loads(r.content)  # 将json字符串转换为python dict对象
         if p['code'] == 1000:
-            data = p['data']
-            print("历史数据下载成功")
+            print(name + "请求数据成功！")
+            if p['data']:
+                data = p['data']
+                print(name+"历史数据下载成功！\n")
+            else:
+                print(name + "无历史数据,请检查近期传感器连接情况。\n")
+                return
         else:
-            print("历史数据下载失败")
+            print(name+"请求数据失败，请查看网络通信。\n")
             return
         deviceAddr = str(data[0]['deviceAddr'])  # 取地址
-        iid = list(self.deviceAddr.values()).index(deviceAddr)
-        name = list(self.deviceAddr.keys())[iid]
+
         filename = "{0}_{1}_{2}-{3}".format(name, deviceAddr, startTime, endTime)
         filename = filename.replace(" ", "_")
         filename = filename.replace(":", "-")
@@ -79,6 +85,7 @@ class YunControl:
                 tim = data[i]['recordTimeStr']
                 f.write(f"{ind},{value},{tim}\n")
         f.close()
+
         return
 
     def get_token(self):
@@ -98,7 +105,7 @@ class YunControl:
     def get_air_temperature_and_humidity_data(self):   # 解析存储空气温度-湿度数据
         # 读主机1 数据
         print("正在下载空气温湿度数据...")
-        url = self.url_yun + "api/data/getRealTimeDataByDeviceAddr?deviceAddrs={}".format(self.host1_addr)
+        url = self.url_yun + "api/data/getRealTimeDataByDeviceAddr?deviceAddrs={}".format(self.addr_host1)
         r = requests.get(url, headers=headers)
         p = json.loads(r.content)
         print(type(p))
@@ -110,7 +117,7 @@ class YunControl:
             self.air_humidity_buffer["湿度1_{}".format(k)] = temp
 
         # 读主机2 的数据
-        url = self.url_yun + "api/data/getRealTimeDataByDeviceAddr?deviceAddrs={}".format(self.host2_addr)
+        url = self.url_yun + "api/data/getRealTimeDataByDeviceAddr?deviceAddrs={}".format(self.addr_host2)
         r = requests.get(url, json, headers=headers)
         q = json.loads(r.content)
         for k in range(29):
@@ -129,7 +136,7 @@ class YunControl:
         # 下载土壤温湿度数据
         print("正在下载土壤温湿度数据...")
         # 北土壤1数据
-        url = self.url_yun + "api/data/getRealTimeDataByDeviceAddr?deviceAddr={}".format(self.northern_soil_addr1)
+        url = self.url_yun + "api/data/getRealTimeDataByDeviceAddr?deviceAddr={}".format(self.addr_northern_soil)
         r = requests.get(url, json, headers=headers)
         s = json.loads(r.content)
         print(type(s))
@@ -139,7 +146,7 @@ class YunControl:
             temp = s['data'][0]['dataItem'][k]['registerItem'][1]['data']
             self.soil_humidity_buffer["北土1湿度_{}".format(k)] = temp
         # 北土壤2数据
-        url = self.url_yun + "api/data/getRealTimeDataByDeviceAddr?deviceAddr={}".format(self.northern_soil_addr2)
+        url = self.url_yun + "api/data/getRealTimeDataByDeviceAddr?deviceAddr={}".format(self.addr_northern_soil2)
         r = requests.get(url, json, headers=headers)
         s = json.loads(r.content)
         for k in range(5):
@@ -148,7 +155,7 @@ class YunControl:
             temp = s['data'][0]['dataItem'][k]['registerItem'][1]['data']
             self. soil_humidity_buffer["北土2湿度_{}".format(k)] = temp
         # 南土壤1 数据
-        url = self.url_yun + "api/data/getRealTimeDataByDeviceAddr?deviceAddr={}".format(self.southern_soil_addr1)
+        url = self.url_yun + "api/data/getRealTimeDataByDeviceAddr?deviceAddr={}".format(self.addr_southern_soil1)
         r = requests.get(url, json, headers=headers)
         s = json.loads(r.content)
         for k in range(5):
@@ -157,7 +164,7 @@ class YunControl:
             temp = s['data'][0]['dataItem'][k]['registerItem'][1]['data']
             self. soil_humidity_buffer["南土1湿度_{}".format(k)] = temp
         # 南土壤2数据
-        url = self.url_yun + "api/data/getRealTimeDataByDeviceAddr?deviceAddr={}".format(self.northern_soil_addr2)
+        url = self.url_yun + "api/data/getRealTimeDataByDeviceAddr?deviceAddr={}".format(self.addr_northern_soil2)
         r = requests.get(url, json, headers=headers)
         s = json.loads(r.content)
         for k in range(5):
@@ -171,6 +178,8 @@ class YunControl:
 
     def intelligent_control_method(self):    # 利用算法计算所有继电器需要的控制状态
         # 添加算法进行数据处理
+        pass
+
         self.relay_command[2] = 1
         self.relay_command[4] = 1
         return 0
@@ -179,7 +188,7 @@ class YunControl:
     def set_relay_state_all(self):   # 控制继电器动作
         # headers.
         for x in range(1, 9):  # x= [1,2 ...8]
-            url = self.url_yun + "api/device/setRelay?deviceAddr=" + self.relay_addr +\
+            url = self.url_yun + "api/device/setRelay?deviceAddr=" + self.addr_relay +\
                   "&relayNo={}".format(x)+"&opt={}".format(self.relay_command[x])
             # http://www.0531yun.com/api/device/setRelay?deviceAddr=40191625&relayNo=5&opt=0
 
@@ -195,7 +204,7 @@ class YunControl:
 
     # 开启某个继电器
     def set_one_relay(self, relay_num):
-        url = self.url_yun + "api/device/setRelay?deviceAddr=" + self.relay_addr + "&relayNo={}".format(
+        url = self.url_yun + "api/device/setRelay?deviceAddr=" + self.addr_relay + "&relayNo={}".format(
             relay_num) + "&opt={}".format(1)
         # http://www.0531yun.com/api/device/setRelay?deviceAddr=40191625&relayNo=5&opt=0
         if relay_num in self.relay_num:
@@ -209,10 +218,11 @@ class YunControl:
                 return
         else:
             print("继电器号超范围")
+        return
 
     # 关闭某个继电器
     def clear_one_relay(self, relay_num):
-        url = self.url_yun + "api/device/setRelay?deviceAddr=" + self.relay_addr + "&relayNo={}".format(
+        url = self.url_yun + "api/device/setRelay?deviceAddr=" + self.addr_relay + "&relayNo={}".format(
             relay_num) + "&opt={}".format(0)
         # http://www.0531yun.com/api/device/setRelay?deviceAddr=40191625&relayNo=5&opt=0
         if relay_num in self.relay_num:
@@ -228,6 +238,29 @@ class YunControl:
             print("继电器号超出范围")
             return
 
+    def get_cloud_data_12hours(self):
+        now = datetime.datetime.now()
+        endTime = now.strftime("%Y-%m-%d %H:%M:%S")
+        month = int(endTime[5:7])
+        day = int(endTime[8:10])
+        if day == 1:
+            if month in [1, 3, 4, 7, 8, 10, 11]:  # not considered Feb
+                day = 31
+                month = month-1
+            else:
+                day = 30
+                month = month - 1
+        else:
+            day = day-1
+
+        startTime = endTime[0:5]+str(month)+'-'+str(day)+endTime[10:]
+        # 数据使用主机数据获得 空气温湿度 ；使用气象站获取光照强度；
+        # 使用土壤南1 获取土壤温湿度；使用集中器获取CO2浓度数据
+        self.get_history_data(self.addr_host1, startTime, endTime)
+        self.get_history_data(self.addr_southern_soil1, startTime, endTime)
+        self.get_history_data(self.addr_weather_station, startTime, endTime)
+        self.get_history_data(self.addr_concentrator, startTime, endTime)
+
 
 if __name__ == "__main__":
     # create data buffer, stores the data download from cloud server last time.
@@ -239,15 +272,16 @@ if __name__ == "__main__":
 
     # 设置继电器状态
 
-    flag = True
-    while flag:
+    flag = 1
+    while flag != 0:
         # 时间格式 YYYY-MM-dd HH:mm:ss
-
-        # Yun.get_history_data(Yun.concentrator_addr, "2023-01-18 16:19:00 ", "2023-02-16 16:19:00")
-        Yun.get_air_temperature_and_humidity_data()  # ok
+        Yun.get_cloud_data_12hours()
+        # Yun.get_history_data(Yun.addr_concentrator, "2023-01-18 16:19:00 ", "2023-02-16 16:19:00")
+        # Yun.get_air_temperature_and_humidity_data()  # ok
         # Yun.get_soil_temperature_and_humidity_data()
         # print("延时3秒钟后，刷新下一帧数据...")
         print()
+        flag = flag -1
         # time.sleep(delay_time)
         # print("空气温度数据：")
         # print(air_temperature_buffer)

@@ -23,9 +23,11 @@ from main import *
 # ///////////////////////////////////////////////////////////////
 from modules import Settings
 from widgets import CustomGrip
+from widgets import  *
 GLOBAL_STATE = False
 GLOBAL_TITLE_BAR = True
-from main import *
+# from main import *
+
 
 class UIFunctions(MainWindow):
     # MAXIMIZE/RESTORE
@@ -188,12 +190,12 @@ class UIFunctions(MainWindow):
     # SELECT/DESELECT MENU
     # ///////////////////////////////////////////////////////////////
     # SELECT
-    def selectMenu(getStyle):
+    def selectMenu(self, getStyle):
         select = getStyle + Settings.MENU_SELECTED_STYLESHEET
         return select
 
     # DESELECT
-    def deselectMenu(getStyle):
+    def deselectMenu(self,getStyle):
         deselect = getStyle.replace(Settings.MENU_SELECTED_STYLESHEET, "")
         return deselect
 

@@ -12,16 +12,13 @@
 # commercially, I recommend reading them on the official website:
 # https://doc.qt.io/qtforpython/licenses.html
 #
-# ///////////////////////////////////////////////////////////////
-import sys
-import time
-import PySide6
-import psutil
-# IMPORT / GUI AND MODULES AND WIDGETS
-from modules import *
-from widgets import *
-from PySide6.QtCharts import QChart, QLineSeries, QValueAxis
+# /////////////////////////////////////////////////////////////// # _*_ coding:TUF-8 _*_
+# -*- coding: gbk -*-
 
+import sys
+# import time
+import PySide6
+# import psutil
 import os
 # 解决no Qt platform plugin could be initialized问题
 dir_name = os.path.dirname(PySide6.__file__)
@@ -30,39 +27,46 @@ os.environ['QT_QPA_PLATFORM_PLUGIN_PATH'] = plusin_path
 os.environ["QT_FONT_DPI"] = "96"  # FIX Problem for High DPI and Scale above 100%
 # SET AS GLOBAL WIDGETS
 # ///////////////////////////////////////////////////////////////
+# IMPORT / GUI AND MODULES AND WIDGETS
+from modules import *
+# from modules.ui_functions import UIFunctions
+from widgets import *
+from PySide6.QtCharts import QChart, QLineSeries, QValueAxis
+
+
 widgets = None
 
 
-class NewThread(QThread):
-    # 自定义信号声明
-    # 使用自定义信号和UI主线程通讯，参数是发送信号时附带参数的数据类型，可以是str、int、list等
-    finishSignal = Signal(str)
-
-    # 带一个参数t
-    def __init__(self, parent=None):
-        super(NewThread, self).__init__(parent)
-
-    # run函数是子线程中的操作，线程启动后开始执行
-    if os.path.exists(f'./computer_info.csv'):
-        pass
-    else:
-        with open(r'./computer_info.csv', 'w') as f:
-            pass
-
-    def run(self):
-        timer = 0
-        while True:
-            timer += 1
-            cpu_percent = psutil.cpu_percent(interval=1)
-            cpu_info = cpu_percent
-            virtual_memory = psutil.virtual_memory()
-            memory_percent = virtual_memory.percent
-            with open(r'./computer_info.csv', 'a') as f:
-                f.write(f"{timer},{cpu_info},{memory_percent}\n")
-            time.sleep(2)
-            # 发射自定义信号
-            # 通过emit函数将参数i传递给主线程，触发自定义信号
-            self.finishSignal.emit("1")  # 注意这里与_signal = pyqtSignal(str)中的类型相同
+# class NewThread(QThread):
+#     # 自定义信号声明
+#     # 使用自定义信号和UI主线程通讯，参数是发送信号时附带参数的数据类型，可以是str、int、list等
+#     finishSignal = Signal(str)
+#
+#     # 带一个参数t
+#     def __init__(self, parent=None):
+#         super(NewThread, self).__init__(parent)
+#
+#     # run函数是子线程中的操作，线程启动后开始执行
+#     if os.path.exists(f'./computer_info.csv'):
+#         pass
+#     else:
+#         with open(r'./computer_info.csv', 'w') as f:
+#             pass
+#
+#     def run(self):
+#         timer = 0
+#         while True:
+#             timer += 1
+#             cpu_percent = psutil.cpu_percent(interval=1)
+#             cpu_info = cpu_percent
+#             virtual_memory = psutil.virtual_memory()
+#             memory_percent = virtual_memory.percent
+#             with open(r'./computer_info.csv', 'a') as f:
+#                 f.write(f"{timer},{cpu_info},{memory_percent}\n")
+#             time.sleep(2)
+#             # 发射自定义信号
+#             # 通过emit函数将参数i传递给主线程，触发自定义信号
+#             self.finishSignal.emit("1")  # 注意这里与_signal = pyqtSignal(str)中的类型相同
 
 
 class MainWindow(QMainWindow):
@@ -86,7 +90,7 @@ class MainWindow(QMainWindow):
         # APPLY TEXTS
         self.setWindowTitle(title)
         widgets.titleRightInfo.setText(description)
-        UIFunctions.toggleMenu(self, True)
+        UIFunctions.toggleMenu(self, enable=True)
         # TOGGLE MENU
         # ///////////////////////////////////////////////////////////////
         widgets.toggleButton.clicked.connect(lambda: UIFunctions.toggleMenu(self, True))  # 实现隐藏功能按钮
@@ -120,6 +124,7 @@ class MainWindow(QMainWindow):
         # 新增电脑数据分析功能
 
         widgets.Btn_open_cloud_web.clicked.connect(self.buttonClick)
+        widgets.btn_get_data_12hours.clicked.connect(self.buttonClick)
         # widgets.btn_
        # widgets.computer_info_start.clicked.connect(self.start_computer_info)
 
@@ -240,7 +245,8 @@ class MainWindow(QMainWindow):
             AppFunctions.Btn_open_web(self)
         print(f'Button "{btnName}" pressed!')
         if btnName == "btn_get_data_12hours":
-            AppFunctions.getClouldData_12hours()
+            AppFunctions.btn_get_data_12hours(self)
+            print()
     # RESIZE EVENTS
     # ///////////////////////////////////////////////////////////////
     def resizeEvent(self, event):
@@ -260,17 +266,17 @@ class MainWindow(QMainWindow):
         if event.buttons() == Qt.RightButton:
             print('Mouse click: RIGHT CLICK')
 
-    def start_computer_info(self):
-        """
-        开始获取电脑数据
-        :return:
-        """
-        # 开始分析记录电脑数据，需持续获取，然后分析
-        self.thread1 = NewThread()  # 实例化一个线程
-        # 将线程thread的信号finishSignal和UI主线程中的槽函数data_display进行连接
-        self.thread1.finishSignal.connect(self.data_display)
-        # 启动线程，执行线程类中run函数
-        self.thread1.start()
+    # def start_computer_info(self):
+    #     """
+    #     开始获取电脑数据
+    #     :return:
+    #     """
+    #     # 开始分析记录电脑数据，需持续获取，然后分析
+    #     self.thread1 = NewThread()  # 实例化一个线程
+    #     # 将线程thread的信号finishSignal和UI主线程中的槽函数data_display进行连接
+    #     self.thread1.finishSignal.connect(self.data_display)
+    #     # 启动线程，执行线程类中run函数
+    #     self.thread1.start()
 
 
 if __name__ == "__main__":

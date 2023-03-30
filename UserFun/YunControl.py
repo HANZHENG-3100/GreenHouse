@@ -6,11 +6,11 @@ import datetime
 # import sys, tty, select, termios
 
 
-class YunControl:
-    urllib3.disable_warnings()  # 忽略https安全证书的验证
+class YunControl():
 
     # noinspection SpellCheckingInspection
     def __init__(self):
+        urllib3.disable_warnings()  # 忽略https安全证书的验证
         self.url_yun = "http://www.0531yun.com/"  # 建大仁科综合环境监控云平台地址
         self.ID = "h211222yqhz"  # 云服务器登录账号
         self.PW = "h211222yqhz"  # 云服务器登录密码
@@ -44,14 +44,18 @@ class YunControl:
         self.soil_temperature_buffer = {}  #
         self.soil_humidity_buffer = {}
 
+        self.headers = ""
+        self.token_expiration_time = 0.0
+        self.token_time = 0.0
     #  获取传感器历史数据 deviceAddr=主机地址, nodeId=传感器因子号, startTime, endTime时间格式：YYYY-MM-dd HH:mm:ss
     #  使用接口获取历史数据时，每分钟只能执行6次，超出次数会被拒绝。
+
     def get_history_data(self, deviceAddr, startTime, endTime, nodeId=-1,):
         iid = list(self.deviceAddr.values()).index(deviceAddr)
         name = list(self.deviceAddr.keys())[iid]
         url = self.url_yun + "api/data/historyList"
         params = {"deviceAddr": int(deviceAddr), "nodeId": nodeId, "startTime": startTime, "endTime": endTime}
-        r = requests.get(url=url, headers=headers, params=params)
+        r = requests.get(url=url, headers=self.headers, params=params)
         p = json.loads(r.content)  # 将json字符串转换为python dict对象
         if p['code'] == 1000:
             print(name + "请求数据成功！")
@@ -94,19 +98,25 @@ class YunControl:
         # print(r.status_code)
         # print(type(r.text))
         # print(r.json())
-        print()
         info = r.json()
-        t = info['data']['token']
-        print("token:")
-        print(t)
-        return t
+        if info['data']['token']:
+            print("已经读取到token数据...")
+            self.token_expiration_time = info['data']['expiration']
+            self.token_time = datetime.datetime.now().timestamp()
+            t = info['data']['token']
+            self.header = {'authorization': "{}".format(t), }  # 'Content-Type': 'multipart/form-data',
+            print("已经更新网络接口请求头header...")
+        else:
+            print("读取到token数据错误！请查看源代码")
+        # print("token:{}".format(t))
+        return
 
     #  函数功能：采集当前主机1 和主机2的温湿度数据，并存储在air_temperature_buffer和air_humidity_buffer中
     def get_air_temperature_and_humidity_data(self):   # 解析存储空气温度-湿度数据
         # 读主机1 数据
         print("正在下载空气温湿度数据...")
         url = self.url_yun + "api/data/getRealTimeDataByDeviceAddr?deviceAddrs={}".format(self.addr_host1)
-        r = requests.get(url, headers=headers)
+        r = requests.get(url, headers=self.headers)
         p = json.loads(r.content)
         print(type(p))
         data = p['data'][0]['dataItem']  # 数据在dataItem list中
@@ -118,7 +128,7 @@ class YunControl:
 
         # 读主机2 的数据
         url = self.url_yun + "api/data/getRealTimeDataByDeviceAddr?deviceAddrs={}".format(self.addr_host2)
-        r = requests.get(url, json, headers=headers)
+        r = requests.get(url, json, headers=self.headers)
         q = json.loads(r.content)
         for k in range(29):
             temp = q['data'][0]['dataItem'][k]['registerItem'][0]['data']
@@ -137,7 +147,7 @@ class YunControl:
         print("正在下载土壤温湿度数据...")
         # 北土壤1数据
         url = self.url_yun + "api/data/getRealTimeDataByDeviceAddr?deviceAddr={}".format(self.addr_northern_soil)
-        r = requests.get(url, json, headers=headers)
+        r = requests.get(url, json, headers=self.headers)
         s = json.loads(r.content)
         print(type(s))
         for k in range(5):
@@ -147,7 +157,7 @@ class YunControl:
             self.soil_humidity_buffer["北土1湿度_{}".format(k)] = temp
         # 北土壤2数据
         url = self.url_yun + "api/data/getRealTimeDataByDeviceAddr?deviceAddr={}".format(self.addr_northern_soil2)
-        r = requests.get(url, json, headers=headers)
+        r = requests.get(url, json, headers=self.headers)
         s = json.loads(r.content)
         for k in range(5):
             temp = s['data'][0]['dataItem'][k]['registerItem'][0]['data']
@@ -156,7 +166,7 @@ class YunControl:
             self. soil_humidity_buffer["北土2湿度_{}".format(k)] = temp
         # 南土壤1 数据
         url = self.url_yun + "api/data/getRealTimeDataByDeviceAddr?deviceAddr={}".format(self.addr_southern_soil1)
-        r = requests.get(url, json, headers=headers)
+        r = requests.get(url, json, headers=self.headers)
         s = json.loads(r.content)
         for k in range(5):
             temp = s['data'][0]['dataItem'][k]['registerItem'][0]['data']
@@ -165,7 +175,7 @@ class YunControl:
             self. soil_humidity_buffer["南土1湿度_{}".format(k)] = temp
         # 南土壤2数据
         url = self.url_yun + "api/data/getRealTimeDataByDeviceAddr?deviceAddr={}".format(self.addr_northern_soil2)
-        r = requests.get(url, json, headers=headers)
+        r = requests.get(url, json, headers=self.headers)
         s = json.loads(r.content)
         for k in range(5):
             temp = s['data'][0]['dataItem'][k]['registerItem'][0]['data']
@@ -194,7 +204,7 @@ class YunControl:
 
             print("设定继电器{}".format(x)+"状态为:{}....".format(self.relay_command[x]))
             # data
-            r = requests.post(url, headers=headers)
+            r = requests.post(url, headers=self.headers)
             # print(r.json)
             # print(r.request.headers)
             if r.status_code == 200:
@@ -208,7 +218,7 @@ class YunControl:
             relay_num) + "&opt={}".format(1)
         # http://www.0531yun.com/api/device/setRelay?deviceAddr=40191625&relayNo=5&opt=0
         if relay_num in self.relay_num:
-            r = requests.post(url, headers=headers)
+            r = requests.post(url, headers=self.headers)
             print("正打开继电器{}...".format(relay_num))
             if r.status_code == 200:
                 print("打开成功。")
@@ -226,7 +236,7 @@ class YunControl:
             relay_num) + "&opt={}".format(0)
         # http://www.0531yun.com/api/device/setRelay?deviceAddr=40191625&relayNo=5&opt=0
         if relay_num in self.relay_num:
-            r = requests.post(url, headers=headers)
+            r = requests.post(url, headers=self.headers)
             print("正打开继电器{}...".format(relay_num))
             if r.status_code == 200:
                 print("关闭成功。")
@@ -260,20 +270,28 @@ class YunControl:
         self.get_history_data(self.addr_southern_soil1, startTime, endTime)
         self.get_history_data(self.addr_weather_station, startTime, endTime)
         self.get_history_data(self.addr_concentrator, startTime, endTime)
+        return
+
+    def draw_data(self):
+
+        pass
+        return
+
+    # def refrash_header(self):
+    #     headers = {'authorization': "{}".format(Yun.get_token()), }  # 'Content-Type': 'multipart/form-data',
+    #     print("已经读取到token数据...")
+    #     return
 
 
 if __name__ == "__main__":
     # create data buffer, stores the data download from cloud server last time.
     Yun = YunControl()
     # create communication header
-    headers = {'authorization': "{}".format(Yun.get_token()), }  # 'Content-Type': 'multipart/form-data',
-    print("已经读取到token数据...")
+    Yun.get_token()
     # time.sleep(2)
-
     # 设置继电器状态
-
     flag = 1
-    while flag != 0:
+    while flag:
         # 时间格式 YYYY-MM-dd HH:mm:ss
         Yun.get_cloud_data_12hours()
         # Yun.get_history_data(Yun.addr_concentrator, "2023-01-18 16:19:00 ", "2023-02-16 16:19:00")
@@ -281,7 +299,7 @@ if __name__ == "__main__":
         # Yun.get_soil_temperature_and_humidity_data()
         # print("延时3秒钟后，刷新下一帧数据...")
         print()
-        flag = flag -1
+        flag = ~ flag
         # time.sleep(delay_time)
         # print("空气温度数据：")
         # print(air_temperature_buffer)

@@ -1,16 +1,21 @@
+# -*- coding: gbk -*-
 
 # MAIN FILE
 # ///////////////////////////////////////////////////////////////
+import urllib3
+
 from main import *
 from .app_settings import Settings
-from  UserFun.YunControl import  YunControl
+from UserFun.YunControl import YunControl
 
 import datetime
 from time import strftime
 # WITH ACCESS TO MAIN WINDOW WIDGETS
 # ///////////////////////////////////////////////////////////////
-class AppFunctions(MainWindow):
 
+
+class AppFunctions(MainWindow):
+    yun = YunControl()
 
     def setThemeHack(self):
         Settings.BTN_LEFT_BOX_COLOR = "background-color: #495474;"
@@ -37,12 +42,15 @@ class AppFunctions(MainWindow):
         print("Btn_open_web run")
         return
 
-
     def btn_get_data_12hours(self):
+        print("btn_get_data_12hours knob down")
+        # now = datetime.datetime.now().timestamp()
+        consumed_time = datetime.datetime.now().timestamp() - AppFunctions.yun.token_time # consumed time/ second.
+        if AppFunctions.yun.token_expiration_time < (consumed_time - 2):
+            AppFunctions.yun.get_token()
+        AppFunctions.yun.get_cloud_data_12hours()
 
-        pass
-
-
+        self.ui.label_time.setText(u"获取时间：" + str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
         return
 
 

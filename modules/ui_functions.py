@@ -17,16 +17,16 @@
 # MAIN FILE
 # ///////////////////////////////////////////////////////////////
 
-from main import *
+# from main import *
 
 # GLOBALS
 # ///////////////////////////////////////////////////////////////
-from modules import Settings
+
 from widgets import CustomGrip
 from widgets import  *
 GLOBAL_STATE = False
 GLOBAL_TITLE_BAR = True
-# from main import *
+from main import *
 
 
 class UIFunctions(MainWindow):
@@ -120,7 +120,7 @@ class UIFunctions(MainWindow):
                 widthExtended = standard
                 # RESET BTN
                 self.ui.toggleLeftBox.setStyleSheet(style.replace(color, ''))
-                
+
         UIFunctions.start_box_animation(self, width, widthRightBox, "left")
 
     # TOGGLE RIGHT BOX
@@ -154,7 +154,7 @@ class UIFunctions(MainWindow):
 
     def start_box_animation(self, left_box_width, right_box_width, direction):
         right_width = 0
-        left_width = 0 
+        left_width = 0
 
         # Check values
         if left_box_width == 0 and direction == "left":
@@ -165,9 +165,9 @@ class UIFunctions(MainWindow):
         if right_box_width == 0 and direction == "right":
             right_width = 240
         else:
-            right_width = 0       
+            right_width = 0
 
-        # ANIMATION LEFT BOX        
+        # ANIMATION LEFT BOX
         self.left_box = QPropertyAnimation(self.ui.extraLeftBox, b"minimumWidth")
         self.left_box.setDuration(Settings.TIME_ANIMATION)
         self.left_box.setStartValue(left_box_width)

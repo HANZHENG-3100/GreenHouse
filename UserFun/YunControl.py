@@ -277,6 +277,12 @@ class YunControl():
         pass
         return
 
+    def check_token(self):
+        consumed_time = datetime.datetime.now().timestamp() - self.token_time  # consumed time/ second.
+        if self.token_expiration_time < (consumed_time - 2):
+            self.get_token()
+        return
+
     # def refrash_header(self):
     #     headers = {'authorization': "{}".format(Yun.get_token()), }  # 'Content-Type': 'multipart/form-data',
     #     print("已经读取到token数据...")

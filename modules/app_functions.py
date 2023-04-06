@@ -5,17 +5,23 @@
 import urllib3
 
 from main import *
+from main import MainWindow
 from .app_settings import Settings
 from UserFun.YunControl import YunControl
 
 import datetime
+
+from matplotlib.figure import Figure
+import matplotlib.pyplot as plt
+import numpy as np
 from time import strftime
 # WITH ACCESS TO MAIN WINDOW WIDGETS
 # ///////////////////////////////////////////////////////////////
 
 
 class AppFunctions(MainWindow):
-    yun = YunControl()
+    def __init__(self):
+        self.yun = YunControl()
 
     def setThemeHack(self):
         Settings.BTN_LEFT_BOX_COLOR = "background-color: #495474;"
@@ -45,13 +51,21 @@ class AppFunctions(MainWindow):
     def btn_get_data_12hours(self):
         print("btn_get_data_12hours knob down")
         # now = datetime.datetime.now().timestamp()
-        consumed_time = datetime.datetime.now().timestamp() - AppFunctions.yun.token_time # consumed time/ second.
-        if AppFunctions.yun.token_expiration_time < (consumed_time - 2):
-            AppFunctions.yun.get_token()
-        AppFunctions.yun.get_cloud_data_12hours()
-
+        self.yun.check_token()
+        self.yun.get_cloud_data_12hours()
         self.ui.label_time.setText(u"获取时间：" + str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+
+
         return
+
+    def compute_initial_figure(self):
+        t = np.arange(0.0, 3.0, 0.01)
+        s = np.sin(2 * np.pi * t)
+        self.axes.grid('on')
+        self.axes.plot(t, s)
+
+
+
 
 
 

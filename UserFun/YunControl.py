@@ -51,6 +51,7 @@ class YunControl():
     #  使用接口获取历史数据时，每分钟只能执行6次，超出次数会被拒绝。
 
     def get_history_data(self, deviceAddr, startTime, endTime, nodeId=-1,):
+        self.check_token()
         iid = list(self.deviceAddr.values()).index(deviceAddr)
         name = list(self.deviceAddr.keys())[iid]
         url = self.url_yun + "api/data/historyList"
@@ -67,6 +68,7 @@ class YunControl():
                 return
         else:
             print(name+"请求数据失败，请查看网络通信。\n")
+            print(p["message"])
             return
         deviceAddr = str(data[0]['deviceAddr'])  # 取地址
 
@@ -83,7 +85,7 @@ class YunControl():
             tim = data[i]['recordTimeStr']
             f.write(f"{index},{value},{tim}\n")
             if len(data[i]['data']) == 2:
-                ind = "{}-{}".format(data[i]['data'][1]['registerName'],
+                ind = "{0}-{1}".format(data[i]['data'][1]['registerName'],
                                      data[i]['nodeId'])  # 命名规则 甲烷-1-1 ：名称-节点号-因子寄存器0/1
                 value = data[i]['data'][1]['value']
                 tim = data[i]['recordTimeStr']
@@ -279,6 +281,7 @@ class YunControl():
 
     def check_token(self):
         consumed_time = datetime.datetime.now().timestamp() - self.token_time  # consumed time/ second.
+        # self.get_token()
         if self.token_expiration_time < (consumed_time - 2):
             self.get_token()
         return
@@ -288,15 +291,34 @@ class YunControl():
     #     print("已经读取到token数据...")
     #     return
 
+    #  plot the data from "data_dir"  ,data_dir is a str .
+    def plot_data(self,data_dir=""):
+        # % matplotlib inline
+        import matplotlib.pyplot as plt
+        plt.style.use("seaborn-whitegrid")
+        x = [1, 2, 3, 4]
+        y = [1, 4, 9, 16]
+        # fig = plt.figure()
+        plt.plot(x, y)
+        plt.ylabel("squares")
+        base_dir = "../data/image"
+        name = base_dir + "./plot_test"
+        plt.savefig(name)
+        plt.show()
+
+
+
 
 if __name__ == "__main__":
-    # create data buffer, stores the data download from cloud server last time.
+
+    # # create data buffer, stores the data download from cloud server last time.
     Yun = YunControl()
-    # create communication header
-    Yun.get_token()
+    Yun.plot_data()
+    # # create communication header
+    # Yun.get_token()
     # time.sleep(2)
     # 设置继电器状态
-    flag = 1
+    flag = 0
     while flag:
         # 时间格式 YYYY-MM-dd HH:mm:ss
         Yun.get_cloud_data_12hours()

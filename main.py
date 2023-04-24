@@ -14,146 +14,86 @@
 #
 # /////////////////////////////////////////////////////////////// # _*_ coding:TUF-8 _*_
 # -*- coding: gbk -*-
-
 import sys
-# import time
 import PySide6
-# import psutil
 import os
-# 解决no Qt platform plugin could be initialized问题
-dir_name = os.path.dirname(PySide6.__file__)
-plusin_path = os.path.join(dir_name, 'plugins', 'platforms')
-os.environ['QT_QPA_PLATFORM_PLUGIN_PATH'] = plusin_path
-os.environ["QT_FONT_DPI"] = "96"  # FIX Problem for High DPI and Scale above 100%
-# SET AS GLOBAL WIDGETS
-# ///////////////////////////////////////////////////////////////
 # IMPORT / GUI AND MODULES AND WIDGETS
+from UserFun.YunControl import YunControl
 from modules import *
-# from modules.ui_functions import UIFunctions
 from widgets import *
 from PySide6.QtCharts import QChart, QLineSeries, QValueAxis
-
-
+# SET AS GLOBAL WIDGETS
 widgets = None
+yun = None
 
 
-# class NewThread(QThread):
-#     # 自定义信号声明
-#     # 使用自定义信号和UI主线程通讯，参数是发送信号时附带参数的数据类型，可以是str、int、list等
-#     finishSignal = Signal(str)
-#
-#     # 带一个参数t
-#     def __init__(self, parent=None):
-#         super(NewThread, self).__init__(parent)
-#
-#     # run函数是子线程中的操作，线程启动后开始执行
-#     if os.path.exists(f'./computer_info.csv'):
-#         pass
-#     else:
-#         with open(r'./computer_info.csv', 'w') as f:
-#             pass
-#
-#     def run(self):
-#         timer = 0
-#         while True:
-#             timer += 1
-#             cpu_percent = psutil.cpu_percent(interval=1)
-#             cpu_info = cpu_percent
-#             virtual_memory = psutil.virtual_memory()
-#             memory_percent = virtual_memory.percent
-#             with open(r'./computer_info.csv', 'a') as f:
-#                 f.write(f"{timer},{cpu_info},{memory_percent}\n")
-#             time.sleep(2)
-#             # 发射自定义信号
-#             # 通过emit函数将参数i传递给主线程，触发自定义信号
-#             self.finishSignal.emit("1")  # 注意这里与_signal = pyqtSignal(str)中的类型相同
-
-
-class MainWindow(QMainWindow):
+class MyMainWindow(QMainWindow):
     def __init__(self):
         QMainWindow.__init__(self)
-
-        # SET AS GLOBAL WIDGETS
-        # ///////////////////////////////////////////////////////////////
         self.ui = Ui_MainWindow()
+        self.yun = YunControl()
         self.ui.setupUi(self)
-        global widgets
+        global widgets, yun
         widgets = self.ui
+        yun = self.yun
 
         # USE CUSTOM TITLE BAR | USE AS "False" FOR MAC OR LINUX
         # ///////////////////////////////////////////////////////////////
         Settings.ENABLE_CUSTOM_TITLE_BAR = True
-
         # APP NAME
         title = "智能物联网温室环境自动控制系统"
         description = "智能物联网温室环境自动控制系统"
         # APPLY TEXTS
         self.setWindowTitle(title)
         widgets.titleRightInfo.setText(description)
-        UIFunctions.toggleMenu(self, enable=True)
         # TOGGLE MENU
-        # ///////////////////////////////////////////////////////////////
         widgets.toggleButton.clicked.connect(lambda: UIFunctions.toggleMenu(self, True))  # 实现隐藏功能按钮
-
         # SET UI DEFINITIONS
-        # ///////////////////////////////////////////////////////////////
         UIFunctions.uiDefinitions(self)
 
+        # UIFunctions.toggleMenu(self, enable=False)
+        # self.show()
         # QTableWidget PARAMETERS
-        # ///////////////////////////////////////////////////////////////
         # widgets.tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
 
         # BUTTONS CLICK
-        # ///////////////////////////////////////////////////////////////
-
+        '''
         # btn_cloud -> cloud_page；
         # btn_manual_control->manual_control_page
         # btn_auto_control-> auto_control_page；
         # btn_energy-> energy_page；
         # btn_information->information_page；
+        '''
 
         # LEFT MENUS
-        widgets.btn_cloud.clicked.connect(self.buttonClick)
-        widgets.btn_manual_control.clicked.connect(self.buttonClick)
+        widgets.btn_cloud1.clicked.connect(self.buttonClick)
+        widgets.btn_cloud2.clicked.connect(self.buttonClick)
+        widgets.btn_manual_control1.clicked.connect(self.buttonClick)
+        widgets.btn_manual_control2.clicked.connect(self.buttonClick)
         widgets.btn_auto_control.clicked.connect(self.buttonClick)
         widgets.btn_energy.clicked.connect(self.buttonClick)
         widgets.btn_information.clicked.connect(self.buttonClick)
         # widgets.btn_open_web.clicked.connect(self.buttonClick)
-        #  新增切换皮肤功能
+        #  CHANGE THEMES
         widgets.btn_change_topic.clicked.connect(self.buttonClick)
-        # 新增电脑数据分析功能
-
+        # OPEN CLOUD WEB
         widgets.Btn_open_cloud_web.clicked.connect(self.buttonClick)
+        # GET 12HOURS DATA
         widgets.btn_get_data_12hours.clicked.connect(self.buttonClick)
-        # widgets.btn_
-       # widgets.computer_info_start.clicked.connect(self.start_computer_info)
-
-        # widgets.computer_info_start.clicked.connect(get_computer_info)  # 此方法会导致页面卡顿
-        # 清理电脑数据
-        # widgets.computer_info_clear.clicked.connect(self.clear_computer_info)
-
-        # 打开说明书
-        # widgets.pushButton_2.clicked.connect(self.open_guide_book)
-        # 打开网址
-        # widgets.pushButton_3.clicked.connect(self.open_web)
-        # 切换图片
-        # widgets.pushButton_4.clicked.connect(self.change_pic)
+        AppFunctions.display(self)
 
         # EXTRA LEFT BOX
         def openCloseLeftBox():
             UIFunctions.toggleLeftBox(self, True)
-
-        widgets.toggleLeftBox.clicked.connect(openCloseLeftBox)
-        widgets.extraCloseColumnBtn.clicked.connect(openCloseLeftBox)
+        # widgets.toggleLeftBox.clicked.connect(openCloseLeftBox)
+        # widgets.extraCloseColumnBtn.clicked.connect(openCloseLeftBox)
 
         # EXTRA RIGHT BOX
         def openCloseRightBox():
             UIFunctions.toggleRightBox(self, True)
-
         widgets.settingsTopBtn.clicked.connect(openCloseRightBox)
 
         # SHOW APP
-        # ///////////////////////////////////////////////////////////////
         self.show()
 
         # SET CUSTOM THEME
@@ -177,7 +117,7 @@ class MainWindow(QMainWindow):
 
         # SET HOME PAGE AND SELECT MENU
         # ///////////////////////////////////////////////////////////////
-        widgets.stackedWidget.setCurrentWidget(widgets.cloud_page)
+        widgets.stackedWidget.setCurrentWidget(widgets.cloud_page1)  # 设置首页显示
         # widgets.btn_home.setStyleSheet(UIFunctions.selectMenu(widgets.btn_home.styleSheet()))
 
     # BUTTONS CLICK
@@ -187,43 +127,53 @@ class MainWindow(QMainWindow):
         # GET BUTTON CLICKED
         btn = self.sender()  # 获取发送信号的对象
         btnName = btn.objectName()
+        '''
         # btn_auto_control-> auto_control_page；
         # btn_cloud -> cloud_page；
         # btn_energy-> energy_page；
         # btn_information->information_page；
         # btn_manual_control->manual_control_page
-
+        '''
         # SHOW cloud_page
-        if btnName == "btn_cloud":
-            widgets.stackedWidget.setCurrentWidget(widgets.cloud_page) # 堆栈窗口设置为cloud_page窗口
+        if btnName == "btn_cloud1":
+            widgets.stackedWidget.setCurrentWidget(widgets.cloud_page1)  # 堆栈窗口设置为cloud_page窗口
             UIFunctions.resetStyle(self, btnName)
-            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
-
+            btn.setStyleSheet(UIFunctions.selectMenu(self, btn.styleSheet()))
+        if btnName == "btn_cloud2":
+            widgets.stackedWidget.setCurrentWidget(widgets.cloud_page2)  # 堆栈窗口设置为cloud_page窗口
+            UIFunctions.resetStyle(self, btnName)
+            btn.setStyleSheet(UIFunctions.selectMenu(self, btn.styleSheet()))
         # SHOW energy_page
         if btnName == "btn_energy":
             widgets.stackedWidget.setCurrentWidget(widgets.energy_page)
             UIFunctions.resetStyle(self, btnName)
-            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
+            btn.setStyleSheet(UIFunctions.selectMenu(self, btn.styleSheet()))
             QMessageBox.information(self, "Sorry", "该功能还在开发之中", QMessageBox.Yes)
 
         # SHOW auto_control_page
         if btnName == "btn_auto_control":
             widgets.stackedWidget.setCurrentWidget(widgets.auto_control_page)  # SET PAGE
             UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
-            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
+            btn.setStyleSheet(UIFunctions.selectMenu(self, btn.styleSheet()))  # SELECT MENU
 
         # SHOW auto_control_page
-        if btnName == "btn_manual_control":
+        if btnName == "btn_manual_control1":
             # print("Save BTN clicked!")
-            widgets.stackedWidget.setCurrentWidget(widgets.manual_control_page)  # SET PAGE
+            widgets.stackedWidget.setCurrentWidget(widgets.manual_control_page1)  # SET PAGE
             UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
-            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
+            btn.setStyleSheet(UIFunctions.selectMenu(self, btn.styleSheet()))  # SELECT MENU
+            # QMessageBox.information(self, "提示", "该功能暂未实现", QMessageBox.Yes)
+        if btnName == "btn_manual_control2":
+            # print("Save BTN clicked!")
+            widgets.stackedWidget.setCurrentWidget(widgets.manual_control_page2)  # SET PAGE
+            UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
+            btn.setStyleSheet(UIFunctions.selectMenu(self, btn.styleSheet()))  # SELECT MENU
             # QMessageBox.information(self, "提示", "该功能暂未实现", QMessageBox.Yes)
 
         if btnName == "btn_information":
             widgets.stackedWidget.setCurrentWidget(widgets.information_page)  # SET PAGE
             UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
-            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
+            btn.setStyleSheet(UIFunctions.selectMenu(self, btn.styleSheet()))  # SELECT MENU
 
         # change topic button
         if btnName == "btn_change_topic":
@@ -282,5 +232,5 @@ class MainWindow(QMainWindow):
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     app.setWindowIcon(QIcon("bakeup/icon.ico"))
-    window = MainWindow()
+    window = MyMainWindow()
     sys.exit(app.exec())

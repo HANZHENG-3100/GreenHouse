@@ -2,26 +2,21 @@
 
 # MAIN FILE
 # ///////////////////////////////////////////////////////////////
-import urllib3
+import os.path
+
+import numpy as np
 
 from main import *
-from main import MainWindow
 from .app_settings import Settings
-from UserFun.YunControl import YunControl
 
-import datetime
 
-from matplotlib.figure import Figure
-import matplotlib.pyplot as plt
-import numpy as np
-from time import strftime
 # WITH ACCESS TO MAIN WINDOW WIDGETS
 # ///////////////////////////////////////////////////////////////
 
 
-class AppFunctions(MainWindow):
-    def __init__(self):
-        self.yun = YunControl()
+class AppFunctions(MyMainWindow):
+    # def __init__(self):
+
 
     def setThemeHack(self):
         Settings.BTN_LEFT_BOX_COLOR = "background-color: #495474;"
@@ -51,12 +46,24 @@ class AppFunctions(MainWindow):
     def btn_get_data_12hours(self):
         print("btn_get_data_12hours knob down")
         # now = datetime.datetime.now().timestamp()
-        self.yun.check_token()
-        self.yun.get_cloud_data_12hours()
-        self.ui.label_time.setText(u"获取时间：" + str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+        ''' 以下代码下载数据使用'''
+        # self.yun.check_token()
+        # self.yun.get_cloud_data_12hours()
+        # self.ui.label_time.setText(u"获取时间：" + str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+        self.display(self)
 
-
-        return
+    def display(self):
+        image_label_list = [self.ui.image_1, self.ui.image_2, self.ui.image_3,
+                            self.ui.image_4, self.ui.image_5, self.ui.image_6,
+                            self.ui.image_7, self.ui.image_8, self.ui.image_9,
+                            self.ui.image_10]
+        for i in range(1, 11):
+            path = r'D:\greenhouse_control\data\image\image{}.png'.format(i)
+            image = image_label_list[i - 1]
+            pix = QPixmap(path)
+            pix.scaled(image.size(), aspectMode = Qt.KeepAspectRatio)
+            image.setPixmap(pix)
+            image.setScaledContents(True)
 
     def compute_initial_figure(self):
         t = np.arange(0.0, 3.0, 0.01)
@@ -64,7 +71,12 @@ class AppFunctions(MainWindow):
         self.axes.grid('on')
         self.axes.plot(t, s)
 
+if __name__ == "__main__":
+    import os
+    import sys
 
+    print("sys.path[0] = ", sys.path[0])
+    print("sys.argv[0] = ", sys.argv[0])
 
 
 

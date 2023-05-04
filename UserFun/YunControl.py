@@ -214,9 +214,9 @@ class YunControl():
             else:
                 print("操作失败")
 
-    # 开启某个继电器
-    def set_one_relay(self, relay_num):
-        url = self.url_yun + "api/device/setRelay?deviceAddr=" + self.addr_relay + "&relayNo={}".format(
+    # 开启某个继电器  addr_relay:继电器地址    relay_num： 继电器的位 取值范围0-7
+    def set_one_relay(self, addr_relay, relay_num):
+        url = self.url_yun + "api/device/setRelay?deviceAddr=" + addr_relay + "&relayNo={}".format(
             relay_num) + "&opt={}".format(1)
         # http://www.0531yun.com/api/device/setRelay?deviceAddr=40191625&relayNo=5&opt=0
         if relay_num in self.relay_num:
@@ -233,8 +233,8 @@ class YunControl():
         return
 
     # 关闭某个继电器
-    def clear_one_relay(self, relay_num):
-        url = self.url_yun + "api/device/setRelay?deviceAddr=" + self.addr_relay + "&relayNo={}".format(
+    def clear_one_relay(self, addr_relay, relay_num):
+        url = self.url_yun + "api/device/setRelay?deviceAddr=" + addr_relay + "&relayNo={}".format(
             relay_num) + "&opt={}".format(0)
         # http://www.0531yun.com/api/device/setRelay?deviceAddr=40191625&relayNo=5&opt=0
         if relay_num in self.relay_num:
@@ -292,7 +292,7 @@ class YunControl():
     #     return
 
     #  plot the data from "data_dir"  ,data_dir is a str .
-    def plot_data(self,data_dir=""):
+    def plot_data(self, data_dir=""):
         # % matplotlib inline
         import matplotlib.pyplot as plt
         plt.style.use("seaborn-whitegrid")

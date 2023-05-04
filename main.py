@@ -80,7 +80,22 @@ class MyMainWindow(QMainWindow):
         widgets.Btn_open_cloud_web.clicked.connect(self.buttonClick)
         # GET 12HOURS DATA
         widgets.btn_get_data_12hours.clicked.connect(self.buttonClick)
+
+        # manual_control Button
+        self.manual_control_Button_config()  # 配置控制按钮功能
+
+
+
+
+
         AppFunctions.display(self)
+
+
+
+
+
+
+
 
         # EXTRA LEFT BOX
         def openCloseLeftBox():
@@ -199,6 +214,21 @@ class MyMainWindow(QMainWindow):
             print()
     # RESIZE EVENTS
     # ///////////////////////////////////////////////////////////////
+
+    def Ctl_Radio_button_selected(self):
+        # GET BUTTON CLICKED
+        btn = self.sender()  # 获取发送信号的对象
+        btnName = btn.objectName()
+
+        # self.yun.set_one_relay(self.yun.addr_relay, 0)
+        if self.ui.Rbtn1_11_up.isChecked():
+            print(self.ui.Rbtn1_11_up.objectName() + "chosen")
+        if self.ui.Rbtn1_11_stop.isChecked():
+            print(self.ui.Rbtn1_11_stop.objectName() + "chosen")
+        if self.ui.Rbtn1_11_down.isChecked():
+            print(self.ui.Rbtn1_11_down.objectName() + "chosen")
+
+
     def resizeEvent(self, event):
         # Update Size Grips
         UIFunctions.resize_grips(self)
@@ -227,6 +257,83 @@ class MyMainWindow(QMainWindow):
     #     self.thread1.finishSignal.connect(self.data_display)
     #     # 启动线程，执行线程类中run函数
     #     self.thread1.start()
+
+    def manual_control_Button_config(self):
+        # manual_control_page1 按键设置 3行 4列
+        self.ui.Rbtn1_11_up.clicked.connect(self.Ctl_Radio_button_selected)  # 卷帘机
+        self.ui.Rbtn1_11_stop.clicked.connect(self.Ctl_Radio_button_selected)
+        self.ui.Rbtn1_11_down.clicked.connect(self.Ctl_Radio_button_selected)
+
+        self.ui.Rbtn1_12_up.clicked.connect(self.Ctl_Radio_button_selected)   # 卷膜机
+        self.ui.Rbtn1_12_stop.clicked.connect(self.Ctl_Radio_button_selected)
+        self.ui.Rbtn1_12_down.clicked.connect(self.Ctl_Radio_button_selected)
+
+        self.ui.Rbtn1_13_open.toggled.connect(self.Ctl_Radio_button_selected)  # 补光灯1
+        self.ui.Rbtn1_13_close.toggled.connect(self.Ctl_Radio_button_selected)
+
+        self.ui.Rbtn1_14_open.toggled.connect(self.Ctl_Radio_button_selected)  # 补光灯2
+        self.ui.Rbtn1_14_close.toggled.connect(self.Ctl_Radio_button_selected)
+
+        self.ui.Rbtn1_21_open.toggled.connect(self.Ctl_Radio_button_selected)  # 照明灯
+        self.ui.Rbtn1_21_close.toggled.connect(self.Ctl_Radio_button_selected)
+
+        self.ui.Rbtn1_22_open.toggled.connect(self.Ctl_Radio_button_selected)  # 门厅灯
+        self.ui.Rbtn1_22_close.toggled.connect(self.Ctl_Radio_button_selected)
+
+        self.ui.Rbtn1_23_open.toggled.connect(self.Ctl_Radio_button_selected)  # 循环乙二醇泵
+        self.ui.Rbtn1_23_close.toggled.connect(self.Ctl_Radio_button_selected)
+
+        self.ui.Rbtn1_24_open.toggled.connect(self.Ctl_Radio_button_selected)   # 循环乙二醇泵（备用）
+        self.ui.Rbtn1_24_close.toggled.connect(self.Ctl_Radio_button_selected)
+
+        self.ui.Rbtn1_31_open.toggled.connect(self.Ctl_Radio_button_selected)  # 循环水与乙二醇换热泵
+        self.ui.Rbtn1_31_close.toggled.connect(self.Ctl_Radio_button_selected)
+
+        self.ui.Rbtn1_32_open.toggled.connect(self.Ctl_Radio_button_selected)  # 循环水与乙二醇换热泵（备用）
+        self.ui.Rbtn1_32_close.toggled.connect(self.Ctl_Radio_button_selected)
+
+        self.ui.Rbtn1_33_open.toggled.connect(self.Ctl_Radio_button_selected)  # 循环水与空气换热泵
+        self.ui.Rbtn1_33_close.toggled.connect(self.Ctl_Radio_button_selected)
+
+        self.ui.Rbtn1_34_open.toggled.connect(self.Ctl_Radio_button_selected)
+        self.ui.Rbtn1_34_close.toggled.connect(self.Ctl_Radio_button_selected)  # 循环水与空气换热泵（备用）
+
+        # manual_control_page2   按键设置 3行 4列
+        self.ui.Rbtn2_11_open.toggled.connect(self.Ctl_Radio_button_selected)  # 加热棒1
+        self.ui.Rbtn2_11_close.toggled.connect(self.Ctl_Radio_button_selected)
+
+        self.ui.Rbtn2_12_open.toggled.connect(self.Ctl_Radio_button_selected)  # 加热棒2
+        self.ui.Rbtn2_12_close.toggled.connect(self.Ctl_Radio_button_selected)
+
+        self.ui.Rbtn2_13_open.toggled.connect(self.Ctl_Radio_button_selected)  # 加热棒3
+        self.ui.Rbtn2_13_close.toggled.connect(self.Ctl_Radio_button_selected)
+
+        self.ui.Rbtn2_14_open.toggled.connect(self.Ctl_Radio_button_selected)  # 控制回路电源
+        self.ui.Rbtn2_14_close.toggled.connect(self.Ctl_Radio_button_selected)
+
+        self.ui.Rbtn2_21_open.toggled.connect(self.Ctl_Radio_button_selected)  # 排风机1
+        self.ui.Rbtn2_21_close.toggled.connect(self.Ctl_Radio_button_selected)
+
+        self.ui.Rbtn2_22_open.toggled.connect(self.Ctl_Radio_button_selected)  # 排风机2
+        self.ui.Rbtn2_22_close.toggled.connect(self.Ctl_Radio_button_selected)
+
+        self.ui.Rbtn2_23_open.toggled.connect(self.Ctl_Radio_button_selected)  # 排风机3
+        self.ui.Rbtn2_23_close.toggled.connect(self.Ctl_Radio_button_selected)
+
+        self.ui.Rbtn2_24_open.toggled.connect(self.Ctl_Radio_button_selected)  # 排风机4
+        self.ui.Rbtn2_24_close.toggled.connect(self.Ctl_Radio_button_selected)
+
+        self.ui.Rbtn2_31_open.toggled.connect(self.Ctl_Radio_button_selected)  # 水肥一体机泵
+        self.ui.Rbtn2_31_close.toggled.connect(self.Ctl_Radio_button_selected)
+
+        self.ui.Rbtn2_32_open.toggled.connect(self.Ctl_Radio_button_selected)   # 水肥一体机电磁阀门
+        self.ui.Rbtn2_32_close.toggled.connect(self.Ctl_Radio_button_selected)
+
+        self.ui.Rbtn2_33_open.toggled.connect(self.Ctl_Radio_button_selected)   # 室内监测电源
+        self.ui.Rbtn2_33_close.toggled.connect(self.Ctl_Radio_button_selected)
+
+        self.ui.Rbtn2_34_open.toggled.connect(self.Ctl_Radio_button_selected)  # 气象站电源
+        self.ui.Rbtn2_34_close.toggled.connect(self.Ctl_Radio_button_selected)
 
 
 if __name__ == "__main__":

@@ -1353,27 +1353,27 @@ class Ui_MainWindow(object):
         self.verticalLayout_17.setSpacing(0)
         self.verticalLayout_17.setObjectName(u"verticalLayout_17")
         self.verticalLayout_17.setContentsMargins(0, 0, 0, 0)
-        self.frame_k = QFrame(self.manual_control_page1)
-        self.frame_k.setObjectName(u"frame_k")
-        sizePolicy4.setHeightForWidth(self.frame_k.sizePolicy().hasHeightForWidth())
-        self.frame_k.setSizePolicy(sizePolicy4)
-        self.frame_k.setMinimumSize(QSize(600, 400))
-        self.frame_k.setMaximumSize(QSize(16777215, 16777215))
-        self.frame_k.setFrameShape(QFrame.StyledPanel)
-        self.frame_k.setFrameShadow(QFrame.Raised)
-        self.gridLayout_4 = QGridLayout(self.frame_k)
+        self.frame_0 = QFrame(self.manual_control_page1)
+        self.frame_0.setObjectName(u"frame_0")
+        sizePolicy4.setHeightForWidth(self.frame_0.sizePolicy().hasHeightForWidth())
+        self.frame_0.setSizePolicy(sizePolicy4)
+        self.frame_0.setMinimumSize(QSize(600, 400))
+        self.frame_0.setMaximumSize(QSize(16777215, 16777215))
+        self.frame_0.setFrameShape(QFrame.StyledPanel)
+        self.frame_0.setFrameShadow(QFrame.Raised)
+        self.gridLayout_4 = QGridLayout(self.frame_0)
         self.gridLayout_4.setSpacing(0)
         self.gridLayout_4.setObjectName(u"gridLayout_4")
         self.gridLayout_4.setContentsMargins(0, 0, 10, 0)
-        self.frame_5 = QFrame(self.frame_k)
-        self.frame_5.setObjectName(u"frame_5")
-        self.frame_5.setFrameShape(QFrame.Box)
-        self.frame_5.setFrameShadow(QFrame.Raised)
-        self.frame_5.setLineWidth(0)
-        self.frame_5.setMidLineWidth(2)
-        self.horizontalLayout_21 = QHBoxLayout(self.frame_5)
+        self.control_page1_12 = QFrame(self.frame_0)
+        self.control_page1_12.setObjectName(u"control_page1_12")
+        self.control_page1_12.setFrameShape(QFrame.Box)
+        self.control_page1_12.setFrameShadow(QFrame.Raised)
+        self.control_page1_12.setLineWidth(0)
+        self.control_page1_12.setMidLineWidth(2)
+        self.horizontalLayout_21 = QHBoxLayout(self.control_page1_12)
         self.horizontalLayout_21.setObjectName(u"horizontalLayout_21")
-        self.label_8 = QLabel(self.frame_5)
+        self.label_8 = QLabel(self.control_page1_12)
         self.label_8.setObjectName(u"label_8")
         self.label_8.setAlignment(Qt.AlignCenter)
 
@@ -1381,39 +1381,39 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_31 = QVBoxLayout()
         self.verticalLayout_31.setObjectName(u"verticalLayout_31")
-        self.Rbtn_mc2_up = QRadioButton(self.frame_5)
-        self.Rbtn_mc2_up.setObjectName(u"Rbtn_mc2_up")
-        self.Rbtn_mc2_up.setStyleSheet(u"")
+        self.Rbtn1_12_up = QRadioButton(self.control_page1_12)
+        self.Rbtn1_12_up.setObjectName(u"Rbtn1_12_up")
+        self.Rbtn1_12_up.setStyleSheet(u"")
 
-        self.verticalLayout_31.addWidget(self.Rbtn_mc2_up)
+        self.verticalLayout_31.addWidget(self.Rbtn1_12_up)
 
-        self.Rbtn_mc2_stop = QRadioButton(self.frame_5)
-        self.Rbtn_mc2_stop.setObjectName(u"Rbtn_mc2_stop")
-        self.Rbtn_mc2_stop.setStyleSheet(u"")
+        self.Rbtn1_12_stop = QRadioButton(self.control_page1_12)
+        self.Rbtn1_12_stop.setObjectName(u"Rbtn1_12_stop")
+        self.Rbtn1_12_stop.setStyleSheet(u"")
 
-        self.verticalLayout_31.addWidget(self.Rbtn_mc2_stop)
+        self.verticalLayout_31.addWidget(self.Rbtn1_12_stop)
 
-        self.Rbtn_mc2_down = QRadioButton(self.frame_5)
-        self.Rbtn_mc2_down.setObjectName(u"Rbtn_mc2_down")
-        self.Rbtn_mc2_down.setStyleSheet(u"")
+        self.Rbtn1_12_down = QRadioButton(self.control_page1_12)
+        self.Rbtn1_12_down.setObjectName(u"Rbtn1_12_down")
+        self.Rbtn1_12_down.setStyleSheet(u"")
 
-        self.verticalLayout_31.addWidget(self.Rbtn_mc2_down)
+        self.verticalLayout_31.addWidget(self.Rbtn1_12_down)
 
 
         self.horizontalLayout_21.addLayout(self.verticalLayout_31)
 
 
-        self.gridLayout_4.addWidget(self.frame_5, 0, 2, 1, 1)
+        self.gridLayout_4.addWidget(self.control_page1_12, 0, 2, 1, 1)
 
-        self.frame_28 = QFrame(self.frame_k)
-        self.frame_28.setObjectName(u"frame_28")
-        self.frame_28.setFrameShape(QFrame.Box)
-        self.frame_28.setFrameShadow(QFrame.Raised)
-        self.frame_28.setLineWidth(0)
-        self.frame_28.setMidLineWidth(2)
-        self.horizontalLayout_24 = QHBoxLayout(self.frame_28)
+        self.control_page1_33 = QFrame(self.frame_0)
+        self.control_page1_33.setObjectName(u"control_page1_33")
+        self.control_page1_33.setFrameShape(QFrame.Box)
+        self.control_page1_33.setFrameShadow(QFrame.Raised)
+        self.control_page1_33.setLineWidth(0)
+        self.control_page1_33.setMidLineWidth(2)
+        self.horizontalLayout_24 = QHBoxLayout(self.control_page1_33)
         self.horizontalLayout_24.setObjectName(u"horizontalLayout_24")
-        self.label_11 = QLabel(self.frame_28)
+        self.label_11 = QLabel(self.control_page1_33)
         self.label_11.setObjectName(u"label_11")
         self.label_11.setAlignment(Qt.AlignCenter)
 
@@ -1421,33 +1421,33 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_34 = QVBoxLayout()
         self.verticalLayout_34.setObjectName(u"verticalLayout_34")
-        self.Rbtn_mc11_open = QRadioButton(self.frame_28)
-        self.Rbtn_mc11_open.setObjectName(u"Rbtn_mc11_open")
-        self.Rbtn_mc11_open.setStyleSheet(u"")
+        self.Rbtn1_33_open = QRadioButton(self.control_page1_33)
+        self.Rbtn1_33_open.setObjectName(u"Rbtn1_33_open")
+        self.Rbtn1_33_open.setStyleSheet(u"")
 
-        self.verticalLayout_34.addWidget(self.Rbtn_mc11_open)
+        self.verticalLayout_34.addWidget(self.Rbtn1_33_open)
 
-        self.RB_close_shuibeng = QRadioButton(self.frame_28)
-        self.RB_close_shuibeng.setObjectName(u"RB_close_shuibeng")
-        self.RB_close_shuibeng.setStyleSheet(u"")
+        self.Rbtn1_33_close = QRadioButton(self.control_page1_33)
+        self.Rbtn1_33_close.setObjectName(u"Rbtn1_33_close")
+        self.Rbtn1_33_close.setStyleSheet(u"")
 
-        self.verticalLayout_34.addWidget(self.RB_close_shuibeng)
+        self.verticalLayout_34.addWidget(self.Rbtn1_33_close)
 
 
         self.horizontalLayout_24.addLayout(self.verticalLayout_34)
 
 
-        self.gridLayout_4.addWidget(self.frame_28, 3, 3, 1, 1)
+        self.gridLayout_4.addWidget(self.control_page1_33, 3, 3, 1, 1)
 
-        self.frame_25 = QFrame(self.frame_k)
-        self.frame_25.setObjectName(u"frame_25")
-        self.frame_25.setFrameShape(QFrame.Box)
-        self.frame_25.setFrameShadow(QFrame.Raised)
-        self.frame_25.setLineWidth(0)
-        self.frame_25.setMidLineWidth(2)
-        self.horizontalLayout_19 = QHBoxLayout(self.frame_25)
+        self.control_page1_13 = QFrame(self.frame_0)
+        self.control_page1_13.setObjectName(u"control_page1_13")
+        self.control_page1_13.setFrameShape(QFrame.Box)
+        self.control_page1_13.setFrameShadow(QFrame.Raised)
+        self.control_page1_13.setLineWidth(0)
+        self.control_page1_13.setMidLineWidth(2)
+        self.horizontalLayout_19 = QHBoxLayout(self.control_page1_13)
         self.horizontalLayout_19.setObjectName(u"horizontalLayout_19")
-        self.label_6 = QLabel(self.frame_25)
+        self.label_6 = QLabel(self.control_page1_13)
         self.label_6.setObjectName(u"label_6")
         self.label_6.setAlignment(Qt.AlignCenter)
 
@@ -1455,33 +1455,33 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_29 = QVBoxLayout()
         self.verticalLayout_29.setObjectName(u"verticalLayout_29")
-        self.Rbtn_mc3_open = QRadioButton(self.frame_25)
-        self.Rbtn_mc3_open.setObjectName(u"Rbtn_mc3_open")
-        self.Rbtn_mc3_open.setStyleSheet(u"")
+        self.Rbtn1_13_open = QRadioButton(self.control_page1_13)
+        self.Rbtn1_13_open.setObjectName(u"Rbtn1_13_open")
+        self.Rbtn1_13_open.setStyleSheet(u"")
 
-        self.verticalLayout_29.addWidget(self.Rbtn_mc3_open)
+        self.verticalLayout_29.addWidget(self.Rbtn1_13_open)
 
-        self.RB_close_buguang = QRadioButton(self.frame_25)
-        self.RB_close_buguang.setObjectName(u"RB_close_buguang")
-        self.RB_close_buguang.setStyleSheet(u"")
+        self.Rbtn1_13_close = QRadioButton(self.control_page1_13)
+        self.Rbtn1_13_close.setObjectName(u"Rbtn1_13_close")
+        self.Rbtn1_13_close.setStyleSheet(u"")
 
-        self.verticalLayout_29.addWidget(self.RB_close_buguang)
+        self.verticalLayout_29.addWidget(self.Rbtn1_13_close)
 
 
         self.horizontalLayout_19.addLayout(self.verticalLayout_29)
 
 
-        self.gridLayout_4.addWidget(self.frame_25, 0, 3, 1, 1)
+        self.gridLayout_4.addWidget(self.control_page1_13, 0, 3, 1, 1)
 
-        self.frame_13 = QFrame(self.frame_k)
-        self.frame_13.setObjectName(u"frame_13")
-        self.frame_13.setFrameShape(QFrame.Box)
-        self.frame_13.setFrameShadow(QFrame.Raised)
-        self.frame_13.setLineWidth(0)
-        self.frame_13.setMidLineWidth(2)
-        self.horizontalLayout_29 = QHBoxLayout(self.frame_13)
+        self.control_page1_32 = QFrame(self.frame_0)
+        self.control_page1_32.setObjectName(u"control_page1_32")
+        self.control_page1_32.setFrameShape(QFrame.Box)
+        self.control_page1_32.setFrameShadow(QFrame.Raised)
+        self.control_page1_32.setLineWidth(0)
+        self.control_page1_32.setMidLineWidth(2)
+        self.horizontalLayout_29 = QHBoxLayout(self.control_page1_32)
         self.horizontalLayout_29.setObjectName(u"horizontalLayout_29")
-        self.label_17 = QLabel(self.frame_13)
+        self.label_17 = QLabel(self.control_page1_32)
         self.label_17.setObjectName(u"label_17")
         self.label_17.setAlignment(Qt.AlignCenter)
 
@@ -1489,33 +1489,33 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_39 = QVBoxLayout()
         self.verticalLayout_39.setObjectName(u"verticalLayout_39")
-        self.Rbtn_mc10_open = QRadioButton(self.frame_13)
-        self.Rbtn_mc10_open.setObjectName(u"Rbtn_mc10_open")
-        self.Rbtn_mc10_open.setStyleSheet(u"")
+        self.Rbtn1_32_open = QRadioButton(self.control_page1_32)
+        self.Rbtn1_32_open.setObjectName(u"Rbtn1_32_open")
+        self.Rbtn1_32_open.setStyleSheet(u"")
 
-        self.verticalLayout_39.addWidget(self.Rbtn_mc10_open)
+        self.verticalLayout_39.addWidget(self.Rbtn1_32_open)
 
-        self.RB_close_jire_4 = QRadioButton(self.frame_13)
-        self.RB_close_jire_4.setObjectName(u"RB_close_jire_4")
-        self.RB_close_jire_4.setStyleSheet(u"")
+        self.Rbtn1_32_close = QRadioButton(self.control_page1_32)
+        self.Rbtn1_32_close.setObjectName(u"Rbtn1_32_close")
+        self.Rbtn1_32_close.setStyleSheet(u"")
 
-        self.verticalLayout_39.addWidget(self.RB_close_jire_4)
+        self.verticalLayout_39.addWidget(self.Rbtn1_32_close)
 
 
         self.horizontalLayout_29.addLayout(self.verticalLayout_39)
 
 
-        self.gridLayout_4.addWidget(self.frame_13, 3, 2, 1, 1)
+        self.gridLayout_4.addWidget(self.control_page1_32, 3, 2, 1, 1)
 
-        self.frame_29 = QFrame(self.frame_k)
-        self.frame_29.setObjectName(u"frame_29")
-        self.frame_29.setFrameShape(QFrame.Box)
-        self.frame_29.setFrameShadow(QFrame.Raised)
-        self.frame_29.setLineWidth(0)
-        self.frame_29.setMidLineWidth(2)
-        self.horizontalLayout_25 = QHBoxLayout(self.frame_29)
+        self.control_page1_34 = QFrame(self.frame_0)
+        self.control_page1_34.setObjectName(u"control_page1_34")
+        self.control_page1_34.setFrameShape(QFrame.Box)
+        self.control_page1_34.setFrameShadow(QFrame.Raised)
+        self.control_page1_34.setLineWidth(0)
+        self.control_page1_34.setMidLineWidth(2)
+        self.horizontalLayout_25 = QHBoxLayout(self.control_page1_34)
         self.horizontalLayout_25.setObjectName(u"horizontalLayout_25")
-        self.label_12 = QLabel(self.frame_29)
+        self.label_12 = QLabel(self.control_page1_34)
         self.label_12.setObjectName(u"label_12")
         self.label_12.setAlignment(Qt.AlignCenter)
 
@@ -1523,33 +1523,33 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_35 = QVBoxLayout()
         self.verticalLayout_35.setObjectName(u"verticalLayout_35")
-        self.Rbtn_mc12_open = QRadioButton(self.frame_29)
-        self.Rbtn_mc12_open.setObjectName(u"Rbtn_mc12_open")
-        self.Rbtn_mc12_open.setStyleSheet(u"")
+        self.Rbtn1_34_open = QRadioButton(self.control_page1_34)
+        self.Rbtn1_34_open.setObjectName(u"Rbtn1_34_open")
+        self.Rbtn1_34_open.setStyleSheet(u"")
 
-        self.verticalLayout_35.addWidget(self.Rbtn_mc12_open)
+        self.verticalLayout_35.addWidget(self.Rbtn1_34_open)
 
-        self.RB_close_shuibeng_2 = QRadioButton(self.frame_29)
-        self.RB_close_shuibeng_2.setObjectName(u"RB_close_shuibeng_2")
-        self.RB_close_shuibeng_2.setStyleSheet(u"")
+        self.Rbtn1_34_close = QRadioButton(self.control_page1_34)
+        self.Rbtn1_34_close.setObjectName(u"Rbtn1_34_close")
+        self.Rbtn1_34_close.setStyleSheet(u"")
 
-        self.verticalLayout_35.addWidget(self.RB_close_shuibeng_2)
+        self.verticalLayout_35.addWidget(self.Rbtn1_34_close)
 
 
         self.horizontalLayout_25.addLayout(self.verticalLayout_35)
 
 
-        self.gridLayout_4.addWidget(self.frame_29, 3, 5, 1, 1)
+        self.gridLayout_4.addWidget(self.control_page1_34, 3, 5, 1, 1)
 
-        self.frame_27 = QFrame(self.frame_k)
-        self.frame_27.setObjectName(u"frame_27")
-        self.frame_27.setFrameShape(QFrame.Box)
-        self.frame_27.setFrameShadow(QFrame.Raised)
-        self.frame_27.setLineWidth(0)
-        self.frame_27.setMidLineWidth(2)
-        self.horizontalLayout_20 = QHBoxLayout(self.frame_27)
+        self.control_page1_22 = QFrame(self.frame_0)
+        self.control_page1_22.setObjectName(u"control_page1_22")
+        self.control_page1_22.setFrameShape(QFrame.Box)
+        self.control_page1_22.setFrameShadow(QFrame.Raised)
+        self.control_page1_22.setLineWidth(0)
+        self.control_page1_22.setMidLineWidth(2)
+        self.horizontalLayout_20 = QHBoxLayout(self.control_page1_22)
         self.horizontalLayout_20.setObjectName(u"horizontalLayout_20")
-        self.label_7 = QLabel(self.frame_27)
+        self.label_7 = QLabel(self.control_page1_22)
         self.label_7.setObjectName(u"label_7")
         self.label_7.setAlignment(Qt.AlignCenter)
 
@@ -1557,33 +1557,33 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_30 = QVBoxLayout()
         self.verticalLayout_30.setObjectName(u"verticalLayout_30")
-        self.Rbtn_mc6_open = QRadioButton(self.frame_27)
-        self.Rbtn_mc6_open.setObjectName(u"Rbtn_mc6_open")
-        self.Rbtn_mc6_open.setStyleSheet(u"")
+        self.Rbtn1_22_open = QRadioButton(self.control_page1_22)
+        self.Rbtn1_22_open.setObjectName(u"Rbtn1_22_open")
+        self.Rbtn1_22_open.setStyleSheet(u"")
 
-        self.verticalLayout_30.addWidget(self.Rbtn_mc6_open)
+        self.verticalLayout_30.addWidget(self.Rbtn1_22_open)
 
-        self.RB_close_jiare = QRadioButton(self.frame_27)
-        self.RB_close_jiare.setObjectName(u"RB_close_jiare")
-        self.RB_close_jiare.setStyleSheet(u"")
+        self.Rbtn1_22_close = QRadioButton(self.control_page1_22)
+        self.Rbtn1_22_close.setObjectName(u"Rbtn1_22_close")
+        self.Rbtn1_22_close.setStyleSheet(u"")
 
-        self.verticalLayout_30.addWidget(self.RB_close_jiare)
+        self.verticalLayout_30.addWidget(self.Rbtn1_22_close)
 
 
         self.horizontalLayout_20.addLayout(self.verticalLayout_30)
 
 
-        self.gridLayout_4.addWidget(self.frame_27, 1, 2, 1, 1)
+        self.gridLayout_4.addWidget(self.control_page1_22, 1, 2, 1, 1)
 
-        self.frame_12 = QFrame(self.frame_k)
-        self.frame_12.setObjectName(u"frame_12")
-        self.frame_12.setFrameShape(QFrame.Box)
-        self.frame_12.setFrameShadow(QFrame.Raised)
-        self.frame_12.setLineWidth(0)
-        self.frame_12.setMidLineWidth(2)
-        self.horizontalLayout_28 = QHBoxLayout(self.frame_12)
+        self.control_page1_31 = QFrame(self.frame_0)
+        self.control_page1_31.setObjectName(u"control_page1_31")
+        self.control_page1_31.setFrameShape(QFrame.Box)
+        self.control_page1_31.setFrameShadow(QFrame.Raised)
+        self.control_page1_31.setLineWidth(0)
+        self.control_page1_31.setMidLineWidth(2)
+        self.horizontalLayout_28 = QHBoxLayout(self.control_page1_31)
         self.horizontalLayout_28.setObjectName(u"horizontalLayout_28")
-        self.label_16 = QLabel(self.frame_12)
+        self.label_16 = QLabel(self.control_page1_31)
         self.label_16.setObjectName(u"label_16")
         self.label_16.setAlignment(Qt.AlignCenter)
 
@@ -1591,33 +1591,33 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_38 = QVBoxLayout()
         self.verticalLayout_38.setObjectName(u"verticalLayout_38")
-        self.Rbtn_mc9_open = QRadioButton(self.frame_12)
-        self.Rbtn_mc9_open.setObjectName(u"Rbtn_mc9_open")
-        self.Rbtn_mc9_open.setStyleSheet(u"")
+        self.Rbtn1_31_open = QRadioButton(self.control_page1_31)
+        self.Rbtn1_31_open.setObjectName(u"Rbtn1_31_open")
+        self.Rbtn1_31_open.setStyleSheet(u"")
 
-        self.verticalLayout_38.addWidget(self.Rbtn_mc9_open)
+        self.verticalLayout_38.addWidget(self.Rbtn1_31_open)
 
-        self.RB_close_jire_3 = QRadioButton(self.frame_12)
-        self.RB_close_jire_3.setObjectName(u"RB_close_jire_3")
-        self.RB_close_jire_3.setStyleSheet(u"")
+        self.Rbtn1_31_close = QRadioButton(self.control_page1_31)
+        self.Rbtn1_31_close.setObjectName(u"Rbtn1_31_close")
+        self.Rbtn1_31_close.setStyleSheet(u"")
 
-        self.verticalLayout_38.addWidget(self.RB_close_jire_3)
+        self.verticalLayout_38.addWidget(self.Rbtn1_31_close)
 
 
         self.horizontalLayout_28.addLayout(self.verticalLayout_38)
 
 
-        self.gridLayout_4.addWidget(self.frame_12, 3, 0, 1, 1)
+        self.gridLayout_4.addWidget(self.control_page1_31, 3, 0, 1, 1)
 
-        self.frame_11 = QFrame(self.frame_k)
-        self.frame_11.setObjectName(u"frame_11")
-        self.frame_11.setFrameShape(QFrame.Box)
-        self.frame_11.setFrameShadow(QFrame.Raised)
-        self.frame_11.setLineWidth(0)
-        self.frame_11.setMidLineWidth(2)
-        self.horizontalLayout_27 = QHBoxLayout(self.frame_11)
+        self.control_page1_24 = QFrame(self.frame_0)
+        self.control_page1_24.setObjectName(u"control_page1_24")
+        self.control_page1_24.setFrameShape(QFrame.Box)
+        self.control_page1_24.setFrameShadow(QFrame.Raised)
+        self.control_page1_24.setLineWidth(0)
+        self.control_page1_24.setMidLineWidth(2)
+        self.horizontalLayout_27 = QHBoxLayout(self.control_page1_24)
         self.horizontalLayout_27.setObjectName(u"horizontalLayout_27")
-        self.label_15 = QLabel(self.frame_11)
+        self.label_15 = QLabel(self.control_page1_24)
         self.label_15.setObjectName(u"label_15")
         self.label_15.setAlignment(Qt.AlignCenter)
 
@@ -1625,33 +1625,33 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_37 = QVBoxLayout()
         self.verticalLayout_37.setObjectName(u"verticalLayout_37")
-        self.Rbtn_mc8_open = QRadioButton(self.frame_11)
-        self.Rbtn_mc8_open.setObjectName(u"Rbtn_mc8_open")
-        self.Rbtn_mc8_open.setStyleSheet(u"")
+        self.Rbtn1_24_open = QRadioButton(self.control_page1_24)
+        self.Rbtn1_24_open.setObjectName(u"Rbtn1_24_open")
+        self.Rbtn1_24_open.setStyleSheet(u"")
 
-        self.verticalLayout_37.addWidget(self.Rbtn_mc8_open)
+        self.verticalLayout_37.addWidget(self.Rbtn1_24_open)
 
-        self.RB_close_jire_2 = QRadioButton(self.frame_11)
-        self.RB_close_jire_2.setObjectName(u"RB_close_jire_2")
-        self.RB_close_jire_2.setStyleSheet(u"")
+        self.Rbtn1_24_close = QRadioButton(self.control_page1_24)
+        self.Rbtn1_24_close.setObjectName(u"Rbtn1_24_close")
+        self.Rbtn1_24_close.setStyleSheet(u"")
 
-        self.verticalLayout_37.addWidget(self.RB_close_jire_2)
+        self.verticalLayout_37.addWidget(self.Rbtn1_24_close)
 
 
         self.horizontalLayout_27.addLayout(self.verticalLayout_37)
 
 
-        self.gridLayout_4.addWidget(self.frame_11, 1, 5, 1, 1)
+        self.gridLayout_4.addWidget(self.control_page1_24, 1, 5, 1, 1)
 
-        self.frame_26 = QFrame(self.frame_k)
-        self.frame_26.setObjectName(u"frame_26")
-        self.frame_26.setFrameShape(QFrame.Box)
-        self.frame_26.setFrameShadow(QFrame.Raised)
-        self.frame_26.setLineWidth(0)
-        self.frame_26.setMidLineWidth(2)
-        self.horizontalLayout_17 = QHBoxLayout(self.frame_26)
+        self.control_page1_21 = QFrame(self.frame_0)
+        self.control_page1_21.setObjectName(u"control_page1_21")
+        self.control_page1_21.setFrameShape(QFrame.Box)
+        self.control_page1_21.setFrameShadow(QFrame.Raised)
+        self.control_page1_21.setLineWidth(0)
+        self.control_page1_21.setMidLineWidth(2)
+        self.horizontalLayout_17 = QHBoxLayout(self.control_page1_21)
         self.horizontalLayout_17.setObjectName(u"horizontalLayout_17")
-        self.label_4 = QLabel(self.frame_26)
+        self.label_4 = QLabel(self.control_page1_21)
         self.label_4.setObjectName(u"label_4")
         self.label_4.setAlignment(Qt.AlignCenter)
 
@@ -1659,33 +1659,33 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_27 = QVBoxLayout()
         self.verticalLayout_27.setObjectName(u"verticalLayout_27")
-        self.Rbtn_mc5_open = QRadioButton(self.frame_26)
-        self.Rbtn_mc5_open.setObjectName(u"Rbtn_mc5_open")
-        self.Rbtn_mc5_open.setStyleSheet(u"")
+        self.Rbtn1_21_open = QRadioButton(self.control_page1_21)
+        self.Rbtn1_21_open.setObjectName(u"Rbtn1_21_open")
+        self.Rbtn1_21_open.setStyleSheet(u"")
 
-        self.verticalLayout_27.addWidget(self.Rbtn_mc5_open)
+        self.verticalLayout_27.addWidget(self.Rbtn1_21_open)
 
-        self.RB_close_zhaoming = QRadioButton(self.frame_26)
-        self.RB_close_zhaoming.setObjectName(u"RB_close_zhaoming")
-        self.RB_close_zhaoming.setStyleSheet(u"")
+        self.Rbtn1_21_close = QRadioButton(self.control_page1_21)
+        self.Rbtn1_21_close.setObjectName(u"Rbtn1_21_close")
+        self.Rbtn1_21_close.setStyleSheet(u"")
 
-        self.verticalLayout_27.addWidget(self.RB_close_zhaoming)
+        self.verticalLayout_27.addWidget(self.Rbtn1_21_close)
 
 
         self.horizontalLayout_17.addLayout(self.verticalLayout_27)
 
 
-        self.gridLayout_4.addWidget(self.frame_26, 1, 0, 1, 1)
+        self.gridLayout_4.addWidget(self.control_page1_21, 1, 0, 1, 1)
 
-        self.frame_10 = QFrame(self.frame_k)
-        self.frame_10.setObjectName(u"frame_10")
-        self.frame_10.setFrameShape(QFrame.Box)
-        self.frame_10.setFrameShadow(QFrame.Raised)
-        self.frame_10.setLineWidth(0)
-        self.frame_10.setMidLineWidth(2)
-        self.horizontalLayout_26 = QHBoxLayout(self.frame_10)
+        self.control_page1_14 = QFrame(self.frame_0)
+        self.control_page1_14.setObjectName(u"control_page1_14")
+        self.control_page1_14.setFrameShape(QFrame.Box)
+        self.control_page1_14.setFrameShadow(QFrame.Raised)
+        self.control_page1_14.setLineWidth(0)
+        self.control_page1_14.setMidLineWidth(2)
+        self.horizontalLayout_26 = QHBoxLayout(self.control_page1_14)
         self.horizontalLayout_26.setObjectName(u"horizontalLayout_26")
-        self.label_13 = QLabel(self.frame_10)
+        self.label_13 = QLabel(self.control_page1_14)
         self.label_13.setObjectName(u"label_13")
         self.label_13.setAlignment(Qt.AlignCenter)
 
@@ -1693,33 +1693,33 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_36 = QVBoxLayout()
         self.verticalLayout_36.setObjectName(u"verticalLayout_36")
-        self.Rbtn_mc4_open = QRadioButton(self.frame_10)
-        self.Rbtn_mc4_open.setObjectName(u"Rbtn_mc4_open")
-        self.Rbtn_mc4_open.setStyleSheet(u"")
+        self.Rbtn1_14_open = QRadioButton(self.control_page1_14)
+        self.Rbtn1_14_open.setObjectName(u"Rbtn1_14_open")
+        self.Rbtn1_14_open.setStyleSheet(u"")
 
-        self.verticalLayout_36.addWidget(self.Rbtn_mc4_open)
+        self.verticalLayout_36.addWidget(self.Rbtn1_14_open)
 
-        self.RB_close_buguang_2 = QRadioButton(self.frame_10)
-        self.RB_close_buguang_2.setObjectName(u"RB_close_buguang_2")
-        self.RB_close_buguang_2.setStyleSheet(u"")
+        self.Rbtn1_14_close = QRadioButton(self.control_page1_14)
+        self.Rbtn1_14_close.setObjectName(u"Rbtn1_14_close")
+        self.Rbtn1_14_close.setStyleSheet(u"")
 
-        self.verticalLayout_36.addWidget(self.RB_close_buguang_2)
+        self.verticalLayout_36.addWidget(self.Rbtn1_14_close)
 
 
         self.horizontalLayout_26.addLayout(self.verticalLayout_36)
 
 
-        self.gridLayout_4.addWidget(self.frame_10, 0, 5, 1, 1)
+        self.gridLayout_4.addWidget(self.control_page1_14, 0, 5, 1, 1)
 
-        self.frame_7 = QFrame(self.frame_k)
-        self.frame_7.setObjectName(u"frame_7")
-        self.frame_7.setFrameShape(QFrame.Box)
-        self.frame_7.setFrameShadow(QFrame.Raised)
-        self.frame_7.setLineWidth(0)
-        self.frame_7.setMidLineWidth(2)
-        self.horizontalLayout_23 = QHBoxLayout(self.frame_7)
+        self.control_page1_23 = QFrame(self.frame_0)
+        self.control_page1_23.setObjectName(u"control_page1_23")
+        self.control_page1_23.setFrameShape(QFrame.Box)
+        self.control_page1_23.setFrameShadow(QFrame.Raised)
+        self.control_page1_23.setLineWidth(0)
+        self.control_page1_23.setMidLineWidth(2)
+        self.horizontalLayout_23 = QHBoxLayout(self.control_page1_23)
         self.horizontalLayout_23.setObjectName(u"horizontalLayout_23")
-        self.label_10 = QLabel(self.frame_7)
+        self.label_10 = QLabel(self.control_page1_23)
         self.label_10.setObjectName(u"label_10")
         self.label_10.setAlignment(Qt.AlignCenter)
 
@@ -1727,34 +1727,34 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_33 = QVBoxLayout()
         self.verticalLayout_33.setObjectName(u"verticalLayout_33")
-        self.Rbtn_mc7_open = QRadioButton(self.frame_7)
-        self.Rbtn_mc7_open.setObjectName(u"Rbtn_mc7_open")
-        self.Rbtn_mc7_open.setStyleSheet(u"")
+        self.Rbtn1_23_open = QRadioButton(self.control_page1_23)
+        self.Rbtn1_23_open.setObjectName(u"Rbtn1_23_open")
+        self.Rbtn1_23_open.setStyleSheet(u"")
 
-        self.verticalLayout_33.addWidget(self.Rbtn_mc7_open)
+        self.verticalLayout_33.addWidget(self.Rbtn1_23_open)
 
-        self.RB_close_jire = QRadioButton(self.frame_7)
-        self.RB_close_jire.setObjectName(u"RB_close_jire")
-        self.RB_close_jire.setStyleSheet(u"")
+        self.Rbtn1_23_close = QRadioButton(self.control_page1_23)
+        self.Rbtn1_23_close.setObjectName(u"Rbtn1_23_close")
+        self.Rbtn1_23_close.setStyleSheet(u"")
 
-        self.verticalLayout_33.addWidget(self.RB_close_jire)
+        self.verticalLayout_33.addWidget(self.Rbtn1_23_close)
 
 
         self.horizontalLayout_23.addLayout(self.verticalLayout_33)
 
 
-        self.gridLayout_4.addWidget(self.frame_7, 1, 3, 1, 1)
+        self.gridLayout_4.addWidget(self.control_page1_23, 1, 3, 1, 1)
 
-        self.frame_4 = QFrame(self.frame_k)
-        self.frame_4.setObjectName(u"frame_4")
-        self.frame_4.setContextMenuPolicy(Qt.NoContextMenu)
-        self.frame_4.setFrameShape(QFrame.Box)
-        self.frame_4.setFrameShadow(QFrame.Raised)
-        self.frame_4.setLineWidth(0)
-        self.frame_4.setMidLineWidth(2)
-        self.horizontalLayout_18 = QHBoxLayout(self.frame_4)
+        self.control_page1_11 = QFrame(self.frame_0)
+        self.control_page1_11.setObjectName(u"control_page1_11")
+        self.control_page1_11.setContextMenuPolicy(Qt.NoContextMenu)
+        self.control_page1_11.setFrameShape(QFrame.Box)
+        self.control_page1_11.setFrameShadow(QFrame.Raised)
+        self.control_page1_11.setLineWidth(0)
+        self.control_page1_11.setMidLineWidth(2)
+        self.horizontalLayout_18 = QHBoxLayout(self.control_page1_11)
         self.horizontalLayout_18.setObjectName(u"horizontalLayout_18")
-        self.label_5 = QLabel(self.frame_4)
+        self.label_5 = QLabel(self.control_page1_11)
         self.label_5.setObjectName(u"label_5")
         self.label_5.setAlignment(Qt.AlignCenter)
 
@@ -1762,32 +1762,32 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_28 = QVBoxLayout()
         self.verticalLayout_28.setObjectName(u"verticalLayout_28")
-        self.Rbtn_mc1_up = QRadioButton(self.frame_4)
-        self.Rbtn_mc1_up.setObjectName(u"Rbtn_mc1_up")
-        self.Rbtn_mc1_up.setStyleSheet(u"")
+        self.Rbtn1_11_up = QRadioButton(self.control_page1_11)
+        self.Rbtn1_11_up.setObjectName(u"Rbtn1_11_up")
+        self.Rbtn1_11_up.setStyleSheet(u"")
 
-        self.verticalLayout_28.addWidget(self.Rbtn_mc1_up)
+        self.verticalLayout_28.addWidget(self.Rbtn1_11_up)
 
-        self.Rbtn_mc1_stop = QRadioButton(self.frame_4)
-        self.Rbtn_mc1_stop.setObjectName(u"Rbtn_mc1_stop")
-        self.Rbtn_mc1_stop.setStyleSheet(u"")
+        self.Rbtn1_11_stop = QRadioButton(self.control_page1_11)
+        self.Rbtn1_11_stop.setObjectName(u"Rbtn1_11_stop")
+        self.Rbtn1_11_stop.setStyleSheet(u"")
 
-        self.verticalLayout_28.addWidget(self.Rbtn_mc1_stop)
+        self.verticalLayout_28.addWidget(self.Rbtn1_11_stop)
 
-        self.Rbtn_mc1_down = QRadioButton(self.frame_4)
-        self.Rbtn_mc1_down.setObjectName(u"Rbtn_mc1_down")
-        self.Rbtn_mc1_down.setStyleSheet(u"")
+        self.Rbtn1_11_down = QRadioButton(self.control_page1_11)
+        self.Rbtn1_11_down.setObjectName(u"Rbtn1_11_down")
+        self.Rbtn1_11_down.setStyleSheet(u"")
 
-        self.verticalLayout_28.addWidget(self.Rbtn_mc1_down)
+        self.verticalLayout_28.addWidget(self.Rbtn1_11_down)
 
 
         self.horizontalLayout_18.addLayout(self.verticalLayout_28)
 
 
-        self.gridLayout_4.addWidget(self.frame_4, 0, 0, 1, 1)
+        self.gridLayout_4.addWidget(self.control_page1_11, 0, 0, 1, 1)
 
 
-        self.verticalLayout_17.addWidget(self.frame_k)
+        self.verticalLayout_17.addWidget(self.frame_0)
 
         self.stackedWidget.addWidget(self.manual_control_page1)
         self.manual_control_page2 = QWidget()
@@ -1796,17 +1796,17 @@ class Ui_MainWindow(object):
         self.gridLayout_6.setSpacing(0)
         self.gridLayout_6.setObjectName(u"gridLayout_6")
         self.gridLayout_6.setContentsMargins(0, 0, 10, 0)
-        self.frame_14 = QFrame(self.manual_control_page2)
-        self.frame_14.setObjectName(u"frame_14")
-        self.frame_14.setFrameShape(QFrame.Box)
-        self.frame_14.setFrameShadow(QFrame.Raised)
-        self.frame_14.setLineWidth(0)
-        self.frame_14.setMidLineWidth(2)
-        self.horizontalLayout_30 = QHBoxLayout(self.frame_14)
+        self.control_page2_12 = QFrame(self.manual_control_page2)
+        self.control_page2_12.setObjectName(u"control_page2_12")
+        self.control_page2_12.setFrameShape(QFrame.Box)
+        self.control_page2_12.setFrameShadow(QFrame.Raised)
+        self.control_page2_12.setLineWidth(0)
+        self.control_page2_12.setMidLineWidth(2)
+        self.horizontalLayout_30 = QHBoxLayout(self.control_page2_12)
         self.horizontalLayout_30.setSpacing(0)
         self.horizontalLayout_30.setObjectName(u"horizontalLayout_30")
         self.horizontalLayout_30.setContentsMargins(0, 0, 0, 0)
-        self.label_18 = QLabel(self.frame_14)
+        self.label_18 = QLabel(self.control_page2_12)
         self.label_18.setObjectName(u"label_18")
         self.label_18.setAlignment(Qt.AlignCenter)
 
@@ -1814,33 +1814,33 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_40 = QVBoxLayout()
         self.verticalLayout_40.setObjectName(u"verticalLayout_40")
-        self.Rbtn_mc14_open = QRadioButton(self.frame_14)
-        self.Rbtn_mc14_open.setObjectName(u"Rbtn_mc14_open")
-        self.Rbtn_mc14_open.setStyleSheet(u"")
+        self.Rbtn2_12_open = QRadioButton(self.control_page2_12)
+        self.Rbtn2_12_open.setObjectName(u"Rbtn2_12_open")
+        self.Rbtn2_12_open.setStyleSheet(u"")
 
-        self.verticalLayout_40.addWidget(self.Rbtn_mc14_open)
+        self.verticalLayout_40.addWidget(self.Rbtn2_12_open)
 
-        self.Rbtn_mc14_close = QRadioButton(self.frame_14)
-        self.Rbtn_mc14_close.setObjectName(u"Rbtn_mc14_close")
-        self.Rbtn_mc14_close.setStyleSheet(u"")
+        self.Rbtn2_12_close = QRadioButton(self.control_page2_12)
+        self.Rbtn2_12_close.setObjectName(u"Rbtn2_12_close")
+        self.Rbtn2_12_close.setStyleSheet(u"")
 
-        self.verticalLayout_40.addWidget(self.Rbtn_mc14_close)
+        self.verticalLayout_40.addWidget(self.Rbtn2_12_close)
 
 
         self.horizontalLayout_30.addLayout(self.verticalLayout_40)
 
 
-        self.gridLayout_6.addWidget(self.frame_14, 0, 1, 1, 1)
+        self.gridLayout_6.addWidget(self.control_page2_12, 0, 1, 1, 1)
 
-        self.frame_23 = QFrame(self.manual_control_page2)
-        self.frame_23.setObjectName(u"frame_23")
-        self.frame_23.setFrameShape(QFrame.Box)
-        self.frame_23.setFrameShadow(QFrame.Raised)
-        self.frame_23.setLineWidth(0)
-        self.frame_23.setMidLineWidth(2)
-        self.horizontalLayout_39 = QHBoxLayout(self.frame_23)
+        self.control_page2_24 = QFrame(self.manual_control_page2)
+        self.control_page2_24.setObjectName(u"control_page2_24")
+        self.control_page2_24.setFrameShape(QFrame.Box)
+        self.control_page2_24.setFrameShadow(QFrame.Raised)
+        self.control_page2_24.setLineWidth(0)
+        self.control_page2_24.setMidLineWidth(2)
+        self.horizontalLayout_39 = QHBoxLayout(self.control_page2_24)
         self.horizontalLayout_39.setObjectName(u"horizontalLayout_39")
-        self.label_27 = QLabel(self.frame_23)
+        self.label_27 = QLabel(self.control_page2_24)
         self.label_27.setObjectName(u"label_27")
         self.label_27.setAlignment(Qt.AlignCenter)
 
@@ -1848,33 +1848,33 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_49 = QVBoxLayout()
         self.verticalLayout_49.setObjectName(u"verticalLayout_49")
-        self.Rbtn_mc20_open = QRadioButton(self.frame_23)
-        self.Rbtn_mc20_open.setObjectName(u"Rbtn_mc20_open")
-        self.Rbtn_mc20_open.setStyleSheet(u"")
+        self.Rbtn2_24_open = QRadioButton(self.control_page2_24)
+        self.Rbtn2_24_open.setObjectName(u"Rbtn2_24_open")
+        self.Rbtn2_24_open.setStyleSheet(u"")
 
-        self.verticalLayout_49.addWidget(self.Rbtn_mc20_open)
+        self.verticalLayout_49.addWidget(self.Rbtn2_24_open)
 
-        self.Rbtn_mc20_close = QRadioButton(self.frame_23)
-        self.Rbtn_mc20_close.setObjectName(u"Rbtn_mc20_close")
-        self.Rbtn_mc20_close.setStyleSheet(u"")
+        self.Rbtn2_24_close = QRadioButton(self.control_page2_24)
+        self.Rbtn2_24_close.setObjectName(u"Rbtn2_24_close")
+        self.Rbtn2_24_close.setStyleSheet(u"")
 
-        self.verticalLayout_49.addWidget(self.Rbtn_mc20_close)
+        self.verticalLayout_49.addWidget(self.Rbtn2_24_close)
 
 
         self.horizontalLayout_39.addLayout(self.verticalLayout_49)
 
 
-        self.gridLayout_6.addWidget(self.frame_23, 1, 3, 1, 1)
+        self.gridLayout_6.addWidget(self.control_page2_24, 1, 3, 1, 1)
 
-        self.frame_17 = QFrame(self.manual_control_page2)
-        self.frame_17.setObjectName(u"frame_17")
-        self.frame_17.setFrameShape(QFrame.Box)
-        self.frame_17.setFrameShadow(QFrame.Raised)
-        self.frame_17.setLineWidth(0)
-        self.frame_17.setMidLineWidth(2)
-        self.horizontalLayout_33 = QHBoxLayout(self.frame_17)
+        self.control_page2_21 = QFrame(self.manual_control_page2)
+        self.control_page2_21.setObjectName(u"control_page2_21")
+        self.control_page2_21.setFrameShape(QFrame.Box)
+        self.control_page2_21.setFrameShadow(QFrame.Raised)
+        self.control_page2_21.setLineWidth(0)
+        self.control_page2_21.setMidLineWidth(2)
+        self.horizontalLayout_33 = QHBoxLayout(self.control_page2_21)
         self.horizontalLayout_33.setObjectName(u"horizontalLayout_33")
-        self.label_21 = QLabel(self.frame_17)
+        self.label_21 = QLabel(self.control_page2_21)
         self.label_21.setObjectName(u"label_21")
         self.label_21.setAlignment(Qt.AlignCenter)
 
@@ -1882,33 +1882,33 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_43 = QVBoxLayout()
         self.verticalLayout_43.setObjectName(u"verticalLayout_43")
-        self.Rbtn_mc17_open = QRadioButton(self.frame_17)
-        self.Rbtn_mc17_open.setObjectName(u"Rbtn_mc17_open")
-        self.Rbtn_mc17_open.setStyleSheet(u"")
+        self.Rbtn2_21_open = QRadioButton(self.control_page2_21)
+        self.Rbtn2_21_open.setObjectName(u"Rbtn2_21_open")
+        self.Rbtn2_21_open.setStyleSheet(u"")
 
-        self.verticalLayout_43.addWidget(self.Rbtn_mc17_open)
+        self.verticalLayout_43.addWidget(self.Rbtn2_21_open)
 
-        self.Rbtn_mc17_close = QRadioButton(self.frame_17)
-        self.Rbtn_mc17_close.setObjectName(u"Rbtn_mc17_close")
-        self.Rbtn_mc17_close.setStyleSheet(u"")
+        self.Rbtn2_21_close = QRadioButton(self.control_page2_21)
+        self.Rbtn2_21_close.setObjectName(u"Rbtn2_21_close")
+        self.Rbtn2_21_close.setStyleSheet(u"")
 
-        self.verticalLayout_43.addWidget(self.Rbtn_mc17_close)
+        self.verticalLayout_43.addWidget(self.Rbtn2_21_close)
 
 
         self.horizontalLayout_33.addLayout(self.verticalLayout_43)
 
 
-        self.gridLayout_6.addWidget(self.frame_17, 1, 0, 1, 1)
+        self.gridLayout_6.addWidget(self.control_page2_21, 1, 0, 1, 1)
 
-        self.frame_18 = QFrame(self.manual_control_page2)
-        self.frame_18.setObjectName(u"frame_18")
-        self.frame_18.setFrameShape(QFrame.Box)
-        self.frame_18.setFrameShadow(QFrame.Raised)
-        self.frame_18.setLineWidth(0)
-        self.frame_18.setMidLineWidth(2)
-        self.horizontalLayout_34 = QHBoxLayout(self.frame_18)
+        self.control_page2_22 = QFrame(self.manual_control_page2)
+        self.control_page2_22.setObjectName(u"control_page2_22")
+        self.control_page2_22.setFrameShape(QFrame.Box)
+        self.control_page2_22.setFrameShadow(QFrame.Raised)
+        self.control_page2_22.setLineWidth(0)
+        self.control_page2_22.setMidLineWidth(2)
+        self.horizontalLayout_34 = QHBoxLayout(self.control_page2_22)
         self.horizontalLayout_34.setObjectName(u"horizontalLayout_34")
-        self.label_22 = QLabel(self.frame_18)
+        self.label_22 = QLabel(self.control_page2_22)
         self.label_22.setObjectName(u"label_22")
         self.label_22.setAlignment(Qt.AlignCenter)
 
@@ -1916,33 +1916,33 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_44 = QVBoxLayout()
         self.verticalLayout_44.setObjectName(u"verticalLayout_44")
-        self.Rbtn_mc18_open = QRadioButton(self.frame_18)
-        self.Rbtn_mc18_open.setObjectName(u"Rbtn_mc18_open")
-        self.Rbtn_mc18_open.setStyleSheet(u"")
+        self.Rbtn2_22_open = QRadioButton(self.control_page2_22)
+        self.Rbtn2_22_open.setObjectName(u"Rbtn2_22_open")
+        self.Rbtn2_22_open.setStyleSheet(u"")
 
-        self.verticalLayout_44.addWidget(self.Rbtn_mc18_open)
+        self.verticalLayout_44.addWidget(self.Rbtn2_22_open)
 
-        self.Rbtn_mc18_close = QRadioButton(self.frame_18)
-        self.Rbtn_mc18_close.setObjectName(u"Rbtn_mc18_close")
-        self.Rbtn_mc18_close.setStyleSheet(u"")
+        self.Rbtn2_22_close = QRadioButton(self.control_page2_22)
+        self.Rbtn2_22_close.setObjectName(u"Rbtn2_22_close")
+        self.Rbtn2_22_close.setStyleSheet(u"")
 
-        self.verticalLayout_44.addWidget(self.Rbtn_mc18_close)
+        self.verticalLayout_44.addWidget(self.Rbtn2_22_close)
 
 
         self.horizontalLayout_34.addLayout(self.verticalLayout_44)
 
 
-        self.gridLayout_6.addWidget(self.frame_18, 1, 1, 1, 1)
+        self.gridLayout_6.addWidget(self.control_page2_22, 1, 1, 1, 1)
 
-        self.frame_24 = QFrame(self.manual_control_page2)
-        self.frame_24.setObjectName(u"frame_24")
-        self.frame_24.setFrameShape(QFrame.Box)
-        self.frame_24.setFrameShadow(QFrame.Raised)
-        self.frame_24.setLineWidth(0)
-        self.frame_24.setMidLineWidth(2)
-        self.horizontalLayout_40 = QHBoxLayout(self.frame_24)
+        self.control_page2_34 = QFrame(self.manual_control_page2)
+        self.control_page2_34.setObjectName(u"control_page2_34")
+        self.control_page2_34.setFrameShape(QFrame.Box)
+        self.control_page2_34.setFrameShadow(QFrame.Raised)
+        self.control_page2_34.setLineWidth(0)
+        self.control_page2_34.setMidLineWidth(2)
+        self.horizontalLayout_40 = QHBoxLayout(self.control_page2_34)
         self.horizontalLayout_40.setObjectName(u"horizontalLayout_40")
-        self.label_28 = QLabel(self.frame_24)
+        self.label_28 = QLabel(self.control_page2_34)
         self.label_28.setObjectName(u"label_28")
         self.label_28.setAlignment(Qt.AlignCenter)
 
@@ -1950,33 +1950,33 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_50 = QVBoxLayout()
         self.verticalLayout_50.setObjectName(u"verticalLayout_50")
-        self.Rbtn_mc24_open = QRadioButton(self.frame_24)
-        self.Rbtn_mc24_open.setObjectName(u"Rbtn_mc24_open")
-        self.Rbtn_mc24_open.setStyleSheet(u"")
+        self.Rbtn2_34_open = QRadioButton(self.control_page2_34)
+        self.Rbtn2_34_open.setObjectName(u"Rbtn2_34_open")
+        self.Rbtn2_34_open.setStyleSheet(u"")
 
-        self.verticalLayout_50.addWidget(self.Rbtn_mc24_open)
+        self.verticalLayout_50.addWidget(self.Rbtn2_34_open)
 
-        self.Rbtn_mc24_close = QRadioButton(self.frame_24)
-        self.Rbtn_mc24_close.setObjectName(u"Rbtn_mc24_close")
-        self.Rbtn_mc24_close.setStyleSheet(u"")
+        self.Rbtn2_34_close = QRadioButton(self.control_page2_34)
+        self.Rbtn2_34_close.setObjectName(u"Rbtn2_34_close")
+        self.Rbtn2_34_close.setStyleSheet(u"")
 
-        self.verticalLayout_50.addWidget(self.Rbtn_mc24_close)
+        self.verticalLayout_50.addWidget(self.Rbtn2_34_close)
 
 
         self.horizontalLayout_40.addLayout(self.verticalLayout_50)
 
 
-        self.gridLayout_6.addWidget(self.frame_24, 2, 3, 1, 1)
+        self.gridLayout_6.addWidget(self.control_page2_34, 2, 3, 1, 1)
 
-        self.frame_19 = QFrame(self.manual_control_page2)
-        self.frame_19.setObjectName(u"frame_19")
-        self.frame_19.setFrameShape(QFrame.Box)
-        self.frame_19.setFrameShadow(QFrame.Raised)
-        self.frame_19.setLineWidth(0)
-        self.frame_19.setMidLineWidth(2)
-        self.horizontalLayout_35 = QHBoxLayout(self.frame_19)
+        self.control_page2_23 = QFrame(self.manual_control_page2)
+        self.control_page2_23.setObjectName(u"control_page2_23")
+        self.control_page2_23.setFrameShape(QFrame.Box)
+        self.control_page2_23.setFrameShadow(QFrame.Raised)
+        self.control_page2_23.setLineWidth(0)
+        self.control_page2_23.setMidLineWidth(2)
+        self.horizontalLayout_35 = QHBoxLayout(self.control_page2_23)
         self.horizontalLayout_35.setObjectName(u"horizontalLayout_35")
-        self.label_23 = QLabel(self.frame_19)
+        self.label_23 = QLabel(self.control_page2_23)
         self.label_23.setObjectName(u"label_23")
         self.label_23.setAlignment(Qt.AlignCenter)
 
@@ -1984,33 +1984,33 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_45 = QVBoxLayout()
         self.verticalLayout_45.setObjectName(u"verticalLayout_45")
-        self.Rbtn_mc19_open = QRadioButton(self.frame_19)
-        self.Rbtn_mc19_open.setObjectName(u"Rbtn_mc19_open")
-        self.Rbtn_mc19_open.setStyleSheet(u"")
+        self.Rbtn2_23_open = QRadioButton(self.control_page2_23)
+        self.Rbtn2_23_open.setObjectName(u"Rbtn2_23_open")
+        self.Rbtn2_23_open.setStyleSheet(u"")
 
-        self.verticalLayout_45.addWidget(self.Rbtn_mc19_open)
+        self.verticalLayout_45.addWidget(self.Rbtn2_23_open)
 
-        self.Rbtn_mc19_close = QRadioButton(self.frame_19)
-        self.Rbtn_mc19_close.setObjectName(u"Rbtn_mc19_close")
-        self.Rbtn_mc19_close.setStyleSheet(u"")
+        self.Rbtn2_23_close = QRadioButton(self.control_page2_23)
+        self.Rbtn2_23_close.setObjectName(u"Rbtn2_23_close")
+        self.Rbtn2_23_close.setStyleSheet(u"")
 
-        self.verticalLayout_45.addWidget(self.Rbtn_mc19_close)
+        self.verticalLayout_45.addWidget(self.Rbtn2_23_close)
 
 
         self.horizontalLayout_35.addLayout(self.verticalLayout_45)
 
 
-        self.gridLayout_6.addWidget(self.frame_19, 1, 2, 1, 1)
+        self.gridLayout_6.addWidget(self.control_page2_23, 1, 2, 1, 1)
 
-        self.frame_21 = QFrame(self.manual_control_page2)
-        self.frame_21.setObjectName(u"frame_21")
-        self.frame_21.setFrameShape(QFrame.Box)
-        self.frame_21.setFrameShadow(QFrame.Raised)
-        self.frame_21.setLineWidth(0)
-        self.frame_21.setMidLineWidth(2)
-        self.horizontalLayout_37 = QHBoxLayout(self.frame_21)
+        self.control_page2_32 = QFrame(self.manual_control_page2)
+        self.control_page2_32.setObjectName(u"control_page2_32")
+        self.control_page2_32.setFrameShape(QFrame.Box)
+        self.control_page2_32.setFrameShadow(QFrame.Raised)
+        self.control_page2_32.setLineWidth(0)
+        self.control_page2_32.setMidLineWidth(2)
+        self.horizontalLayout_37 = QHBoxLayout(self.control_page2_32)
         self.horizontalLayout_37.setObjectName(u"horizontalLayout_37")
-        self.label_25 = QLabel(self.frame_21)
+        self.label_25 = QLabel(self.control_page2_32)
         self.label_25.setObjectName(u"label_25")
         self.label_25.setAlignment(Qt.AlignCenter)
 
@@ -2018,33 +2018,33 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_47 = QVBoxLayout()
         self.verticalLayout_47.setObjectName(u"verticalLayout_47")
-        self.Rbtn_mc22_open = QRadioButton(self.frame_21)
-        self.Rbtn_mc22_open.setObjectName(u"Rbtn_mc22_open")
-        self.Rbtn_mc22_open.setStyleSheet(u"")
+        self.Rbtn2_32_open = QRadioButton(self.control_page2_32)
+        self.Rbtn2_32_open.setObjectName(u"Rbtn2_32_open")
+        self.Rbtn2_32_open.setStyleSheet(u"")
 
-        self.verticalLayout_47.addWidget(self.Rbtn_mc22_open)
+        self.verticalLayout_47.addWidget(self.Rbtn2_32_open)
 
-        self.Rbtn_mc22_close = QRadioButton(self.frame_21)
-        self.Rbtn_mc22_close.setObjectName(u"Rbtn_mc22_close")
-        self.Rbtn_mc22_close.setStyleSheet(u"")
+        self.Rbtn2_32_close = QRadioButton(self.control_page2_32)
+        self.Rbtn2_32_close.setObjectName(u"Rbtn2_32_close")
+        self.Rbtn2_32_close.setStyleSheet(u"")
 
-        self.verticalLayout_47.addWidget(self.Rbtn_mc22_close)
+        self.verticalLayout_47.addWidget(self.Rbtn2_32_close)
 
 
         self.horizontalLayout_37.addLayout(self.verticalLayout_47)
 
 
-        self.gridLayout_6.addWidget(self.frame_21, 2, 1, 1, 1)
+        self.gridLayout_6.addWidget(self.control_page2_32, 2, 1, 1, 1)
 
-        self.frame_16 = QFrame(self.manual_control_page2)
-        self.frame_16.setObjectName(u"frame_16")
-        self.frame_16.setFrameShape(QFrame.Box)
-        self.frame_16.setFrameShadow(QFrame.Raised)
-        self.frame_16.setLineWidth(0)
-        self.frame_16.setMidLineWidth(2)
-        self.horizontalLayout_32 = QHBoxLayout(self.frame_16)
+        self.control_page2_14 = QFrame(self.manual_control_page2)
+        self.control_page2_14.setObjectName(u"control_page2_14")
+        self.control_page2_14.setFrameShape(QFrame.Box)
+        self.control_page2_14.setFrameShadow(QFrame.Raised)
+        self.control_page2_14.setLineWidth(0)
+        self.control_page2_14.setMidLineWidth(2)
+        self.horizontalLayout_32 = QHBoxLayout(self.control_page2_14)
         self.horizontalLayout_32.setObjectName(u"horizontalLayout_32")
-        self.label_20 = QLabel(self.frame_16)
+        self.label_20 = QLabel(self.control_page2_14)
         self.label_20.setObjectName(u"label_20")
         self.label_20.setAlignment(Qt.AlignCenter)
 
@@ -2052,33 +2052,33 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_42 = QVBoxLayout()
         self.verticalLayout_42.setObjectName(u"verticalLayout_42")
-        self.Rbtn_mc16_open = QRadioButton(self.frame_16)
-        self.Rbtn_mc16_open.setObjectName(u"Rbtn_mc16_open")
-        self.Rbtn_mc16_open.setStyleSheet(u"")
+        self.Rbtn2_14_open = QRadioButton(self.control_page2_14)
+        self.Rbtn2_14_open.setObjectName(u"Rbtn2_14_open")
+        self.Rbtn2_14_open.setStyleSheet(u"")
 
-        self.verticalLayout_42.addWidget(self.Rbtn_mc16_open)
+        self.verticalLayout_42.addWidget(self.Rbtn2_14_open)
 
-        self.Rbtn_mc16_close = QRadioButton(self.frame_16)
-        self.Rbtn_mc16_close.setObjectName(u"Rbtn_mc16_close")
-        self.Rbtn_mc16_close.setStyleSheet(u"")
+        self.Rbtn2_14_close = QRadioButton(self.control_page2_14)
+        self.Rbtn2_14_close.setObjectName(u"Rbtn2_14_close")
+        self.Rbtn2_14_close.setStyleSheet(u"")
 
-        self.verticalLayout_42.addWidget(self.Rbtn_mc16_close)
+        self.verticalLayout_42.addWidget(self.Rbtn2_14_close)
 
 
         self.horizontalLayout_32.addLayout(self.verticalLayout_42)
 
 
-        self.gridLayout_6.addWidget(self.frame_16, 0, 3, 1, 1)
+        self.gridLayout_6.addWidget(self.control_page2_14, 0, 3, 1, 1)
 
-        self.frame_22 = QFrame(self.manual_control_page2)
-        self.frame_22.setObjectName(u"frame_22")
-        self.frame_22.setFrameShape(QFrame.Box)
-        self.frame_22.setFrameShadow(QFrame.Raised)
-        self.frame_22.setLineWidth(0)
-        self.frame_22.setMidLineWidth(2)
-        self.horizontalLayout_38 = QHBoxLayout(self.frame_22)
+        self.control_page2_33 = QFrame(self.manual_control_page2)
+        self.control_page2_33.setObjectName(u"control_page2_33")
+        self.control_page2_33.setFrameShape(QFrame.Box)
+        self.control_page2_33.setFrameShadow(QFrame.Raised)
+        self.control_page2_33.setLineWidth(0)
+        self.control_page2_33.setMidLineWidth(2)
+        self.horizontalLayout_38 = QHBoxLayout(self.control_page2_33)
         self.horizontalLayout_38.setObjectName(u"horizontalLayout_38")
-        self.label_26 = QLabel(self.frame_22)
+        self.label_26 = QLabel(self.control_page2_33)
         self.label_26.setObjectName(u"label_26")
         self.label_26.setAlignment(Qt.AlignCenter)
 
@@ -2086,33 +2086,33 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_48 = QVBoxLayout()
         self.verticalLayout_48.setObjectName(u"verticalLayout_48")
-        self.Rbtn_mc23_open = QRadioButton(self.frame_22)
-        self.Rbtn_mc23_open.setObjectName(u"Rbtn_mc23_open")
-        self.Rbtn_mc23_open.setStyleSheet(u"")
+        self.Rbtn2_33_open = QRadioButton(self.control_page2_33)
+        self.Rbtn2_33_open.setObjectName(u"Rbtn2_33_open")
+        self.Rbtn2_33_open.setStyleSheet(u"")
 
-        self.verticalLayout_48.addWidget(self.Rbtn_mc23_open)
+        self.verticalLayout_48.addWidget(self.Rbtn2_33_open)
 
-        self.Rbtn_mc23_close = QRadioButton(self.frame_22)
-        self.Rbtn_mc23_close.setObjectName(u"Rbtn_mc23_close")
-        self.Rbtn_mc23_close.setStyleSheet(u"")
+        self.Rbtn2_33_close = QRadioButton(self.control_page2_33)
+        self.Rbtn2_33_close.setObjectName(u"Rbtn2_33_close")
+        self.Rbtn2_33_close.setStyleSheet(u"")
 
-        self.verticalLayout_48.addWidget(self.Rbtn_mc23_close)
+        self.verticalLayout_48.addWidget(self.Rbtn2_33_close)
 
 
         self.horizontalLayout_38.addLayout(self.verticalLayout_48)
 
 
-        self.gridLayout_6.addWidget(self.frame_22, 2, 2, 1, 1)
+        self.gridLayout_6.addWidget(self.control_page2_33, 2, 2, 1, 1)
 
-        self.frame_20 = QFrame(self.manual_control_page2)
-        self.frame_20.setObjectName(u"frame_20")
-        self.frame_20.setFrameShape(QFrame.Box)
-        self.frame_20.setFrameShadow(QFrame.Raised)
-        self.frame_20.setLineWidth(0)
-        self.frame_20.setMidLineWidth(2)
-        self.horizontalLayout_36 = QHBoxLayout(self.frame_20)
+        self.control_page2_31 = QFrame(self.manual_control_page2)
+        self.control_page2_31.setObjectName(u"control_page2_31")
+        self.control_page2_31.setFrameShape(QFrame.Box)
+        self.control_page2_31.setFrameShadow(QFrame.Raised)
+        self.control_page2_31.setLineWidth(0)
+        self.control_page2_31.setMidLineWidth(2)
+        self.horizontalLayout_36 = QHBoxLayout(self.control_page2_31)
         self.horizontalLayout_36.setObjectName(u"horizontalLayout_36")
-        self.label_24 = QLabel(self.frame_20)
+        self.label_24 = QLabel(self.control_page2_31)
         self.label_24.setObjectName(u"label_24")
         self.label_24.setAlignment(Qt.AlignCenter)
 
@@ -2120,35 +2120,35 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_46 = QVBoxLayout()
         self.verticalLayout_46.setObjectName(u"verticalLayout_46")
-        self.Rbtn_mc21_open = QRadioButton(self.frame_20)
-        self.Rbtn_mc21_open.setObjectName(u"Rbtn_mc21_open")
-        self.Rbtn_mc21_open.setStyleSheet(u"")
+        self.Rbtn2_31_open = QRadioButton(self.control_page2_31)
+        self.Rbtn2_31_open.setObjectName(u"Rbtn2_31_open")
+        self.Rbtn2_31_open.setStyleSheet(u"")
 
-        self.verticalLayout_46.addWidget(self.Rbtn_mc21_open)
+        self.verticalLayout_46.addWidget(self.Rbtn2_31_open)
 
-        self.Rbtn_mc21_close = QRadioButton(self.frame_20)
-        self.Rbtn_mc21_close.setObjectName(u"Rbtn_mc21_close")
-        self.Rbtn_mc21_close.setStyleSheet(u"")
+        self.Rbtn2_31_close = QRadioButton(self.control_page2_31)
+        self.Rbtn2_31_close.setObjectName(u"Rbtn2_31_close")
+        self.Rbtn2_31_close.setStyleSheet(u"")
 
-        self.verticalLayout_46.addWidget(self.Rbtn_mc21_close)
+        self.verticalLayout_46.addWidget(self.Rbtn2_31_close)
 
 
         self.horizontalLayout_36.addLayout(self.verticalLayout_46)
 
 
-        self.gridLayout_6.addWidget(self.frame_20, 2, 0, 1, 1)
+        self.gridLayout_6.addWidget(self.control_page2_31, 2, 0, 1, 1)
 
-        self.frame_15 = QFrame(self.manual_control_page2)
-        self.frame_15.setObjectName(u"frame_15")
-        self.frame_15.setFrameShape(QFrame.Box)
-        self.frame_15.setFrameShadow(QFrame.Raised)
-        self.frame_15.setLineWidth(0)
-        self.frame_15.setMidLineWidth(2)
-        self.horizontalLayout_31 = QHBoxLayout(self.frame_15)
+        self.control_page2_13 = QFrame(self.manual_control_page2)
+        self.control_page2_13.setObjectName(u"control_page2_13")
+        self.control_page2_13.setFrameShape(QFrame.Box)
+        self.control_page2_13.setFrameShadow(QFrame.Raised)
+        self.control_page2_13.setLineWidth(0)
+        self.control_page2_13.setMidLineWidth(2)
+        self.horizontalLayout_31 = QHBoxLayout(self.control_page2_13)
         self.horizontalLayout_31.setSpacing(0)
         self.horizontalLayout_31.setObjectName(u"horizontalLayout_31")
         self.horizontalLayout_31.setContentsMargins(0, 0, 0, 0)
-        self.label_19 = QLabel(self.frame_15)
+        self.label_19 = QLabel(self.control_page2_13)
         self.label_19.setObjectName(u"label_19")
         self.label_19.setAlignment(Qt.AlignCenter)
 
@@ -2156,33 +2156,33 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_41 = QVBoxLayout()
         self.verticalLayout_41.setObjectName(u"verticalLayout_41")
-        self.Rbtn_mc15_open = QRadioButton(self.frame_15)
-        self.Rbtn_mc15_open.setObjectName(u"Rbtn_mc15_open")
-        self.Rbtn_mc15_open.setStyleSheet(u"")
+        self.Rbtn2_13_open = QRadioButton(self.control_page2_13)
+        self.Rbtn2_13_open.setObjectName(u"Rbtn2_13_open")
+        self.Rbtn2_13_open.setStyleSheet(u"")
 
-        self.verticalLayout_41.addWidget(self.Rbtn_mc15_open)
+        self.verticalLayout_41.addWidget(self.Rbtn2_13_open)
 
-        self.Rbtn_mc15_close = QRadioButton(self.frame_15)
-        self.Rbtn_mc15_close.setObjectName(u"Rbtn_mc15_close")
-        self.Rbtn_mc15_close.setStyleSheet(u"")
+        self.Rbtn2_13_close = QRadioButton(self.control_page2_13)
+        self.Rbtn2_13_close.setObjectName(u"Rbtn2_13_close")
+        self.Rbtn2_13_close.setStyleSheet(u"")
 
-        self.verticalLayout_41.addWidget(self.Rbtn_mc15_close)
+        self.verticalLayout_41.addWidget(self.Rbtn2_13_close)
 
 
         self.horizontalLayout_31.addLayout(self.verticalLayout_41)
 
 
-        self.gridLayout_6.addWidget(self.frame_15, 0, 2, 1, 1)
+        self.gridLayout_6.addWidget(self.control_page2_13, 0, 2, 1, 1)
 
-        self.frame_6 = QFrame(self.manual_control_page2)
-        self.frame_6.setObjectName(u"frame_6")
-        self.frame_6.setFrameShape(QFrame.Box)
-        self.frame_6.setFrameShadow(QFrame.Raised)
-        self.frame_6.setLineWidth(0)
-        self.frame_6.setMidLineWidth(2)
-        self.horizontalLayout_22 = QHBoxLayout(self.frame_6)
+        self.control_page2_11 = QFrame(self.manual_control_page2)
+        self.control_page2_11.setObjectName(u"control_page2_11")
+        self.control_page2_11.setFrameShape(QFrame.Box)
+        self.control_page2_11.setFrameShadow(QFrame.Raised)
+        self.control_page2_11.setLineWidth(0)
+        self.control_page2_11.setMidLineWidth(2)
+        self.horizontalLayout_22 = QHBoxLayout(self.control_page2_11)
         self.horizontalLayout_22.setObjectName(u"horizontalLayout_22")
-        self.label_9 = QLabel(self.frame_6)
+        self.label_9 = QLabel(self.control_page2_11)
         self.label_9.setObjectName(u"label_9")
         self.label_9.setAlignment(Qt.AlignCenter)
 
@@ -2190,23 +2190,23 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_32 = QVBoxLayout()
         self.verticalLayout_32.setObjectName(u"verticalLayout_32")
-        self.Rbtn_mc13_open = QRadioButton(self.frame_6)
-        self.Rbtn_mc13_open.setObjectName(u"Rbtn_mc13_open")
-        self.Rbtn_mc13_open.setStyleSheet(u"")
+        self.Rbtn2_11_open = QRadioButton(self.control_page2_11)
+        self.Rbtn2_11_open.setObjectName(u"Rbtn2_11_open")
+        self.Rbtn2_11_open.setStyleSheet(u"")
 
-        self.verticalLayout_32.addWidget(self.Rbtn_mc13_open)
+        self.verticalLayout_32.addWidget(self.Rbtn2_11_open)
 
-        self.Rbtn_mc13_close = QRadioButton(self.frame_6)
-        self.Rbtn_mc13_close.setObjectName(u"Rbtn_mc13_close")
-        self.Rbtn_mc13_close.setStyleSheet(u"")
+        self.Rbtn2_11_close = QRadioButton(self.control_page2_11)
+        self.Rbtn2_11_close.setObjectName(u"Rbtn2_11_close")
+        self.Rbtn2_11_close.setStyleSheet(u"")
 
-        self.verticalLayout_32.addWidget(self.Rbtn_mc13_close)
+        self.verticalLayout_32.addWidget(self.Rbtn2_11_close)
 
 
         self.horizontalLayout_22.addLayout(self.verticalLayout_32)
 
 
-        self.gridLayout_6.addWidget(self.frame_6, 0, 0, 1, 1)
+        self.gridLayout_6.addWidget(self.control_page2_11, 0, 0, 1, 1)
 
         self.stackedWidget.addWidget(self.manual_control_page2)
         self.cloud_page1 = QWidget()
@@ -2635,7 +2635,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(5)
+        self.stackedWidget.setCurrentIndex(2)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -2713,93 +2713,93 @@ class Ui_MainWindow(object):
         self.labelVersion_3.setText(QCoreApplication.translate("MainWindow", u"\u63a7\u5236\u6570\u636e\u6587\u4ef6\u6a21\u677f\u89c1\u8bf4\u660e\u4e66", None))
         self.lineEdit_15.setText(QCoreApplication.translate("MainWindow", u"\u5b9e\u65f6\u73af\u5883\u6570\u636e\uff1a", None))
         self.label_8.setText(QCoreApplication.translate("MainWindow", u"\u5377\u819c\u673a", None))
-        self.Rbtn_mc2_up.setText(QCoreApplication.translate("MainWindow", u"\u4e0a\u5377", None))
-        self.Rbtn_mc2_stop.setText(QCoreApplication.translate("MainWindow", u"\u505c\u6b62", None))
-        self.Rbtn_mc2_down.setText(QCoreApplication.translate("MainWindow", u"\u4e0b\u653e", None))
+        self.Rbtn1_12_up.setText(QCoreApplication.translate("MainWindow", u"\u4e0a\u5377", None))
+        self.Rbtn1_12_stop.setText(QCoreApplication.translate("MainWindow", u"\u505c\u6b62", None))
+        self.Rbtn1_12_down.setText(QCoreApplication.translate("MainWindow", u"\u4e0b\u653e", None))
         self.label_11.setText(QCoreApplication.translate("MainWindow", u"\u5faa\u73af\u6c34\u4e0e\u7a7a\u6c14\n"
 "\u6362\u70ed\u6cf5", None))
-        self.Rbtn_mc11_open.setText(QCoreApplication.translate("MainWindow", u"\u5f00\u542f", None))
-        self.RB_close_shuibeng.setText(QCoreApplication.translate("MainWindow", u"\u5173\u95ed", None))
+        self.Rbtn1_33_open.setText(QCoreApplication.translate("MainWindow", u"\u5f00\u542f", None))
+        self.Rbtn1_33_close.setText(QCoreApplication.translate("MainWindow", u"\u5173\u95ed", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"\u8865\u5149\u706f1", None))
-        self.Rbtn_mc3_open.setText(QCoreApplication.translate("MainWindow", u"\u5f00\u542f", None))
-        self.RB_close_buguang.setText(QCoreApplication.translate("MainWindow", u"\u5173\u95ed", None))
+        self.Rbtn1_13_open.setText(QCoreApplication.translate("MainWindow", u"\u5f00\u542f", None))
+        self.Rbtn1_13_close.setText(QCoreApplication.translate("MainWindow", u"\u5173\u95ed", None))
         self.label_17.setText(QCoreApplication.translate("MainWindow", u"\u5faa\u73af\u6c34\u4e0e\n"
 "\u4e59\u4e8c\u9187\u6362\n"
 "\u70ed\u6cf5(\u5907\u7528)", None))
-        self.Rbtn_mc10_open.setText(QCoreApplication.translate("MainWindow", u"\u5f00\u542f", None))
-        self.RB_close_jire_4.setText(QCoreApplication.translate("MainWindow", u"\u5173\u95ed", None))
+        self.Rbtn1_32_open.setText(QCoreApplication.translate("MainWindow", u"\u5f00\u542f", None))
+        self.Rbtn1_32_close.setText(QCoreApplication.translate("MainWindow", u"\u5173\u95ed", None))
         self.label_12.setText(QCoreApplication.translate("MainWindow", u"\u5faa\u73af\u6c34\u4e0e\u7a7a\u6c14\n"
 "\u6362\u70ed\u6cf5", None))
-        self.Rbtn_mc12_open.setText(QCoreApplication.translate("MainWindow", u"\u5f00\u542f", None))
-        self.RB_close_shuibeng_2.setText(QCoreApplication.translate("MainWindow", u"\u5173\u95ed", None))
+        self.Rbtn1_34_open.setText(QCoreApplication.translate("MainWindow", u"\u5f00\u542f", None))
+        self.Rbtn1_34_close.setText(QCoreApplication.translate("MainWindow", u"\u5173\u95ed", None))
         self.label_7.setText(QCoreApplication.translate("MainWindow", u"\u95e8\u5385\u706f", None))
-        self.Rbtn_mc6_open.setText(QCoreApplication.translate("MainWindow", u"\u5f00\u542f", None))
-        self.RB_close_jiare.setText(QCoreApplication.translate("MainWindow", u"\u5173\u95ed", None))
+        self.Rbtn1_22_open.setText(QCoreApplication.translate("MainWindow", u"\u5f00\u542f", None))
+        self.Rbtn1_22_close.setText(QCoreApplication.translate("MainWindow", u"\u5173\u95ed", None))
         self.label_16.setText(QCoreApplication.translate("MainWindow", u"\u5faa\u73af\u6c34\u4e0e\n"
 "\u4e59\u4e8c\u9187\u6362\n"
 "\u70ed\u6cf5", None))
-        self.Rbtn_mc9_open.setText(QCoreApplication.translate("MainWindow", u"\u5f00\u542f", None))
-        self.RB_close_jire_3.setText(QCoreApplication.translate("MainWindow", u"\u5173\u95ed", None))
+        self.Rbtn1_31_open.setText(QCoreApplication.translate("MainWindow", u"\u5f00\u542f", None))
+        self.Rbtn1_31_close.setText(QCoreApplication.translate("MainWindow", u"\u5173\u95ed", None))
         self.label_15.setText(QCoreApplication.translate("MainWindow", u"\u5faa\u73af\u4e59\n"
 "\u4e8c\u9187\u6cf5\n"
 "\uff08\u5907\u7528\uff09", None))
-        self.Rbtn_mc8_open.setText(QCoreApplication.translate("MainWindow", u"\u5f00\u542f", None))
-        self.RB_close_jire_2.setText(QCoreApplication.translate("MainWindow", u"\u5173\u95ed", None))
+        self.Rbtn1_24_open.setText(QCoreApplication.translate("MainWindow", u"\u5f00\u542f", None))
+        self.Rbtn1_24_close.setText(QCoreApplication.translate("MainWindow", u"\u5173\u95ed", None))
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"\u7167\u660e\u706f", None))
-        self.Rbtn_mc5_open.setText(QCoreApplication.translate("MainWindow", u"\u5f00\u542f", None))
-        self.RB_close_zhaoming.setText(QCoreApplication.translate("MainWindow", u"\u5173\u95ed", None))
+        self.Rbtn1_21_open.setText(QCoreApplication.translate("MainWindow", u"\u5f00\u542f", None))
+        self.Rbtn1_21_close.setText(QCoreApplication.translate("MainWindow", u"\u5173\u95ed", None))
         self.label_13.setText(QCoreApplication.translate("MainWindow", u"\u8865\u5149\u706f2", None))
-        self.Rbtn_mc4_open.setText(QCoreApplication.translate("MainWindow", u"\u5f00\u542f", None))
-        self.RB_close_buguang_2.setText(QCoreApplication.translate("MainWindow", u"\u5173\u95ed", None))
+        self.Rbtn1_14_open.setText(QCoreApplication.translate("MainWindow", u"\u5f00\u542f", None))
+        self.Rbtn1_14_close.setText(QCoreApplication.translate("MainWindow", u"\u5173\u95ed", None))
         self.label_10.setText(QCoreApplication.translate("MainWindow", u"\u5faa\u73af\u4e59\n"
 "\u4e8c\u9187\u6cf5", None))
-        self.Rbtn_mc7_open.setText(QCoreApplication.translate("MainWindow", u"\u5f00\u542f", None))
-        self.RB_close_jire.setText(QCoreApplication.translate("MainWindow", u"\u5173\u95ed", None))
+        self.Rbtn1_23_open.setText(QCoreApplication.translate("MainWindow", u"\u5f00\u542f", None))
+        self.Rbtn1_23_close.setText(QCoreApplication.translate("MainWindow", u"\u5173\u95ed", None))
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"\u5377\u5e18\u673a", None))
-        self.Rbtn_mc1_up.setText(QCoreApplication.translate("MainWindow", u"\u4e0a\u5377", None))
-        self.Rbtn_mc1_stop.setText(QCoreApplication.translate("MainWindow", u"\u505c\u6b62", None))
-        self.Rbtn_mc1_down.setText(QCoreApplication.translate("MainWindow", u"\u4e0b\u653e", None))
+        self.Rbtn1_11_up.setText(QCoreApplication.translate("MainWindow", u"\u4e0a\u5377", None))
+        self.Rbtn1_11_stop.setText(QCoreApplication.translate("MainWindow", u"\u505c\u6b62", None))
+        self.Rbtn1_11_down.setText(QCoreApplication.translate("MainWindow", u"\u4e0b\u653e", None))
         self.label_18.setText(QCoreApplication.translate("MainWindow", u"\u52a0\u70ed\u68d22", None))
-        self.Rbtn_mc14_open.setText(QCoreApplication.translate("MainWindow", u"\u5f00\u542f", None))
-        self.Rbtn_mc14_close.setText(QCoreApplication.translate("MainWindow", u"\u5173\u95ed", None))
+        self.Rbtn2_12_open.setText(QCoreApplication.translate("MainWindow", u"\u5f00\u542f", None))
+        self.Rbtn2_12_close.setText(QCoreApplication.translate("MainWindow", u"\u5173\u95ed", None))
         self.label_27.setText(QCoreApplication.translate("MainWindow", u"\u6392\u98ce\u673a4", None))
-        self.Rbtn_mc20_open.setText(QCoreApplication.translate("MainWindow", u"\u5f00\u542f", None))
-        self.Rbtn_mc20_close.setText(QCoreApplication.translate("MainWindow", u"\u5173\u95ed", None))
+        self.Rbtn2_24_open.setText(QCoreApplication.translate("MainWindow", u"\u5f00\u542f", None))
+        self.Rbtn2_24_close.setText(QCoreApplication.translate("MainWindow", u"\u5173\u95ed", None))
         self.label_21.setText(QCoreApplication.translate("MainWindow", u"\u6392\u98ce\u673a1", None))
-        self.Rbtn_mc17_open.setText(QCoreApplication.translate("MainWindow", u"\u5f00\u542f", None))
-        self.Rbtn_mc17_close.setText(QCoreApplication.translate("MainWindow", u"\u5173\u95ed", None))
+        self.Rbtn2_21_open.setText(QCoreApplication.translate("MainWindow", u"\u5f00\u542f", None))
+        self.Rbtn2_21_close.setText(QCoreApplication.translate("MainWindow", u"\u5173\u95ed", None))
         self.label_22.setText(QCoreApplication.translate("MainWindow", u"\u6392\u98ce\u673a2", None))
-        self.Rbtn_mc18_open.setText(QCoreApplication.translate("MainWindow", u"\u5f00\u542f", None))
-        self.Rbtn_mc18_close.setText(QCoreApplication.translate("MainWindow", u"\u5173\u95ed", None))
+        self.Rbtn2_22_open.setText(QCoreApplication.translate("MainWindow", u"\u5f00\u542f", None))
+        self.Rbtn2_22_close.setText(QCoreApplication.translate("MainWindow", u"\u5173\u95ed", None))
         self.label_28.setText(QCoreApplication.translate("MainWindow", u"\u6c14\u8c61\u7ad9\n"
 "\u7535\u6e90", None))
-        self.Rbtn_mc24_open.setText(QCoreApplication.translate("MainWindow", u"\u5f00\u542f", None))
-        self.Rbtn_mc24_close.setText(QCoreApplication.translate("MainWindow", u"\u5173\u95ed", None))
+        self.Rbtn2_34_open.setText(QCoreApplication.translate("MainWindow", u"\u5f00\u542f", None))
+        self.Rbtn2_34_close.setText(QCoreApplication.translate("MainWindow", u"\u5173\u95ed", None))
         self.label_23.setText(QCoreApplication.translate("MainWindow", u"\u6392\u98ce\u673a3", None))
-        self.Rbtn_mc19_open.setText(QCoreApplication.translate("MainWindow", u"\u5f00\u542f", None))
-        self.Rbtn_mc19_close.setText(QCoreApplication.translate("MainWindow", u"\u5173\u95ed", None))
+        self.Rbtn2_23_open.setText(QCoreApplication.translate("MainWindow", u"\u5f00\u542f", None))
+        self.Rbtn2_23_close.setText(QCoreApplication.translate("MainWindow", u"\u5173\u95ed", None))
         self.label_25.setText(QCoreApplication.translate("MainWindow", u"\u6c34\u80a5\u4e00\u4f53\u673a\n"
 "\u7535\u78c1\u9600\u95e8", None))
-        self.Rbtn_mc22_open.setText(QCoreApplication.translate("MainWindow", u"\u5f00\u542f", None))
-        self.Rbtn_mc22_close.setText(QCoreApplication.translate("MainWindow", u"\u5173\u95ed", None))
+        self.Rbtn2_32_open.setText(QCoreApplication.translate("MainWindow", u"\u5f00\u542f", None))
+        self.Rbtn2_32_close.setText(QCoreApplication.translate("MainWindow", u"\u5173\u95ed", None))
         self.label_20.setText(QCoreApplication.translate("MainWindow", u"\u63a7\u5236\u56de\u8def\n"
 "\u7535\u6e90", None))
-        self.Rbtn_mc16_open.setText(QCoreApplication.translate("MainWindow", u"\u5f00\u542f", None))
-        self.Rbtn_mc16_close.setText(QCoreApplication.translate("MainWindow", u"\u5173\u95ed", None))
+        self.Rbtn2_14_open.setText(QCoreApplication.translate("MainWindow", u"\u5f00\u542f", None))
+        self.Rbtn2_14_close.setText(QCoreApplication.translate("MainWindow", u"\u5173\u95ed", None))
         self.label_26.setText(QCoreApplication.translate("MainWindow", u"\u5ba4\u5185\u76d1\u6d4b\n"
 "\u7535\u6e90", None))
-        self.Rbtn_mc23_open.setText(QCoreApplication.translate("MainWindow", u"\u5f00\u542f", None))
-        self.Rbtn_mc23_close.setText(QCoreApplication.translate("MainWindow", u"\u5173\u95ed", None))
+        self.Rbtn2_33_open.setText(QCoreApplication.translate("MainWindow", u"\u5f00\u542f", None))
+        self.Rbtn2_33_close.setText(QCoreApplication.translate("MainWindow", u"\u5173\u95ed", None))
         self.label_24.setText(QCoreApplication.translate("MainWindow", u"\u6c34\u80a5\u4e00\u4f53\u673a\n"
 "\u6cf5", None))
-        self.Rbtn_mc21_open.setText(QCoreApplication.translate("MainWindow", u"\u5f00\u542f", None))
-        self.Rbtn_mc21_close.setText(QCoreApplication.translate("MainWindow", u"\u5173\u95ed", None))
+        self.Rbtn2_31_open.setText(QCoreApplication.translate("MainWindow", u"\u5f00\u542f", None))
+        self.Rbtn2_31_close.setText(QCoreApplication.translate("MainWindow", u"\u5173\u95ed", None))
         self.label_19.setText(QCoreApplication.translate("MainWindow", u"\u52a0\u70ed\u68d23", None))
-        self.Rbtn_mc15_open.setText(QCoreApplication.translate("MainWindow", u"\u5f00\u542f", None))
-        self.Rbtn_mc15_close.setText(QCoreApplication.translate("MainWindow", u"\u5173\u95ed", None))
+        self.Rbtn2_13_open.setText(QCoreApplication.translate("MainWindow", u"\u5f00\u542f", None))
+        self.Rbtn2_13_close.setText(QCoreApplication.translate("MainWindow", u"\u5173\u95ed", None))
         self.label_9.setText(QCoreApplication.translate("MainWindow", u"\u52a0\u70ed\u68d21", None))
-        self.Rbtn_mc13_open.setText(QCoreApplication.translate("MainWindow", u"\u5f00\u542f", None))
-        self.Rbtn_mc13_close.setText(QCoreApplication.translate("MainWindow", u"\u5173\u95ed", None))
+        self.Rbtn2_11_open.setText(QCoreApplication.translate("MainWindow", u"\u5f00\u542f", None))
+        self.Rbtn2_11_close.setText(QCoreApplication.translate("MainWindow", u"\u5173\u95ed", None))
         self.btn_get_data_12hours.setText(QCoreApplication.translate("MainWindow", u"\u70b9\u51fb\u83b7\u53d612\u5c0f\u65f6\u73af\u5883\u6570\u636e", None))
         self.label_time.setText(QCoreApplication.translate("MainWindow", u"\u83b7\u53d6\u65f6\u95f4\uff1a", None))
         self.Btn_open_cloud_web.setText(QCoreApplication.translate("MainWindow", u"\u767b\u9646\u4e91\u5e73\u53f0\u67e5\u770b\u8be6\u7ec6\u4fe1\u606f", None))

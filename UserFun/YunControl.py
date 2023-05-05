@@ -1,13 +1,12 @@
-import os
+import threading
+import time
 import requests
 import json
 import urllib3
 import datetime
-# import sys, tty, select, termios
 
 
-class YunControl():
-
+class YunControl:
     # noinspection SpellCheckingInspection
     def __init__(self):
         urllib3.disable_warnings()  # 忽略https安全证书的验证
@@ -34,11 +33,15 @@ class YunControl():
         self.addr_southern_soil2 = "21043765"        # 南部土壤传感器2      （5个温度值，5个湿度值）
         self.addr_host1 = "40184157"                 # 主机1地址            （32组温湿度）
         self.addr_host2 = "40184180"                 # 主机2地址            （29组温湿度） 不确定
-        self.addr_relay = "40191625"                 # 网络继电器地址
+        self.addr_relay1 = "40261493"                 # 网络继电器地址
+        self.addr_relay2 = "40261505"                # 网络继电器地址
+        self.addr_relay3= "40261506"                  # 网络继电器地址
+        self.addr_relay4 = "40261512"  # 网络继电器地址
         self.delay_time = 2                          # 程序运行时间间隔，由传感器采集频率决定
 
         self.relay_command = {1: 1, 2: 1, 3: 1, 4: 0, 5: 0, 6: 0, 7: 1, 8: 1}  # 继电器控制初始状态  0灯亮 闭合  1灯灭 断开
-        self.relay_num = {'1', '2', '3', '4', '5', '6', '7', '8'}
+        self.relay_num = {1, 2, 3, 4, 5, 6, 7, 8}
+        # self.relay_num = {'1', '2', '3', '4', '5', '6', '7', '8'}
         self.air_temperature_buffer = {}  # 存储临时环境数据
         self.air_humidity_buffer = {}
         self.soil_temperature_buffer = {}  #
@@ -50,7 +53,7 @@ class YunControl():
     #  获取传感器历史数据 deviceAddr=主机地址, nodeId=传感器因子号, startTime, endTime时间格式：YYYY-MM-dd HH:mm:ss
     #  使用接口获取历史数据时，每分钟只能执行6次，超出次数会被拒绝。
 
-    def get_history_data(self, deviceAddr, startTime, endTime, nodeId=-1,):
+    def get_history_data_withoutThreads(self, deviceAddr, startTime, endTime, nodeId=-1):
         self.check_token()
         iid = list(self.deviceAddr.values()).index(deviceAddr)
         name = list(self.deviceAddr.keys())[iid]
@@ -93,6 +96,12 @@ class YunControl():
         f.close()
 
         return
+
+    def get_history_data(self, deviceAddr, startTime, endTime, nodeId=-1 ):
+        newThread = threading.Thread(target=self.set_one_relay_withoutThreads,
+                                     args=(deviceAddr, startTime, endTime, nodeId),
+                                     name="get_history_data")
+        newThread.start()
 
     def get_token(self):
         url = self.url_yun + "api/getToken?loginName=" + self.ID + "&password=" + self.PW
@@ -214,14 +223,14 @@ class YunControl():
             else:
                 print("操作失败")
 
-    # 开启某个继电器  addr_relay:继电器地址    relay_num： 继电器的位 取值范围0-7
-    def set_one_relay(self, addr_relay, relay_num):
+    # 开启某个继电器  addr_relay:继电器地址    relay_num： 继电器编号 取值范围1-8
+    def set_one_relay_withoutThreads(self, addr_relay, relay_num):
         url = self.url_yun + "api/device/setRelay?deviceAddr=" + addr_relay + "&relayNo={}".format(
             relay_num) + "&opt={}".format(1)
         # http://www.0531yun.com/api/device/setRelay?deviceAddr=40191625&relayNo=5&opt=0
         if relay_num in self.relay_num:
             r = requests.post(url, headers=self.headers)
-            print("正打开继电器{}...".format(relay_num))
+            print("正打开继电器{0}-{1}...".format(addr_relay,relay_num))
             if r.status_code == 200:
                 print("打开成功。")
                 return
@@ -232,14 +241,20 @@ class YunControl():
             print("继电器号超范围")
         return
 
+    def set_one_relay(self, addr_relay, relay_num):
+        newThread1 = threading.Thread(target=self.set_one_relay_withoutThreads,
+                                      args=(addr_relay, relay_num),
+                                      name="newThread_set_one_relay")
+        newThread1.start()
+
     # 关闭某个继电器
-    def clear_one_relay(self, addr_relay, relay_num):
+    def clear_one_relay_withoutThreads(self, addr_relay, relay_num):
         url = self.url_yun + "api/device/setRelay?deviceAddr=" + addr_relay + "&relayNo={}".format(
             relay_num) + "&opt={}".format(0)
         # http://www.0531yun.com/api/device/setRelay?deviceAddr=40191625&relayNo=5&opt=0
         if relay_num in self.relay_num:
             r = requests.post(url, headers=self.headers)
-            print("正打开继电器{}...".format(relay_num))
+            print("正关闭继电器{0}-{1}...".format(addr_relay, relay_num))
             if r.status_code == 200:
                 print("关闭成功。")
                 return
@@ -249,6 +264,23 @@ class YunControl():
         else:
             print("继电器号超出范围")
             return
+
+    def clear_one_relay(self, addr_relay, relay_num):
+        newThread2 = threading.Thread(target=self.clear_one_relay_withoutThreads,
+                                      args=(addr_relay, relay_num),
+                                      name="newThread_clear_one_relay")
+        newThread2.start()
+
+    def set_and_clear_one_relay_withoutThreads(self, addr_relay, relay_num):
+        self.set_one_relay(self.addr_relay1, 1)
+        time.sleep(0.05)
+        self.clear_one_relay(self.addr_relay1, 1)
+
+    def set_and_clear_one_relay(self, addr_relay, relay_num):
+        newThread = threading.Thread(target=self.set_and_clear_one_relay_withoutThreads,
+                                     args=(addr_relay, relay_num),
+                                     name="newThread_set_and_clear_one_relay")
+        newThread.start()
 
     def get_cloud_data_12hours(self):
         now = datetime.datetime.now()
@@ -275,7 +307,6 @@ class YunControl():
         return
 
     def draw_data(self):
-
         pass
         return
 

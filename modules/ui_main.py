@@ -2729,7 +2729,7 @@ class Ui_MainWindow(object):
         self.Rbtn1_32_open.setText(QCoreApplication.translate("MainWindow", u"\u5f00\u542f", None))
         self.Rbtn1_32_close.setText(QCoreApplication.translate("MainWindow", u"\u5173\u95ed", None))
         self.label_12.setText(QCoreApplication.translate("MainWindow", u"\u5faa\u73af\u6c34\u4e0e\u7a7a\u6c14\n"
-"\u6362\u70ed\u6cf5", None))
+"\u6362\u70ed\u6cf5(\u5907\u7528)", None))
         self.Rbtn1_34_open.setText(QCoreApplication.translate("MainWindow", u"\u5f00\u542f", None))
         self.Rbtn1_34_close.setText(QCoreApplication.translate("MainWindow", u"\u5173\u95ed", None))
         self.label_7.setText(QCoreApplication.translate("MainWindow", u"\u95e8\u5385\u706f", None))

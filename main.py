@@ -36,6 +36,13 @@ class MyMainWindow(QMainWindow):
         global widgets, yun
         widgets = self.ui
         yun = self.yun
+        self.RadioBtnName = {"Rbtn1_11": "卷帘机", "Rbtn1_12": "卷膜机", "Rbtn1_13": "补光灯1", "Rbtn1_14": "补光灯2",
+                             "Rbtn1_21": "照明灯", "Rbtn1_22": "门厅灯", "Rbtn1_23": "循环乙二醇", "Rbtn1_24": "循环乙二醇(备用)",
+                             "Rbtn1_31": "循环水与乙二醇备用泵", "Rbtn1_32": "循环水与乙二醇备用泵(备用)", "Rbtn1_33": "循环水与空气换热泵", "Rbtn1_34": "循环水与空气换热泵(备用)",
+                             "Rbtn2_11": "加热棒1", "Rbtn2_12": "加热棒2", "Rbtn2_13": "加热棒3", "Rbtn2_14": "控制回路电源",
+                             "Rbtn2_21": "排风机1", "Rbtn2_22": "排风机2", "Rbtn2_23": "排风机3", "Rbtn2_24": "排风机4",
+                             "Rbtn2_31": "水肥一体机泵", "Rbtn2_32": "水肥一体机电磁阀", "Rbtn2_33": "室内监测电源", "Rbtn2_34": "气象站电源",
+                             }
 
         # USE CUSTOM TITLE BAR | USE AS "False" FOR MAC OR LINUX
         # ///////////////////////////////////////////////////////////////
@@ -84,17 +91,7 @@ class MyMainWindow(QMainWindow):
         # manual_control Button
         self.manual_control_Button_config()  # 配置控制按钮功能
 
-
-
-
-
         AppFunctions.display(self)
-
-
-
-
-
-
 
 
         # EXTRA LEFT BOX
@@ -215,19 +212,6 @@ class MyMainWindow(QMainWindow):
     # RESIZE EVENTS
     # ///////////////////////////////////////////////////////////////
 
-    def Ctl_Radio_button_selected(self):
-        # GET BUTTON CLICKED
-        btn = self.sender()  # 获取发送信号的对象
-        btnName = btn.objectName()
-
-        # self.yun.set_one_relay(self.yun.addr_relay, 0)
-        if self.ui.Rbtn1_11_up.isChecked():
-            print(self.ui.Rbtn1_11_up.objectName() + "chosen")
-        if self.ui.Rbtn1_11_stop.isChecked():
-            print(self.ui.Rbtn1_11_stop.objectName() + "chosen")
-        if self.ui.Rbtn1_11_down.isChecked():
-            print(self.ui.Rbtn1_11_down.objectName() + "chosen")
-
 
     def resizeEvent(self, event):
         # Update Size Grips
@@ -268,72 +252,256 @@ class MyMainWindow(QMainWindow):
         self.ui.Rbtn1_12_stop.clicked.connect(self.Ctl_Radio_button_selected)
         self.ui.Rbtn1_12_down.clicked.connect(self.Ctl_Radio_button_selected)
 
-        self.ui.Rbtn1_13_open.toggled.connect(self.Ctl_Radio_button_selected)  # 补光灯1
-        self.ui.Rbtn1_13_close.toggled.connect(self.Ctl_Radio_button_selected)
+        self.ui.Rbtn1_13_open.clicked.connect(self.Ctl_Radio_button_selected)  # 补光灯1
+        self.ui.Rbtn1_13_close.clicked.connect(self.Ctl_Radio_button_selected)
 
-        self.ui.Rbtn1_14_open.toggled.connect(self.Ctl_Radio_button_selected)  # 补光灯2
-        self.ui.Rbtn1_14_close.toggled.connect(self.Ctl_Radio_button_selected)
+        self.ui.Rbtn1_14_open.clicked.connect(self.Ctl_Radio_button_selected)  # 补光灯2
+        self.ui.Rbtn1_14_close.clicked.connect(self.Ctl_Radio_button_selected)
 
-        self.ui.Rbtn1_21_open.toggled.connect(self.Ctl_Radio_button_selected)  # 照明灯
-        self.ui.Rbtn1_21_close.toggled.connect(self.Ctl_Radio_button_selected)
+        self.ui.Rbtn1_21_open.clicked.connect(self.Ctl_Radio_button_selected)  # 照明灯
+        self.ui.Rbtn1_21_close.clicked.connect(self.Ctl_Radio_button_selected)
 
-        self.ui.Rbtn1_22_open.toggled.connect(self.Ctl_Radio_button_selected)  # 门厅灯
-        self.ui.Rbtn1_22_close.toggled.connect(self.Ctl_Radio_button_selected)
+        self.ui.Rbtn1_22_open.clicked.connect(self.Ctl_Radio_button_selected)  # 门厅灯
+        self.ui.Rbtn1_22_close.clicked.connect(self.Ctl_Radio_button_selected)
 
-        self.ui.Rbtn1_23_open.toggled.connect(self.Ctl_Radio_button_selected)  # 循环乙二醇泵
-        self.ui.Rbtn1_23_close.toggled.connect(self.Ctl_Radio_button_selected)
+        self.ui.Rbtn1_23_open.clicked.connect(self.Ctl_Radio_button_selected)  # 循环乙二醇泵
+        self.ui.Rbtn1_23_close.clicked.connect(self.Ctl_Radio_button_selected)
 
-        self.ui.Rbtn1_24_open.toggled.connect(self.Ctl_Radio_button_selected)   # 循环乙二醇泵（备用）
-        self.ui.Rbtn1_24_close.toggled.connect(self.Ctl_Radio_button_selected)
+        self.ui.Rbtn1_24_open.clicked.connect(self.Ctl_Radio_button_selected)   # 循环乙二醇泵（备用）
+        self.ui.Rbtn1_24_close.clicked.connect(self.Ctl_Radio_button_selected)
 
-        self.ui.Rbtn1_31_open.toggled.connect(self.Ctl_Radio_button_selected)  # 循环水与乙二醇换热泵
-        self.ui.Rbtn1_31_close.toggled.connect(self.Ctl_Radio_button_selected)
+        self.ui.Rbtn1_31_open.clicked.connect(self.Ctl_Radio_button_selected)  # 循环水与乙二醇换热泵
+        self.ui.Rbtn1_31_close.clicked.connect(self.Ctl_Radio_button_selected)
 
-        self.ui.Rbtn1_32_open.toggled.connect(self.Ctl_Radio_button_selected)  # 循环水与乙二醇换热泵（备用）
-        self.ui.Rbtn1_32_close.toggled.connect(self.Ctl_Radio_button_selected)
+        self.ui.Rbtn1_32_open.clicked.connect(self.Ctl_Radio_button_selected)  # 循环水与乙二醇换热泵（备用）
+        self.ui.Rbtn1_32_close.clicked.connect(self.Ctl_Radio_button_selected)
 
-        self.ui.Rbtn1_33_open.toggled.connect(self.Ctl_Radio_button_selected)  # 循环水与空气换热泵
-        self.ui.Rbtn1_33_close.toggled.connect(self.Ctl_Radio_button_selected)
+        self.ui.Rbtn1_33_open.clicked.connect(self.Ctl_Radio_button_selected)  # 循环水与空气换热泵
+        self.ui.Rbtn1_33_close.clicked.connect(self.Ctl_Radio_button_selected)
 
-        self.ui.Rbtn1_34_open.toggled.connect(self.Ctl_Radio_button_selected)
-        self.ui.Rbtn1_34_close.toggled.connect(self.Ctl_Radio_button_selected)  # 循环水与空气换热泵（备用）
+        self.ui.Rbtn1_34_open.clicked.connect(self.Ctl_Radio_button_selected)
+        self.ui.Rbtn1_34_close.clicked.connect(self.Ctl_Radio_button_selected)  # 循环水与空气换热泵（备用）
 
         # manual_control_page2   按键设置 3行 4列
-        self.ui.Rbtn2_11_open.toggled.connect(self.Ctl_Radio_button_selected)  # 加热棒1
-        self.ui.Rbtn2_11_close.toggled.connect(self.Ctl_Radio_button_selected)
+        self.ui.Rbtn2_11_open.clicked.connect(self.Ctl_Radio_button_selected)  # 加热棒1
+        self.ui.Rbtn2_11_close.clicked.connect(self.Ctl_Radio_button_selected)
 
-        self.ui.Rbtn2_12_open.toggled.connect(self.Ctl_Radio_button_selected)  # 加热棒2
-        self.ui.Rbtn2_12_close.toggled.connect(self.Ctl_Radio_button_selected)
+        self.ui.Rbtn2_12_open.clicked.connect(self.Ctl_Radio_button_selected)  # 加热棒2
+        self.ui.Rbtn2_12_close.clicked.connect(self.Ctl_Radio_button_selected)
 
-        self.ui.Rbtn2_13_open.toggled.connect(self.Ctl_Radio_button_selected)  # 加热棒3
-        self.ui.Rbtn2_13_close.toggled.connect(self.Ctl_Radio_button_selected)
+        self.ui.Rbtn2_13_open.clicked.connect(self.Ctl_Radio_button_selected)  # 加热棒3
+        self.ui.Rbtn2_13_close.clicked.connect(self.Ctl_Radio_button_selected)
 
-        self.ui.Rbtn2_14_open.toggled.connect(self.Ctl_Radio_button_selected)  # 控制回路电源
-        self.ui.Rbtn2_14_close.toggled.connect(self.Ctl_Radio_button_selected)
+        self.ui.Rbtn2_14_open.clicked.connect(self.Ctl_Radio_button_selected)  # 控制回路电源
+        self.ui.Rbtn2_14_close.clicked.connect(self.Ctl_Radio_button_selected)
 
-        self.ui.Rbtn2_21_open.toggled.connect(self.Ctl_Radio_button_selected)  # 排风机1
-        self.ui.Rbtn2_21_close.toggled.connect(self.Ctl_Radio_button_selected)
+        self.ui.Rbtn2_21_open.clicked.connect(self.Ctl_Radio_button_selected)  # 排风机1
+        self.ui.Rbtn2_21_close.clicked.connect(self.Ctl_Radio_button_selected)
 
-        self.ui.Rbtn2_22_open.toggled.connect(self.Ctl_Radio_button_selected)  # 排风机2
-        self.ui.Rbtn2_22_close.toggled.connect(self.Ctl_Radio_button_selected)
+        self.ui.Rbtn2_22_open.clicked.connect(self.Ctl_Radio_button_selected)  # 排风机2
+        self.ui.Rbtn2_22_close.clicked.connect(self.Ctl_Radio_button_selected)
 
-        self.ui.Rbtn2_23_open.toggled.connect(self.Ctl_Radio_button_selected)  # 排风机3
-        self.ui.Rbtn2_23_close.toggled.connect(self.Ctl_Radio_button_selected)
+        self.ui.Rbtn2_23_open.clicked.connect(self.Ctl_Radio_button_selected)  # 排风机3
+        self.ui.Rbtn2_23_close.clicked.connect(self.Ctl_Radio_button_selected)
 
-        self.ui.Rbtn2_24_open.toggled.connect(self.Ctl_Radio_button_selected)  # 排风机4
-        self.ui.Rbtn2_24_close.toggled.connect(self.Ctl_Radio_button_selected)
+        self.ui.Rbtn2_24_open.clicked.connect(self.Ctl_Radio_button_selected)  # 排风机4
+        self.ui.Rbtn2_24_close.clicked.connect(self.Ctl_Radio_button_selected)
 
-        self.ui.Rbtn2_31_open.toggled.connect(self.Ctl_Radio_button_selected)  # 水肥一体机泵
-        self.ui.Rbtn2_31_close.toggled.connect(self.Ctl_Radio_button_selected)
+        self.ui.Rbtn2_31_open.clicked.connect(self.Ctl_Radio_button_selected)  # 水肥一体机泵
+        self.ui.Rbtn2_31_close.clicked.connect(self.Ctl_Radio_button_selected)
 
-        self.ui.Rbtn2_32_open.toggled.connect(self.Ctl_Radio_button_selected)   # 水肥一体机电磁阀门
-        self.ui.Rbtn2_32_close.toggled.connect(self.Ctl_Radio_button_selected)
+        self.ui.Rbtn2_32_open.clicked.connect(self.Ctl_Radio_button_selected)   # 水肥一体机电磁阀门
+        self.ui.Rbtn2_32_close.clicked.connect(self.Ctl_Radio_button_selected)
 
-        self.ui.Rbtn2_33_open.toggled.connect(self.Ctl_Radio_button_selected)   # 室内监测电源
-        self.ui.Rbtn2_33_close.toggled.connect(self.Ctl_Radio_button_selected)
+        self.ui.Rbtn2_33_open.clicked.connect(self.Ctl_Radio_button_selected)   # 室内监测电源
+        self.ui.Rbtn2_33_close.clicked.connect(self.Ctl_Radio_button_selected)
 
-        self.ui.Rbtn2_34_open.toggled.connect(self.Ctl_Radio_button_selected)  # 气象站电源
-        self.ui.Rbtn2_34_close.toggled.connect(self.Ctl_Radio_button_selected)
+        self.ui.Rbtn2_34_open.clicked.connect(self.Ctl_Radio_button_selected)  # 气象站电源
+        self.ui.Rbtn2_34_close.clicked.connect(self.Ctl_Radio_button_selected)
+
+    def Ctl_Radio_button_selected(self):
+        # GET BUTTON CLICKED
+        btn = self.sender()  # 获取发送信号的对象
+        btnName = btn.objectName()
+        RadioBtn = btnName[0:8]
+        # self.yun.set_one_relay(self.yun.addr_relay, 0)
+        '''以下代码用于 “手动远程控制1” 页面的选择按键'''
+        if RadioBtn == "Rbtn1_11":   # 使用addr_relay1 的1、2、3路继电器
+            if self.ui.Rbtn1_11_up.isChecked():  # 上卷按钮选中时，开通relay1-1 0.05s 后断开(实际要大)，模拟按键的点动
+                self.yun.set_and_clear_one_relay(self.yun.addr_relay1, 1)
+                print(self.ui.Rbtn1_11_up.objectName() + "   " + self.ui.Rbtn1_11_up.text())
+            if self.ui.Rbtn1_11_stop.isChecked():
+                self.yun.set_and_clear_one_relay(self.yun.addr_relay1, 2)
+                print(self.ui.Rbtn1_11_stop.objectName() + "   " + self.ui.Rbtn1_11_stop.text())
+            if self.ui.Rbtn1_11_down.isChecked():
+                self.yun.set_and_clear_one_relay(self.yun.addr_relay1, 3)
+                print(self.ui.Rbtn1_11_down.objectName() + "   " + self.ui.Rbtn1_11_down.text())
+        if RadioBtn == "Rbtn1_12":  # 使用addr_relay1 的4、5、6路继电器
+            if self.ui.Rbtn1_12_up.isChecked():
+                self.yun.set_and_clear_one_relay(self.yun.addr_relay1, 4)
+                print(self.ui.Rbtn1_12_up.objectName() + "   " + self.ui.Rbtn1_12_up.text())
+            if self.ui.Rbtn1_12_stop.isChecked():
+                self.yun.set_and_clear_one_relay(self.yun.addr_relay1, 5)
+                print(self.ui.Rbtn1_12_stop.objectName() + "   " + self.ui.Rbtn1_12_stop.text())
+            if self.ui.Rbtn1_12_down.isChecked():
+                self.yun.set_and_clear_one_relay(self.yun.addr_relay1, 6)
+                print(self.ui.Rbtn1_12_down.objectName() + "   " + self.ui.Rbtn1_12_down.text())
+        if RadioBtn == "Rbtn1_13":
+            if self.ui.Rbtn1_13_open.isChecked():
+                self.yun.set_one_relay(self.yun.addr_relay1, 7)
+                print(self.ui.Rbtn1_13_open.objectName() + "   " + self.ui.Rbtn1_13_open.text())
+            if self.ui.Rbtn1_13_close.isChecked():
+                self.yun.set_one_relay(self.yun.addr_relay1, 7)
+                print(self.ui.Rbtn1_13_close.objectName() + "   " + self.ui.Rbtn1_13_close.text())
+        if RadioBtn == "Rbtn1_14":
+            if self.ui.Rbtn1_14_open.isChecked():
+                self.yun.set_one_relay(self.yun.addr_relay1, 8)
+                print(self.ui.Rbtn1_14_open.objectName() + "   " + self.ui.Rbtn1_14_open.text())
+            if self.ui.Rbtn1_14_close.isChecked():
+                self.yun.clear_one_relay(self.yun.addr_relay1, 8)
+                print(self.ui.Rbtn1_13_close.objectName() + "   " + self.ui.Rbtn1_14_close.text())
+        if RadioBtn == "Rbtn1_21":
+            if self.ui.Rbtn1_21_open.isChecked():
+                self.yun.set_one_relay(self.yun.addr_relay2, 1)
+                print(self.ui.Rbtn1_21_open.objectName() + "   " + self.ui.Rbtn1_21_open.text())
+            if self.ui.Rbtn1_21_close.isChecked():
+                self.yun.clear_one_relay(self.yun.addr_relay2, 1)
+                print(self.ui.Rbtn1_13_close.objectName() + "   " + self.ui.Rbtn1_21_close.text())
+        if RadioBtn == "Rbtn1_22":
+            if self.ui.Rbtn1_22_open.isChecked():
+                self.yun.set_one_relay(self.yun.addr_relay2, 2)
+                print(self.ui.Rbtn1_22_open.objectName() + "   " + self.ui.Rbtn1_22_open.text())
+            if self.ui.Rbtn1_22_close.isChecked():
+                self.yun.clear_one_relay(self.yun.addr_relay2, 2)
+                print(self.ui.Rbtn1_13_close.objectName() + "   " + self.ui.Rbtn1_22_close.text())
+        if RadioBtn == "Rbtn1_23":
+            if self.ui.Rbtn1_23_open.isChecked():
+                self.yun.set_one_relay(self.yun.addr_relay2, 3)
+                print(self.ui.Rbtn1_23_open.objectName() + "   " + self.ui.Rbtn1_23_open.text())
+            if self.ui.Rbtn1_23_close.isChecked():
+                self.yun.clear_one_relay(self.yun.addr_relay2, 3)
+                print(self.ui.Rbtn1_13_close.objectName() + "   " + self.ui.Rbtn1_23_close.text())
+        if RadioBtn == "Rbtn1_24":
+            if self.ui.Rbtn1_24_open.isChecked():
+                self.yun.set_one_relay(self.yun.addr_relay2, 4)
+                print(self.ui.Rbtn1_24_open.objectName() + "   " + self.ui.Rbtn1_24_open.text())
+            if self.ui.Rbtn1_24_close.isChecked():
+                self.yun.clear_one_relay(self.yun.addr_relay2, 4)
+                print(self.ui.Rbtn1_13_close.objectName() + "   " + self.ui.Rbtn1_24_close.text())
+        if RadioBtn == "Rbtn1_31":
+            if self.ui.Rbtn1_31_open.isChecked():
+                self.yun.set_one_relay(self.yun.addr_relay2, 5)
+                print(self.ui.Rbtn1_31_open.objectName() + "   " + self.ui.Rbtn1_31_open.text())
+            if self.ui.Rbtn1_31_close.isChecked():
+                self.yun.clear_one_relay(self.yun.addr_relay2, 5)
+                print(self.ui.Rbtn1_13_close.objectName() + "   " + self.ui.Rbtn1_31_close.text())
+        if RadioBtn == "Rbtn1_32":
+            if self.ui.Rbtn1_32_open.isChecked():
+                self.yun.set_one_relay(self.yun.addr_relay2, 6)
+                print(self.ui.Rbtn1_32_open.objectName() + "   " + self.ui.Rbtn1_32_open.text())
+            if self.ui.Rbtn1_32_close.isChecked():
+                self.yun.clear_one_relay(self.yun.addr_relay2, 6)
+                print(self.ui.Rbtn1_13_close.objectName() + "   " + self.ui.Rbtn1_32_close.text())
+        if RadioBtn == "Rbtn1_33":
+            if self.ui.Rbtn1_33_open.isChecked():
+                self.yun.set_one_relay(self.yun.addr_relay2, 7)
+                print(self.ui.Rbtn1_33_open.objectName() + "   " + self.ui.Rbtn1_33_open.text())
+            if self.ui.Rbtn1_33_close.isChecked():
+                self.yun.clear_one_relay(self.yun.addr_relay2, 7)
+                print(self.ui.Rbtn1_13_close.objectName() + "   " + self.ui.Rbtn1_33_close.text())
+        if RadioBtn == "Rbtn1_34":
+            if self.ui.Rbtn1_34_open.isChecked():
+                self.yun.set_one_relay(self.yun.addr_relay2, 8)
+                print(self.ui.Rbtn1_34_open.objectName() + "   " + self.ui.Rbtn1_34_open.text())
+            if self.ui.Rbtn1_34_close.isChecked():
+                self.yun.clear_one_relay(self.yun.addr_relay2, 8)
+                print(self.ui.Rbtn1_13_close.objectName() + "   " + self.ui.Rbtn1_34_close.text())
+
+        '''以下代码用于 “手动远程控制2” 页面的选择按键'''
+        if RadioBtn == "Rbtn2_11":  # 使用relay3 的 第1路继电器
+            if self.ui.Rbtn2_11_open.isChecked():
+                self.yun.set_one_relay(self.yun.addr_relay3, 1)
+                print(self.ui.Rbtn2_11_open.objectName() + "   " + self.ui.Rbtn2_11_open.text())
+            if self.ui.Rbtn2_11_close.isChecked():
+                self.yun.set_one_relay(self.yun.addr_relay3, 1)
+                print(self.ui.Rbtn2_11_close.objectName() + "   " + self.ui.Rbtn2_11_close.text())
+        if RadioBtn == "Rbtn2_12":
+            if self.ui.Rbtn2_12_open.isChecked():
+                self.yun.set_one_relay(self.yun.addr_relay3, 2)
+                print(self.ui.Rbtn2_12_open.objectName() + "   " + self.ui.Rbtn2_12_open.text())
+            if self.ui.Rbtn2_12_close.isChecked():
+                self.yun.set_one_relay(self.yun.addr_relay3, 2)
+                print(self.ui.Rbtn2_12_close.objectName() + "   " + self.ui.Rbtn2_12_close.text())
+        if RadioBtn == "Rbtn2_13":
+            if self.ui.Rbtn2_13_open.isChecked():
+                self.yun.set_one_relay(self.yun.addr_relay3, 3)
+                print(self.ui.Rbtn2_13_open.objectName() + "   " + self.ui.Rbtn2_13_open.text())
+            if self.ui.Rbtn2_13_close.isChecked():
+                self.yun.set_one_relay(self.yun.addr_relay3, 3)
+                print(self.ui.Rbtn2_13_close.objectName() + "   " + self.ui.Rbtn2_13_close.text())
+        if RadioBtn == "Rbtn2_14":
+            if self.ui.Rbtn2_14_open.isChecked():
+                self.yun.set_one_relay(self.yun.addr_relay3, 4)
+                print(self.ui.Rbtn2_14_open.objectName() + "   " + self.ui.Rbtn2_14_open.text())
+            if self.ui.Rbtn2_14_close.isChecked():
+                self.yun.clear_one_relay(self.yun.addr_relay3, 4)
+                print(self.ui.Rbtn2_13_close.objectName() + "   " + self.ui.Rbtn2_14_close.text())
+        if RadioBtn == "Rbtn2_21":
+            if self.ui.Rbtn2_21_open.isChecked():
+                self.yun.set_one_relay(self.yun.addr_relay3, 5)
+                print(self.ui.Rbtn2_21_open.objectName() + "   " + self.ui.Rbtn2_21_open.text())
+            if self.ui.Rbtn2_21_close.isChecked():
+                self.yun.clear_one_relay(self.yun.addr_relay3, 5)
+                print(self.ui.Rbtn2_13_close.objectName() + "   " + self.ui.Rbtn2_21_close.text())
+        if RadioBtn == "Rbtn2_22":
+            if self.ui.Rbtn2_22_open.isChecked():
+                self.yun.set_one_relay(self.yun.addr_relay3, 6)
+                print(self.ui.Rbtn2_22_open.objectName() + "   " + self.ui.Rbtn2_22_open.text())
+            if self.ui.Rbtn2_22_close.isChecked():
+                self.yun.clear_one_relay(self.yun.addr_relay3, 6)
+                print(self.ui.Rbtn2_13_close.objectName() + "   " + self.ui.Rbtn2_22_close.text())
+        if RadioBtn == "Rbtn2_23":
+            if self.ui.Rbtn2_23_open.isChecked():
+                self.yun.set_one_relay(self.yun.addr_relay3, 7)
+                print(self.ui.Rbtn2_23_open.objectName() + "   " + self.ui.Rbtn2_23_open.text())
+            if self.ui.Rbtn2_23_close.isChecked():
+                self.yun.clear_one_relay(self.yun.addr_relay3, 7)
+                print(self.ui.Rbtn2_13_close.objectName() + "   " + self.ui.Rbtn2_23_close.text())
+        if RadioBtn == "Rbtn2_24":
+            if self.ui.Rbtn2_24_open.isChecked():
+                self.yun.set_one_relay(self.yun.addr_relay3, 8)
+                print(self.ui.Rbtn2_24_open.objectName() + "   " + self.ui.Rbtn2_24_open.text())
+            if self.ui.Rbtn2_24_close.isChecked():
+                self.yun.clear_one_relay(self.yun.addr_relay3, 8)
+                print(self.ui.Rbtn2_13_close.objectName() + "   " + self.ui.Rbtn2_24_close.text())
+        if RadioBtn == "Rbtn2_31":
+            if self.ui.Rbtn2_31_open.isChecked():
+                self.yun.set_one_relay(self.yun.addr_relay4, 1)
+                print(self.ui.Rbtn2_31_open.objectName() + "   " + self.ui.Rbtn2_31_open.text())
+            if self.ui.Rbtn2_31_close.isChecked():
+                self.yun.clear_one_relay(self.yun.addr_relay4, 1)
+                print(self.ui.Rbtn2_13_close.objectName() + "   " + self.ui.Rbtn2_31_close.text())
+        if RadioBtn == "Rbtn2_32":
+            if self.ui.Rbtn2_32_open.isChecked():
+                self.yun.set_one_relay(self.yun.addr_relay4, 2)
+                print(self.ui.Rbtn2_32_open.objectName() + "   " + self.ui.Rbtn2_32_open.text())
+            if self.ui.Rbtn2_32_close.isChecked():
+                self.yun.clear_one_relay(self.yun.addr_relay4, 2)
+                print(self.ui.Rbtn2_13_close.objectName() + "   " + self.ui.Rbtn2_32_close.text())
+        if RadioBtn == "Rbtn2_33":
+            if self.ui.Rbtn2_33_open.isChecked():
+                self.yun.set_one_relay(self.yun.addr_relay4, 3)
+                print(self.ui.Rbtn2_33_open.objectName() + "   " + self.ui.Rbtn2_33_open.text())
+            if self.ui.Rbtn2_33_close.isChecked():
+                self.yun.clear_one_relay(self.yun.addr_relay4, 3)
+                print(self.ui.Rbtn2_13_close.objectName() + "   " + self.ui.Rbtn2_33_close.text())
+        if RadioBtn == "Rbtn2_34":
+            if self.ui.Rbtn2_34_open.isChecked():
+                self.yun.set_one_relay(self.yun.addr_relay4, 4)
+                print(self.ui.Rbtn2_34_open.objectName() + "   " + self.ui.Rbtn2_34_open.text())
+            if self.ui.Rbtn2_34_close.isChecked():
+                self.yun.clear_one_relay(self.yun.addr_relay4, 4)
+                print(self.ui.Rbtn2_13_close.objectName() + "   " + self.ui.Rbtn2_34_close.text())
 
 
 if __name__ == "__main__":
@@ -341,3 +509,5 @@ if __name__ == "__main__":
     app.setWindowIcon(QIcon("bakeup/icon.ico"))
     window = MyMainWindow()
     sys.exit(app.exec())
+
+

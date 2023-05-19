@@ -70,6 +70,8 @@ class AppFunctions(MyMainWindow):
     def Refresh_radioBtn(self):
         self.ui.Rbtn1_11_stop.checkStateSet(True)
         self.ui.Rbtn1_12_stop.checkStateSet(True)
+
+
 if __name__ == "__main__":
     import os
     import sys

@@ -7,6 +7,8 @@ import json
 import urllib3
 import datetime
 import matplotlib.pyplot as plt
+from UserFun.DataProcessAndPlot import DataProcessAndPlot
+
 
 class YunControl:
     # noinspection SpellCheckingInspection

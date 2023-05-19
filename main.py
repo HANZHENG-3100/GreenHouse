@@ -18,6 +18,7 @@ import sys
 import PySide6
 import os
 # IMPORT / GUI AND MODULES AND WIDGETS
+from UserFun.DataProcessAndPlot import DataProcessAndPlot
 from UserFun.YunControl import YunControl
 from modules import *
 from widgets import *
@@ -208,6 +209,10 @@ class MyMainWindow(QMainWindow):
         print(f'Button "{btnName}" pressed!')
         if btnName == "btn_get_data_12hours":
             AppFunctions.btn_get_data_12hours(self)  # 获取数据
+            DataProcessAndPlot.plot_data1()
+            DataProcessAndPlot.plot_data2()
+            DataProcessAndPlot.plot_data3()
+            DataProcessAndPlot.plot_data4()
             AppFunctions.display(self)     # 显示数据
             print()
     # RESIZE EVENTS

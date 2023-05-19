@@ -2391,15 +2391,27 @@ class Ui_MainWindow(object):
         self.frame2_c1.setObjectName(u"frame2_c1")
         self.horizontalLayout_42 = QHBoxLayout(self.frame2_c1)
         self.horizontalLayout_42.setObjectName(u"horizontalLayout_42")
+        self.horizontalSpacer_15 = QSpacerItem(40, 20, QSizePolicy.Preferred, QSizePolicy.Minimum)
+
+        self.horizontalLayout_42.addItem(self.horizontalSpacer_15)
+
         self.image_7 = QLabel(self.frame2_c1)
         self.image_7.setObjectName(u"image_7")
 
         self.horizontalLayout_42.addWidget(self.image_7)
 
+        self.horizontalSpacer_16 = QSpacerItem(40, 20, QSizePolicy.Preferred, QSizePolicy.Minimum)
+
+        self.horizontalLayout_42.addItem(self.horizontalSpacer_16)
+
         self.image_8 = QLabel(self.frame2_c1)
         self.image_8.setObjectName(u"image_8")
 
         self.horizontalLayout_42.addWidget(self.image_8)
+
+        self.horizontalSpacer_17 = QSpacerItem(40, 20, QSizePolicy.Preferred, QSizePolicy.Minimum)
+
+        self.horizontalLayout_42.addItem(self.horizontalSpacer_17)
 
 
         self.verticalLayout_20.addWidget(self.frame2_c1)
@@ -2408,6 +2420,10 @@ class Ui_MainWindow(object):
         self.frame2_c2.setObjectName(u"frame2_c2")
         self.horizontalLayout_43 = QHBoxLayout(self.frame2_c2)
         self.horizontalLayout_43.setObjectName(u"horizontalLayout_43")
+        self.horizontalSpacer_9 = QSpacerItem(40, 20, QSizePolicy.Preferred, QSizePolicy.Minimum)
+
+        self.horizontalLayout_43.addItem(self.horizontalSpacer_9)
+
         self.text_humidness_3 = QLineEdit(self.frame2_c2)
         self.text_humidness_3.setObjectName(u"text_humidness_3")
         self.text_humidness_3.setMinimumSize(QSize(60, 0))
@@ -2419,6 +2435,10 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_43.addWidget(self.text_humidness_3)
 
+        self.horizontalSpacer_10 = QSpacerItem(40, 20, QSizePolicy.Preferred, QSizePolicy.Minimum)
+
+        self.horizontalLayout_43.addItem(self.horizontalSpacer_10)
+
         self.text_humidness_2 = QLineEdit(self.frame2_c2)
         self.text_humidness_2.setObjectName(u"text_humidness_2")
         sizePolicy7 = QSizePolicy(QSizePolicy.Ignored, QSizePolicy.Fixed)
@@ -2426,7 +2446,7 @@ class Ui_MainWindow(object):
         sizePolicy7.setVerticalStretch(0)
         sizePolicy7.setHeightForWidth(self.text_humidness_2.sizePolicy().hasHeightForWidth())
         self.text_humidness_2.setSizePolicy(sizePolicy7)
-        self.text_humidness_2.setMinimumSize(QSize(60, 32))
+        self.text_humidness_2.setMinimumSize(QSize(160, 32))
         self.text_humidness_2.setMaximumSize(QSize(160, 32))
         self.text_humidness_2.setFont(font5)
         self.text_humidness_2.setLayoutDirection(Qt.LeftToRight)
@@ -2435,6 +2455,15 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_43.addWidget(self.text_humidness_2)
 
+        self.horizontalSpacer_11 = QSpacerItem(40, 20, QSizePolicy.Preferred, QSizePolicy.Minimum)
+
+        self.horizontalLayout_43.addItem(self.horizontalSpacer_11)
+
+        self.horizontalLayout_43.setStretch(0, 1)
+        self.horizontalLayout_43.setStretch(1, 1)
+        self.horizontalLayout_43.setStretch(2, 2)
+        self.horizontalLayout_43.setStretch(3, 1)
+        self.horizontalLayout_43.setStretch(4, 1)
 
         self.verticalLayout_20.addWidget(self.frame2_c2)
 
@@ -2460,6 +2489,10 @@ class Ui_MainWindow(object):
         self.frame2_c4_2.setObjectName(u"frame2_c4_2")
         self.frame2_c4 = QHBoxLayout(self.frame2_c4_2)
         self.frame2_c4.setObjectName(u"frame2_c4")
+        self.horizontalSpacer_12 = QSpacerItem(40, 20, QSizePolicy.Preferred, QSizePolicy.Minimum)
+
+        self.frame2_c4.addItem(self.horizontalSpacer_12)
+
         self.text_humidness_5 = QLineEdit(self.frame2_c4_2)
         self.text_humidness_5.setObjectName(u"text_humidness_5")
         self.text_humidness_5.setMaximumSize(QSize(160, 16777215))
@@ -2469,6 +2502,10 @@ class Ui_MainWindow(object):
         self.text_humidness_5.setAlignment(Qt.AlignCenter)
 
         self.frame2_c4.addWidget(self.text_humidness_5)
+
+        self.horizontalSpacer_13 = QSpacerItem(40, 20, QSizePolicy.Preferred, QSizePolicy.Minimum)
+
+        self.frame2_c4.addItem(self.horizontalSpacer_13)
 
         self.text_humidness_4 = QLineEdit(self.frame2_c4_2)
         self.text_humidness_4.setObjectName(u"text_humidness_4")
@@ -2480,6 +2517,15 @@ class Ui_MainWindow(object):
 
         self.frame2_c4.addWidget(self.text_humidness_4)
 
+        self.horizontalSpacer_14 = QSpacerItem(40, 20, QSizePolicy.Preferred, QSizePolicy.Minimum)
+
+        self.frame2_c4.addItem(self.horizontalSpacer_14)
+
+        self.frame2_c4.setStretch(0, 1)
+        self.frame2_c4.setStretch(1, 1)
+        self.frame2_c4.setStretch(2, 2)
+        self.frame2_c4.setStretch(3, 1)
+        self.frame2_c4.setStretch(4, 1)
 
         self.verticalLayout_20.addWidget(self.frame2_c4_2)
 
@@ -2635,7 +2681,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(2)
+        self.stackedWidget.setCurrentIndex(5)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -2806,23 +2852,23 @@ class Ui_MainWindow(object):
         self.image_1.setText(QCoreApplication.translate("MainWindow", u"image_1", None))
         self.image_2.setText(QCoreApplication.translate("MainWindow", u"image_2", None))
         self.image_3.setText(QCoreApplication.translate("MainWindow", u"image_3", None))
-        self.text_humidness.setText(QCoreApplication.translate("MainWindow", u"\u7a7a\u6c14\u6e7f\u5ea6", None))
-        self.text_temperature.setText(QCoreApplication.translate("MainWindow", u"\u7a7a\u6c14\u6e29\u5ea6", None))
-        self.text_illumination.setText(QCoreApplication.translate("MainWindow", u"\u5149\u7167\u5f3a\u5ea6", None))
+        self.text_humidness.setText(QCoreApplication.translate("MainWindow", u"\u7a7a\u6c14\u6e29\u5ea6", None))
+        self.text_temperature.setText(QCoreApplication.translate("MainWindow", u"\u7a7a\u6c14\u6e7f\u5ea6", None))
+        self.text_illumination.setText(QCoreApplication.translate("MainWindow", u"\u5ba4\u5185CO2\u6d53\u5ea6", None))
         self.image_4.setText(QCoreApplication.translate("MainWindow", u"image_4", None))
         self.image_5.setText(QCoreApplication.translate("MainWindow", u"image_5", None))
         self.image_6.setText(QCoreApplication.translate("MainWindow", u"image_6", None))
         self.lineEdit_3.setText(QCoreApplication.translate("MainWindow", u"\u571f\u58e4\u6e29\u5ea6", None))
         self.lineEdit_4.setText(QCoreApplication.translate("MainWindow", u"\u571f\u58e4\u6e7f\u5ea6", None))
-        self.lineEdit_2.setText(QCoreApplication.translate("MainWindow", u"\u4e8c\u6c27\u5316\u78b3\u6d53\u5ea6", None))
+        self.lineEdit_2.setText(QCoreApplication.translate("MainWindow", u"\u5317\u5899\u6052\u6e29\u6c34\u7bb1\u6e29\u5ea6", None))
         self.image_7.setText(QCoreApplication.translate("MainWindow", u"image_7", None))
         self.image_8.setText(QCoreApplication.translate("MainWindow", u"image_8", None))
-        self.text_humidness_3.setText(QCoreApplication.translate("MainWindow", u"\u7a7a\u6c14\u6e7f\u5ea6", None))
-        self.text_humidness_2.setText(QCoreApplication.translate("MainWindow", u"\u7a7a\u6c14\u6e29\u5ea6", None))
+        self.text_humidness_3.setText(QCoreApplication.translate("MainWindow", u"\u5149\u7167\u5f3a\u5ea6", None))
+        self.text_humidness_2.setText(QCoreApplication.translate("MainWindow", u"\u73af\u5883\u6e29\u5ea6", None))
         self.image_9.setText(QCoreApplication.translate("MainWindow", u"image_9", None))
         self.image_10.setText(QCoreApplication.translate("MainWindow", u"image_10", None))
-        self.text_humidness_5.setText(QCoreApplication.translate("MainWindow", u"\u7a7a\u6c14\u6e29\u5ea6", None))
-        self.text_humidness_4.setText(QCoreApplication.translate("MainWindow", u"\u7a7a\u6c14\u6e7f\u5ea6", None))
+        self.text_humidness_5.setText(QCoreApplication.translate("MainWindow", u"\u73af\u5883\u6e7f\u5ea6", None))
+        self.text_humidness_4.setText(QCoreApplication.translate("MainWindow", u"\u73af\u5883\u98ce\u901f", None))
         self.textBrowser.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
@@ -2830,8 +2876,8 @@ class Ui_MainWindow(object):
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:14pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">       \u672c\u8f6f\u4ef6\u57fa\u4e8e\u201cxxx\u9879\u76ee\u201d\u592a\u9633\u80fd\u667a\u80fd\u6e29\u5ba4\u5927\u68da\u5b9e\u9645\u5e94\u7528\u5f00\u53d1\uff0c\u96c6\u6210\u5e38\u7528\u6e29\u5ba4\u5927\u68da\u6570\u636e\u91c7\u96c6\u5668\u53ca\u63a7\u5236\u5668\uff0c\u914d\u5408\u4e13\u7528\u201c\u81ea\u52a8\u63a7\u5236\u7cfb\u7edf&quot;\u786c\u4ef6\u4f7f\u7528\u3002</p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"> "
-                        "      \u8f6f\u4ef6\u7248\u6743\u5f52\u201c\u5185\u8499\u53e4\u777f\u529b\u80fd\u6e90\u6709\u9650\u516c\u53f8\u201d\u6240\u6709\uff0c\u975e\u7ecf\u516c\u53f8\u6388\u6743\uff0c\u4e0d\u80fd\u5c06\u5176\u7528\u4e8e\u76c8\u5229\u6216\u975e\u76c8\u5229\u7684\u4efb\u4f55\u7528\u9014\u3002</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">     \u8f6f\u4ef6\u6280\u672f\u652f\u6301\u8bf7\u8054\u7cfb\uff1a15389769877</p></body></html>", None))
+                        "      \u8f6f\u4ef6\u7248\u6743\u5f52\u201cXXXXXX\u6709\u9650\u516c\u53f8\u201d\u6240\u6709\uff0c\u975e\u7ecf\u516c\u53f8\u6388\u6743\uff0c\u4e0d\u80fd\u5c06\u5176\u7528\u4e8e\u76c8\u5229\u6216\u975e\u76c8\u5229\u7684\u4efb\u4f55\u7528\u9014\u3002</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">     \u8f6f\u4ef6\u6280\u672f\u652f\u6301\u8bf7\u8054\u7cfb\uff1a\u97e9\u8001\u5e08  15389769877</p></body></html>", None))
         self.btn_change_topic.setText(QCoreApplication.translate("MainWindow", u"\u6539\u53d8\u4e3b\u9898", None))
         self.btn_print.setText(QCoreApplication.translate("MainWindow", u"\u5f85\u8bbe\u529f\u80fd2print", None))
         self.btn_logout.setText(QCoreApplication.translate("MainWindow", u"\u5f85\u8bbe\u529f\u80fd1logout", None))

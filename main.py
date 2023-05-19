@@ -207,7 +207,8 @@ class MyMainWindow(QMainWindow):
             AppFunctions.Btn_open_web(self)
         print(f'Button "{btnName}" pressed!')
         if btnName == "btn_get_data_12hours":
-            AppFunctions.btn_get_data_12hours(self)
+            AppFunctions.btn_get_data_12hours(self)  # 获取数据
+            AppFunctions.display(self)     # 显示数据
             print()
     # RESIZE EVENTS
     # ///////////////////////////////////////////////////////////////

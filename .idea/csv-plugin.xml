@@ -10,55 +10,6 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="\data\主机1_40184157_2023-3-18_11-53-45-2023-03-19_11-53-45.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\data\主机1_40184157_2023-3-29_11-34-42-2023-03-30_11-34-42.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\data\南部土壤传感器1_21043765_2023-3-18_11-53-45-2023-03-19_11-53-45.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\data\南部土壤传感器1_21043765_2023-3-29_11-34-42-2023-03-30_11-34-42.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\data\气象站_20009680_2023-01-18_16-19-00_-2023-02-16_16-19-00.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\data\气象站_40133062_2023-3-18_11-53-45-2023-03-19_11-53-45.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\data\气象站_40133062_2023-3-29_11-34-42-2023-03-30_11-34-42.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
       </map>
     </option>
   </component>

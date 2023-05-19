@@ -1,23 +1,18 @@
 # -*- coding: gbk -*-
-
 # MAIN FILE
 # ///////////////////////////////////////////////////////////////
 import os.path
+import datetime
 
 import numpy as np
-
 from main import *
 from .app_settings import Settings
 
-
 # WITH ACCESS TO MAIN WINDOW WIDGETS
-# ///////////////////////////////////////////////////////////////
 
 
 class AppFunctions(MyMainWindow):
     # def __init__(self):
-
-
     def setThemeHack(self):
         Settings.BTN_LEFT_BOX_COLOR = "background-color: #495474;"
         Settings.BTN_RIGHT_BOX_COLOR = "background-color: #495474;"
@@ -43,15 +38,6 @@ class AppFunctions(MyMainWindow):
         print("Btn_open_web run")
         return
 
-    def btn_get_data_12hours(self):
-        print("btn_get_data_12hours knob down")
-        # now = datetime.datetime.now().timestamp()
-        ''' 以下代码下载数据使用'''
-        # self.yun.check_token()
-        # self.yun.get_cloud_data_12hours()
-        # self.ui.label_time.setText(u"获取时间：" + str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
-        self.display(self)
-
     def display(self):
         image_label_list = [self.ui.image_1, self.ui.image_2, self.ui.image_3,
                             self.ui.image_4, self.ui.image_5, self.ui.image_6,
@@ -61,15 +47,26 @@ class AppFunctions(MyMainWindow):
             path = r'D:\greenhouse_control\data\image\image{}.png'.format(i)
             image = image_label_list[i - 1]
             pix = QPixmap(path)
-            pix.scaled(image.size(), aspectMode = Qt.KeepAspectRatio)
+            pix.scaled(image.size(), aspectMode=Qt.KeepAspectRatio)
             image.setPixmap(pix)
             image.setScaledContents(True)
+        return
+
+    def btn_get_data_12hours(self):
+        print("btn_get_data_12hours knob down")
+        # now = datetime.datetime.now().timestamp()
+        ''' 以下代码下载数据使用'''
+        # self.yun.check_token()
+        self.yun.get_cloud_data_12hours()
+        self.ui.label_time.setText(u"获取时间：" + str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+        return
 
     def compute_initial_figure(self):
         t = np.arange(0.0, 3.0, 0.01)
         s = np.sin(2 * np.pi * t)
         self.axes.grid('on')
         self.axes.plot(t, s)
+
 
 if __name__ == "__main__":
     import os

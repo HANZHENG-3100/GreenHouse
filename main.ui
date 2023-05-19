@@ -1654,7 +1654,7 @@ border-style:outset;}</string>
                       <enum>QFrame::NoFrame</enum>
                      </property>
                      <property name="currentIndex">
-                      <number>2</number>
+                      <number>4</number>
                      </property>
                      <widget class="QWidget" name="energy_page">
                       <property name="styleSheet">
@@ -3550,7 +3550,7 @@ border-style:outset;}</string>
                              <string notr="true"/>
                             </property>
                             <property name="text">
-                             <string>空气湿度</string>
+                             <string>空气温度</string>
                             </property>
                             <property name="alignment">
                              <set>Qt::AlignCenter</set>
@@ -3576,7 +3576,7 @@ border-style:outset;}</string>
                              <string notr="true"/>
                             </property>
                             <property name="text">
-                             <string>空气温度</string>
+                             <string>土壤温度</string>
                             </property>
                             <property name="alignment">
                              <set>Qt::AlignCenter</set>
@@ -3599,7 +3599,7 @@ border-style:outset;}</string>
                           <item>
                            <widget class="QLineEdit" name="text_illumination">
                             <property name="text">
-                             <string>光照强度</string>
+                             <string>室内CO2浓度</string>
                             </property>
                             <property name="alignment">
                              <set>Qt::AlignCenter</set>
@@ -3674,7 +3674,7 @@ border-style:outset;}</string>
                           <item>
                            <widget class="QLineEdit" name="lineEdit_3">
                             <property name="text">
-                             <string>土壤温度</string>
+                             <string>北墙恒温水箱温度</string>
                             </property>
                             <property name="alignment">
                              <set>Qt::AlignCenter</set>
@@ -3697,7 +3697,7 @@ border-style:outset;}</string>
                           <item>
                            <widget class="QLineEdit" name="lineEdit_4">
                             <property name="text">
-                             <string>土壤湿度</string>
+                             <string>未使用</string>
                             </property>
                             <property name="alignment">
                              <set>Qt::AlignCenter</set>
@@ -3720,7 +3720,7 @@ border-style:outset;}</string>
                           <item>
                            <widget class="QLineEdit" name="lineEdit_2">
                             <property name="text">
-                             <string>二氧化碳浓度</string>
+                             <string>未使用</string>
                             </property>
                             <property name="alignment">
                              <set>Qt::AlignCenter</set>
@@ -3803,7 +3803,7 @@ border-style:outset;}</string>
                                 <string notr="true"/>
                                </property>
                                <property name="text">
-                                <string>空气湿度</string>
+                                <string>光照强度</string>
                                </property>
                                <property name="alignment">
                                 <set>Qt::AlignCenter</set>
@@ -3846,7 +3846,7 @@ border-style:outset;}</string>
                                 <string notr="true"/>
                                </property>
                                <property name="text">
-                                <string>空气温度</string>
+                                <string>环境温度</string>
                                </property>
                                <property name="alignment">
                                 <set>Qt::AlignCenter</set>
@@ -3906,7 +3906,7 @@ border-style:outset;}</string>
                                 <string notr="true"/>
                                </property>
                                <property name="text">
-                                <string>空气温度</string>
+                                <string>环境湿度</string>
                                </property>
                                <property name="alignment">
                                 <set>Qt::AlignCenter</set>
@@ -3937,7 +3937,7 @@ border-style:outset;}</string>
                                 <string notr="true"/>
                                </property>
                                <property name="text">
-                                <string>空气湿度</string>
+                                <string>环境风速</string>
                                </property>
                                <property name="alignment">
                                 <set>Qt::AlignCenter</set>
@@ -3972,8 +3972,8 @@ p, li { white-space: pre-wrap; }
 hr { height: 1px; border-width: 0; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:14pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;       本软件基于“xxx项目”太阳能智能温室大棚实际应用开发，集成常用温室大棚数据采集器及控制器，配合专用“自动控制系统&amp;quot;硬件使用。&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;       软件版权归“内蒙古睿力能源有限公司”所有，非经公司授权，不能将其用于盈利或非盈利的任何用途。&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;     软件技术支持请联系：15389769877&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;       软件版权归“XXXXXX有限公司”所有，非经公司授权，不能将其用于盈利或非盈利的任何用途。&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;     软件技术支持请联系：韩老师  15389769877&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                          </property>
                         </widget>
                        </item>

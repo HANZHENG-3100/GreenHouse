@@ -22,7 +22,7 @@ class DataProcessAndPlot:
         timeH = []
         for i in range(len(time_)):
             ss = time_[i]
-            timeH.append(ss[11:13])
+            timeH.append(ss[11:16])
         # useNames = ["温度5", "温度26", "温度22", "温度23"]
         # 空气温度曲线1---温度5(主机1)，温度23(主机2)，温度26(主机1)，温度22(主机2)，
         d1 = np.array(list(map(float, w1["温度5"][0])))
@@ -87,6 +87,7 @@ class DataProcessAndPlot:
         plt.xticks(x[::12], timeH[::12], rotation=45)
         plt.ylim(0, 60)
         # plt.show()
+        plt.subplots_adjust(bottom=0.15)
         plt.savefig(path1)
         plt.close()
 
@@ -103,6 +104,7 @@ class DataProcessAndPlot:
         plt.xlabel("time /h ", fontsize=15)
         plt.xticks(x[::12], timeH[::12], rotation=45)
         plt.ylim(0, 100)
+        plt.subplots_adjust(bottom=0.15)
         plt.savefig(path2)
         plt.close()
         # plt.show()
@@ -131,7 +133,7 @@ class DataProcessAndPlot:
         timeH = []
         for i in range(len(time_)):
             ss = time_[i]
-            timeH.append(ss[11:13])  # 取出小时作为x轴坐标用
+            timeH.append(ss[11:16])  # 取出小时作为x轴坐标用
         # useNames = ["温度5", "温度26", "温度22", "温度23"]
         # 空气温度曲线1---温度1(北土1)，温度1(北土2)，温度1(南土1)，温度1(南土1)
         d1 = np.array(list(map(float, n1["温度1"][0])))
@@ -208,6 +210,7 @@ class DataProcessAndPlot:
         plt.xlabel("time /h ", fontsize=15)
         plt.xticks(x[::12], timeH[::12], rotation=45)
         plt.ylim(0, 60)
+        plt.subplots_adjust(bottom=0.15)
         plt.savefig(path3)
         plt.close()
     
@@ -224,6 +227,7 @@ class DataProcessAndPlot:
         plt.xlabel("time /h ", fontsize=15)
         plt.xticks(x[::12], timeH[::12], rotation=45)
         plt.ylim(0, 100)
+        plt.subplots_adjust(bottom=0.15)
         plt.savefig(path4)
         plt.close()
 
@@ -241,7 +245,7 @@ class DataProcessAndPlot:
         timeH = []
         for i in range(len(time_)):
             ss = time_[i]
-            timeH.append(ss[11:13])  # 取出小时作为x轴坐标用
+            timeH.append(ss[11:16])  # 取出小时作为x轴坐标用
         x = list(range(1, len(time_) + 1))
         d1 = np.array(list(map(float, j["CO2"][0])))
         d2 = np.array(list(map(float, j["水箱1"][0])))
@@ -260,6 +264,7 @@ class DataProcessAndPlot:
         plt.ylabel("CO2  /ppm", fontsize=15)
         plt.xlabel("time /h  ", fontsize=15)
         plt.xticks(x[::12], timeH[::12], rotation=60)
+        plt.subplots_adjust(bottom=0.15)
         plt.savefig(path7)
         plt.close()
         # 北墙恒温水箱温度曲线
@@ -269,7 +274,8 @@ class DataProcessAndPlot:
         plt.plot(x, d4, color=colors[2], label=labels[3])
         plt.ylabel("Water tank temperature   $^\circ$C", fontsize=15)
         plt.xlabel("time /h ", fontsize=15)
-        plt.xticks(x[::12], timeH[::12], rotation=45)
+        plt.xticks(x[::12], timeH[::12], rotation=50)
+        plt.subplots_adjust(bottom=0.15)
         plt.savefig(path8)
         plt.close()
         print(" -----------")
@@ -305,10 +311,11 @@ class DataProcessAndPlot:
         labels = ["0 ", "1", "2", "3", "3"]
         # 光照强度曲线
         plt.figure()
-        plt.plot(x, d1, color=colors[0], label=labels[1])
+        fig = plt.plot(x, d1, color=colors[0], label=labels[1])
         plt.ylabel("light intensity /LUX", fontsize=15)
         plt.xlabel("time /h  ", fontsize=15)
         plt.xticks(x[::4], timeH[::4], rotation=45)
+        plt.subplots_adjust(bottom=0.15)
         plt.savefig(path7)
         # 环境温度曲线
         plt.figure()
@@ -316,6 +323,7 @@ class DataProcessAndPlot:
         plt.ylabel("outdoor temperature  $^\circ$C", fontsize=15)
         plt.xlabel("time /h ", fontsize=15)
         plt.xticks(x[::4], timeH[::4], rotation=45)
+        plt.subplots_adjust(bottom=0.15)
         plt.savefig(path8)
         plt.close()
         # 环境湿度曲线
@@ -324,6 +332,7 @@ class DataProcessAndPlot:
         plt.ylabel("outdoor humidity   %", fontsize=15)
         plt.xlabel("time /h ", fontsize=15)
         plt.xticks(x[::4], timeH[::4], rotation=45)
+        plt.subplots_adjust(bottom=0.15)
         plt.savefig(path9)
         plt.close()
         # 环境风速曲线
@@ -332,6 +341,7 @@ class DataProcessAndPlot:
         plt.ylabel("wind speed   m/s", fontsize=15)
         plt.xlabel("time /h ", fontsize=15)
         plt.xticks(x[::4], timeH[::4], rotation=45)
+        plt.subplots_adjust(bottom=0.15)
         plt.savefig(path10)
         plt.close()
         print(" -----------")
@@ -356,11 +366,9 @@ def mean_value(d1, d2, d3, d4):
     return va
 #
 #
-# if __name__ == "__main__":
-#     s = DataProcessAndPlot()
-#     s.plot_data1()
-#     s.plot_data2()
-#     s.plot_data3()
-#     DataProcessAndPlot.plot_data3()
-#     s.plot_data4()
-#     print("ff test")
+if __name__ == "__main__":
+    DataProcessAndPlot.plot_data1()
+    DataProcessAndPlot.plot_data2()
+    DataProcessAndPlot.plot_data3()
+    DataProcessAndPlot.plot_data4()
+    print("ff test")

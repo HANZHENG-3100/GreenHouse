@@ -47,6 +47,11 @@ class YunControl:
         self.addr_relay3 = "40261506"                # 网络继电器3地址
         self.addr_relay4 = "40261512"                # 网络继电器4地址
         self.addr_relay5 = "40261513"                # 网络继电器5地址(未用)
+        self.relay1_status = {}
+        self.relay2_status = {}
+        self.relay3_status = {}
+        self.relay4_status = {}
+        self.relay5_status = {}
 
         self.delay_time = 2                          # 程序运行时间间隔，由传感器采集频率决定
 
@@ -56,7 +61,7 @@ class YunControl:
                           './data/气象站_40133062.json', './data/集中器_20009680.json']
         self.relay_command = {1: 1, 2: 1, 3: 1, 4: 0, 5: 0, 6: 0, 7: 1, 8: 1}  # 继电器控制初始状态  0灯亮 闭合  1灯灭 断开
         self.relay_num = {1, 2, 3, 4, 5, 6, 7, 8}
-        # self.relay_num = {'1', '2', '3', '4', '5', '6', '7', '8'}
+
         self.air_temperature_buffer = {}  # 存储临时环境数据
         self.air_humidity_buffer = {}
         self.soil_temperature_buffer = {}  #
@@ -244,17 +249,6 @@ class YunControl:
             temp = s['data'][0]['dataItem'][k]['registerItem'][1]['data']
             self.soil_humidity_buffer["南土2湿度_{}".format(k)] = temp
 
-    def get_radiation_intensity_data(self):    # 解析室内太阳能辐射数据
-        pass
-
-    def intelligent_control_method(self):    # 利用算法计算所有继电器需要的控制状态
-        # 添加算法进行数据处理
-        pass
-
-        self.relay_command[2] = 1
-        self.relay_command[4] = 1
-        return 0
-
     # 使用self.relay_command字典设置继电器开关动作
     def set_relay_state_all(self):   # 控制继电器动作
         # headers.
@@ -366,10 +360,6 @@ class YunControl:
         newThread.start()
         return
 
-    def draw_data(self):
-        pass
-        return
-
     def check_token(self):
         consumed_time = datetime.datetime.now().timestamp() - self.token_time  # consumed time/ second.
         # self.get_token()
@@ -382,46 +372,55 @@ class YunControl:
     #     print("已经读取到token数据...")
     #     return
 
-    #  plot the data from "data_dir"  ,data_dir is a str .
-    def plot_data(self, data_dir=""):
-       with open(self.file_list[0]) as f:  # file_list[0] 主机1
+    #  读出继电器状态，.
+    def read_all_delay_status(self):
+        # 继电器数据
+        addr = [self.addr_relay1, self.addr_relay2, self.addr_relay3, self.addr_relay4, self.addr_relay5]
+        status = [self.relay1_status, self.relay2_status, self.relay3_status, self.relay4_status, self.relay5_status]
+        for i in range(5):
+            print("正在读取继电器{}状态信息...".format(addr[i]))
+            url = self.url_yun + "api/data/getRealTimeDataByDeviceAddr?deviceAddrs={}".format(addr[i])
+            self.check_token()  # 检测token是否过期
+            r = requests.get(url, headers=self.headers)
+            p = json.loads(r.content)
+            D = p['data'][0]['relayStatus']
+            status[i] = json.loads(D)
+        print("vvvvvvvvv")
 
+    # 读一个继电器的状态num 取值为 0-4
+    def read_one_delay_status(self, num):
+        # 继电器数据
+        addr = [self.addr_relay1, self.addr_relay2, self.addr_relay3, self.addr_relay4, self.addr_relay5]
+        status = [self.relay1_status, self.relay2_status, self.relay3_status, self.relay4_status, self.relay5_status]
 
-
-
-        plt.style.use("seaborn-whitegrid")
-        x = [1, 2, 3, 4]
-        y = [1, 4, 9, 16]
-        # fig = plt.figure()
-        plt.plot(x, y)
-        plt.ylabel("squares")
-        base_dir = "../data/image"
-        name = base_dir + "./plot_test"
-        plt.savefig(name)
-        plt.show()
-
-
+        print("正在读取继电器{}状态信息...".format(addr[num]))
+        url = self.url_yun + "api/data/getRealTimeDataByDeviceAddr?deviceAddrs={}".format(addr[num])
+        self.check_token()  # 检测token是否过期
+        r = requests.get(url, headers=self.headers)
+        p = json.loads(r.content)
+        status[num] =json.loads(p['data'][0]['relayStatus'])
 
 
 if __name__ == "__main__":
 
     # # create data buffer, stores the data download from cloud server last time.
     Yun = YunControl()
-    Yun.plot_data()
+    Yun.read_all_delay_status()
+    print("++++++++++++")
     # # create communication header
     # Yun.get_token()
     # time.sleep(2)
     # 设置继电器状态
-    flag = 0
-    while flag:
+    # flag = 0
+    # while flag:
         # 时间格式 YYYY-MM-dd HH:mm:ss
-        Yun.get_cloud_data_12hours()
+        # Yun.get_cloud_data_12hours()
         # Yun.get_history_data(Yun.addr_concentrator, "2023-01-18 16:19:00 ", "2023-02-16 16:19:00")
         # Yun.get_air_temperature_and_humidity_data()  # ok
         # Yun.get_soil_temperature_and_humidity_data()
         # print("延时3秒钟后，刷新下一帧数据...")
-        print()
-        flag = ~ flag
+        # print()
+        # flag = ~ flag
         # time.sleep(delay_time)
         # print("空气温度数据：")
         # print(air_temperature_buffer)

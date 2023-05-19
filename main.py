@@ -175,6 +175,9 @@ class MyMainWindow(QMainWindow):
             widgets.stackedWidget.setCurrentWidget(widgets.manual_control_page1)  # SET PAGE
             UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
             btn.setStyleSheet(UIFunctions.selectMenu(self, btn.styleSheet()))  # SELECT MENU
+            self.yun.read_all_delay_status()
+            AppFunctions.Refresh_radioBtn()
+
             # QMessageBox.information(self, "提示", "该功能暂未实现", QMessageBox.Yes)
         if btnName == "btn_manual_control2":
             # print("Save BTN clicked!")

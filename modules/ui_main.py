@@ -1186,98 +1186,95 @@ class Ui_MainWindow(object):
         self.auto_control_page_row_1.setFrameShadow(QFrame.Raised)
         self.gridLayout_3 = QGridLayout(self.auto_control_page_row_1)
         self.gridLayout_3.setObjectName(u"gridLayout_3")
-        self.spinBox = QSpinBox(self.auto_control_page_row_1)
-        self.spinBox.setObjectName(u"spinBox")
+        self.label_time_2 = QLabel(self.auto_control_page_row_1)
+        self.label_time_2.setObjectName(u"label_time_2")
 
-        self.gridLayout_3.addWidget(self.spinBox, 2, 1, 1, 1)
-
-        self.lineEdit_7 = QLineEdit(self.auto_control_page_row_1)
-        self.lineEdit_7.setObjectName(u"lineEdit_7")
-
-        self.gridLayout_3.addWidget(self.lineEdit_7, 2, 2, 1, 1)
-
-        self.horizontalSpacer_22 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
-        self.gridLayout_3.addItem(self.horizontalSpacer_22, 3, 3, 1, 1)
-
-        self.lineEdit_10 = QLineEdit(self.auto_control_page_row_1)
-        self.lineEdit_10.setObjectName(u"lineEdit_10")
-
-        self.gridLayout_3.addWidget(self.lineEdit_10, 3, 0, 1, 1)
-
-        self.lineEdit_13 = QLineEdit(self.auto_control_page_row_1)
-        self.lineEdit_13.setObjectName(u"lineEdit_13")
-
-        self.gridLayout_3.addWidget(self.lineEdit_13, 3, 6, 1, 1)
-
-        self.lineEdit_8 = QLineEdit(self.auto_control_page_row_1)
-        self.lineEdit_8.setObjectName(u"lineEdit_8")
-        sizePolicy1.setHeightForWidth(self.lineEdit_8.sizePolicy().hasHeightForWidth())
-        self.lineEdit_8.setSizePolicy(sizePolicy1)
-        self.lineEdit_8.setMouseTracking(True)
-        self.lineEdit_8.setLayoutDirection(Qt.RightToLeft)
-        self.lineEdit_8.setInputMethodHints(Qt.ImhUppercaseOnly)
-        self.lineEdit_8.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
-
-        self.gridLayout_3.addWidget(self.lineEdit_8, 2, 4, 1, 1)
-
-        self.lineEdit_11 = QLineEdit(self.auto_control_page_row_1)
-        self.lineEdit_11.setObjectName(u"lineEdit_11")
-
-        self.gridLayout_3.addWidget(self.lineEdit_11, 3, 2, 1, 1)
-
-        self.spinBox_3 = QSpinBox(self.auto_control_page_row_1)
-        self.spinBox_3.setObjectName(u"spinBox_3")
-
-        self.gridLayout_3.addWidget(self.spinBox_3, 3, 1, 1, 1)
+        self.gridLayout_3.addWidget(self.label_time_2, 0, 0, 1, 1)
 
         self.btn_auto_control_2 = QPushButton(self.auto_control_page_row_1)
         self.btn_auto_control_2.setObjectName(u"btn_auto_control_2")
 
-        self.gridLayout_3.addWidget(self.btn_auto_control_2, 1, 6, 1, 1)
+        self.gridLayout_3.addWidget(self.btn_auto_control_2, 0, 5, 1, 1)
+
+        self.label_time_3 = QLabel(self.auto_control_page_row_1)
+        self.label_time_3.setObjectName(u"label_time_3")
+
+        self.gridLayout_3.addWidget(self.label_time_3, 1, 0, 1, 1)
+
+        self.spinBox = QSpinBox(self.auto_control_page_row_1)
+        self.spinBox.setObjectName(u"spinBox")
+
+        self.gridLayout_3.addWidget(self.spinBox, 1, 1, 1, 1)
+
+        self.label_time_4 = QLabel(self.auto_control_page_row_1)
+        self.label_time_4.setObjectName(u"label_time_4")
+
+        self.gridLayout_3.addWidget(self.label_time_4, 1, 2, 1, 1)
+
+        self.label_time_5 = QLabel(self.auto_control_page_row_1)
+        self.label_time_5.setObjectName(u"label_time_5")
+
+        self.gridLayout_3.addWidget(self.label_time_5, 1, 3, 1, 1)
 
         self.spinBox_2 = QSpinBox(self.auto_control_page_row_1)
         self.spinBox_2.setObjectName(u"spinBox_2")
 
-        self.gridLayout_3.addWidget(self.spinBox_2, 2, 5, 1, 1)
+        self.gridLayout_3.addWidget(self.spinBox_2, 1, 4, 1, 1)
 
-        self.lineEdit_9 = QLineEdit(self.auto_control_page_row_1)
-        self.lineEdit_9.setObjectName(u"lineEdit_9")
+        self.label_time_6 = QLabel(self.auto_control_page_row_1)
+        self.label_time_6.setObjectName(u"label_time_6")
 
-        self.gridLayout_3.addWidget(self.lineEdit_9, 2, 6, 1, 1)
+        self.gridLayout_3.addWidget(self.label_time_6, 1, 5, 1, 1)
 
-        self.horizontalSpacer_21 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        self.label_time_7 = QLabel(self.auto_control_page_row_1)
+        self.label_time_7.setObjectName(u"label_time_7")
 
-        self.gridLayout_3.addItem(self.horizontalSpacer_21, 2, 3, 1, 1)
+        self.gridLayout_3.addWidget(self.label_time_7, 2, 0, 1, 1)
 
-        self.lineEdit_5 = QLineEdit(self.auto_control_page_row_1)
-        self.lineEdit_5.setObjectName(u"lineEdit_5")
+        self.spinBox_3 = QSpinBox(self.auto_control_page_row_1)
+        self.spinBox_3.setObjectName(u"spinBox_3")
 
-        self.gridLayout_3.addWidget(self.lineEdit_5, 1, 0, 1, 2)
+        self.gridLayout_3.addWidget(self.spinBox_3, 2, 1, 1, 1)
 
-        self.lineEdit_12 = QLineEdit(self.auto_control_page_row_1)
-        self.lineEdit_12.setObjectName(u"lineEdit_12")
-        self.lineEdit_12.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.label_time_8 = QLabel(self.auto_control_page_row_1)
+        self.label_time_8.setObjectName(u"label_time_8")
 
-        self.gridLayout_3.addWidget(self.lineEdit_12, 3, 4, 1, 1)
+        self.gridLayout_3.addWidget(self.label_time_8, 2, 2, 1, 1)
 
-        self.lineEdit_6 = QLineEdit(self.auto_control_page_row_1)
-        self.lineEdit_6.setObjectName(u"lineEdit_6")
+        self.label_time_9 = QLabel(self.auto_control_page_row_1)
+        self.label_time_9.setObjectName(u"label_time_9")
 
-        self.gridLayout_3.addWidget(self.lineEdit_6, 2, 0, 1, 1)
+        self.gridLayout_3.addWidget(self.label_time_9, 2, 3, 1, 1)
 
         self.spinBox_4 = QSpinBox(self.auto_control_page_row_1)
         self.spinBox_4.setObjectName(u"spinBox_4")
 
-        self.gridLayout_3.addWidget(self.spinBox_4, 3, 5, 1, 1)
+        self.gridLayout_3.addWidget(self.spinBox_4, 2, 4, 1, 1)
+
+        self.label_time_10 = QLabel(self.auto_control_page_row_1)
+        self.label_time_10.setObjectName(u"label_time_10")
+
+        self.gridLayout_3.addWidget(self.label_time_10, 2, 5, 1, 1)
+
+        self.label_time_11 = QLabel(self.auto_control_page_row_1)
+        self.label_time_11.setObjectName(u"label_time_11")
+
+        self.gridLayout_3.addWidget(self.label_time_11, 3, 0, 1, 1)
+
+        self.label_time_12 = QLabel(self.auto_control_page_row_1)
+        self.label_time_12.setObjectName(u"label_time_12")
+        self.label_time_12.setMaximumSize(QSize(16777215, 60))
+
+        self.gridLayout_3.addWidget(self.label_time_12, 3, 2, 1, 1)
+
+        self.label_time_13 = QLabel(self.auto_control_page_row_1)
+        self.label_time_13.setObjectName(u"label_time_13")
+        self.label_time_13.setMaximumSize(QSize(16777215, 60))
+
+        self.gridLayout_3.addWidget(self.label_time_13, 3, 3, 1, 3)
 
 
         self.verticalLayout.addWidget(self.auto_control_page_row_1)
-
-        self.lineEdit_14 = QLineEdit(self.auto_control_page)
-        self.lineEdit_14.setObjectName(u"lineEdit_14")
-
-        self.verticalLayout.addWidget(self.lineEdit_14)
 
         self.line = QFrame(self.auto_control_page)
         self.line.setObjectName(u"line")
@@ -2271,39 +2268,27 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_6.addItem(self.horizontalSpacer)
 
-        self.text_humidness = QLineEdit(self.frame_c3)
-        self.text_humidness.setObjectName(u"text_humidness")
-        font5 = QFont()
-        font5.setFamilies([u"Segoe UI"])
-        font5.setPointSize(14)
-        font5.setBold(False)
-        font5.setItalic(False)
-        font5.setKerning(True)
-        self.text_humidness.setFont(font5)
-        self.text_humidness.setLayoutDirection(Qt.LeftToRight)
-        self.text_humidness.setStyleSheet(u"")
-        self.text_humidness.setAlignment(Qt.AlignCenter)
+        self.text_temperature = QLabel(self.frame_c3)
+        self.text_temperature.setObjectName(u"text_temperature")
 
-        self.horizontalLayout_6.addWidget(self.text_humidness)
+        self.horizontalLayout_6.addWidget(self.text_temperature)
 
         self.horizontalSpacer_3 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.horizontalLayout_6.addItem(self.horizontalSpacer_3)
 
-        self.text_temperature = QLineEdit(self.frame_c3)
-        self.text_temperature.setObjectName(u"text_temperature")
-        self.text_temperature.setStyleSheet(u"")
-        self.text_temperature.setAlignment(Qt.AlignCenter)
+        self.text_humidness = QLabel(self.frame_c3)
+        self.text_humidness.setObjectName(u"text_humidness")
 
-        self.horizontalLayout_6.addWidget(self.text_temperature)
+        self.horizontalLayout_6.addWidget(self.text_humidness)
 
         self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.horizontalLayout_6.addItem(self.horizontalSpacer_2)
 
-        self.text_illumination = QLineEdit(self.frame_c3)
+        self.text_illumination = QLabel(self.frame_c3)
         self.text_illumination.setObjectName(u"text_illumination")
-        self.text_illumination.setAlignment(Qt.AlignCenter)
+        self.text_illumination.setFont(font2)
 
         self.horizontalLayout_6.addWidget(self.text_illumination)
 
@@ -2345,31 +2330,28 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_10.addItem(self.horizontalSpacer_5)
 
-        self.lineEdit_3 = QLineEdit(self.frame_c5)
-        self.lineEdit_3.setObjectName(u"lineEdit_3")
-        self.lineEdit_3.setAlignment(Qt.AlignCenter)
+        self.text_temperature_2 = QLabel(self.frame_c5)
+        self.text_temperature_2.setObjectName(u"text_temperature_2")
 
-        self.horizontalLayout_10.addWidget(self.lineEdit_3)
+        self.horizontalLayout_10.addWidget(self.text_temperature_2)
 
         self.horizontalSpacer_6 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.horizontalLayout_10.addItem(self.horizontalSpacer_6)
 
-        self.lineEdit_4 = QLineEdit(self.frame_c5)
-        self.lineEdit_4.setObjectName(u"lineEdit_4")
-        self.lineEdit_4.setAlignment(Qt.AlignCenter)
+        self.text_temperature_3 = QLabel(self.frame_c5)
+        self.text_temperature_3.setObjectName(u"text_temperature_3")
 
-        self.horizontalLayout_10.addWidget(self.lineEdit_4)
+        self.horizontalLayout_10.addWidget(self.text_temperature_3)
 
         self.horizontalSpacer_7 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.horizontalLayout_10.addItem(self.horizontalSpacer_7)
 
-        self.lineEdit_2 = QLineEdit(self.frame_c5)
-        self.lineEdit_2.setObjectName(u"lineEdit_2")
-        self.lineEdit_2.setAlignment(Qt.AlignCenter)
+        self.text_temperature_4 = QLabel(self.frame_c5)
+        self.text_temperature_4.setObjectName(u"text_temperature_4")
 
-        self.horizontalLayout_10.addWidget(self.lineEdit_2)
+        self.horizontalLayout_10.addWidget(self.text_temperature_4)
 
         self.horizontalSpacer_8 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
@@ -2418,52 +2400,23 @@ class Ui_MainWindow(object):
 
         self.frame2_c2 = QFrame(self.gg)
         self.frame2_c2.setObjectName(u"frame2_c2")
-        self.horizontalLayout_43 = QHBoxLayout(self.frame2_c2)
-        self.horizontalLayout_43.setObjectName(u"horizontalLayout_43")
-        self.horizontalSpacer_9 = QSpacerItem(40, 20, QSizePolicy.Preferred, QSizePolicy.Minimum)
+        self.frame2_c2.setLayoutDirection(Qt.LeftToRight)
+        self.horizontalLayout_13 = QHBoxLayout(self.frame2_c2)
+        self.horizontalLayout_13.setObjectName(u"horizontalLayout_13")
+        self.text_temperature_5 = QLabel(self.frame2_c2)
+        self.text_temperature_5.setObjectName(u"text_temperature_5")
+        self.text_temperature_5.setAlignment(Qt.AlignCenter)
 
-        self.horizontalLayout_43.addItem(self.horizontalSpacer_9)
+        self.horizontalLayout_13.addWidget(self.text_temperature_5)
 
-        self.text_humidness_3 = QLineEdit(self.frame2_c2)
-        self.text_humidness_3.setObjectName(u"text_humidness_3")
-        self.text_humidness_3.setMinimumSize(QSize(60, 0))
-        self.text_humidness_3.setMaximumSize(QSize(160, 16777215))
-        self.text_humidness_3.setFont(font5)
-        self.text_humidness_3.setLayoutDirection(Qt.LeftToRight)
-        self.text_humidness_3.setStyleSheet(u"")
-        self.text_humidness_3.setAlignment(Qt.AlignCenter)
+        self.text_temperature_6 = QLabel(self.frame2_c2)
+        self.text_temperature_6.setObjectName(u"text_temperature_6")
+        self.text_temperature_6.setAlignment(Qt.AlignCenter)
 
-        self.horizontalLayout_43.addWidget(self.text_humidness_3)
+        self.horizontalLayout_13.addWidget(self.text_temperature_6)
 
-        self.horizontalSpacer_10 = QSpacerItem(40, 20, QSizePolicy.Preferred, QSizePolicy.Minimum)
-
-        self.horizontalLayout_43.addItem(self.horizontalSpacer_10)
-
-        self.text_humidness_2 = QLineEdit(self.frame2_c2)
-        self.text_humidness_2.setObjectName(u"text_humidness_2")
-        sizePolicy7 = QSizePolicy(QSizePolicy.Ignored, QSizePolicy.Fixed)
-        sizePolicy7.setHorizontalStretch(0)
-        sizePolicy7.setVerticalStretch(0)
-        sizePolicy7.setHeightForWidth(self.text_humidness_2.sizePolicy().hasHeightForWidth())
-        self.text_humidness_2.setSizePolicy(sizePolicy7)
-        self.text_humidness_2.setMinimumSize(QSize(160, 32))
-        self.text_humidness_2.setMaximumSize(QSize(160, 32))
-        self.text_humidness_2.setFont(font5)
-        self.text_humidness_2.setLayoutDirection(Qt.LeftToRight)
-        self.text_humidness_2.setStyleSheet(u"")
-        self.text_humidness_2.setAlignment(Qt.AlignCenter)
-
-        self.horizontalLayout_43.addWidget(self.text_humidness_2)
-
-        self.horizontalSpacer_11 = QSpacerItem(40, 20, QSizePolicy.Preferred, QSizePolicy.Minimum)
-
-        self.horizontalLayout_43.addItem(self.horizontalSpacer_11)
-
-        self.horizontalLayout_43.setStretch(0, 1)
-        self.horizontalLayout_43.setStretch(1, 1)
-        self.horizontalLayout_43.setStretch(2, 2)
-        self.horizontalLayout_43.setStretch(3, 1)
-        self.horizontalLayout_43.setStretch(4, 1)
+        self.horizontalLayout_13.setStretch(0, 1)
+        self.horizontalLayout_13.setStretch(1, 1)
 
         self.verticalLayout_20.addWidget(self.frame2_c2)
 
@@ -2487,45 +2440,22 @@ class Ui_MainWindow(object):
 
         self.frame2_c4_2 = QFrame(self.gg)
         self.frame2_c4_2.setObjectName(u"frame2_c4_2")
-        self.frame2_c4 = QHBoxLayout(self.frame2_c4_2)
-        self.frame2_c4.setObjectName(u"frame2_c4")
-        self.horizontalSpacer_12 = QSpacerItem(40, 20, QSizePolicy.Preferred, QSizePolicy.Minimum)
+        self.horizontalLayout_41 = QHBoxLayout(self.frame2_c4_2)
+        self.horizontalLayout_41.setObjectName(u"horizontalLayout_41")
+        self.text_temperature_7 = QLabel(self.frame2_c4_2)
+        self.text_temperature_7.setObjectName(u"text_temperature_7")
+        self.text_temperature_7.setAlignment(Qt.AlignCenter)
 
-        self.frame2_c4.addItem(self.horizontalSpacer_12)
+        self.horizontalLayout_41.addWidget(self.text_temperature_7)
 
-        self.text_humidness_5 = QLineEdit(self.frame2_c4_2)
-        self.text_humidness_5.setObjectName(u"text_humidness_5")
-        self.text_humidness_5.setMaximumSize(QSize(160, 16777215))
-        self.text_humidness_5.setFont(font5)
-        self.text_humidness_5.setLayoutDirection(Qt.LeftToRight)
-        self.text_humidness_5.setStyleSheet(u"")
-        self.text_humidness_5.setAlignment(Qt.AlignCenter)
+        self.text_temperature_8 = QLabel(self.frame2_c4_2)
+        self.text_temperature_8.setObjectName(u"text_temperature_8")
+        self.text_temperature_8.setAlignment(Qt.AlignCenter)
 
-        self.frame2_c4.addWidget(self.text_humidness_5)
+        self.horizontalLayout_41.addWidget(self.text_temperature_8)
 
-        self.horizontalSpacer_13 = QSpacerItem(40, 20, QSizePolicy.Preferred, QSizePolicy.Minimum)
-
-        self.frame2_c4.addItem(self.horizontalSpacer_13)
-
-        self.text_humidness_4 = QLineEdit(self.frame2_c4_2)
-        self.text_humidness_4.setObjectName(u"text_humidness_4")
-        self.text_humidness_4.setMaximumSize(QSize(160, 16777215))
-        self.text_humidness_4.setFont(font5)
-        self.text_humidness_4.setLayoutDirection(Qt.LeftToRight)
-        self.text_humidness_4.setStyleSheet(u"")
-        self.text_humidness_4.setAlignment(Qt.AlignCenter)
-
-        self.frame2_c4.addWidget(self.text_humidness_4)
-
-        self.horizontalSpacer_14 = QSpacerItem(40, 20, QSizePolicy.Preferred, QSizePolicy.Minimum)
-
-        self.frame2_c4.addItem(self.horizontalSpacer_14)
-
-        self.frame2_c4.setStretch(0, 1)
-        self.frame2_c4.setStretch(1, 1)
-        self.frame2_c4.setStretch(2, 2)
-        self.frame2_c4.setStretch(3, 1)
-        self.frame2_c4.setStretch(4, 1)
+        self.horizontalLayout_41.setStretch(0, 1)
+        self.horizontalLayout_41.setStretch(1, 1)
 
         self.verticalLayout_20.addWidget(self.frame2_c4_2)
 
@@ -2647,11 +2577,11 @@ class Ui_MainWindow(object):
         self.creditsLabel = QLabel(self.bottomBar)
         self.creditsLabel.setObjectName(u"creditsLabel")
         self.creditsLabel.setMaximumSize(QSize(16777215, 20))
-        font6 = QFont()
-        font6.setFamilies([u"Segoe UI"])
-        font6.setBold(False)
-        font6.setItalic(False)
-        self.creditsLabel.setFont(font6)
+        font5 = QFont()
+        font5.setFamilies([u"Segoe UI"])
+        font5.setBold(False)
+        font5.setItalic(False)
+        self.creditsLabel.setFont(font5)
         self.creditsLabel.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
 
         self.horizontalLayout_5.addWidget(self.creditsLabel)
@@ -2739,20 +2669,19 @@ class Ui_MainWindow(object):
         self.closeAppBtn.setText("")
         self.label.setText(QCoreApplication.translate("MainWindow", u"\u4ea7\u751f\u7535\u80fd\u603b\u91cf\uff1aXXXXX                        ", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"   \u6d88\u8017\u7535\u80fd\u603b\u91cf\uff1a XXXX", None))
-        self.lineEdit_7.setText(QCoreApplication.translate("MainWindow", u"\u5ea6", None))
-        self.lineEdit_10.setText(QCoreApplication.translate("MainWindow", u"CO2\u6d53\u5ea6\uff1a", None))
-        self.lineEdit_13.setText(QCoreApplication.translate("MainWindow", u"umol/m2s    (PPFD)", None))
-#if QT_CONFIG(accessibility)
-        self.lineEdit_8.setAccessibleDescription(QCoreApplication.translate("MainWindow", u"0", None))
-#endif // QT_CONFIG(accessibility)
-        self.lineEdit_8.setText(QCoreApplication.translate("MainWindow", u"\u571f\u58e4\u6e7f\u5ea6\uff1a", None))
-        self.lineEdit_11.setText(QCoreApplication.translate("MainWindow", u"ppm", None))
+        self.label_time_2.setText(QCoreApplication.translate("MainWindow", u"\u76ee\u6807\u73af\u5883\u503c\u8bbe\u7f6e\uff1a", None))
         self.btn_auto_control_2.setText(QCoreApplication.translate("MainWindow", u"\u5f00\u59cb\u63a7\u5236", None))
-        self.lineEdit_9.setText(QCoreApplication.translate("MainWindow", u"% ", None))
-        self.lineEdit_5.setText(QCoreApplication.translate("MainWindow", u"\u76ee\u6807\u73af\u5883\u503c\u8bbe\u7f6e\uff1a", None))
-        self.lineEdit_12.setText(QCoreApplication.translate("MainWindow", u"\u5149\u7167\u5f3a\u5ea6\uff1a", None))
-        self.lineEdit_6.setText(QCoreApplication.translate("MainWindow", u"\u7efc\u5408\u6e29\u5ea6\u503c\uff1a", None))
-        self.lineEdit_14.setText(QCoreApplication.translate("MainWindow", u"\u5b9e\u65f6\u73af\u5883\u6570\u636e\uff1a", None))
+        self.label_time_3.setText(QCoreApplication.translate("MainWindow", u"\u7efc\u5408\u6e29\u5ea6\u503c\uff1a", None))
+        self.label_time_4.setText(QCoreApplication.translate("MainWindow", u"\u5ea6", None))
+        self.label_time_5.setText(QCoreApplication.translate("MainWindow", u"\u571f\u58e4\u6e7f\u5ea6\uff1a", None))
+        self.label_time_6.setText(QCoreApplication.translate("MainWindow", u"% ", None))
+        self.label_time_7.setText(QCoreApplication.translate("MainWindow", u"CO2\u6d53\u5ea6\uff1a", None))
+        self.label_time_8.setText(QCoreApplication.translate("MainWindow", u"ppm", None))
+        self.label_time_9.setText(QCoreApplication.translate("MainWindow", u"\u5149\u7167\u5f3a\u5ea6\uff1a", None))
+        self.label_time_10.setText(QCoreApplication.translate("MainWindow", u"umol/m2s    (PPFD)", None))
+        self.label_time_11.setText(QCoreApplication.translate("MainWindow", u"\u5b9e\u65f6\u73af\u5883\u6570\u636e\uff1a", None))
+        self.label_time_12.setText(QCoreApplication.translate("MainWindow", u"\u7a7a\u6c14\u6e29\u5ea6                   \u571f\u58e4\u6e7f\u5ea6               ", None))
+        self.label_time_13.setText(QCoreApplication.translate("MainWindow", u"  CO2\u6d53\u5ea6                     \u5149\u7167\u5f3a\u5ea6", None))
         self.btn_open_control_file.setText(QCoreApplication.translate("MainWindow", u"\u6253\u5f00", None))
         self.lineEdit.setText(QCoreApplication.translate("MainWindow", u"\u8f93\u5165\u6587\u4ef6\u8def\u5f84", None))
         self.lineEdit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Type here", None))
@@ -2852,23 +2781,23 @@ class Ui_MainWindow(object):
         self.image_1.setText(QCoreApplication.translate("MainWindow", u"image_1", None))
         self.image_2.setText(QCoreApplication.translate("MainWindow", u"image_2", None))
         self.image_3.setText(QCoreApplication.translate("MainWindow", u"image_3", None))
-        self.text_humidness.setText(QCoreApplication.translate("MainWindow", u"\u7a7a\u6c14\u6e29\u5ea6", None))
-        self.text_temperature.setText(QCoreApplication.translate("MainWindow", u"\u7a7a\u6c14\u6e7f\u5ea6", None))
+        self.text_temperature.setText(QCoreApplication.translate("MainWindow", u"\u7a7a\u6c14\u6e29\u5ea6", None))
+        self.text_humidness.setText(QCoreApplication.translate("MainWindow", u"\u7a7a\u6c14\u6e7f\u5ea6", None))
         self.text_illumination.setText(QCoreApplication.translate("MainWindow", u"\u5ba4\u5185CO2\u6d53\u5ea6", None))
         self.image_4.setText(QCoreApplication.translate("MainWindow", u"image_4", None))
         self.image_5.setText(QCoreApplication.translate("MainWindow", u"image_5", None))
         self.image_6.setText(QCoreApplication.translate("MainWindow", u"image_6", None))
-        self.lineEdit_3.setText(QCoreApplication.translate("MainWindow", u"\u571f\u58e4\u6e29\u5ea6", None))
-        self.lineEdit_4.setText(QCoreApplication.translate("MainWindow", u"\u571f\u58e4\u6e7f\u5ea6", None))
-        self.lineEdit_2.setText(QCoreApplication.translate("MainWindow", u"\u5317\u5899\u6052\u6e29\u6c34\u7bb1\u6e29\u5ea6", None))
+        self.text_temperature_2.setText(QCoreApplication.translate("MainWindow", u"\u571f\u58e4\u6e29\u5ea6", None))
+        self.text_temperature_3.setText(QCoreApplication.translate("MainWindow", u"\u571f\u58e4\u6e7f\u5ea6", None))
+        self.text_temperature_4.setText(QCoreApplication.translate("MainWindow", u"\u5317\u5899\u6052\u6e29\u6c34\u7bb1\u6e29\u5ea6", None))
         self.image_7.setText(QCoreApplication.translate("MainWindow", u"image_7", None))
         self.image_8.setText(QCoreApplication.translate("MainWindow", u"image_8", None))
-        self.text_humidness_3.setText(QCoreApplication.translate("MainWindow", u"\u5149\u7167\u5f3a\u5ea6", None))
-        self.text_humidness_2.setText(QCoreApplication.translate("MainWindow", u"\u73af\u5883\u6e29\u5ea6", None))
+        self.text_temperature_5.setText(QCoreApplication.translate("MainWindow", u"\u73af\u5883\u5149\u7167\u5f3a\u5ea6", None))
+        self.text_temperature_6.setText(QCoreApplication.translate("MainWindow", u"\u73af\u5883\u6e29\u5ea6", None))
         self.image_9.setText(QCoreApplication.translate("MainWindow", u"image_9", None))
         self.image_10.setText(QCoreApplication.translate("MainWindow", u"image_10", None))
-        self.text_humidness_5.setText(QCoreApplication.translate("MainWindow", u"\u73af\u5883\u6e7f\u5ea6", None))
-        self.text_humidness_4.setText(QCoreApplication.translate("MainWindow", u"\u73af\u5883\u98ce\u901f", None))
+        self.text_temperature_7.setText(QCoreApplication.translate("MainWindow", u"\u73af\u5883\u6e7f\u5ea6", None))
+        self.text_temperature_8.setText(QCoreApplication.translate("MainWindow", u"\u73af\u5883\u98ce\u901f", None))
         self.textBrowser.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"

@@ -377,15 +377,22 @@ class YunControl:
         # 继电器数据
         addr = [self.addr_relay1, self.addr_relay2, self.addr_relay3, self.addr_relay4, self.addr_relay5]
         status = [self.relay1_status, self.relay2_status, self.relay3_status, self.relay4_status, self.relay5_status]
+
         for i in range(5):
+
             print("正在读取继电器{}状态信息...".format(addr[i]))
             url = self.url_yun + "api/data/getRealTimeDataByDeviceAddr?deviceAddrs={}".format(addr[i])
             self.check_token()  # 检测token是否过期
             r = requests.get(url, headers=self.headers)
             p = json.loads(r.content)
             D = p['data'][0]['relayStatus']
-            status[i] = json.loads(D)
-        print("vvvvvvvvv")
+            if D:
+                print("当前继电器{}离线，请检查网络连接".format(addr[i]))
+                break
+            else:
+                status[i] = json.loads(D)
+                print("当前继电器{}状态已经下载".format(addr[i]))
+
 
     # 读一个继电器的状态num 取值为 0-4
     def read_one_delay_status(self, num):

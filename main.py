@@ -81,7 +81,6 @@ class MyMainWindow(QMainWindow):
         widgets.btn_auto_control.clicked.connect(self.buttonClick)
         widgets.btn_energy.clicked.connect(self.buttonClick)
         widgets.btn_information.clicked.connect(self.buttonClick)
-        # widgets.btn_open_web.clicked.connect(self.buttonClick)
         #  CHANGE THEMES
         widgets.btn_change_topic.clicked.connect(self.buttonClick)
         # OPEN CLOUD WEB
@@ -93,7 +92,6 @@ class MyMainWindow(QMainWindow):
         self.manual_control_Button_config()  # 配置控制按钮功能
 
         AppFunctions.display(self)
-
 
         # EXTRA LEFT BOX
         def openCloseLeftBox():
@@ -116,10 +114,11 @@ class MyMainWindow(QMainWindow):
             absPath = os.path.dirname(os.path.abspath(sys.executable))
         elif __file__:
             absPath = os.path.dirname(os.path.abspath(__file__))
-        useCustomTheme = False
+        useCustomTheme = True  # 是否允许使用主题切换
         self.useCustomTheme = useCustomTheme
         self.absPath = absPath
-        themeFile = os.path.abspath(os.path.join(absPath, "themes\py_dracula_light.qss"))
+        # themeFile = os.path.abspath(os.path.join(absPath, "themes\py_dracula_light.qss"))
+        themeFile = os.path.abspath(os.path.join(self.absPath, "themes\py_dracula_dark.qss"))
         # SET THEME AND HACKS
         if useCustomTheme:
             # LOAD AND APPLY STYLE
@@ -161,14 +160,14 @@ class MyMainWindow(QMainWindow):
             widgets.stackedWidget.setCurrentWidget(widgets.energy_page)
             UIFunctions.resetStyle(self, btnName)
             btn.setStyleSheet(UIFunctions.selectMenu(self, btn.styleSheet()))
-            QMessageBox.information(self, "Sorry", "该功能还在开发之中", QMessageBox.Yes)
+            QMessageBox.information(self, "Sorry", "该功能还在开发中", QMessageBox.Yes)
 
         # SHOW auto_control_page
         if btnName == "btn_auto_control":
             widgets.stackedWidget.setCurrentWidget(widgets.auto_control_page)  # SET PAGE
             UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
             btn.setStyleSheet(UIFunctions.selectMenu(self, btn.styleSheet()))  # SELECT MENU
-
+            QMessageBox.information(self, "Sorry", "该功能在开发中", QMessageBox.Yes)
         # SHOW auto_control_page
         if btnName == "btn_manual_control1":
             # print("Save BTN clicked!")
@@ -176,7 +175,7 @@ class MyMainWindow(QMainWindow):
             UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
             btn.setStyleSheet(UIFunctions.selectMenu(self, btn.styleSheet()))  # SELECT MENU
             self.yun.read_all_delay_status()
-            AppFunctions.Refresh_radioBtn()
+            # AppFunctions.Refresh_radioBtn()
 
             # QMessageBox.information(self, "提示", "该功能暂未实现", QMessageBox.Yes)
         if btnName == "btn_manual_control2":

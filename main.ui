@@ -1759,146 +1759,122 @@ border-style:outset;}</string>
                           <enum>QFrame::Raised</enum>
                          </property>
                          <layout class="QGridLayout" name="gridLayout_3">
-                          <item row="2" column="1">
-                           <widget class="QSpinBox" name="spinBox"/>
-                          </item>
-                          <item row="2" column="2">
-                           <widget class="QLineEdit" name="lineEdit_7">
+                          <item row="0" column="0">
+                           <widget class="QLabel" name="label_time_2">
                             <property name="text">
-                             <string>度</string>
+                             <string>目标环境值设置：</string>
                             </property>
                            </widget>
                           </item>
-                          <item row="3" column="3">
-                           <spacer name="horizontalSpacer_22">
-                            <property name="orientation">
-                             <enum>Qt::Horizontal</enum>
-                            </property>
-                            <property name="sizeHint" stdset="0">
-                             <size>
-                              <width>40</width>
-                              <height>20</height>
-                             </size>
-                            </property>
-                           </spacer>
-                          </item>
-                          <item row="3" column="0">
-                           <widget class="QLineEdit" name="lineEdit_10">
-                            <property name="text">
-                             <string>CO2浓度：</string>
-                            </property>
-                           </widget>
-                          </item>
-                          <item row="3" column="6">
-                           <widget class="QLineEdit" name="lineEdit_13">
-                            <property name="text">
-                             <string>umol/m2s    (PPFD)</string>
-                            </property>
-                           </widget>
-                          </item>
-                          <item row="2" column="4">
-                           <widget class="QLineEdit" name="lineEdit_8">
-                            <property name="sizePolicy">
-                             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-                              <horstretch>0</horstretch>
-                              <verstretch>0</verstretch>
-                             </sizepolicy>
-                            </property>
-                            <property name="mouseTracking">
-                             <bool>true</bool>
-                            </property>
-                            <property name="accessibleDescription">
-                             <string>0</string>
-                            </property>
-                            <property name="layoutDirection">
-                             <enum>Qt::RightToLeft</enum>
-                            </property>
-                            <property name="inputMethodHints">
-                             <set>Qt::ImhUppercaseOnly</set>
-                            </property>
-                            <property name="text">
-                             <string>土壤湿度：</string>
-                            </property>
-                            <property name="alignment">
-                             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                            </property>
-                           </widget>
-                          </item>
-                          <item row="3" column="2">
-                           <widget class="QLineEdit" name="lineEdit_11">
-                            <property name="text">
-                             <string>ppm</string>
-                            </property>
-                           </widget>
-                          </item>
-                          <item row="3" column="1">
-                           <widget class="QSpinBox" name="spinBox_3"/>
-                          </item>
-                          <item row="1" column="6">
+                          <item row="0" column="5">
                            <widget class="QPushButton" name="btn_auto_control_2">
                             <property name="text">
                              <string>开始控制</string>
                             </property>
                            </widget>
                           </item>
-                          <item row="2" column="5">
-                           <widget class="QSpinBox" name="spinBox_2"/>
-                          </item>
-                          <item row="2" column="6">
-                           <widget class="QLineEdit" name="lineEdit_9">
-                            <property name="text">
-                             <string>% </string>
-                            </property>
-                           </widget>
-                          </item>
-                          <item row="2" column="3">
-                           <spacer name="horizontalSpacer_21">
-                            <property name="orientation">
-                             <enum>Qt::Horizontal</enum>
-                            </property>
-                            <property name="sizeHint" stdset="0">
-                             <size>
-                              <width>40</width>
-                              <height>20</height>
-                             </size>
-                            </property>
-                           </spacer>
-                          </item>
-                          <item row="1" column="0" colspan="2">
-                           <widget class="QLineEdit" name="lineEdit_5">
-                            <property name="text">
-                             <string>目标环境值设置：</string>
-                            </property>
-                           </widget>
-                          </item>
-                          <item row="3" column="4">
-                           <widget class="QLineEdit" name="lineEdit_12">
-                            <property name="text">
-                             <string>光照强度：</string>
-                            </property>
-                            <property name="alignment">
-                             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                            </property>
-                           </widget>
-                          </item>
-                          <item row="2" column="0">
-                           <widget class="QLineEdit" name="lineEdit_6">
+                          <item row="1" column="0">
+                           <widget class="QLabel" name="label_time_3">
                             <property name="text">
                              <string>综合温度值：</string>
                             </property>
                            </widget>
                           </item>
-                          <item row="3" column="5">
+                          <item row="1" column="1">
+                           <widget class="QSpinBox" name="spinBox"/>
+                          </item>
+                          <item row="1" column="2">
+                           <widget class="QLabel" name="label_time_4">
+                            <property name="text">
+                             <string>度</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="1" column="3">
+                           <widget class="QLabel" name="label_time_5">
+                            <property name="text">
+                             <string>土壤湿度：</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="1" column="4">
+                           <widget class="QSpinBox" name="spinBox_2"/>
+                          </item>
+                          <item row="1" column="5">
+                           <widget class="QLabel" name="label_time_6">
+                            <property name="text">
+                             <string>% </string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="2" column="0">
+                           <widget class="QLabel" name="label_time_7">
+                            <property name="text">
+                             <string>CO2浓度：</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="2" column="1">
+                           <widget class="QSpinBox" name="spinBox_3"/>
+                          </item>
+                          <item row="2" column="2">
+                           <widget class="QLabel" name="label_time_8">
+                            <property name="text">
+                             <string>ppm</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="2" column="3">
+                           <widget class="QLabel" name="label_time_9">
+                            <property name="text">
+                             <string>光照强度：</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="2" column="4">
                            <widget class="QSpinBox" name="spinBox_4"/>
                           </item>
+                          <item row="2" column="5">
+                           <widget class="QLabel" name="label_time_10">
+                            <property name="text">
+                             <string>umol/m2s    (PPFD)</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="3" column="0">
+                           <widget class="QLabel" name="label_time_11">
+                            <property name="text">
+                             <string>实时环境数据：</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="3" column="2">
+                           <widget class="QLabel" name="label_time_12">
+                            <property name="maximumSize">
+                             <size>
+                              <width>16777215</width>
+                              <height>60</height>
+                             </size>
+                            </property>
+                            <property name="text">
+                             <string>空气温度                   土壤湿度               </string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="3" column="3" colspan="3">
+                           <widget class="QLabel" name="label_time_13">
+                            <property name="maximumSize">
+                             <size>
+                              <width>16777215</width>
+                              <height>60</height>
+                             </size>
+                            </property>
+                            <property name="text">
+                             <string>  CO2浓度                     光照强度</string>
+                            </property>
+                           </widget>
+                          </item>
                          </layout>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QLineEdit" name="lineEdit_14">
-                         <property name="text">
-                          <string>实时环境数据：</string>
-                         </property>
                         </widget>
                        </item>
                        <item>
@@ -3533,27 +3509,9 @@ border-style:outset;}</string>
                            </spacer>
                           </item>
                           <item>
-                           <widget class="QLineEdit" name="text_humidness">
-                            <property name="font">
-                             <font>
-                              <family>Segoe UI</family>
-                              <pointsize>14</pointsize>
-                              <italic>false</italic>
-                              <bold>false</bold>
-                              <kerning>true</kerning>
-                             </font>
-                            </property>
-                            <property name="layoutDirection">
-                             <enum>Qt::LeftToRight</enum>
-                            </property>
-                            <property name="styleSheet">
-                             <string notr="true"/>
-                            </property>
+                           <widget class="QLabel" name="text_temperature">
                             <property name="text">
                              <string>空气温度</string>
-                            </property>
-                            <property name="alignment">
-                             <set>Qt::AlignCenter</set>
                             </property>
                            </widget>
                           </item>
@@ -3571,15 +3529,9 @@ border-style:outset;}</string>
                            </spacer>
                           </item>
                           <item>
-                           <widget class="QLineEdit" name="text_temperature">
-                            <property name="styleSheet">
-                             <string notr="true"/>
-                            </property>
+                           <widget class="QLabel" name="text_humidness">
                             <property name="text">
                              <string>空气湿度</string>
-                            </property>
-                            <property name="alignment">
-                             <set>Qt::AlignCenter</set>
                             </property>
                            </widget>
                           </item>
@@ -3597,12 +3549,17 @@ border-style:outset;}</string>
                            </spacer>
                           </item>
                           <item>
-                           <widget class="QLineEdit" name="text_illumination">
+                           <widget class="QLabel" name="text_illumination">
+                            <property name="font">
+                             <font>
+                              <family>Segoe UI</family>
+                              <pointsize>14</pointsize>
+                              <italic>false</italic>
+                              <bold>false</bold>
+                             </font>
+                            </property>
                             <property name="text">
                              <string>室内CO2浓度</string>
-                            </property>
-                            <property name="alignment">
-                             <set>Qt::AlignCenter</set>
                             </property>
                            </widget>
                           </item>
@@ -3672,12 +3629,9 @@ border-style:outset;}</string>
                            </spacer>
                           </item>
                           <item>
-                           <widget class="QLineEdit" name="lineEdit_3">
+                           <widget class="QLabel" name="text_temperature_2">
                             <property name="text">
                              <string>土壤温度</string>
-                            </property>
-                            <property name="alignment">
-                             <set>Qt::AlignCenter</set>
                             </property>
                            </widget>
                           </item>
@@ -3695,12 +3649,9 @@ border-style:outset;}</string>
                            </spacer>
                           </item>
                           <item>
-                           <widget class="QLineEdit" name="lineEdit_4">
+                           <widget class="QLabel" name="text_temperature_3">
                             <property name="text">
                              <string>土壤湿度</string>
-                            </property>
-                            <property name="alignment">
-                             <set>Qt::AlignCenter</set>
                             </property>
                            </widget>
                           </item>
@@ -3718,12 +3669,9 @@ border-style:outset;}</string>
                            </spacer>
                           </item>
                           <item>
-                           <widget class="QLineEdit" name="lineEdit_2">
+                           <widget class="QLabel" name="text_temperature_4">
                             <property name="text">
                              <string>北墙恒温水箱温度</string>
-                            </property>
-                            <property name="alignment">
-                             <set>Qt::AlignCenter</set>
                             </property>
                            </widget>
                           </item>
@@ -3820,54 +3768,14 @@ border-style:outset;}</string>
                           </item>
                           <item>
                            <widget class="QFrame" name="frame2_c2">
-                            <layout class="QHBoxLayout" name="horizontalLayout_43" stretch="1,1,2,1,1">
+                            <property name="layoutDirection">
+                             <enum>Qt::LeftToRight</enum>
+                            </property>
+                            <layout class="QHBoxLayout" name="horizontalLayout_13" stretch="1,1">
                              <item>
-                              <spacer name="horizontalSpacer_9">
-                               <property name="orientation">
-                                <enum>Qt::Horizontal</enum>
-                               </property>
-                               <property name="sizeType">
-                                <enum>QSizePolicy::Preferred</enum>
-                               </property>
-                               <property name="sizeHint" stdset="0">
-                                <size>
-                                 <width>40</width>
-                                 <height>20</height>
-                                </size>
-                               </property>
-                              </spacer>
-                             </item>
-                             <item>
-                              <widget class="QLineEdit" name="text_humidness_3">
-                               <property name="minimumSize">
-                                <size>
-                                 <width>60</width>
-                                 <height>0</height>
-                                </size>
-                               </property>
-                               <property name="maximumSize">
-                                <size>
-                                 <width>160</width>
-                                 <height>16777215</height>
-                                </size>
-                               </property>
-                               <property name="font">
-                                <font>
-                                 <family>Segoe UI</family>
-                                 <pointsize>14</pointsize>
-                                 <italic>false</italic>
-                                 <bold>false</bold>
-                                 <kerning>true</kerning>
-                                </font>
-                               </property>
-                               <property name="layoutDirection">
-                                <enum>Qt::LeftToRight</enum>
-                               </property>
-                               <property name="styleSheet">
-                                <string notr="true"/>
-                               </property>
+                              <widget class="QLabel" name="text_temperature_5">
                                <property name="text">
-                                <string>光照强度</string>
+                                <string>环境光照强度</string>
                                </property>
                                <property name="alignment">
                                 <set>Qt::AlignCenter</set>
@@ -3875,56 +3783,7 @@ border-style:outset;}</string>
                               </widget>
                              </item>
                              <item>
-                              <spacer name="horizontalSpacer_10">
-                               <property name="orientation">
-                                <enum>Qt::Horizontal</enum>
-                               </property>
-                               <property name="sizeType">
-                                <enum>QSizePolicy::Preferred</enum>
-                               </property>
-                               <property name="sizeHint" stdset="0">
-                                <size>
-                                 <width>40</width>
-                                 <height>20</height>
-                                </size>
-                               </property>
-                              </spacer>
-                             </item>
-                             <item>
-                              <widget class="QLineEdit" name="text_humidness_2">
-                               <property name="sizePolicy">
-                                <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
-                                 <horstretch>0</horstretch>
-                                 <verstretch>0</verstretch>
-                                </sizepolicy>
-                               </property>
-                               <property name="minimumSize">
-                                <size>
-                                 <width>160</width>
-                                 <height>32</height>
-                                </size>
-                               </property>
-                               <property name="maximumSize">
-                                <size>
-                                 <width>160</width>
-                                 <height>32</height>
-                                </size>
-                               </property>
-                               <property name="font">
-                                <font>
-                                 <family>Segoe UI</family>
-                                 <pointsize>14</pointsize>
-                                 <italic>false</italic>
-                                 <bold>false</bold>
-                                 <kerning>true</kerning>
-                                </font>
-                               </property>
-                               <property name="layoutDirection">
-                                <enum>Qt::LeftToRight</enum>
-                               </property>
-                               <property name="styleSheet">
-                                <string notr="true"/>
-                               </property>
+                              <widget class="QLabel" name="text_temperature_6">
                                <property name="text">
                                 <string>环境温度</string>
                                </property>
@@ -3932,22 +3791,6 @@ border-style:outset;}</string>
                                 <set>Qt::AlignCenter</set>
                                </property>
                               </widget>
-                             </item>
-                             <item>
-                              <spacer name="horizontalSpacer_11">
-                               <property name="orientation">
-                                <enum>Qt::Horizontal</enum>
-                               </property>
-                               <property name="sizeType">
-                                <enum>QSizePolicy::Preferred</enum>
-                               </property>
-                               <property name="sizeHint" stdset="0">
-                                <size>
-                                 <width>40</width>
-                                 <height>20</height>
-                                </size>
-                               </property>
-                              </spacer>
                              </item>
                             </layout>
                            </widget>
@@ -3977,46 +3820,9 @@ border-style:outset;}</string>
                           </item>
                           <item>
                            <widget class="QFrame" name="frame2_c4_2">
-                            <layout class="QHBoxLayout" name="frame2_c4" stretch="1,1,2,1,1">
+                            <layout class="QHBoxLayout" name="horizontalLayout_41" stretch="1,1">
                              <item>
-                              <spacer name="horizontalSpacer_12">
-                               <property name="orientation">
-                                <enum>Qt::Horizontal</enum>
-                               </property>
-                               <property name="sizeType">
-                                <enum>QSizePolicy::Preferred</enum>
-                               </property>
-                               <property name="sizeHint" stdset="0">
-                                <size>
-                                 <width>40</width>
-                                 <height>20</height>
-                                </size>
-                               </property>
-                              </spacer>
-                             </item>
-                             <item>
-                              <widget class="QLineEdit" name="text_humidness_5">
-                               <property name="maximumSize">
-                                <size>
-                                 <width>160</width>
-                                 <height>16777215</height>
-                                </size>
-                               </property>
-                               <property name="font">
-                                <font>
-                                 <family>Segoe UI</family>
-                                 <pointsize>14</pointsize>
-                                 <italic>false</italic>
-                                 <bold>false</bold>
-                                 <kerning>true</kerning>
-                                </font>
-                               </property>
-                               <property name="layoutDirection">
-                                <enum>Qt::LeftToRight</enum>
-                               </property>
-                               <property name="styleSheet">
-                                <string notr="true"/>
-                               </property>
+                              <widget class="QLabel" name="text_temperature_7">
                                <property name="text">
                                 <string>环境湿度</string>
                                </property>
@@ -4026,44 +3832,7 @@ border-style:outset;}</string>
                               </widget>
                              </item>
                              <item>
-                              <spacer name="horizontalSpacer_13">
-                               <property name="orientation">
-                                <enum>Qt::Horizontal</enum>
-                               </property>
-                               <property name="sizeType">
-                                <enum>QSizePolicy::Preferred</enum>
-                               </property>
-                               <property name="sizeHint" stdset="0">
-                                <size>
-                                 <width>40</width>
-                                 <height>20</height>
-                                </size>
-                               </property>
-                              </spacer>
-                             </item>
-                             <item>
-                              <widget class="QLineEdit" name="text_humidness_4">
-                               <property name="maximumSize">
-                                <size>
-                                 <width>160</width>
-                                 <height>16777215</height>
-                                </size>
-                               </property>
-                               <property name="font">
-                                <font>
-                                 <family>Segoe UI</family>
-                                 <pointsize>14</pointsize>
-                                 <italic>false</italic>
-                                 <bold>false</bold>
-                                 <kerning>true</kerning>
-                                </font>
-                               </property>
-                               <property name="layoutDirection">
-                                <enum>Qt::LeftToRight</enum>
-                               </property>
-                               <property name="styleSheet">
-                                <string notr="true"/>
-                               </property>
+                              <widget class="QLabel" name="text_temperature_8">
                                <property name="text">
                                 <string>环境风速</string>
                                </property>
@@ -4071,22 +3840,6 @@ border-style:outset;}</string>
                                 <set>Qt::AlignCenter</set>
                                </property>
                               </widget>
-                             </item>
-                             <item>
-                              <spacer name="horizontalSpacer_14">
-                               <property name="orientation">
-                                <enum>Qt::Horizontal</enum>
-                               </property>
-                               <property name="sizeType">
-                                <enum>QSizePolicy::Preferred</enum>
-                               </property>
-                               <property name="sizeHint" stdset="0">
-                                <size>
-                                 <width>40</width>
-                                 <height>20</height>
-                                </size>
-                               </property>
-                              </spacer>
                              </item>
                             </layout>
                            </widget>

@@ -1,4 +1,4 @@
-# -*- coding: gbk -*-
+# -*- coding: utf-8 -*-
 # https://www.cnblogs.com/hhh5460/p/4322652.html
 import sys
 import random
@@ -16,11 +16,11 @@ from matplotlib.figure import Figure
 
 
 class MyMplCanvas(FigureCanvas):
-     #  ÕâÊÇÒ»¸ö´°¿Ú²¿¼ş£¬¼´QWidget£¨µ±È»Ò²ÊÇFigureCanvasAgg£©
+     #  è¿™æ˜¯ä¸€ä¸ªçª—å£éƒ¨ä»¶ï¼Œå³QWidgetï¼ˆå½“ç„¶ä¹Ÿæ˜¯FigureCanvasAggï¼‰
     def __init__(self, parent=None, width=5, height=4, dpi=100):
         fig = Figure(figsize=(width, height), dpi=dpi)
         self.axes = fig.add_subplot(111)
-        # Ã¿´Îplot()µ÷ÓÃµÄÊ±ºò£¬ÎÒÃÇÏ£ÍûÔ­À´µÄ×ø±êÖá±»Çå³ı(ËùÒÔFalse)
+        # æ¯æ¬¡plot()è°ƒç”¨çš„æ—¶å€™ï¼Œæˆ‘ä»¬å¸Œæœ›åŸæ¥çš„åæ ‡è½´è¢«æ¸…é™¤(æ‰€ä»¥False)
         # self.axes.hold(False)
 
         self.compute_initial_figure()
@@ -38,7 +38,7 @@ class MyMplCanvas(FigureCanvas):
         pass
 
 class MyStaticMplCanvas(MyMplCanvas):
-    """¾²Ì¬»­²¼£ºÒ»ÌõÕıÏÒÏß"""
+    """é™æ€ç”»å¸ƒï¼šä¸€æ¡æ­£å¼¦çº¿"""
     def compute_initial_figure(self):
         t = arange(0.0, 3.0, 0.01)
         s = sin(2*pi*t)
@@ -46,7 +46,7 @@ class MyStaticMplCanvas(MyMplCanvas):
 
 
 class MyDynamicMplCanvas(MyMplCanvas):
-    """¶¯Ì¬»­²¼£ºÃ¿Ãë×Ô¶¯¸üĞÂ£¬¸ü»»Ò»ÌõÕÛÏß¡£"""
+    """åŠ¨æ€ç”»å¸ƒï¼šæ¯ç§’è‡ªåŠ¨æ›´æ–°ï¼Œæ›´æ¢ä¸€æ¡æŠ˜çº¿ã€‚"""
     def __init__(self, *args, **kwargs):
         MyMplCanvas.__init__(self, *args, **kwargs)
         timer = QtCore.QTimer(self)
@@ -57,7 +57,7 @@ class MyDynamicMplCanvas(MyMplCanvas):
         self.axes.plot([0, 1, 2, 3], [1, 2, 0, 4], 'r')
 
     def update_figure(self):
-        # ¹¹½¨4¸öËæ»úÕûÊı£¬Î»ÓÚ±ÕÇø¼ä[0, 10]
+        # æ„å»º4ä¸ªéšæœºæ•´æ•°ï¼Œä½äºé—­åŒºé—´[0, 10]
         l = [random.randint(0, 10) for i in range(4)]
 
         self.axes.plot([0, 1, 2, 3], l, 'r')
@@ -67,7 +67,7 @@ class ApplicationWindow(QMainWindow):
     def __init__(self):
         QMainWindow.__init__(self)
         # self.setAttribute(QtCore.Qt.WA_DeleteOnClose)
-        # self.setWindowTitle("³ÌĞòÖ÷´°¿Ú")
+        # self.setWindowTitle("ç¨‹åºä¸»çª—å£")
 
         # self.file_menu = QMenu('&File', self)
         # self.file_menu.addAction('&Quit', self.fileQuit,
@@ -90,8 +90,8 @@ class ApplicationWindow(QMainWindow):
 
         self.main_widget.setFocus()
         self.setCentralWidget(self.main_widget)
-        # ×´Ì¬ÌõÏÔÊ¾2Ãë
-        # self.statusBar().showMessage("matplotlib ÍòËê!", 2000)
+        # çŠ¶æ€æ¡æ˜¾ç¤º2ç§’
+        # self.statusBar().showMessage("matplotlib ä¸‡å²!", 2000)
 
     def fileQuit(self):
         self.close()
@@ -119,7 +119,7 @@ if __name__ == '__main__':
     app = QApplication(sys.argv)
 
     aw = ApplicationWindow()
-    aw.setWindowTitle("PyQt5 Óë Matplotlib Àı×Ó")
+    aw.setWindowTitle("PyQt5 ä¸ Matplotlib ä¾‹å­")
     aw.show()
     #sys.exit(qApp.exec_())
     app.exec_()

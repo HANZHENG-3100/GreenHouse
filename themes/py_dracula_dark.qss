@@ -512,6 +512,30 @@ Button */
 	background-color: rgb(35, 40, 49);
 	border: 2px solid rgb(43, 50, 61);
 }
-
-
+QRadioButton::indicator{
+	width:30px;
+	height:30px;
+	border-radius:15px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: black;
+}
+QRadioButton::indicator:checked {
+	background-color:rgb(100, 255, 0);
+}
+QRadioButton::indicator:unchecked {
+	background-color:rgb(200, 200, 200);
+}
+QRadioButton{
+    spacing:12px;
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    background-color:rgba(0, 255, 0, 125);
+    /*color: rgb(0, 255, 0);*/
+}
+QRadioButton:hover {
+  background-color: rgba(165, 205, 255,80%);
+  border:2px outset rgba(36, 36, 36,0);
+}
 

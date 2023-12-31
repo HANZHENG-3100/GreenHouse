@@ -1,3 +1,4 @@
+import os
 import threading
 import time
 
@@ -6,8 +7,6 @@ import requests
 import json
 import urllib3
 import datetime
-import matplotlib.pyplot as plt
-from UserFun.DataProcessAndPlot import DataProcessAndPlot
 
 
 class YunControl:
@@ -16,7 +15,7 @@ class YunControl:
         urllib3.disable_warnings()  # 忽略https安全证书的验证
         self.url_yun = "http://www.0531yun.com/"  # 建大仁科综合环境监控云平台地址
         self.ID = "h211222yqhz"  # 云服务器登录账号
-        self.PW = "h211222yqhz"  # 云服务器登录密码
+        self.PW = "A123456@"  # 云服务器登录密码
         self.deviceAddr = {'气象站': "40133062",
                            '集中器': "20009680",
                            '对照土壤': "21043744",
@@ -70,8 +69,35 @@ class YunControl:
         self.headers = ""
         self.token_expiration_time = 0.0
         self.token_time = 0.0
-    #  获取传感器历史数据 deviceAddr=主机地址, nodeId=传感器因子号, startTime, endTime时间格式：YYYY-MM-dd HH:mm:ss
+        self.read_device_add()
+
+    def read_device_add(self):
+        with open(file="./DeviceConfig.txt", encoding="gbk", mode="r") as f:
+            inf = f.readlines()
+
+            self.addr_relay1 = inf[0][inf[0].find('= ')+3:inf[0].find('= ')+11]
+            self.addr_relay2 = inf[1][inf[1].find('= ')+3:inf[1].find('= ')+11]
+            self.addr_relay3 = inf[2][inf[2].find('= ')+3:inf[2].find('= ')+11]
+            self.addr_relay4 = inf[3][inf[3].find('= ')+3:inf[3].find('= ')+11]
+            self.addr_relay5 = inf[4][inf[4].find('= ')+3:inf[4].find('= ')+11]
+            ########################################################################
+            self.addr_weather_station = inf[6][inf[6].find('= ')+3:inf[6].find('= ')+11]  # 气象站设备地址
+            self.addr_concentrator = inf[7][inf[7].find('= ')+3:inf[7].find('= ')+11] # 集中器地址            数据6个 甲烷、氮气、水箱123、CO2浓度
+            self.Addr_Comparison_soil = inf[8][inf[8].find('= ')+3:inf[8].find('= ')+11]  # 对照土壤传感器       （5个温度值，5个湿度值）
+            self.addr_northern_soil1 = inf[9][inf[9].find('= ')+3:inf[9].find('= ')+11]  # 北部土壤传感器1      （5个温度值，5个湿度值）
+            self.addr_northern_soil2 = inf[10][inf[10].find('= ')+3:inf[10].find('= ')+11]  # 北部土壤传感器2      （5个温度值，5个湿度值）
+            self.addr_southern_soil1 = inf[11][inf[11].find('= ')+3:inf[11].find('= ')+11]  # 南部土壤传感器1      （5个温度值，5个湿度值）
+            self.addr_southern_soil2 = inf[11][inf[11].find('= ')+3:inf[11].find('= ')+11]  # 南部土壤传感器2      （5个温度值，5个湿度值）
+            self.addr_host1 = inf[12][inf[12].find('= ')+3:inf[12].find('= ')+11]  # 主机1地址            （32组温湿度）
+            self.addr_host2 = inf[13][inf[13].find('= ')+3:inf[13].find('= ')+11]  # 主机2地址            （29组温湿度） 不确定
+
+            print('')
+
+        #  获取传感器历史数据 deviceAddr=主机地址, nodeId=传感器因子号, startTime, endTime时间格式：YYYY-MM-dd HH:mm:ss
     #  使用接口获取历史数据时，每分钟只能执行6次，超出次数会被拒绝。
+
+        # print(name + "数据存储成功！\n")
+        return
 
     def get_history_data_withoutThreads(self, deviceAddr, startTime, endTime, nodeId=-1):
         self.check_token()  # 检测token是否过期
@@ -94,13 +120,20 @@ class YunControl:
             print(name+"请求数据失败，请查看网络通信。\n")
             print(str(p["code"])+"  "+ p["message"])
             return
+
         deviceAddr = str(data[0]['deviceAddr'])  # 取地址信息
         # 构建存储时的文件名称
+        daPath = os.getcwd()
+        daPath = "{}./data".format(daPath)
+        if not os.path.exists(daPath):
+            os.makedirs(daPath, mode=0o777)
         # filename = "{0}_{1}_{2}-{3}".format(name, deviceAddr, startTime, endTime)
         filename = "{0}_{1}".format(name, deviceAddr)  # 简化文件名
         filename = filename.replace(" ", "_")
         filename = filename.replace(":", "-")
-        filename = "./data/{0}.json".format(filename)
+        filename = "{}/{}.json".format(daPath, filename)
+
+
         # self.file_list.append(filename)
         # 解析数据并存储到文件
         # f = open(filename, 'w')  # 属性w 打开一个文件只写，无则新建，有则重写
@@ -147,6 +180,7 @@ class YunControl:
             data_t[1] = np.ndarray.tolist(temp1)
             data_json[i] = data_t.copy()
         # 存储json数据
+
         with open(filename, "w") as f:
             json.dump(data_json, f)
         print(name + "数据存储成功！\n")
@@ -158,6 +192,7 @@ class YunControl:
                                      name="get_history_data")
         newThread.start()
         return
+
     def get_token(self):
         url = self.url_yun + "api/getToken?loginName=" + self.ID + "&password=" + self.PW
         r = requests.get(url)
@@ -310,10 +345,10 @@ class YunControl:
             return
 
     def clear_one_relay(self, addr_relay, relay_num):
-        newThread2 = threading.Thread(target=self.clear_one_relay_withoutThreads,
+        newThread = threading.Thread(target=self.clear_one_relay_withoutThreads,
                                       args=(addr_relay, relay_num),
-                                      name="newThread_clear_one_relay")
-        newThread2.start()
+                                      name="Thread-clear-relay-{}-{}".format(addr_relay, relay_num))
+        newThread.start()
 
     def set_and_clear_one_relay_withoutThreads(self, addr_relay, relay_num):
         self.set_one_relay_withoutThreads(addr_relay, relay_num)
@@ -393,13 +428,11 @@ class YunControl:
                 status[i] = json.loads(D)
                 print("当前继电器{}状态已经下载".format(addr[i]))
 
-
     # 读一个继电器的状态num 取值为 0-4
     def read_one_delay_status(self, num):
         # 继电器数据
         addr = [self.addr_relay1, self.addr_relay2, self.addr_relay3, self.addr_relay4, self.addr_relay5]
         status = [self.relay1_status, self.relay2_status, self.relay3_status, self.relay4_status, self.relay5_status]
-
         print("正在读取继电器{}状态信息...".format(addr[num]))
         url = self.url_yun + "api/data/getRealTimeDataByDeviceAddr?deviceAddrs={}".format(addr[num])
         self.check_token()  # 检测token是否过期
@@ -411,8 +444,8 @@ class YunControl:
 if __name__ == "__main__":
 
     # # create data buffer, stores the data download from cloud server last time.
-    Yun = YunControl()
-    Yun.read_all_delay_status()
+    # Yun = YunControl()
+    # Yun.read_all_delay_status()
     print("++++++++++++")
     # # create communication header
     # Yun.get_token()

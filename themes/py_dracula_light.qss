@@ -528,5 +528,24 @@ Button */
 	background-color: #546391;
 	border: 2px solid #ff79c6;
 }
-
+QRadioButton::indicator{
+	width:30px;
+	height:30px;
+	border-radius:15px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: black;
+}
+QRadioButton::indicator:checked {
+	background-color:green;
+}
+QRadioButton::indicator:unchecked {
+	background-color:rgb(255, 255, 255);
+}
+QRadioButton{
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    /*color: rgb(0, 255, 0);*/
+}
 

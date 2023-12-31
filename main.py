@@ -12,34 +12,54 @@
 # commercially, I recommend reading them on the official website:
 # https://doc.qt.io/qtforpython/licenses.html
 #
-# /////////////////////////////////////////////////////////////// # _*_ coding:TUF-8 _*_
-# -*- coding: gbk -*-
-import sys
-import PySide6
+# ///////////////////////////////////////////////////////////////
+
+
+# import PySide6
 import os
+import sys
+from os import path
 # IMPORT / GUI AND MODULES AND WIDGETS
+from PySide6.QtGui import Qt, QIcon
+from PySide6.QtWidgets import QMainWindow, QMessageBox, QApplication
+
 from UserFun.DataProcessAndPlot import DataProcessAndPlot
 from UserFun.YunControl import YunControl
-from modules import *
-from widgets import *
-from PySide6.QtCharts import QChart, QLineSeries, QValueAxis
+# from modules import *
+# from widgets import *
+# from PySide6.QtCharts import QChart, QLineSeries, QValueAxis
 # SET AS GLOBAL WIDGETS
+from modules import *
+
+# from modules import Ui_MainWindow
+# # from modules.app_functions import AppFunctions
+# from modules import UIFunctions
+# from modules import Settings
+
 widgets = None
 yun = None
 
 
+# dir_name = os.path.dirname(PySide6.__file__)
+# plusin_path = os.path.join(dir_name, 'plugins', 'platforms')
+# os.environ['QT_QPA_PLATFORM_PLUGIN_PATH'] = plusin_path
+# os.environ["QT_FONT_DPI"] = "96"  # FIX Problem for High DPI and Scale above 100%
+
+
 class MyMainWindow(QMainWindow):
     def __init__(self):
-        QMainWindow.__init__(self)
+        # QMainWindow.__init__(self)
+        super().__init__()
         self.ui = Ui_MainWindow()
         self.yun = YunControl()
         self.ui.setupUi(self)
-        global widgets, yun
+        global widgets, yun, absPath
         widgets = self.ui
         yun = self.yun
         self.RadioBtnName = {"Rbtn1_11": "卷帘机", "Rbtn1_12": "卷膜机", "Rbtn1_13": "补光灯1", "Rbtn1_14": "补光灯2",
                              "Rbtn1_21": "照明灯", "Rbtn1_22": "门厅灯", "Rbtn1_23": "循环乙二醇", "Rbtn1_24": "循环乙二醇(备用)",
-                             "Rbtn1_31": "循环水与乙二醇备用泵", "Rbtn1_32": "循环水与乙二醇备用泵(备用)", "Rbtn1_33": "循环水与空气换热泵", "Rbtn1_34": "循环水与空气换热泵(备用)",
+                             "Rbtn1_31": "循环水与乙二醇备用泵", "Rbtn1_32": "循环水与乙二醇备用泵(备用)", "Rbtn1_33": "循环水与空气换热泵",
+                             "Rbtn1_34": "循环水与空气换热泵(备用)",
                              "Rbtn2_11": "加热棒1", "Rbtn2_12": "加热棒2", "Rbtn2_13": "加热棒3", "Rbtn2_14": "控制回路电源",
                              "Rbtn2_21": "排风机1", "Rbtn2_22": "排风机2", "Rbtn2_23": "排风机3", "Rbtn2_24": "排风机4",
                              "Rbtn2_31": "水肥一体机泵", "Rbtn2_32": "水肥一体机电磁阀", "Rbtn2_33": "室内监测电源", "Rbtn2_34": "气象站电源",
@@ -72,7 +92,7 @@ class MyMainWindow(QMainWindow):
         # btn_energy-> energy_page；
         # btn_information->information_page；
         '''
-
+        # 连接信号与槽
         # LEFT MENUS
         widgets.btn_cloud1.clicked.connect(self.buttonClick)
         widgets.btn_cloud2.clicked.connect(self.buttonClick)
@@ -89,19 +109,21 @@ class MyMainWindow(QMainWindow):
         widgets.btn_get_data_12hours.clicked.connect(self.buttonClick)
 
         # manual_control Button
-        self.manual_control_Button_config()  # 配置控制按钮功能
+        self.buttonClickManualControl()  # 配置控制按钮功能
 
         AppFunctions.display(self)
 
         # EXTRA LEFT BOX
         def openCloseLeftBox():
             UIFunctions.toggleLeftBox(self, True)
+
         # widgets.toggleLeftBox.clicked.connect(openCloseLeftBox)
         # widgets.extraCloseColumnBtn.clicked.connect(openCloseLeftBox)
 
         # EXTRA RIGHT BOX
         def openCloseRightBox():
             UIFunctions.toggleRightBox(self, True)
+
         widgets.settingsTopBtn.clicked.connect(openCloseRightBox)
 
         # SHOW APP
@@ -111,14 +133,14 @@ class MyMainWindow(QMainWindow):
         # ///////////////////////////////////////////////////////////////
         # 路径冻结，防止打包成exe后路径错乱
         if getattr(sys, 'frozen', False):
-            absPath = os.path.dirname(os.path.abspath(sys.executable))
+            absPath = path.dirname(path.abspath(sys.executable))
         elif __file__:
-            absPath = os.path.dirname(os.path.abspath(__file__))
+            absPath = path.dirname(path.abspath(__file__))
         useCustomTheme = True  # 是否允许使用主题切换
         self.useCustomTheme = useCustomTheme
         self.absPath = absPath
         # themeFile = os.path.abspath(os.path.join(absPath, "themes\py_dracula_light.qss"))
-        themeFile = os.path.abspath(os.path.join(self.absPath, "themes\py_dracula_dark.qss"))
+        themeFile = path.abspath(path.join(self.absPath, "themes\py_dracula_dark.qss"))
         # SET THEME AND HACKS
         if useCustomTheme:
             # LOAD AND APPLY STYLE
@@ -148,11 +170,11 @@ class MyMainWindow(QMainWindow):
         '''
         # SHOW cloud_page
         if btnName == "btn_cloud1":
-            widgets.stackedWidget.setCurrentWidget(widgets.cloud_page1)  # 堆栈窗口设置为cloud_page窗口
+            widgets.stackedWidget.setCurrentWidget(widgets.cloud_page1)  # 堆栈窗口设置为cloud_page1窗口
             UIFunctions.resetStyle(self, btnName)
             btn.setStyleSheet(UIFunctions.selectMenu(self, btn.styleSheet()))
         if btnName == "btn_cloud2":
-            widgets.stackedWidget.setCurrentWidget(widgets.cloud_page2)  # 堆栈窗口设置为cloud_page窗口
+            widgets.stackedWidget.setCurrentWidget(widgets.cloud_page2)  # 堆栈窗口设置为cloud_page2窗口
             UIFunctions.resetStyle(self, btnName)
             btn.setStyleSheet(UIFunctions.selectMenu(self, btn.styleSheet()))
         # SHOW energy_page
@@ -174,7 +196,7 @@ class MyMainWindow(QMainWindow):
             widgets.stackedWidget.setCurrentWidget(widgets.manual_control_page1)  # SET PAGE
             UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
             btn.setStyleSheet(UIFunctions.selectMenu(self, btn.styleSheet()))  # SELECT MENU
-            self.yun.read_all_delay_status()
+            # self.yun.read_all_delay_status()
             # AppFunctions.Refresh_radioBtn()
 
             # QMessageBox.information(self, "提示", "该功能暂未实现", QMessageBox.Yes)
@@ -193,13 +215,13 @@ class MyMainWindow(QMainWindow):
         # change topic button
         if btnName == "btn_change_topic":
             if self.useCustomTheme:
-                themeFile = os.path.abspath(os.path.join(self.absPath, "themes\py_dracula_dark.qss"))
+                themeFile = path.abspath(path.join(self.absPath, "themes\py_dracula_dark.qss"))
                 UIFunctions.theme(self, themeFile, True)
                 # SET HACKS
                 AppFunctions.setThemeHack(self)
                 self.useCustomTheme = False
             else:
-                themeFile = os.path.abspath(os.path.join(self.absPath, "themes\py_dracula_light.qss"))
+                themeFile = path.abspath(path.join(self.absPath, "themes\py_dracula_light.qss"))
                 UIFunctions.theme(self, themeFile, True)
                 # SET HACKS
                 AppFunctions.setThemeHack(self)
@@ -207,7 +229,7 @@ class MyMainWindow(QMainWindow):
 
         #  Button in cloud_page
         if btnName == "Btn_open_cloud_web":
-            AppFunctions.Btn_open_web(self)
+            AppFunctions.Btn_open_web()
         print(f'Button "{btnName}" pressed!')
         if btnName == "btn_get_data_12hours":
             AppFunctions.btn_get_data_12hours(self)  # 获取数据
@@ -215,48 +237,18 @@ class MyMainWindow(QMainWindow):
             DataProcessAndPlot.plot_data2()
             DataProcessAndPlot.plot_data3()
             DataProcessAndPlot.plot_data4()
-            AppFunctions.display(self)     # 显示数据
+            AppFunctions.display(self)  # 显示数据
             print()
+
     # RESIZE EVENTS
     # ///////////////////////////////////////////////////////////////
-
-
-    def resizeEvent(self, event):
-        # Update Size Grips
-        UIFunctions.resize_grips(self)
-
-    # MOUSE CLICK EVENTS
-    # ///////////////////////////////////////////////////////////////
-    def mousePressEvent(self, event):
-        # SET DRAG POS WINDOW
-        # self.dragPos = event.globalPos()
-        self.dragPos = event.globalPosition().toPoint()
-
-        # PRINT MOUSE EVENTS
-        if event.buttons() == Qt.LeftButton:
-            print('Mouse click: LEFT CLICK')
-        if event.buttons() == Qt.RightButton:
-            print('Mouse click: RIGHT CLICK')
-
-    # def start_computer_info(self):
-    #     """
-    #     开始获取电脑数据
-    #     :return:
-    #     """
-    #     # 开始分析记录电脑数据，需持续获取，然后分析
-    #     self.thread1 = NewThread()  # 实例化一个线程
-    #     # 将线程thread的信号finishSignal和UI主线程中的槽函数data_display进行连接
-    #     self.thread1.finishSignal.connect(self.data_display)
-    #     # 启动线程，执行线程类中run函数
-    #     self.thread1.start()
-
-    def manual_control_Button_config(self):
+    def buttonClickManualControl(self):
         # manual_control_page1 按键设置 3行 4列
         self.ui.Rbtn1_11_up.clicked.connect(self.Ctl_Radio_button_selected)  # 卷帘机
         self.ui.Rbtn1_11_stop.clicked.connect(self.Ctl_Radio_button_selected)
         self.ui.Rbtn1_11_down.clicked.connect(self.Ctl_Radio_button_selected)
 
-        self.ui.Rbtn1_12_up.clicked.connect(self.Ctl_Radio_button_selected)   # 卷膜机
+        self.ui.Rbtn1_12_up.clicked.connect(self.Ctl_Radio_button_selected)  # 卷膜机
         self.ui.Rbtn1_12_stop.clicked.connect(self.Ctl_Radio_button_selected)
         self.ui.Rbtn1_12_down.clicked.connect(self.Ctl_Radio_button_selected)
 
@@ -275,7 +267,7 @@ class MyMainWindow(QMainWindow):
         self.ui.Rbtn1_23_open.clicked.connect(self.Ctl_Radio_button_selected)  # 循环乙二醇泵
         self.ui.Rbtn1_23_close.clicked.connect(self.Ctl_Radio_button_selected)
 
-        self.ui.Rbtn1_24_open.clicked.connect(self.Ctl_Radio_button_selected)   # 循环乙二醇泵（备用）
+        self.ui.Rbtn1_24_open.clicked.connect(self.Ctl_Radio_button_selected)  # 循环乙二醇泵（备用）
         self.ui.Rbtn1_24_close.clicked.connect(self.Ctl_Radio_button_selected)
 
         self.ui.Rbtn1_31_open.clicked.connect(self.Ctl_Radio_button_selected)  # 循环水与乙二醇换热泵
@@ -318,14 +310,43 @@ class MyMainWindow(QMainWindow):
         self.ui.Rbtn2_31_open.clicked.connect(self.Ctl_Radio_button_selected)  # 水肥一体机泵
         self.ui.Rbtn2_31_close.clicked.connect(self.Ctl_Radio_button_selected)
 
-        self.ui.Rbtn2_32_open.clicked.connect(self.Ctl_Radio_button_selected)   # 水肥一体机电磁阀门
+        self.ui.Rbtn2_32_open.clicked.connect(self.Ctl_Radio_button_selected)  # 水肥一体机电磁阀门
         self.ui.Rbtn2_32_close.clicked.connect(self.Ctl_Radio_button_selected)
 
-        self.ui.Rbtn2_33_open.clicked.connect(self.Ctl_Radio_button_selected)   # 室内监测电源
+        self.ui.Rbtn2_33_open.clicked.connect(self.Ctl_Radio_button_selected)  # 室内监测电源
         self.ui.Rbtn2_33_close.clicked.connect(self.Ctl_Radio_button_selected)
 
         self.ui.Rbtn2_34_open.clicked.connect(self.Ctl_Radio_button_selected)  # 气象站电源
         self.ui.Rbtn2_34_close.clicked.connect(self.Ctl_Radio_button_selected)
+
+    def resizeEvent(self, event):
+        # Update Size Grips
+        UIFunctions.resize_grips(self)
+
+    # MOUSE CLICK EVENTS
+    # ///////////////////////////////////////////////////////////////
+    def mousePressEvent(self, event):
+        # SET DRAG POS WINDOW
+        # self.dragPos = event.globalPos()
+        self.dragPos = event.globalPosition().toPoint()
+
+        # PRINT MOUSE EVENTS
+        if event.buttons() == Qt.LeftButton:
+            print('Mouse click: LEFT CLICK')
+        if event.buttons() == Qt.RightButton:
+            print('Mouse click: RIGHT CLICK')
+
+    # def start_computer_info(self):
+    #     """
+    #     开始获取电脑数据
+    #     :return:
+    #     """
+    #     # 开始分析记录电脑数据，需持续获取，然后分析
+    #     self.thread1 = NewThread()  # 实例化一个线程
+    #     # 将线程thread的信号finishSignal和UI主线程中的槽函数data_display进行连接
+    #     self.thread1.finishSignal.connect(self.data_display)
+    #     # 启动线程，执行线程类中run函数
+    #     self.thread1.start()
 
     def Ctl_Radio_button_selected(self):
         # GET BUTTON CLICKED
@@ -333,8 +354,8 @@ class MyMainWindow(QMainWindow):
         btnName = btn.objectName()
         RadioBtn = btnName[0:8]
         # self.yun.set_one_relay(self.yun.addr_relay, 0)
-        '''以下代码用于 “手动远程控制1” 页面的选择按键'''
-        if RadioBtn == "Rbtn1_11":   # 使用addr_relay1 的1、2、3路继电器
+        '''以下代码用于 “手动远程控制1” 页面的选择按键  btn命名   Rbtn页_行列 '''
+        if RadioBtn == "Rbtn1_11":  # 使用addr_relay1 的1、2、3路继电器
             if self.ui.Rbtn1_11_up.isChecked():  # 上卷按钮选中时，开通relay1-1 0.05s 后断开(实际要大)，模拟按键的点动
                 self.yun.set_and_clear_one_relay(self.yun.addr_relay1, 1)
                 print(self.ui.Rbtn1_11_up.objectName() + "   " + self.ui.Rbtn1_11_up.text())
@@ -516,6 +537,8 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     app.setWindowIcon(QIcon("bakeup/icon.ico"))
     window = MyMainWindow()
-    sys.exit(app.exec())
-
-
+    workPath = os.getcwd()
+    a = app.exec()
+    if a == 0:
+        # input()  # 调试时使用 ，防止程序闪退
+        sys.exit(a)

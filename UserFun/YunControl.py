@@ -45,12 +45,12 @@ class YunControl:
         self.addr_relay2 = "40261505"                # 网络继电器2地址
         self.addr_relay3 = "40261506"                # 网络继电器3地址
         self.addr_relay4 = "40261512"                # 网络继电器4地址
-        self.addr_relay5 = "40261513"                # 网络继电器5地址(未用)
-        self.relay1_status = {}
-        self.relay2_status = {}
-        self.relay3_status = {}
-        self.relay4_status = {}
-        self.relay5_status = {}
+        #  self.addr_relay5 = "40261513"                # 网络继电器5地址(未用)
+        self.relay1_status = {1: 1, 2: 0, 3: 1, 4: 1, 5: 0, 6: 1, 7: 1, 8: 1}  # 用于存储继电器状态 {1: 1, 2: 1, 3: 1, 4: 0, 5: 0, 6: 0, 7: 1, 8: 1}
+        self.relay2_status = {1: 1, 2: 1, 3: 1, 4: 1, 5: 1, 6: 1, 7: 1, 8: 1}  # 继电器状态0闭合 1断开
+        self.relay3_status = {1: 1, 2: 1, 3: 1, 4: 1, 5: 1, 6: 1, 7: 1, 8: 1}
+        self.relay4_status = {1: 1, 2: 1, 3: 1, 4: 1, 5: 1, 6: 1, 7: 1, 8: 1}
+        # self.relay5_status = {1: 0, 2: 1, 3: 1, 4: 1, 5: 1, 6: 1, 7: 1, 8: 1}
 
         self.delay_time = 2                          # 程序运行时间间隔，由传感器采集频率决定
 
@@ -70,7 +70,20 @@ class YunControl:
         self.token_expiration_time = 0.0
         self.token_time = 0.0
         self.read_device_add()
+        self.data_path = self.mkdir_data_path()
 
+    #  建立数据存储路径
+    def mkdir_data_path(self):
+        daPath = os.getcwd()
+        daPath = "{}./data/image".format(daPath)
+        if not os.path.exists(daPath):
+            os.makedirs(daPath, mode=0o777)
+            print("数据和图像存储路径构建完成")
+        else:
+            print("./data/image 已经存在")
+        return daPath
+
+    #  函数功能： 使用外置DeviceConfig.txt文件设置继电器及传感器的地址，方便在传感器损坏时更换
     def read_device_add(self):
         with open(file="./DeviceConfig.txt", encoding="gbk", mode="r") as f:
             inf = f.readlines()
@@ -79,26 +92,24 @@ class YunControl:
             self.addr_relay2 = inf[1][inf[1].find('= ')+3:inf[1].find('= ')+11]
             self.addr_relay3 = inf[2][inf[2].find('= ')+3:inf[2].find('= ')+11]
             self.addr_relay4 = inf[3][inf[3].find('= ')+3:inf[3].find('= ')+11]
-            self.addr_relay5 = inf[4][inf[4].find('= ')+3:inf[4].find('= ')+11]
+            ########################################################################
             ########################################################################
             self.addr_weather_station = inf[6][inf[6].find('= ')+3:inf[6].find('= ')+11]  # 气象站设备地址
-            self.addr_concentrator = inf[7][inf[7].find('= ')+3:inf[7].find('= ')+11] # 集中器地址            数据6个 甲烷、氮气、水箱123、CO2浓度
+            self.addr_concentrator = inf[7][inf[7].find('= ')+3:inf[7].find('= ')+11]  # 集中器地址  数据6个 甲烷、氮气、水箱123、CO2浓度
             self.Addr_Comparison_soil = inf[8][inf[8].find('= ')+3:inf[8].find('= ')+11]  # 对照土壤传感器       （5个温度值，5个湿度值）
             self.addr_northern_soil1 = inf[9][inf[9].find('= ')+3:inf[9].find('= ')+11]  # 北部土壤传感器1      （5个温度值，5个湿度值）
-            self.addr_northern_soil2 = inf[10][inf[10].find('= ')+3:inf[10].find('= ')+11]  # 北部土壤传感器2      （5个温度值，5个湿度值）
-            self.addr_southern_soil1 = inf[11][inf[11].find('= ')+3:inf[11].find('= ')+11]  # 南部土壤传感器1      （5个温度值，5个湿度值）
-            self.addr_southern_soil2 = inf[11][inf[11].find('= ')+3:inf[11].find('= ')+11]  # 南部土壤传感器2      （5个温度值，5个湿度值）
+            self.addr_northern_soil2 = inf[10][inf[10].find('= ')+3:inf[10].find('= ')+11]  # 北部土壤传感器2   （5个温度值，5个湿度值）
+            self.addr_southern_soil1 = inf[11][inf[11].find('= ')+3:inf[11].find('= ')+11]  # 南部土壤传感器1   （5个温度值，5个湿度值）
+            self.addr_southern_soil2 = inf[11][inf[11].find('= ')+3:inf[11].find('= ')+11]  # 南部土壤传感器2   （5个温度值，5个湿度值）
             self.addr_host1 = inf[12][inf[12].find('= ')+3:inf[12].find('= ')+11]  # 主机1地址            （32组温湿度）
             self.addr_host2 = inf[13][inf[13].find('= ')+3:inf[13].find('= ')+11]  # 主机2地址            （29组温湿度） 不确定
-
-            print('')
-
-        #  获取传感器历史数据 deviceAddr=主机地址, nodeId=传感器因子号, startTime, endTime时间格式：YYYY-MM-dd HH:mm:ss
-    #  使用接口获取历史数据时，每分钟只能执行6次，超出次数会被拒绝。
-
-        # print(name + "数据存储成功！\n")
+        f.close()
+        print("地址设置完成")
         return
 
+    #  本函数获取某个时段的历史数据
+    #  获取传感器历史数据 deviceAddr=主机地址, nodeId=传感器因子号, startTime, endTime时间格式：YYYY-MM-dd HH:mm:ss
+    #  使用接口获取历史数据时，每分钟只能执行6次，超出次数会被拒绝。
     def get_history_data_withoutThreads(self, deviceAddr, startTime, endTime, nodeId=-1):
         self.check_token()  # 检测token是否过期
         iid = list(self.deviceAddr.values()).index(deviceAddr)
@@ -124,7 +135,7 @@ class YunControl:
         deviceAddr = str(data[0]['deviceAddr'])  # 取地址信息
         # 构建存储时的文件名称
         daPath = os.getcwd()
-        daPath = "{}./data".format(daPath)
+        daPath = "{}\\data".format(daPath)
         if not os.path.exists(daPath):
             os.makedirs(daPath, mode=0o777)
         # filename = "{0}_{1}_{2}-{3}".format(name, deviceAddr, startTime, endTime)
@@ -362,10 +373,10 @@ class YunControl:
         newThread.start()
 
     def get_cloud_data_12hours_without_Thread(self):
-        now = datetime.datetime.now()
-        endTime = now.strftime("%Y-%m-%d %H:%M:%S")
+        now = datetime.datetime.now()  # 获取系统时间
+        endTime = now.strftime("%Y-%m-%d %H:%M:%S")  # 系统时间格式调整
         month = int(endTime[5:7])
-        day = int(endTime[8:10])
+        day = int(endTime[8:10])  # 取回日期
         if day == 1:
             if month in [1, 3, 4, 7, 8, 10, 11]:  # not considered Feb
                 day = 31
@@ -376,7 +387,7 @@ class YunControl:
         else:
             day = day-1
 
-        startTime = endTime[0:5]+str(month)+'-'+str(day)+endTime[10:]
+        startTime = endTime[0:5]+str(month)+'-'+str(day)+endTime[10:]  # 构建前12小时的起始时刻
         # 数据使用主机数据获得 空气温湿度 ；使用气象站获取光照强度；
         # 使用土壤南1 获取土壤温湿度；使用集中器获取CO2浓度数据
 
@@ -391,8 +402,9 @@ class YunControl:
         return
 
     def get_cloud_data_12hours(self):
-        newThread = threading.Thread(target=self.get_cloud_data_12hours_without_Thread)
-        newThread.start()
+        self.get_cloud_data_12hours_without_Thread
+        # newThread = threading.Thread(target=self.get_cloud_data_12hours_without_Thread)
+        # newThread.start()
         return
 
     def check_token(self):
@@ -408,25 +420,47 @@ class YunControl:
     #     return
 
     #  读出继电器状态，.
-    def read_all_delay_status(self):
+    def read_all_delay_status(self, pageNum):
         # 继电器数据
-        addr = [self.addr_relay1, self.addr_relay2, self.addr_relay3, self.addr_relay4, self.addr_relay5]
-        status = [self.relay1_status, self.relay2_status, self.relay3_status, self.relay4_status, self.relay5_status]
+        addr = [self.addr_relay1, self.addr_relay2, self.addr_relay3, self.addr_relay4]
+        status = [self.relay1_status, self.relay2_status, self.relay3_status, self.relay4_status]
 
-        for i in range(5):
+        if pageNum == 1:
+            for i in [0, 1]:
+                print("正在读取继电器{}状态信息...".format(addr[i]))
+                url = self.url_yun + "api/data/getRealTimeDataByDeviceAddr?deviceAddrs={}".format(addr[i])
+                self.check_token()  # 检测token是否过期
+                r = requests.get(url, headers=self.headers)
+                p = json.loads(r.content)
+                if p['message'] == '设备地址不符合条件':
+                    print("当前继电器{}地址错误\n".format(addr[i]))
+                    continue
+                D = p['data'][0]['relayStatus']  # 继电器状态0闭合 1断开
+                if p['data'][0]['deviceStatus'] == "offline":
+                    print("当前继电器{}离线，请检查网络连接\n".format(addr[i]))
+                    continue
+                else:
+                    status[i] = json.loads(D)
+                    print("当前继电器{}状态已经下载".format(addr[i]))
 
-            print("正在读取继电器{}状态信息...".format(addr[i]))
-            url = self.url_yun + "api/data/getRealTimeDataByDeviceAddr?deviceAddrs={}".format(addr[i])
-            self.check_token()  # 检测token是否过期
-            r = requests.get(url, headers=self.headers)
-            p = json.loads(r.content)
-            D = p['data'][0]['relayStatus']
-            if D:
-                print("当前继电器{}离线，请检查网络连接".format(addr[i]))
-                break
-            else:
-                status[i] = json.loads(D)
-                print("当前继电器{}状态已经下载".format(addr[i]))
+        if pageNum == 2:
+            for i in [2, 3]:
+                print("正在读取继电器{}状态信息...".format(addr[i]))
+                url = self.url_yun + "api/data/getRealTimeDataByDeviceAddr?deviceAddrs={}".format(addr[i])
+                self.check_token()  # 检测token是否过期
+                r = requests.get(url, headers=self.headers)
+                p = json.loads(r.content)
+                if p['message'] == '设备地址不符合条件':
+                    print("当前继电器{}地址错误\n".format(addr[i]))
+                    continue
+                D = p['data'][0]['relayStatus']  # 继电器状态0闭合 1断开
+                if p['data'][0]['deviceStatus'] == "offline":
+                    print("当前继电器{}离线，请检查网络连接\n".format(addr[i]))
+                    continue
+                else:
+                    status[i] = json.loads(D)
+                    print("当前继电器{}状态已经下载".format(addr[i]))
+        return
 
     # 读一个继电器的状态num 取值为 0-4
     def read_one_delay_status(self, num):

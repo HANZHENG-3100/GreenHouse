@@ -25,16 +25,11 @@ from PySide6.QtWidgets import QMainWindow, QMessageBox, QApplication
 
 from UserFun.DataProcessAndPlot import DataProcessAndPlot
 from UserFun.YunControl import YunControl
-# from modules import *
-# from widgets import *
-# from PySide6.QtCharts import QChart, QLineSeries, QValueAxis
-# SET AS GLOBAL WIDGETS
-from modules import *
 
+# SET AS GLOBAL WIDGETS
+# from modules import Settings, UIFunctions, Ui_MainWindow, AppFunctions
+from modules import *
 # from modules import Ui_MainWindow
-# # from modules.app_functions import AppFunctions
-# from modules import UIFunctions
-# from modules import Settings
 
 widgets = None
 yun = None
@@ -173,10 +168,12 @@ class MyMainWindow(QMainWindow):
             widgets.stackedWidget.setCurrentWidget(widgets.cloud_page1)  # 堆栈窗口设置为cloud_page1窗口
             UIFunctions.resetStyle(self, btnName)
             btn.setStyleSheet(UIFunctions.selectMenu(self, btn.styleSheet()))
+            AppFunctions.display(self)
         if btnName == "btn_cloud2":
             widgets.stackedWidget.setCurrentWidget(widgets.cloud_page2)  # 堆栈窗口设置为cloud_page2窗口
             UIFunctions.resetStyle(self, btnName)
             btn.setStyleSheet(UIFunctions.selectMenu(self, btn.styleSheet()))
+            AppFunctions.display(self)
         # SHOW energy_page
         if btnName == "btn_energy":
             widgets.stackedWidget.setCurrentWidget(widgets.energy_page)
@@ -196,8 +193,7 @@ class MyMainWindow(QMainWindow):
             widgets.stackedWidget.setCurrentWidget(widgets.manual_control_page1)  # SET PAGE
             UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
             btn.setStyleSheet(UIFunctions.selectMenu(self, btn.styleSheet()))  # SELECT MENU
-            # self.yun.read_all_delay_status()
-            # AppFunctions.Refresh_radioBtn()
+            AppFunctions.Refresh_radioBtn(self, 1)  # 同步第1页的继电器状态到页面显示
 
             # QMessageBox.information(self, "提示", "该功能暂未实现", QMessageBox.Yes)
         if btnName == "btn_manual_control2":
@@ -206,6 +202,7 @@ class MyMainWindow(QMainWindow):
             UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
             btn.setStyleSheet(UIFunctions.selectMenu(self, btn.styleSheet()))  # SELECT MENU
             # QMessageBox.information(self, "提示", "该功能暂未实现", QMessageBox.Yes)
+            AppFunctions.Refresh_radioBtn(self, 2)  # 同步第2页的继电器状态到页面显示
 
         if btnName == "btn_information":
             widgets.stackedWidget.setCurrentWidget(widgets.information_page)  # SET PAGE
@@ -534,10 +531,13 @@ class MyMainWindow(QMainWindow):
 
 
 if __name__ == "__main__":
+    # 构建数据和图像存储路径
+
+    # 启动界面
     app = QApplication(sys.argv)
     app.setWindowIcon(QIcon("bakeup/icon.ico"))
     window = MyMainWindow()
-    workPath = os.getcwd()
+    # workPath = os.getcwd()
     a = app.exec()
     if a == 0:
         # input()  # 调试时使用 ，防止程序闪退

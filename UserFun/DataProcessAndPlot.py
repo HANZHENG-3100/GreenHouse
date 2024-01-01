@@ -8,13 +8,13 @@ my_font = FontProperties(fname='C:\\Windows\\Fonts\\simsun.ttc', size=10)
 
 
 class DataProcessAndPlot:
-    @staticmethod  # 使用主机1 主机2的数据完成 image1和image2 两张图像
+    @staticmethod  # 使用主机1 主机2的数据完成 image1和image2 两张图像的绘制
     def plot_data1():
-        plt.style.use("seaborn-whitegrid")
-        currPath = os.getcwd()
+        plt.style.use("seaborn-whitegrid")  # 图片显示格式
+        currPath = os.getcwd()  # 获取当前工作路径
         path1 = r'{}\data\image\image{}.png'.format(currPath, "1")
-        path2 = r'{}\data\image\image{}.png'.format(currPath, "2")
-        name1 = "./data/主机1_40184157.json"
+        path2 = r'{}\data\image\image{}.png'.format(currPath, "2")  # 生成图像存储路径
+        name1 = "./data/主机1_40184157.json"  # 数据位置
         name2 = "./data/主机2_40184180.json"
         with open(name1, "r") as f1:
             w1 = json.load(f1)
@@ -305,7 +305,7 @@ class DataProcessAndPlot:
         path9 = r'{}\data\image\image{}.png'.format(currPath, "9")
         path10 = r'{}\data\image\image{}.png'.format(currPath, "10")
     
-        name1 = "./data/气象站_40133062.json"
+        name1 = f"./data/气象站_40133062.json"
     
         with open(name1, "r") as f1:
             q1 = json.load(f1)

@@ -1654,7 +1654,7 @@ border-style:outset;}</string>
                       <enum>QFrame::NoFrame</enum>
                      </property>
                      <property name="currentIndex">
-                      <number>5</number>
+                      <number>2</number>
                      </property>
                      <widget class="QWidget" name="energy_page">
                       <property name="styleSheet">
@@ -2699,11 +2699,17 @@ border-style:outset;}</string>
                               <layout class="QVBoxLayout" name="verticalLayout_28">
                                <item>
                                 <widget class="QRadioButton" name="Rbtn1_11_up">
+                                 <property name="mouseTracking">
+                                  <bool>true</bool>
+                                 </property>
                                  <property name="styleSheet">
                                   <string notr="true"/>
                                  </property>
                                  <property name="text">
                                   <string>上卷</string>
+                                 </property>
+                                 <property name="checked">
+                                  <bool>false</bool>
                                  </property>
                                 </widget>
                                </item>
@@ -2714,6 +2720,9 @@ border-style:outset;}</string>
                                  </property>
                                  <property name="text">
                                   <string>停止</string>
+                                 </property>
+                                 <property name="checked">
+                                  <bool>true</bool>
                                  </property>
                                 </widget>
                                </item>

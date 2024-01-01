@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# https://www.cnblogs.com/hhh5460/p/4322652.html
+# 参考 https://www.cnblogs.com/hhh5460/p/4322652.html
 import sys
 import random
 
@@ -14,7 +14,7 @@ from numpy import arange, sin, pi
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.figure import Figure
 
-
+# 画图
 class MyMplCanvas(FigureCanvas):
      #  这是一个窗口部件，即QWidget（当然也是FigureCanvasAgg）
     def __init__(self, parent=None, width=5, height=4, dpi=100):

@@ -33,7 +33,7 @@ from modules import *
 
 widgets = None
 yun = None
-
+driver =None
 
 # dir_name = os.path.dirname(PySide6.__file__)
 # plusin_path = os.path.join(dir_name, 'plugins', 'platforms')

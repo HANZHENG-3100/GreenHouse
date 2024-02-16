@@ -2,8 +2,13 @@
 # ///////////////////////////////////////////////////////////////
 from datetime import datetime
 import os
+from ddddocr import DdddOcr
+from selenium import webdriver
+
 from PySide6.QtGui import QPixmap, Qt
+import OpenCloudWeb
 from .app_settings import Settings
+
 from main import MyMainWindow
 # WITH ACCESS TO MAIN WINDOW WIDGETS
 
@@ -34,8 +39,10 @@ class AppFunctions:
 
     @staticmethod
     def Btn_open_web():
-        import webbrowser
-        webbrowser.open('http://www.0531yun.com/')
+        # global driver
+        # driver = webdriver.Edge()  # "./chromedriver_win32/chromedriver.exe" = webdriver.Edge()  # "./chromedriver_win32/chromedriver.exe"
+        op = OpenCloudWeb.OpenWeb()
+        op.open_cloud_web()
         print("Btn_open_web run")
         return
 

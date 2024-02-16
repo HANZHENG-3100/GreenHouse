@@ -85,7 +85,7 @@ class YunControl:
 
     #  函数功能： 使用外置DeviceConfig.txt文件设置继电器及传感器的地址，方便在传感器损坏时更换
     def read_device_add(self):
-        with open(file="./DeviceConfig.txt", encoding="gbk", mode="r") as f:
+        with open(file="./DeviceConfig.txt", encoding="utf-8", mode="r") as f:
             inf = f.readlines()
 
             self.addr_relay1 = inf[0][inf[0].find('= ')+3:inf[0].find('= ')+11]

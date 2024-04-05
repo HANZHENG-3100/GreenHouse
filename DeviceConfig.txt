@@ -1,0 +1,15 @@
+1.addr_relay1 = "40261493"  
+2.addr_relay2 = "40261505" 
+3.addr_relay3 = "40261506" 
+4.addr_relay4 = "40261512"
+#################################
+#################################
+1.addr_weather_station = "40133062"       
+2.addr_concentrator = "20009680"         
+3.Addr_Comparison_soil = "21043744"      
+4.addr_northern_soil1 = "21043747"        
+5.addr_northern_soil2 = "21043782"       
+6.addr_southern_soil1 = "21043765"       
+7.addr_southern_soil2 = "21043786"        
+8.addr_host1 = "40184157"                 
+9.addr_host2 = "40184180"                 

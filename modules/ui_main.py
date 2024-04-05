@@ -1761,13 +1761,16 @@ class Ui_MainWindow(object):
         self.verticalLayout_28.setObjectName(u"verticalLayout_28")
         self.Rbtn1_11_up = QRadioButton(self.control_page1_11)
         self.Rbtn1_11_up.setObjectName(u"Rbtn1_11_up")
+        self.Rbtn1_11_up.setMouseTracking(True)
         self.Rbtn1_11_up.setStyleSheet(u"")
+        self.Rbtn1_11_up.setChecked(False)
 
         self.verticalLayout_28.addWidget(self.Rbtn1_11_up)
 
         self.Rbtn1_11_stop = QRadioButton(self.control_page1_11)
         self.Rbtn1_11_stop.setObjectName(u"Rbtn1_11_stop")
         self.Rbtn1_11_stop.setStyleSheet(u"")
+        self.Rbtn1_11_stop.setChecked(True)
 
         self.verticalLayout_28.addWidget(self.Rbtn1_11_stop)
 
@@ -2611,7 +2614,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(5)
+        self.stackedWidget.setCurrentIndex(6)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -2650,7 +2653,7 @@ class Ui_MainWindow(object):
         self.btn_information.setText(QCoreApplication.translate("MainWindow", u"\u5173\u4e8e\u8f6f\u4ef6", None))
         self.label_3.setText("")
         self.toggleLeftBox.setText(QCoreApplication.translate("MainWindow", u"\u8f6f\u4ef6\u4ecb\u7ecd", None))
-        self.titleRightInfo.setText(QCoreApplication.translate("MainWindow", u"\u667a\u80fd\u7269\u8054\u7f51\u6e29\u5ba4\u73af\u5883\u81ea\u52a8\u63a7\u5236\u7cfb\u7edf", None))
+        self.titleRightInfo.setText(QCoreApplication.translate("MainWindow", u"\u592a\u9633\u80fd\u751f\u6001\u4fee\u590d\u7cfb\u7edf", None))
 #if QT_CONFIG(tooltip)
         self.settingsTopBtn.setToolTip(QCoreApplication.translate("MainWindow", u"Settings", None))
 #endif // QT_CONFIG(tooltip)
@@ -2803,9 +2806,9 @@ class Ui_MainWindow(object):
 "p, li { white-space: pre-wrap; }\n"
 "hr { height: 1px; border-width: 0; }\n"
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:14pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">       \u672c\u8f6f\u4ef6\u57fa\u4e8e\u201cxxx\u9879\u76ee\u201d\u592a\u9633\u80fd\u667a\u80fd\u6e29\u5ba4\u5927\u68da\u5b9e\u9645\u5e94\u7528\u5f00\u53d1\uff0c\u96c6\u6210\u5e38\u7528\u6e29\u5ba4\u5927\u68da\u6570\u636e\u91c7\u96c6\u5668\u53ca\u63a7\u5236\u5668\uff0c\u914d\u5408\u4e13\u7528\u201c\u81ea\u52a8\u63a7\u5236\u7cfb\u7edf&quot;\u786c\u4ef6\u4f7f\u7528\u3002</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"> "
-                        "      \u8f6f\u4ef6\u7248\u6743\u5f52\u201cXXXXXX\u6709\u9650\u516c\u53f8\u201d\u6240\u6709\uff0c\u975e\u7ecf\u516c\u53f8\u6388\u6743\uff0c\u4e0d\u80fd\u5c06\u5176\u7528\u4e8e\u76c8\u5229\u6216\u975e\u76c8\u5229\u7684\u4efb\u4f55\u7528\u9014\u3002</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">       \u672c\u8f6f\u4ef6\u7528\u4e8e\u201d\u592a\u9633\u80fd\u751f\u6001\u4fee\u590d\u7cfb\u7edf\u201c\uff0c\u96c6\u6210\u5e38\u7528\u6e29\u5ba4\u5927\u68da\u6570\u636e\u91c7\u96c6\u5668\u53ca\u63a7\u5236\u5668\uff0c\u914d\u5408\u4e13\u7528\u81ea\u52a8\u63a7\u5236\u7cfb\u7edf\u786c\u4ef6\u4f7f\u7528\u3002</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">       \u8f6f\u4ef6\u7248\u6743\u5f52\u201c\u5185\u8499\u53e4\u5de5"
+                        "\u4e1a\u5927\u5b66\u201d\u6240\u6709\uff0c\u975e\u7ecf\u6388\u6743\uff0c\u7981\u6b62\u5c06\u5176\u7528\u4e8e\u76c8\u5229\u6216\u975e\u76c8\u5229\u7684\u4efb\u4f55\u7528\u9014\u3002</p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">     \u8f6f\u4ef6\u6280\u672f\u652f\u6301\u8bf7\u8054\u7cfb\uff1a\u97e9\u8001\u5e08  15389769877</p></body></html>", None))
         self.btn_change_topic.setText(QCoreApplication.translate("MainWindow", u"\u6539\u53d8\u4e3b\u9898", None))
         self.btn_print.setText(QCoreApplication.translate("MainWindow", u"\u5f85\u8bbe\u529f\u80fd2print", None))

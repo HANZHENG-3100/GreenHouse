@@ -21,7 +21,7 @@ import sys
 from os import path
 # IMPORT / GUI AND MODULES AND WIDGETS
 from PySide6.QtGui import Qt, QIcon
-from PySide6.QtWidgets import QMainWindow, QMessageBox, QApplication
+# from PySide6.QtWidgets import QMainWindow, QMessageBox, QApplication
 
 from UserFun.DataProcessAndPlot import DataProcessAndPlot
 from UserFun.YunControl import YunControl
@@ -64,8 +64,8 @@ class MyMainWindow(QMainWindow):
         # ///////////////////////////////////////////////////////////////
         Settings.ENABLE_CUSTOM_TITLE_BAR = True
         # APP NAME
-        title = "智能物联网温室环境自动控制系统"
-        description = "智能物联网温室环境自动控制系统"
+        title = "太阳能生态修复系统设计软件"
+        description = "太阳能生态修复系统设计软件"
         # APPLY TEXTS
         self.setWindowTitle(title)
         widgets.titleRightInfo.setText(description)
@@ -179,14 +179,14 @@ class MyMainWindow(QMainWindow):
             widgets.stackedWidget.setCurrentWidget(widgets.energy_page)
             UIFunctions.resetStyle(self, btnName)
             btn.setStyleSheet(UIFunctions.selectMenu(self, btn.styleSheet()))
-            QMessageBox.information(self, "Sorry", "该功能还在开发中", QMessageBox.Yes)
+            # QMessageBox.information(self, "Sorry", "该功能还在开发中", QMessageBox.Yes)
 
         # SHOW auto_control_page
         if btnName == "btn_auto_control":
             widgets.stackedWidget.setCurrentWidget(widgets.auto_control_page)  # SET PAGE
             UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
             btn.setStyleSheet(UIFunctions.selectMenu(self, btn.styleSheet()))  # SELECT MENU
-            QMessageBox.information(self, "Sorry", "该功能在开发中", QMessageBox.Yes)
+            # QMessageBox.information(self, "Sorry", "该功能在开发中", QMessageBox.Yes)
         # SHOW auto_control_page
         if btnName == "btn_manual_control1":
             # print("Save BTN clicked!")

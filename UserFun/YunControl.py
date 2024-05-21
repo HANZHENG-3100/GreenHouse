@@ -14,8 +14,8 @@ class YunControl:
     def __init__(self):
         urllib3.disable_warnings()  # 忽略https安全证书的验证
         self.url_yun = "http://www.0531yun.com/"  # 建大仁科综合环境监控云平台地址
-        self.ID = "h211222yqhz"  # 云服务器登录账号
-        self.PW = "A123456@"  # 云服务器登录密码
+        self.ID = "  # 云服务器登录账号
+        self.PW = "@"  # 云服务器登录密码
         self.deviceAddr = {'气象站': "40133062",
                            '集中器': "20009680",
                            '对照土壤': "21043744",
